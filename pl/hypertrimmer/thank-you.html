@@ -200,8 +200,8 @@ window.SITE_CONFIG = {
   PRICE: 349,
   META_PIXEL_ID: '',
   GOOGLE_TAG_ID: '',
-  GOOGLE_ADS_CONVERSION_SEND_TO: 'AW-18327321473/piRMCJP23tkcEOiR9rJE',
-  CONVERSION_VALUE: 1.0,
+  GOOGLE_ADS_CONVERSION_SEND_TO: 'AW-18327321473/S692CKfLieocEIH3kqNE',
+  CONVERSION_VALUE: 21,
   CONVERSION_CURRENCY: 'USD',
   CASHBOLT_OFFER_ID: '751',
   COOKIE_TEXT: 'Używamy technicznych plików cookie i plików cookie stron trzecich w celu poprawy doświadczenia i analizy.',
@@ -302,12 +302,18 @@ window.SITE_CONFIG = {
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Wszelkie prawa zastrzeżone. <a href="/">trendtopia-store.com</a></div>
 </div></footer>
 
-<!-- Event snippet for Purchase conversion page (solo dopo submit Cashbolt) -->
+
+
+
+
+<!-- Event snippet for Purchase - account 709 - Otger (1) conversion page -->
 <script>
-  window.addEventListener('load', function () {
-    if (window.fireLifepickshopThankYouConversion) {
-      window.fireLifepickshopThankYouConversion();
-    }
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18327321473/S692CKfLieocEIH3kqNE',
+      'value': 21.0,
+      'currency': 'EUR',
+      'transaction_id': ''
+      // 'new_customer': true /* calculate dynamically, populate with true/false */,
   });
 </script>
 
