@@ -183,7 +183,45 @@ def inject_forms(html: str, geo: str, offer: str, net_mod) -> str:
     return html
 
 
-def render_landing(offer: str, cfg: dict, net_mod) -> str:
+def patch_landing_footer(html: str, geo: str, shared: dict) -> str:
+    footer_es = (
+        "    <div>\n"
+        '      <h4 class="site-footer__heading">Información</h4>\n'
+        '      <ul class="site-footer__list">\n'
+        '        <li><a href="/es/about-us.html">Sobre nosotros</a></li>\n'
+        '        <li><a href="/es/contact-us.html">Contáctanos</a></li>\n'
+        '        <li><a href="/es/privacy-policy.html">Política de privacidad</a></li>\n'
+        '        <li><a href="/es/terms-conditions.html">Términos y condiciones</a></li>\n'
+        '        <li><a href="/es/cookie-policy.html">Política de cookies</a></li>\n'
+        '        <li><a href="/es/shipping-policy.html">Política de envío</a></li>\n'
+        '        <li><a href="/es/refund-policy.html">Política de reembolso</a></li>\n'
+        "      </ul>\n"
+        "    </div>\n"
+        "    <div>\n"
+        '      <h4 class="site-footer__heading">Contacto</h4>'
+    )
+    footer_geo = (
+        "    <div>\n"
+        f'      <h4 class="site-footer__heading">{shared["info"]}</h4>\n'
+        '      <ul class="site-footer__list">\n'
+        f'        <li><a href="/{geo}/about-us.html">{shared["about"]}</a></li>\n'
+        f'        <li><a href="/{geo}/contact-us.html">{shared["contact"]}</a></li>\n'
+        f'        <li><a href="/{geo}/privacy-policy.html">{shared["privacy"]}</a></li>\n'
+        f'        <li><a href="/{geo}/terms-conditions.html">{shared["terms"]}</a></li>\n'
+        f'        <li><a href="/{geo}/cookie-policy.html">{shared["cookie"]}</a></li>\n'
+        f'        <li><a href="/{geo}/shipping-policy.html">{shared["ship"]}</a></li>\n'
+        f'        <li><a href="/{geo}/refund-policy.html">{shared["refund"]}</a></li>\n'
+        "      </ul>\n"
+        "    </div>\n"
+        "    <div>\n"
+        f'      <h4 class="site-footer__heading">{shared["contacts"]}</h4>'
+    )
+    html = html.replace(footer_es, footer_geo)
+    html = html.replace("Todos los derechos reservados.", shared["rights"] + ".")
+    return html
+
+
+def render_landing(offer: str, cfg: dict, net_mod, ga_tr: dict) -> str:
     geo = cfg["geo"]
     tr_key = cfg["tr"]
     if geo == "hu":
@@ -206,6 +244,8 @@ def render_landing(offer: str, cfg: dict, net_mod) -> str:
     now = fmt_price(cfg["price"], cfg["currency"])
     html = patch_meta(html, tr_key, now)
     html = inject_forms(html, geo, offer, net_mod)
+    shared = shared_for_geo(tr_key, ga_tr)
+    html = patch_landing_footer(html, geo, shared)
     return html
 
 
@@ -334,7 +374,7 @@ def main(only: set[str] | None = None) -> None:
         out_dir = ROOT / geo / SLUG
         out_dir.mkdir(parents=True, exist_ok=True)
 
-        landing = render_landing(offer, cfg, net_mod)
+        landing = render_landing(offer, cfg, net_mod, ga_tr)
         (out_dir / "landing.html").write_text(landing, encoding="utf-8")
 
         (out_dir / "index.html").write_text(

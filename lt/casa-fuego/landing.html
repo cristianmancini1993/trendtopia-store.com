@@ -18,7 +18,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/assets/css/variables.css">
+<link rel="stylesheet" href="/assets/css/reset.css">
+<link rel="stylesheet" href="/assets/css/components.css">
 <script src="/assets/js/tracking.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
 <!-- ============================================================
      CASA FUEGO™ - Nusileidimo puslapis (lietuvių versija)
      ============================================================ -->
@@ -241,6 +245,44 @@
   .cf-specs-img img{aspect-ratio:1/1;object-fit:cover}
   .cf-package{padding:18px}
 }
+
+/* ---------- FOOTER (override cf-lp reset) ---------- */
+.cf-lp .site-footer{
+  margin-top:56px;
+  padding:64px 0 40px;
+  border-top:4px solid var(--cf-orange);
+}
+.cf-lp .site-footer .container{
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.cf-lp .site-footer__grid{
+  gap:40px;
+  margin-bottom:40px;
+}
+.cf-lp .site-footer__heading{
+  margin:0 0 18px;
+  font-size:15px;
+  letter-spacing:.02em;
+}
+.cf-lp .site-footer__list{
+  gap:12px;
+  line-height:1.6;
+}
+.cf-lp .site-footer__list li{
+  margin:0;
+  padding:0;
+}
+.cf-lp .site-footer__bottom{
+  padding-top:28px;
+  margin-top:8px;
+  line-height:1.7;
+}
+@media (min-width:768px){
+  .cf-lp .site-footer{padding:72px 0 48px}
+  .cf-lp .site-footer__grid{gap:48px}
+}
 </style>
 </head>
 <body>
@@ -290,8 +332,8 @@
 <h2>Įveskite duomenis ir užsakykite Casa Fuego</h2>
 <p class="sub">Užsakykite šiandien ir <strong>patogiai mokėkite grynaisiais pristatymo metu.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
-<label class="cf-lbl" for="name">Vardas Pavardė*</label>
-<input id="name" type="text" name="name" autocomplete="name" placeholder="Vardas Pavardė" required><br>
+<label class="cf-lbl" for="name">Nombre Apellido*</label>
+<input id="name" type="text" name="name" autocomplete="name" placeholder="Nombre Apellido" required><br>
 <label class="cf-lbl" for="street-address">Adresas*</label>
 <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adresas" required><br>
 <label class="cf-lbl" for="tel">Telefonas*</label>
@@ -303,7 +345,7 @@
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="649303b60cc4cebb22e018da131b30b4e706b2b8" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Užsisakykite dabar</button>
+<button name="submit" type="submit">Haz tu pedido</button>
 </div>
 <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
@@ -457,8 +499,8 @@
 <h2>Įveskite duomenis ir užsakykite Casa Fuego</h2>
 <p class="sub">Užsakykite šiandien ir <strong>patogiai mokėkite grynaisiais pristatymo metu.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
-<label class="cf-lbl" for="name2">Vardas Pavardė*</label>
-<input id="name2" type="text" name="name" autocomplete="name" placeholder="Vardas Pavardė" required><br>
+<label class="cf-lbl" for="name2">Nombre Apellido*</label>
+<input id="name2" type="text" name="name" autocomplete="name" placeholder="Nombre Apellido" required><br>
 <label class="cf-lbl" for="street-address2">Adresas*</label>
 <input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Adresas" required><br>
 <label class="cf-lbl" for="tel2">Telefonas*</label>
@@ -470,7 +512,7 @@
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="649303b60cc4cebb22e018da131b30b4e706b2b8" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Užsisakykite dabar</button>
+<button name="submit" type="submit">Haz tu pedido</button>
 </div>
 <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
@@ -515,6 +557,39 @@
 </div>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">UŽSAKYTI CASA FUEGO</a></div>
 </div>
+
+<footer class="site-footer"><div class="container">
+  <div class="site-footer__grid">
+    <div>
+      <a href="/" class="site-logo">
+        <span class="site-logo__text" style="display:inline"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
+      </a>
+    </div>
+    <div>
+      <h4 class="site-footer__heading">Informacija</h4>
+      <ul class="site-footer__list">
+        <li><a href="/lt/about-us.html">Apie mus</a></li>
+        <li><a href="/lt/contact-us.html">Susisiekite su mumis</a></li>
+        <li><a href="/lt/privacy-policy.html">Privatumo politika</a></li>
+        <li><a href="/lt/terms-conditions.html">Sąlygos ir nuostatos</a></li>
+        <li><a href="/lt/cookie-policy.html">Slapukų politika</a></li>
+        <li><a href="/lt/shipping-policy.html">Pristatymo politika</a></li>
+        <li><a href="/lt/refund-policy.html">Grąžinimo politika</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="site-footer__heading">Kontaktai</h4>
+      <ul class="site-footer__list">
+        <li><strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong></li>
+        <li>陶敬宾</li>
+        <li>RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong</li>
+        <li><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Visos teisės saugomos. <a href="/">trendtopia-store.com</a></div>
+</div></footer>
+
 </div>
 
 </body>
