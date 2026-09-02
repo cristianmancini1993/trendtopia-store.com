@@ -245,8 +245,8 @@ def patch_thank_you(geo: str, cfg: dict, shared: dict, es_ty: str, offer: str, c
             f"COOKIE_TEXT: '{esc_js(shared['cookie_text'])}',\n  COOKIE_ACCEPT: '{esc_js(shared['cookie_accept'])}',\n  COOKIE_LEARN: '{esc_js(shared['cookie_learn'])}'",
             html,
         )
-        ty_title = shared["ty_title"].replace("GlacierAir™", "Smartwatch™")
-        ty_desc = shared["ty_desc"].replace("GlacierAir™", "Smartwatch™")
+        ty_title = shared["ty_title"].replace("GlacierAir™", "CoreSync™")
+        ty_desc = shared["ty_desc"].replace("GlacierAir™", "CoreSync™")
         html = re.sub(r"<title>.*?</title>", f"<title>{ty_title}</title>", html, count=1)
         html = re.sub(
             r'<meta name="description" content=".*?"\s*/?>',
