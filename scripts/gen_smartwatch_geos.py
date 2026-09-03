@@ -8,30 +8,30 @@ import re
 import sys
 from pathlib import Path
 
-from smartwatch_i18n import LANDING_REPLACEMENTS, LT_TY, META
+from smartwatch_i18n import GR_TY, LANDING_REPLACEMENTS, LT_TY, META
 
 ROOT = Path(__file__).resolve().parents[1]
 SLUG = "smartwatch"
 
-# offer_id -> config. Añade una entrada por país con oferta Adrice real.
+# offer_id -> config (Adrice ref # → país + precio)
 GEOS: dict[str, dict] = {
-    "TODO-OFFER-ES": {"geo": "es", "lang": "es", "tr": "es", "price": 69.0, "currency": "EUR", "offer": "TODO-OFFER-ES"},
-    "TODO-OFFER-DE": {"geo": "de", "lang": "de", "tr": "de", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-DE"},
-    "TODO-OFFER-PT": {"geo": "pt", "lang": "pt", "tr": "pt", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-PT"},
-    "TODO-OFFER-PL": {"geo": "pl", "lang": "pl", "tr": "pl", "price": 399.0, "currency": "PLN", "offer": "TODO-OFFER-PL"},
+    "3137": {"geo": "es", "lang": "es", "tr": "es", "price": 49.0, "currency": "EUR", "offer": "3137"},
+    "3139": {"geo": "de", "lang": "de", "tr": "de", "price": 69.0, "currency": "EUR", "offer": "3139"},
+    "1633": {"geo": "pt", "lang": "pt", "tr": "pt", "price": 66.0, "currency": "EUR", "offer": "1633"},
+    "3141": {"geo": "pl", "lang": "pl", "tr": "pl", "price": 199.0, "currency": "PLN", "offer": "3141"},
+    "3143": {"geo": "cz", "lang": "cs", "tr": "cz", "price": 1499.0, "currency": "CZK", "offer": "3143"},
+    "1844": {"geo": "ro", "lang": "ro", "tr": "ro", "price": 339.0, "currency": "RON", "offer": "1844"},
+    "1842": {"geo": "gr", "lang": "el", "tr": "gr", "price": 69.0, "currency": "EUR", "offer": "1842"},
+    "1843": {"geo": "bg", "lang": "bg", "tr": "bg", "price": 69.0, "currency": "EUR", "offer": "1843"},
+    "1636": {"geo": "lt", "lang": "lt", "tr": "lt", "price": 54.0, "currency": "EUR", "offer": "1636"},
+    "3934": {"geo": "lv", "lang": "lv", "tr": "lv", "price": 69.0, "currency": "EUR", "offer": "3934"},
     "TODO-OFFER-HU": {"geo": "hu", "lang": "hu", "tr": "hu", "price": 31999.0, "currency": "HUF", "offer": "TODO-OFFER-HU"},
-    "TODO-OFFER-CZ": {"geo": "cz", "lang": "cs", "tr": "cz", "price": 1999.0, "currency": "CZK", "offer": "TODO-OFFER-CZ"},
     "TODO-OFFER-SK": {"geo": "sk", "lang": "sk", "tr": "sk", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-SK"},
-    "TODO-OFFER-RO": {"geo": "ro", "lang": "ro", "tr": "ro", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-RO"},
     "TODO-OFFER-IT": {"geo": "it", "lang": "it", "tr": "it", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-IT"},
     "TODO-OFFER-FR": {"geo": "fr", "lang": "fr", "tr": "fr", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-FR"},
     "TODO-OFFER-EN": {"geo": "en", "lang": "en", "tr": "en", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-EN"},
-    "TODO-OFFER-GR": {"geo": "gr", "lang": "el", "tr": "gr", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-GR"},
-    "TODO-OFFER-BG": {"geo": "bg", "lang": "bg", "tr": "bg", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-BG"},
     "TODO-OFFER-HR": {"geo": "hr", "lang": "hr", "tr": "hr", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-HR"},
     "TODO-OFFER-SI": {"geo": "si", "lang": "sl", "tr": "si", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-SI"},
-    "TODO-OFFER-LT": {"geo": "lt", "lang": "lt", "tr": "lt", "price": 89.0, "currency": "EUR", "offer": "TODO-OFFER-LT"},
-    "TODO-OFFER-LV": {"geo": "lv", "lang": "lv", "tr": "lv", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-LV"},
     "TODO-OFFER-EE": {"geo": "ee", "lang": "et", "tr": "ee", "price": 99.0, "currency": "EUR", "offer": "TODO-OFFER-EE"},
 }
 
@@ -55,7 +55,7 @@ INDEX_TMPL = """<!DOCTYPE html>
 </html>
 """
 
-OLD_PRICE_RATIO = 229 / 69.0
+OLD_PRICE_RATIO = 2.0  # -50% discount (old = 2× sale price)
 
 
 def fmt_price(amount: float, currency: str) -> str:
@@ -69,6 +69,10 @@ def fmt_price(amount: float, currency: str) -> str:
         whole = int(amount)
         frac = int(round((amount - whole) * 100))
         return f"{whole:,}".replace(",", ".") + f",{frac:02d} zł"
+    if currency == "RON":
+        whole = int(amount)
+        frac = int(round((amount - whole) * 100))
+        return f"{whole:,}".replace(",", ".") + f",{frac:02d} lei"
     return f"{amount:.2f}".replace(".", ",") + " €"
 
 
@@ -136,9 +140,17 @@ def patch_prices(html: str, cfg: dict, tr_key: str) -> str:
         rf"\g<1>{now} \g<2>",
         html,
     )
-    for src, dst in [("69,00 €", now), ("229,00 €", old), ("160,00 €", save_val)]:
+    for src, dst in [
+        ("49,00 €", now),
+        ("98,00 €", old),
+        ("49,00 €", save_val),
+        ("69,00 €", now),
+        ("229,00 €", old),
+        ("160,00 €", save_val),
+    ]:
         if src != dst:
             html = html.replace(src, dst)
+    html = html.replace("-70%", "-50%")
     return html
 
 
@@ -290,13 +302,13 @@ def patch_thank_you(geo: str, cfg: dict, shared: dict, es_ty: str, offer: str, c
             "    <div>\n"
             '      <h4 class="site-footer__heading">Información</h4>\n'
             '      <ul class="site-footer__list">\n'
-            '        <li><a href="/es/about-us.html">Sobre nosotros</a></li>\n'
-            '        <li><a href="/es/contact-us.html">Contáctanos</a></li>\n'
-            '        <li><a href="/es/privacy-policy.html">Política de privacidad</a></li>\n'
-            '        <li><a href="/es/terms-conditions.html">Términos y condiciones</a></li>\n'
-            '        <li><a href="/es/cookie-policy.html">Política de cookies</a></li>\n'
-            '        <li><a href="/es/shipping-policy.html">Política de envío</a></li>\n'
-            '        <li><a href="/es/refund-policy.html">Política de reembolso</a></li>\n'
+            f'        <li><a href="/{geo}/about-us.html">Sobre nosotros</a></li>\n'
+            f'        <li><a href="/{geo}/contact-us.html">Contáctanos</a></li>\n'
+            f'        <li><a href="/{geo}/privacy-policy.html">Política de privacidad</a></li>\n'
+            f'        <li><a href="/{geo}/terms-conditions.html">Términos y condiciones</a></li>\n'
+            f'        <li><a href="/{geo}/cookie-policy.html">Política de cookies</a></li>\n'
+            f'        <li><a href="/{geo}/shipping-policy.html">Política de envío</a></li>\n'
+            f'        <li><a href="/{geo}/refund-policy.html">Política de reembolso</a></li>\n'
             "      </ul>\n"
             "    </div>\n"
             "    <div>\n"
@@ -327,6 +339,8 @@ def patch_thank_you(geo: str, cfg: dict, shared: dict, es_ty: str, offer: str, c
 def shared_for_geo(tr_key: str, ga_tr: dict) -> dict:
     if tr_key == "lt":
         return LT_TY  # type: ignore[return-value]
+    if tr_key == "gr":
+        return GR_TY  # type: ignore[return-value]
     return ga_tr.get(tr_key, ga_tr.get("es", {}))
 
 
