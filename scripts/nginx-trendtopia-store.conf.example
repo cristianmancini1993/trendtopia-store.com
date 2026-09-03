@@ -1,0 +1,25 @@
+# Example nginx vhost — only if you keep hosting on the VPS (72.62.34.234).
+# Install cert: certbot --nginx -d trendtopia-store.com -d www.trendtopia-store.com
+#
+# server {
+#     listen 443 ssl http2;
+#     listen [::]:443 ssl http2;
+#     server_name trendtopia-store.com www.trendtopia-store.com;
+#
+#     root /var/www/trendtopia-store.com;
+#     index index.html;
+#
+#     ssl_certificate /etc/letsencrypt/live/trendtopia-store.com/fullchain.pem;
+#     ssl_certificate_key /etc/letsencrypt/live/trendtopia-store.com/privkey.pem;
+#
+#     location / {
+#         try_files $uri $uri/ =404;
+#     }
+# }
+#
+# server {
+#     listen 80;
+#     listen [::]:80;
+#     server_name trendtopia-store.com www.trendtopia-store.com;
+#     return 301 https://$host$request_uri;
+# }
