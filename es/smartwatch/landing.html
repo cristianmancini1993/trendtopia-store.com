@@ -341,19 +341,31 @@
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
 <label class="cf-lbl" for="name">Nombre y apellidos*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Nombre y apellidos" required><br>
-<label class="cf-lbl" for="street-address">Dirección de entrega*</label>
-<input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Dirección de entrega" required><br>
 <label class="cf-lbl" for="tel">Teléfono*</label>
 <input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Teléfono" required><br>
-<input name="uid" type="hidden" value="TODO-UID" />
-<input name="offer" type="hidden" value="TODO-OFFER" />
-<input name="lp" type="hidden" value="TODO-LP" />
+<label class="cf-lbl" for="street-address">Dirección de entrega*</label>
+<input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Dirección de entrega" required><br>
+<input name="uid" type="hidden" value="019e5f4e-b178-7d63-91e1-6fda72088957" />
+<input name="offer" type="hidden" value="3137" />
+<input name="lp" type="hidden" value="3171" />
+<input name="subid" id="subid" type="hidden" value="" />
+<input name="tmfp" id="tmfp" type="hidden" value="" />
 <input name="thankyoupage" type="hidden" value="https://trendtopia-store.com/es/smartwatch/thank-you.html"/>
-<input name="webhook" type="hidden" value="TODO-WEBHOOK"/>
-<input name="_key" type="hidden" value="TODO-KEY" />
+<input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
+<input name="_key" type="hidden" value="e4902d24a201fe03eb3c43937bbcef784ded5f43" />
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Sí, quiero mi CoreSync a 49,00 €</button>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+var params = new URLSearchParams(window.location.search);
+var campaign = params.get("utm_campaign") || "";
+document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+subidInput.value = campaign;
+});
+});
+</script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
 <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
@@ -509,19 +521,31 @@
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
 <label class="cf-lbl" for="name2">Nombre y apellidos*</label>
 <input id="name2" type="text" name="name" autocomplete="name" placeholder="Nombre y apellidos" required><br>
-<label class="cf-lbl" for="street-address2">Dirección de entrega*</label>
-<input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Dirección de entrega" required><br>
 <label class="cf-lbl" for="tel2">Teléfono*</label>
 <input id="tel2" type="tel" name="tel" autocomplete="tel" placeholder="Teléfono" required><br>
-<input name="uid" type="hidden" value="TODO-UID" />
-<input name="offer" type="hidden" value="TODO-OFFER" />
-<input name="lp" type="hidden" value="TODO-LP" />
+<label class="cf-lbl" for="street-address2">Dirección de entrega*</label>
+<input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Dirección de entrega" required><br>
+<input name="uid" type="hidden" value="019e5f4e-b178-7d63-91e1-6fda72088957" />
+<input name="offer" type="hidden" value="3137" />
+<input name="lp" type="hidden" value="3171" />
+<input name="subid" id="subid2" type="hidden" value="" />
+<input name="tmfp" id="tmfp2" type="hidden" value="" />
 <input name="thankyoupage" type="hidden" value="https://trendtopia-store.com/es/smartwatch/thank-you.html"/>
-<input name="webhook" type="hidden" value="TODO-WEBHOOK"/>
-<input name="_key" type="hidden" value="TODO-KEY" />
+<input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
+<input name="_key" type="hidden" value="e4902d24a201fe03eb3c43937bbcef784ded5f43" />
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Haz tu pedido</button>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+var params = new URLSearchParams(window.location.search);
+var campaign = params.get("utm_campaign") || "";
+document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+subidInput.value = campaign;
+});
+});
+</script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
 <script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
