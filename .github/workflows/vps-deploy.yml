@@ -9,7 +9,19 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Pull latest on VPS
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload CoreSync landings
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_SSH_PASSWORD }}
+          source: "es/smartwatch/landing.html,pl/smartwatch/landing.html,gr/smartwatch/landing.html"
+          target: "/tmp/tt-deploy"
+
+      - name: Install files on web root
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -18,14 +30,23 @@ jobs:
           script_stop: true
           script: |
             set -e
-            for d in /root/trendtopia-store.com /var/www/trendtopia-store.com /var/www/html; do
-              if [ -d "$d/.git" ]; then
-                cd "$d"
-                git fetch origin main
-                git reset --hard origin/main
-                echo "Deployed from $d"
+            for base in /var/www/html /var/www/trendtopia-store.com /root/trendtopia-store.com; do
+              if [ -f "$base/es/smartwatch/landing.html" ]; then
+                cp /tmp/tt-deploy/es/smartwatch/landing.html "$base/es/smartwatch/landing.html"
+                cp /tmp/tt-deploy/pl/smartwatch/landing.html "$base/pl/smartwatch/landing.html"
+                cp /tmp/tt-deploy/gr/smartwatch/landing.html "$base/gr/smartwatch/landing.html"
+                echo "Updated $base"
                 exit 0
               fi
             done
-            echo "No git repo found on VPS"
+            root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')
+            if [ -n "$root" ] && [ -d "$root" ]; then
+              mkdir -p "$root/es/smartwatch" "$root/pl/smartwatch" "$root/gr/smartwatch"
+              cp /tmp/tt-deploy/es/smartwatch/landing.html "$root/es/smartwatch/landing.html"
+              cp /tmp/tt-deploy/pl/smartwatch/landing.html "$root/pl/smartwatch/landing.html"
+              cp /tmp/tt-deploy/gr/smartwatch/landing.html "$root/gr/smartwatch/landing.html"
+              echo "Updated nginx root $root"
+              exit 0
+            fi
+            echo "Could not locate web root"
             exit 1
