@@ -642,6 +642,12 @@
 }
 .site-footer .site-logo { color: #fff; }
 .site-footer .site-logo__icon { color: #fff; }
+.site-footer__brand-mark {
+  display: block;
+  width: 56px;
+  height: auto;
+  margin-bottom: 1rem;
+}
 .site-footer__grid {
   display: grid;
   gap: var(--space-8);
