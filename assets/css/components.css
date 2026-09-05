@@ -642,11 +642,17 @@
 }
 .site-footer .site-logo { color: #fff; }
 .site-footer .site-logo__icon { color: #fff; }
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .site-footer__brand-mark {
   display: block;
-  width: 56px;
+  width: 75px;
   height: auto;
-  margin: 0 auto 1rem;
+  margin: 0 0 1rem;
 }
 .site-footer__grid {
   display: grid;
