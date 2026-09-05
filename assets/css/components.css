@@ -646,7 +646,7 @@
   display: block;
   width: 56px;
   height: auto;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
 }
 .site-footer__grid {
   display: grid;
