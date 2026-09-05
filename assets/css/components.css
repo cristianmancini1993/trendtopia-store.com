@@ -643,13 +643,13 @@
 .site-footer .site-logo { color: #fff; }
 .site-footer .site-logo__icon { color: #fff; }
 .site-footer__brand {
-  display: block;
+  display: inline-block;
 }
 .site-footer__brand-mark {
   display: block;
   width: 75px;
   height: auto;
-  margin: 0 0 1rem;
+  margin: 0 auto 1rem;
 }
 .site-footer__tagline {
   margin-top: 1rem;
