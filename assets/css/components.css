@@ -32,6 +32,13 @@
 /* Footer is on dark background — primary part flips to white */
 .site-footer .site-logo,
 .site-footer .site-logo__text-primary { color: #fff; }
+.site-logo__mark {
+  display: block;
+  margin-top: 12px;
+  width: 72px;
+  height: auto;
+  border-radius: 8px;
+}
 
 /* ========== SITE HEADER ========== */
 .site-header {
