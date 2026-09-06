@@ -30,15 +30,19 @@ jobs:
           script_stop: true
           script: |
             set -e
-            for base in /var/www/html /var/www/trendtopia-store.com /root/trendtopia-store.com; do
+            updated=0
+            for base in /var/www/trendtopia-store.com /var/www/adclickmobile.com /var/www/html /root/trendtopia-store.com; do
               if [ -f "$base/es/smartwatch/landing.html" ]; then
                 cp /tmp/tt-deploy/es/smartwatch/landing.html "$base/es/smartwatch/landing.html"
                 cp /tmp/tt-deploy/pl/smartwatch/landing.html "$base/pl/smartwatch/landing.html"
                 cp /tmp/tt-deploy/gr/smartwatch/landing.html "$base/gr/smartwatch/landing.html"
                 echo "Updated $base"
-                exit 0
+                updated=1
               fi
             done
+            if [ "$updated" -eq 1 ]; then
+              exit 0
+            fi
             root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')
             if [ -n "$root" ] && [ -d "$root" ]; then
               mkdir -p "$root/es/smartwatch" "$root/pl/smartwatch" "$root/gr/smartwatch"
