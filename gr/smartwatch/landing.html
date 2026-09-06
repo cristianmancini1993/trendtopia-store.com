@@ -11,13 +11,13 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CoreSync™ Smartwatch | Trendtopia Ελλάδα</title>
-<meta name="description" content="Ανακαλύψτε το CoreSync™, το smartwatch διαθέσιμο στο trendtopia-store.com. Δραστηριότητα, καρδιακοί παλμοί, ύπνος και άλλα. 69,00 €, αντικαταβολή.">
+<title>CoreSync™ Smartwatch | Συνδεσιμότητα, δραστηριότητα και αυτονομία | Trendtopia Ελλάδα</title>
+<meta name="description" content="Ανακαλύψτε το CoreSync™, ένα smartwatch για κλήσεις, ειδοποιήσεις, καθημερινή δραστηριότητα και ξεκούραση, με έως 10 ημέρες αυτονομίας και συμβατότητα με iOS και Android.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://trendtopia-store.com/gr/smartwatch/landing.html">
 <meta property="og:locale" content="el_GR">
-<meta property="og:title" content="CoreSync™ Smartwatch | Trendtopia Ελλάδα">
-<meta property="og:description" content="Ανακαλύψτε το CoreSync™, το smartwatch διαθέσιμο στο trendtopia-store.com. Δραστηριότητα, καρδιακοί παλμοί, ύπνος και άλλα. 69,00 €, αντικαταβολή.">
+<meta property="og:title" content="CoreSync™ Smartwatch | Συνδεσιμότητα, δραστηριότητα και αυτονομία | Trendtopia Ελλάδα">
+<meta property="og:description" content="Ανακαλύψτε το CoreSync™, ένα smartwatch για κλήσεις, ειδοποιήσεις, καθημερινή δραστηριότητα και ξεκούραση, με έως 10 ημέρες αυτονομίας και συμβατότητα με iOS και Android.">
 <meta property="og:url" content="https://trendtopia-store.com/gr/smartwatch/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/smartwatch/hero.jpg">
 <script>
@@ -80,18 +80,24 @@ window.SITE_CONFIG = {
   display:flex;align-items:center;
   min-height:32px;
 }
-.cf-topbar__store{
-  display:inline-flex;align-items:center;gap:8px;
-  text-decoration:none;color:#fff;flex:0 0 auto;
+.cf-topbar__logo-link{
+  display:inline-flex;align-items:center;
+  text-decoration:none;flex:0 0 auto;
   position:relative;z-index:1;
 }
-.cf-topbar__store:hover{opacity:.9}
+.cf-topbar__logo-link:hover{opacity:.9}
+.cf-topbar__wordmark{
+  display:inline-flex;align-items:center;
+  text-decoration:none;color:#fff;flex:0 0 auto;
+  margin-left:8px;
+}
+.cf-topbar__wordmark:hover{opacity:.9}
 .cf-topbar__logo{
   width:32px;height:auto;flex:0 0 auto;
 }
-.cf-topbar__store .site-logo__text{font-size:1rem}
-.cf-topbar__store .site-logo__text-primary{color:#fff}
-.cf-topbar__store .site-logo__text-accent{
+.cf-topbar__wordmark .site-logo__text{font-size:1rem}
+.cf-topbar__wordmark .site-logo__text-primary{color:#fff}
+.cf-topbar__wordmark .site-logo__text-accent{
   background:linear-gradient(135deg,#fff 0%,#ffe8d6 100%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
@@ -106,12 +112,7 @@ window.SITE_CONFIG = {
 
 /* ---------- HERO ---------- */
 .cf-hero{padding:26px 0 10px;text-align:center}
-.cf-brand{
-  display:inline-block;font-size:15px;font-weight:700;letter-spacing:3px;
-  color:var(--cf-orange);border:2px solid var(--cf-orange);
-  padding:5px 16px;border-radius:30px;margin-bottom:16px;
-}
-.cf-hero h1{font-size:30px;margin-bottom:14px}
+.cf-hero h1{font-size:30px;margin-bottom:14px;max-width:900px;margin-left:auto;margin-right:auto}
 .cf-hero h1 .hl{color:var(--cf-orange)}
 .cf-hero .lead{font-size:16px;color:var(--cf-gray);max-width:640px;margin:0 auto 14px}
 .cf-hero .lead strong{color:var(--cf-dark)}
@@ -282,7 +283,7 @@ window.SITE_CONFIG = {
 @media(max-width:600px){
   .cf-wrap{padding:0 16px}
   .cf-hero{padding:20px 0 6px}
-  .cf-hero h1{font-size:23px}
+  .cf-hero h1{font-size:22px;line-height:1.3;max-width:100%}
   .cf-price .now{font-size:36px}
   .cf-hero-img{
     margin:16px 0 10px;
@@ -308,8 +309,12 @@ window.SITE_CONFIG = {
   }
   .cf-specs-img img{aspect-ratio:1/1;object-fit:cover}
   .cf-package{padding:18px}
-  .cf-topbar__inner{align-items:center;text-align:left}
-  .cf-topbar__store{justify-content:flex-start}
+  .cf-topbar__inner{justify-content:flex-start;text-align:left}
+  .cf-topbar__wordmark{
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    margin-left:0;
+  }
 }
 
 /* ---------- FOOTER (override cf-lp reset) ---------- */
@@ -363,19 +368,20 @@ window.SITE_CONFIG = {
 <div class="cf-lp" lang="el">
 <div class="cf-topbar">
 <div class="cf-wrap cf-topbar__inner">
-<a href="/" class="site-logo cf-topbar__store" aria-label="trendtopia-store.com">
+<a href="/" class="cf-topbar__logo-link" aria-label="Trendtopia">
 <img class="cf-topbar__logo" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="32" height="32" loading="eager" decoding="async">
+</a>
+<a href="/" class="site-logo cf-topbar__wordmark" aria-label="trendtopia-store.com">
 <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
 </a>
-<span class="cf-topbar__product">CoreSync™ — Παρακολουθήστε την υγεία σας 24/7</span>
 </div>
 </div>
 <section class="cf-hero">
 <div class="cf-wrap">
-<span class="cf-brand">CORESYNC™</span>
-<h1><span class="hl">CoreSync</span>: παλμοί, ύπνος και οξυγόνο αίματος 24 ώρες το 24ωρο — premium ποιότητα σε δίκαιη τιμή</h1>
+<h1><span class="hl">CoreSync</span>: κλήσεις, ειδοποιήσεις, δραστηριότητα και έως 10 ημέρες μπαταρίας στον καρπό σας</h1>
+<p class="lead">Ένα άνετο και ευέλικτο smartwatch για να μένετε συνδεδεμένοι, να παρακολουθείτε την καθημερινή σας δραστηριότητα και να βλέπετε τα δεδομένα σας από μία εφαρμογή.</p>
 <div class="cf-hero-img">
-<img alt="Πλήρες σετ CoreSync: ρολόι, λουράκια, φορτιστής, εγχειρίδιο και εφαρμογή στο κινητό" src="/assets/img/products/smartwatch/hero.jpg" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
+<img alt="Πλήρες σετ CoreSync: smartwatch, λουράκια, φορτιστής, εγχειρίδιο και εφαρμογή στο κινητό" src="/assets/img/products/smartwatch/hero.jpg" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
 </div>
 <div class="cf-stars">
 <span class="star">★★★★★</span>
@@ -383,11 +389,11 @@ window.SITE_CONFIG = {
 <span class="rev">+4100 πραγματικοί αγοραστές</span>
 </div>
 <ul class="cf-feats">
-<li><span><strong>VitalSync 24/7:</strong> παλμοί, οξυγόνο και ύπνος χωρίς κόπο.</span></li>
-<li><span><strong>Έως 10 ημέρες μπαταρίας.</strong></span></li>
-<li><span><strong>Κλήσεις και ειδοποιήσεις στον καρπό,</strong> συμβατό με iOS/Android.</span></li>
-<li><span><strong>Αδιάβροχο (5ATM).</strong></span></li>
-<li><span><strong>Περιλαμβάνει επιπλέον λουράκι.</strong></span></li>
+<li><span><strong>Έως 10 ημέρες αυτονομίας</strong> για να σας συνοδεύει περισσότερο καιρό.</span></li>
+<li><span><strong>Κλήσεις και ειδοποιήσεις στον καρπό,</strong> συμβατό με iOS και Android.</span></li>
+<li><span><strong>Καθημερινή δραστηριότητα και ξεκούραση</strong> με μια ματιά από την εφαρμογή.</span></li>
+<li><span><strong>Αδιαβροχία 5ATM</strong> για την καθημερινή σας ρουτίνα.</span></li>
+<li><span><strong>Επιπλέον λουράκι, φορτιστής και 2 προστατευτικά καλύμματα included.</strong></span></li>
 </ul>
 <div class="cf-price-box">
 <div class="stock">🔥 Η προσφορά ισχύει μέχρι εξαντλήσεως αποθέματος</div>
@@ -409,7 +415,7 @@ window.SITE_CONFIG = {
 <div class="cf-wrap">
 <h2>Εισάγετε τα στοιχεία σας για περισσότερες πληροφορίες σχετικά με το CoreSync</h2>
 <p class="sub">Παραγγείλτε σήμερα και <strong>πληρώστε άνετα με αντικαταβολή.</strong></p>
-<p class="cf-form-urgency">⚠️ Τελευταία τεμάχια σε απόθεμα</p>
+<p class="cf-form-urgency">⚠️ Τελευταία τεμάχια σε απόθεμα, εκμεταλλευτείτε τώρα την έκπτωση 50%</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Ονοματεπώνυμο*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Ονοματεπώνυμο" required aria-required="true"><br>
@@ -461,44 +467,45 @@ subidInput.value = campaign;
 <div class="cf-features">
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="Επαγγελματίας με CoreSync στον καρπό" src="/assets/img/products/smartwatch/feature-1.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="Άνδρας που χρησιμοποιεί το smartwatch CoreSync κατά τη διάρκεια της ημέρας" src="/assets/img/products/smartwatch/feature-1.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">01 — ΥΓΕΙΑ ΣΤΟΝ ΚΑΡΠΟ, ΧΩΡΙΣ ΠΕΡΙΠΛΟΚΕΣ</div>
-<h3 class="cf-feature-title">❤️ VitalSync 24/7</h3>
+<div class="cf-feature-eyebrow">01 — Η ΗΜΕΡΑ ΣΑΣ, ΜΕ ΜΙΑ ΜΑΤΙΑ</div>
+<h3 class="cf-feature-title">Δραστηριότητα και ρουτίνες, χωρίς περιπλοκές</h3>
 <div class="cf-feature-badges">
-<span class="cf-feature-badge">Παλμοί</span>
-<span class="cf-feature-badge">Οξυγόνο</span>
-<span class="cf-feature-badge">Ύπνος</span>
+<span class="cf-feature-badge">Βήματα</span>
+<span class="cf-feature-badge">Δραστηριότητα</span>
+<span class="cf-feature-badge">Ξεκούραση</span>
 </div>
-<p>Παρακολουθήστε παλμούς, οξυγόνο αίματος και ποιότητα ύπνου 24/7. Ιδανικό για προπόνηση, καλύτερη ξεκούραση ή κατανόηση του σώματός σας. Μπορείτε να παρακολουθείτε τα βήματά σας κατά τη διάρκεια της ημέρας, τις θερμίδες, τις ώρες ύπνου και ό,τι χρειάζεστε για να παραμείνετε σε άριστη φόρμα.</p>
+<p>Δείτε τα βήματά σας, την καθημερινή δραστηριότητα και τις περιόδους ξεκούρασης από το ρολόι και την εφαρμογή. Όλα οργανωμένα απλά, ώστε να ελέγχετε τη ρουτίνα σας με μια ματιά.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="CoreSync στο κομοδίνο με στατιστικά ύπνου στην εφαρμογή" src="/assets/img/products/smartwatch/feature-2.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="CoreSync δίπλα σε smartphone με καταγραφές δραστηριότητας και ξεκούρασης" src="/assets/img/products/smartwatch/feature-2.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">02 — ΚΑΤΑΝΟΗΣΤΕ ΠΡΑΓΜΑΤΙΚΑ ΤΗΝ ΞΕΚΟΥΡΑΣΗ ΣΑΣ</div>
-<h3 class="cf-feature-title">😴 Έλεγχος ύπνου και ανάκαμψης</h3>
+<div class="cf-feature-eyebrow">02 — ΞΕΚΟΥΡΑΣΤΕΙΤΕ ΚΑΙ ΔΕΙΤΕ ΤΗ ΡΟΥΤΙΝΑ ΣΑΣ</div>
+<h3 class="cf-feature-title">Πληροφορίες ξεκούρασης εύκολες στην πρόσβαση</h3>
 <div class="cf-feature-badges">
-<span class="cf-feature-badge">Φάσεις ύπνου</span>
-<span class="cf-feature-badge">Νυχτερινό οξυγόνο</span>
+<span class="cf-feature-badge">Καταγραφή ύπνου</span>
+<span class="cf-feature-badge">Ημερήσιο ιστορικό</span>
 <span class="cf-feature-badge">Εφαρμογή included</span>
 </div>
-<p>Θα ανακαλύψετε εύκολα την ποιότητα του ύπνου σας με τη νυχτερινή λειτουργία, η οποία αναλύει τις φάσεις του ύπνου, τα μοτίβα αναπνοής, τους παλμούς και το ροχαλητό για ιδανική ξεκούραση. Επιπλέον, η νυχτερινή λειτουργία κρατά την οθόνη σβηστή ώστε να μην θολώνει τα μάτια στο σκοτάδι του δωματίου.</p>
+<p>Κρατήστε καταγραφή των περιόδων ύπνου σας και δείτε τα δεδομένα σας όταν ξυπνάτε από την εφαρμογή. Έτσι μπορείτε να παρακολουθείτε τις ρουτίνες ξεκούρασης σας με τον καιρό με απλό και οπτικό τρόπο.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="Οικογένεια ήσυχη χάρη στην παρακολούθηση παλμών CoreSync" src="/assets/img/products/smartwatch/feature-3.webp?v=2" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="Άτομο που χρησιμοποιεί CoreSync σε καθημερινό περιβάλλον" src="/assets/img/products/smartwatch/feature-3.webp?v=2" width="1024" height="1024" loading="lazy" decoding="async"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">03 — Ο,ΤΙ ΧΡΕΙΑΖΕΣΤΕ, ΤΙΠΟΤΑ Παραπάνω</div>
-<h3 class="cf-feature-title">📦 Πλήρες σετ έτοιμο προς χρήση</h3>
+<div class="cf-feature-eyebrow">03 — Ο,ΤΙ ΧΡΕΙΑΖΕΣΤΕ, ΤΙΠΟΤΑ ΠΑΡΑΠΑΝΩ</div>
+<h3 class="cf-feature-title">Πλήρες σετ έτοιμο προς χρήση</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">1 επιπλέον λουράκι</span>
 <span class="cf-feature-badge">2 προστατευτικά</span>
 <span class="cf-feature-badge">Φορτιστής included</span>
 </div>
-<p>Περιλαμβάνει ρολόι, 1 επιπλέον λουράκι, 2 προστατευτικά, φορτιστή και εγχειρίδιο οδηγιών. Συμβατό iOS/Android, αδιάβροχο (5ATM) και με αυτονομία έως 10 ημέρες, ώστε να ξεχάσετε φορτιστές και καλώδια.</p>
+<p>Το CoreSync φτάνει έτοιμο να σας συνοδεύει από την πρώτη μέρα: smartwatch, επιπλέον λουράκι, δύο προστατευτικά, φορτιστής και εγχειρίδιο οδηγιών. Συμβατό με iOS και Android, αδιαβροχία 5ATM και έως 10 ημέρες αυτονομίας ανάλογα με τη χρήση και τις ρυθμίσεις.</p>
+<p class="cf-disclaimer" style="margin:12px 0 0;text-align:left">*Η αυτονομία μπορεί να διαφέρει ανάλογα με τη χρήση, τις ρυθμίσεις και τις ενεργές λειτουργίες.</p>
 </div></div>
 </div>
 
@@ -511,18 +518,18 @@ subidInput.value = campaign;
 <h2 class="cf-section-title">Άλλες μάρκες vs CoreSync</h2>
 <table class="cf-compare">
 <tr><th>Ένα συμβατικό smartwatch</th><th>CoreSync</th></tr>
-<tr><td>Η συχνή φόρτιση μπορεί να γίνει μέρος της ρουτίνας σας</td><td><strong>Έως 10 ημέρες αυτονομίας</strong></td></tr>
-<tr><td>Αν το φορτίζετε τη νύχτα, χάνετε μέρος της ημερήσιας παρακολούθησης</td><td><strong>Συνεχής παρακολούθηση 24/7</strong>, ελέγξτε την υγεία σας κάθε στιγμή</td></tr>
-<tr><td>Πάρα πολλές μετρήσεις, μενού και λειτουργίες χαλάνε την εμπειρία</td><td><strong>Το VitalSync συγκεντρώνει τα βασικά δεδομένα</strong> σε καθαρή, εύκολη διεπαφή</td></tr>
-<tr><td>Υπερβολικά σχέδια που δυσκολεύουν την καθημερινή άνεση</td><td><strong>Κομψός, άνετος σχεδιασμός</strong>, για όλη την ημέρα</td></tr>
-<tr><td>Ορισμένα μοντέλα σας κλειδώνουν σε δικό τους οικοσύστημα</td><td><strong>Συμβατό με iOS και Android</strong>, χωρίς πλατφορμιακούς περιορισμούς</td></tr>
-<tr><td>Παρόμοιο design σε άλλες μάρκες μπορεί να κοστίζει έως 3 φορές περισσότερο</td><td><strong>Σχεδιασμός, αυτονομία και λειτουργίες μόνο με 69 €</strong></td></tr>
+<tr><td>Η συχνή φόρτιση μπορεί να γίνει μέρος της ρουτίνας σας</td><td><strong>Έως 10 ημέρες αυτονομίας</strong> ανάλογα με τη χρήση και τις ρυθμίσεις</td></tr>
+<tr><td>Οι σημαντικές λειτουργίες μπορεί να είναι διασκορπισμένες σε διαφορετικά μενού</td><td><strong>Κλήσεις, ειδοποιήσεις και ημερήσιες καταγραφές</strong> σε μια απλή εμπειρία</td></tr>
+<tr><td>Πάρα πολλές μετρήσεις και επιλογές μπορεί να περιπλέκουν την εμπειρία</td><td><strong>Βασικές πληροφορίες</strong> οργανωμένες με σαφήν τρόπο</td></tr>
+<tr><td>Ορισμένα σχέδια μπορεί να είναι άβολα για πολλές ώρες</td><td><strong>Σχεδιασμός</strong> για να σας συνοδεύει όλη την ημέρα</td></tr>
+<tr><td>Ορισμένα μοντέλα σας κλειδώνουν σε δικό τους οικοσύστημα</td><td><strong>Συμβατό με iOS και Android</strong></td></tr>
+<tr><td>Παρόμοιες λειτουργίες μπορεί να βρίσκονται σε μοντέλα με υψηλότερες τιμές</td><td><strong>Σχεδιασμός, αυτονομία και συνδεσιμότητα σε δίκαιη τιμή</strong></td></tr>
 </table>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Αγοράστε τώρα CoreSync</a></div>
 </div>
 
 <div class="cf-wrap">
-<h2 class="cf-section-title">Τι λένε όσοι ήδη φροντίζουν την υγεία τους με CoreSync</h2>
+<h2 class="cf-section-title">Τι λένε όσοι ήδη χρησιμοποιούν το CoreSync</h2>
 <div class="cf-reviews">
 <div class="cf-review">
 <img alt="Javier R. με CoreSync σε διάλειμμα δουλειάς" src="/assets/img/products/smartwatch/review-1.jpg" width="130" height="130" loading="lazy" decoding="async"/>
@@ -555,16 +562,17 @@ subidInput.value = campaign;
 <div class="cf-wrap">
 <h2 class="cf-section-title">Κύρια χαρακτηριστικά CoreSync™</h2>
 <ul class="cf-specs">
-<li><strong>Τύπος:</strong> Smartwatch με VitalSync 24/7: παλμοί, οξυγόνο αίματος και παρακολούθηση ύπνου.</li>
+<li><strong>Τύπος:</strong> Smartwatch για συνδεσιμότητα, καθημερινή δραστηριότητα και παρακολούθηση ρουτινών.</li>
 <li><strong>Οθόνη:</strong> HD οπισθοφωτιζόμενη 2".</li>
-<li><strong>Μπαταρία:</strong> Μεγάλη αυτονομία, έως 10 ημέρες χωρίς φόρτιση.</li>
+<li><strong>Μπαταρία:</strong> Έως 10 ημέρες αυτονομίας ανάλογα με τη χρήση και τις ρυθμίσεις.</li>
 <li><strong>Αντοχή:</strong> Αδιαβροχία 5ATM.</li>
-<li><strong>Συμβατότητα:</strong> iOS και Android, εφαρμογή included.</li>
-<li><strong>Συνδεσιμότητα:</strong> Απαντάτε μηνύματα, απαντάτε κλήσεις… ό,τι χρειάζεστε στον καρπό σας.</li>
-<li><strong>Περιλαμβάνει:</strong> 1 επιπλέον λουράκι, φορτιστή και εγχειρίδιο οδηγιών.</li>
+<li><strong>Συμβατότητα:</strong> Συμβατό με iOS και Android μέσω της εφαρμογής included.</li>
+<li><strong>Συνδεσιμότητα:</strong> Κλήσεις και ειδοποιήσεις απευθείας στον καρπό.</li>
+<li><strong>Παρακολούθηση:</strong> Καθημερινή δραστηριότητα, βήματα και καταγραφές ξεκούρασης.</li>
+<li><strong>Περιλαμβάνει:</strong> 1 επιπλέον λουράκι, 2 προστατευτικά, φορτιστή και εγχειρίδιο οδηγιών.</li>
 <li><strong>Εγγύηση:</strong> 24 μήνες.</li>
 </ul>
-<p class="cf-disclaimer">*Διαβάστε πάντα το εγχειρίδιο και χρησιμοποιείτε το προϊόν σύμφωνα με τις οδηγίες του κατασκευαστή.</p>
+<p class="cf-disclaimer">*Διαβάστε πάντα το εγχειρίδιο included και χρησιμοποιείτε το προϊόν σύμφωνα με τις συστάσεις του κατασκευαστή.</p>
 <div class="cf-specs-img">
 <img alt="Πλήρες σετ CoreSync, εικόνα προϊόντος" src="/assets/img/products/smartwatch/hero.jpg" width="560" height="560" loading="lazy" decoding="async"/>
 </div>
@@ -576,7 +584,7 @@ subidInput.value = campaign;
 <li>✅ <strong>2× Προστατευτικά οθόνης/σώματος</strong></li>
 <li>✅ <strong>1× Φορτιστής + καλώδιο</strong></li>
 <li>📘 Εγχειρίδιο οδηγιών included</li>
-<li>📱 Εφαρμογή iOS/Android</li>
+<li>📱 Εφαρμογή συμβατή με iOS και Android</li>
 <li>🚚 Δωρεάν αποστολή εντός 24–48 ωρών</li>
 <li>💳 Αντικαταβολή</li>
 <li>🔄 Επιστροφή εντός 30 ημερών</li>
@@ -639,24 +647,28 @@ subidInput.value = campaign;
 <h2 class="cf-section-title">❓ Συχνές ερωτήσεις</h2>
 <div class="cf-faq">
 <details>
-<summary>📱 Είναι συμβατό με iPhone ή Android;</summary>
-<p>Ναι. Το CoreSync λειτουργεί με iOS και Android. Κατεβάστε την εφαρμογή, συζεύξτε το ρολόι σε λίγα λεπτά και δείτε τα δεδομένα υγείας σας.</p>
+<summary>📱 Είναι συμβατό με iPhone και Android;</summary>
+<p>Ναι. Το CoreSync είναι συμβατό με iOS και Android. Εγκαταστήστε την εφαρμογή, συζεύξτε το ρολόι και ρυθμίστε τις λειτουργίες του από το κινητό.</p>
 </details>
 <details>
-<summary>🔋 Πόσο διαρκεί πραγματικά η μπαταρία;</summary>
-<p>Με κανονική χρήση (ειδοποιήσεις, ύπνος και παλμοί) η μπαταρία μπορεί να διαρκέσει έως 10 ημέρες. Εξαρτάται από έντονο GPS ή συχνές κλήσεις.</p>
+<summary>🔋 Πόσο διαρκεί η μπαταρία;</summary>
+<p>Το CoreSync μπορεί να φτάσει έως 10 ημέρες αυτονομίας ανάλογα με τη χρήση, τις ρυθμίσεις, τις κλήσεις, τις ειδοποιήσεις και τις ενεργές λειτουργίες.</p>
 </details>
 <details>
-<summary>💧 Μπορώ να κάνω ντους ή κολύμπι με το ρολόι;</summary>
-<p>Το CoreSync είναι αδιάβροχο 5ATM — κατάλληλο για ντους, πλύσιμο χεριών και καθημερινή χρήση. Δεν συνιστούμε βαθιά κατάδυση.</p>
+<summary>💧 Έχει αδιαβροχία;</summary>
+<p>Το CoreSync διαθέτει αδιαβροχία 5ATM. Διαβάστε το εγχειρίδιο και τις συστάσεις του κατασκευαστή για τις συγκεκριμένες συνθήκες χρήσης.</p>
 </details>
 <details>
-<summary>😴 Τι μετρά ακριβώς κατά τον ύπνο;</summary>
-<p>Καταγράφει φάσεις ύπνου, διάρκεια, νυχτερινό οξυγόνο και άλλα μοτίβα ξεκούρασης για να καταλάβετε γιατί ξυπνάτε πιο ξεκούραστοι ή κουρασμένοι.</p>
+<summary>😴 Μπορώ να δω τις καταγραφές ξεκούρασης;</summary>
+<p>Ναι. Το CoreSync μπορεί να καταγράφει πληροφορίες σχετικές με τις περιόδους ύπνου σας, ώστε να ελέγχετε τις ρουτίνες ξεκούρασης από την εφαρμογή.</p>
+</details>
+<details>
+<summary>📞 Μπορώ να λαμβάνω κλήσεις και ειδοποιήσεις;</summary>
+<p>Ναι. Μόλις συνδεθεί με το κινητό, το CoreSync επιτρέπει πρόσβαση σε λειτουργίες κλήσεων και ειδοποιήσεις συμβατές απευθείας στον καρπό.</p>
 </details>
 <details>
 <summary>💰 Μπορώ να πληρώσω με αντικαταβολή;</summary>
-<p>Ναι. Πληρώνετε μετρητά στον courier όταν παραλάβετε την παραγγελία στο σπίτι.</p>
+<p>Ναι. Μπορείτε να πληρώσετε στον courier όταν παραλάβετε την παραγγελία στο σπίτι, σύμφωνα με τις διαθέσιμες συνθήκες αποστολής για την περιοχή σας.</p>
 </details>
 </div>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Αγοράστε τώρα CoreSync</a></div>
