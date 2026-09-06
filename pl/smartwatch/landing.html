@@ -11,13 +11,13 @@
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CoreSync™ — Monitoruj zdrowie 24/7 | -50% + płatność przy odbiorze</title>
-<meta name="description" content="CoreSync™ z VitalSync 24/7: tętno, sen i tlen we krwi. 199,00 zł, płatność przy odbiorze, darmowa dostawa 24–48 h.">
+<title>CoreSync™ Smartwatch | Trendtopia Polska</title>
+<meta name="description" content="Odkryj CoreSync™, smartwatch dostępny w trendtopia-store.com. Monitoruj aktywność, tętno, sen i więcej. 199,00 zł, płatność przy odbiorze.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://trendtopia-store.com/pl/smartwatch/landing.html">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="CoreSync™ — Monitoruj zdrowie 24/7 | -50% + płatność przy odbiorze">
-<meta property="og:description" content="CoreSync™ z VitalSync 24/7: tętno, sen i tlen we krwi. 199,00 zł, płatność przy odbiorze, darmowa dostawa 24–48 h.">
+<meta property="og:title" content="CoreSync™ Smartwatch | Trendtopia Polska">
+<meta property="og:description" content="Odkryj CoreSync™, smartwatch dostępny w trendtopia-store.com. Monitoruj aktywność, tętno, sen i więcej. 199,00 zł, płatność przy odbiorze.">
 <meta property="og:url" content="https://trendtopia-store.com/pl/smartwatch/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/smartwatch/hero.jpg">
 <script>
@@ -62,11 +62,39 @@ window.SITE_CONFIG = {
 .cf-wrap{max-width:1280px;margin:0 auto;padding:0 24px}
 .cf-lp h1,.cf-lp h2,.cf-lp h3{line-height:1.2;font-weight:700}
 
-/* ---------- BARRA SUPERIOR ---------- */
+/* ---------- BARRA SUPERIOR (tienda + producto) ---------- */
 .cf-topbar{
   background:linear-gradient(90deg,var(--cf-orange-dark),var(--cf-orange));
-  color:#fff;text-align:center;padding:9px 12px;
+  color:#fff;padding:9px 12px;
   font-size:14px;font-weight:600;letter-spacing:.2px;
+}
+.cf-topbar__inner{
+  position:relative;
+  display:flex;align-items:center;
+  min-height:32px;
+}
+.cf-topbar__store{
+  display:inline-flex;align-items:center;gap:8px;
+  text-decoration:none;color:#fff;flex:0 0 auto;
+  position:relative;z-index:1;
+}
+.cf-topbar__store:hover{opacity:.9}
+.cf-topbar__logo{
+  width:32px;height:auto;flex:0 0 auto;
+}
+.cf-topbar__store .site-logo__text{font-size:1rem}
+.cf-topbar__store .site-logo__text-primary{color:#fff}
+.cf-topbar__store .site-logo__text-accent{
+  background:linear-gradient(135deg,#fff 0%,#ffe8d6 100%);
+  -webkit-background-clip:text;background-clip:text;
+  color:transparent;-webkit-text-fill-color:transparent;
+}
+.cf-topbar__product{
+  position:absolute;left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;font-size:14px;font-weight:600;
+  width:max-content;max-width:calc(100% - 260px);
+  pointer-events:none;
 }
 
 /* ---------- HERO ---------- */
@@ -97,11 +125,12 @@ window.SITE_CONFIG = {
 /* ---------- LISTA DE VENTAJAS ---------- */
 .cf-feats{max-width:620px;margin:22px auto;list-style:none}
 .cf-feats li{
-  display:flex;gap:12px;align-items:flex-start;
+  display:flex;gap:12px;align-items:center;
   background:var(--cf-light);border-radius:12px;
   padding:13px 16px;margin-bottom:10px;font-size:15px;
 }
-.cf-feats li::before{content:"✓";color:var(--cf-orange);font-weight:800;font-size:17px;flex:0 0 auto}
+.cf-feats li::before{content:"✓";color:var(--cf-orange);font-weight:800;font-size:17px;flex:0 0 auto;line-height:1}
+.cf-feats li > span{flex:1;min-width:0}
 .cf-feats li strong{color:var(--cf-dark)}
 
 /* ---------- CAJA DE PRECIO ---------- */
@@ -272,6 +301,12 @@ window.SITE_CONFIG = {
   }
   .cf-specs-img img{aspect-ratio:1/1;object-fit:cover}
   .cf-package{padding:18px}
+  .cf-topbar__inner{flex-direction:column;gap:6px;text-align:center;min-height:0;padding-top:4px;padding-bottom:4px}
+  .cf-topbar__store{justify-content:center}
+  .cf-topbar__product{
+    position:static;transform:none;width:100%;max-width:none;
+    pointer-events:auto;
+  }
 }
 
 /* ---------- FOOTER (override cf-lp reset) ---------- */
@@ -307,6 +342,22 @@ window.SITE_CONFIG = {
   margin-top:8px;
   line-height:1.7;
 }
+.cf-lp .site-footer__brand{display:inline-block}
+.cf-lp .site-footer__brand-mark-wrap{
+  display:block;
+  width:75px;
+  margin:0 auto 1rem;
+  background-color:#0f172a;
+  line-height:0;
+  border-radius:8px;
+  overflow:hidden;
+}
+.cf-lp .site-footer__brand-mark{
+  display:block;
+  width:100%;
+  height:auto;
+  margin:0;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -316,7 +367,15 @@ window.SITE_CONFIG = {
 <body>
 
 <div class="cf-lp" lang="pl">
-<div class="cf-topbar">CoreSync™ — Monitoruj zdrowie 24/7</div>
+<div class="cf-topbar">
+<div class="cf-wrap cf-topbar__inner">
+<a href="/" class="site-logo cf-topbar__store" aria-label="trendtopia-store.com">
+<img class="cf-topbar__logo" src="/assets/img/site/logo.png?v=2" alt="Trendtopia" width="32" height="32" loading="eager" decoding="async">
+<span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
+</a>
+<span class="cf-topbar__product">CoreSync™ — Monitoruj zdrowie 24/7</span>
+</div>
+</div>
 <section class="cf-hero">
 <div class="cf-wrap">
 <span class="cf-brand">CORESYNC™</span>
@@ -456,7 +515,7 @@ subidInput.value = campaign;
 </div>
 
 <div class="cf-wrap">
-<h2 class="cf-section-title">CoreSync vs inne marki</h2>
+<h2 class="cf-section-title">Inne marki vs CoreSync</h2>
 <table class="cf-compare">
 <tr><th>Zwykły smartwatch</th><th>CoreSync</th></tr>
 <tr><td>Częste ładowanie może stać się częścią Twojej rutyny</td><td><strong>Do 10 dni autonomii</strong></td></tr>
@@ -613,9 +672,14 @@ subidInput.value = campaign;
 <footer class="site-footer"><div class="container">
   <div class="site-footer__grid">
     <div>
-      <a href="/" class="site-logo">
-        <span class="site-logo__text" style="display:inline"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
-      </a>
+      <div class="site-footer__brand">
+        <span class="site-footer__brand-mark-wrap">
+          <img class="site-footer__brand-mark" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="75" height="75" loading="lazy" decoding="async">
+        </span>
+        <a href="/" class="site-logo">
+          <span class="site-logo__text" style="display:inline"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
+        </a>
+      </div>
     </div>
     <div>
       <h4 class="site-footer__heading">Informacje</h4>
