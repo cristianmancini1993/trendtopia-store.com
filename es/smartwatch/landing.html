@@ -80,18 +80,24 @@ window.SITE_CONFIG = {
   display:flex;align-items:center;
   min-height:32px;
 }
-.cf-topbar__store{
-  display:inline-flex;align-items:center;gap:8px;
-  text-decoration:none;color:#fff;flex:0 0 auto;
+.cf-topbar__logo-link{
+  display:inline-flex;align-items:center;
+  text-decoration:none;flex:0 0 auto;
   position:relative;z-index:1;
 }
-.cf-topbar__store:hover{opacity:.9}
+.cf-topbar__logo-link:hover{opacity:.9}
+.cf-topbar__wordmark{
+  display:inline-flex;align-items:center;
+  text-decoration:none;color:#fff;flex:0 0 auto;
+  margin-left:8px;
+}
+.cf-topbar__wordmark:hover{opacity:.9}
 .cf-topbar__logo{
   width:32px;height:auto;flex:0 0 auto;
 }
-.cf-topbar__store .site-logo__text{font-size:1rem}
-.cf-topbar__store .site-logo__text-primary{color:#fff}
-.cf-topbar__store .site-logo__text-accent{
+.cf-topbar__wordmark .site-logo__text{font-size:1rem}
+.cf-topbar__wordmark .site-logo__text-primary{color:#fff}
+.cf-topbar__wordmark .site-logo__text-accent{
   background:linear-gradient(135deg,#fff 0%,#ffe8d6 100%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
@@ -315,8 +321,12 @@ window.SITE_CONFIG = {
   }
   .cf-specs-img img{aspect-ratio:1/1;object-fit:cover}
   .cf-package{padding:18px}
-  .cf-topbar__inner{justify-content:center;text-align:center}
-  .cf-topbar__store{justify-content:center;margin:0 auto}
+  .cf-topbar__inner{justify-content:flex-start;text-align:left}
+  .cf-topbar__wordmark{
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    margin-left:0;
+  }
 }
 
 /* ---------- FOOTER (override cf-lp reset) ---------- */
@@ -370,8 +380,10 @@ window.SITE_CONFIG = {
 <div class="cf-lp" lang="es">
 <div class="cf-topbar">
 <div class="cf-wrap cf-topbar__inner">
-<a href="/" class="site-logo cf-topbar__store" aria-label="trendtopia-store.com">
+<a href="/" class="cf-topbar__logo-link" aria-label="Trendtopia">
 <img class="cf-topbar__logo" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="32" height="32" loading="eager" decoding="async">
+</a>
+<a href="/" class="site-logo cf-topbar__wordmark" aria-label="trendtopia-store.com">
 <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
 </a>
 </div>
