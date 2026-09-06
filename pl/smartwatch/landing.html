@@ -69,6 +69,12 @@ window.SITE_CONFIG = {
   font-size:14px;font-weight:600;letter-spacing:.2px;
 }
 .cf-topbar .cf-wrap{padding-left:0;padding-right:0}
+@media (min-width:768px){
+  .cf-topbar{padding:10px 16px 10px 12px}
+  .cf-topbar .cf-wrap{
+    max-width:none;width:100%;margin:0;padding:0;
+  }
+}
 .cf-topbar__inner{
   position:relative;
   display:flex;align-items:center;
@@ -80,8 +86,14 @@ window.SITE_CONFIG = {
   position:relative;z-index:1;
 }
 .cf-topbar__store:hover{opacity:.9}
+.cf-topbar__logo-wrap{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:32px;height:32px;border-radius:6px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--cf-orange-dark),var(--cf-orange));
+  line-height:0;overflow:hidden;
+}
 .cf-topbar__logo{
-  width:32px;height:auto;flex:0 0 auto;
+  width:28px;height:auto;flex:0 0 auto;
 }
 .cf-topbar__store .site-logo__text{font-size:1rem}
 .cf-topbar__store .site-logo__text-primary{color:#fff}
@@ -348,7 +360,7 @@ window.SITE_CONFIG = {
   display:block;
   width:75px;
   margin:0 auto 1rem;
-  background-color:#0f172a;
+  background:linear-gradient(135deg,var(--cf-orange-dark),var(--cf-orange));
   line-height:0;
   border-radius:8px;
   overflow:hidden;
@@ -371,7 +383,9 @@ window.SITE_CONFIG = {
 <div class="cf-topbar">
 <div class="cf-wrap cf-topbar__inner">
 <a href="/" class="site-logo cf-topbar__store" aria-label="trendtopia-store.com">
-<img class="cf-topbar__logo" src="/assets/img/site/logo.png?v=2" alt="Trendtopia" width="32" height="32" loading="eager" decoding="async">
+<span class="cf-topbar__logo-wrap">
+<img class="cf-topbar__logo" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="28" height="28" loading="eager" decoding="async">
+</span>
 <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
 </a>
 <span class="cf-topbar__product">CoreSync™ — Monitoruj zdrowie 24/7</span>
