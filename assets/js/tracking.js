@@ -282,7 +282,7 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', C.GOOGLE_TAG_ID);
+    // gtag('config') is deferred to main.js after cookie consent
   }
 
   // ---- NETWORK PIXEL (Adrice / ClickFlare / Voluum) ----

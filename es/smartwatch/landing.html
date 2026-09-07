@@ -2,12 +2,14 @@
 <html lang="es">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -399,7 +401,6 @@ window.SITE_CONFIG = {
 <li><span><strong>Correa de recambio, cargador y 2 fundas protectoras incluidas.</strong></span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">🔥 Oferta válida hasta fin de existencias</div>
 <span class="disc">-50% HOY</span>
 <div class="cf-price"><span class="now">49,00 €</span><span class="old">98,00 €</span></div>
 <div class="cf-save-line">Ahorras 49,00 €</div>
@@ -417,8 +418,8 @@ window.SITE_CONFIG = {
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Introduce tus datos para pedir tu CoreSync</h2>
+<p class="cf-form-privacy">Al enviar el formulario, aceptas que tratemos tus datos para gestionar tu pedido. Consulta nuestra <a href="/es/privacy-policy.html">Política de privacidad</a>.</p>
 <p class="sub">Pídelo hoy y <strong>paga cómodamente contra reembolso.</strong></p>
-<p class="cf-form-urgency">⚠️ Últimas unidades en stock, aprovecha ya el descuento del 50%</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Nombre y apellidos*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Nombre y apellidos" required aria-required="true"><br>
@@ -576,6 +577,7 @@ subidInput.value = campaign;
 <li><strong>Incluye:</strong> 1 correa de recambio, 2 protectores, cargador y manual de instrucciones.</li>
 <li><strong>Garantía:</strong> 24 meses.</li>
 </ul>
+<p class="cf-medical-disclaimer">Este producto no es un dispositivo médico y no está destinado al diagnóstico, prevención o tratamiento de enfermedades.</p>
 <p class="cf-disclaimer">*Lee siempre el manual incluido y usa el producto según las recomendaciones del fabricante.</p>
 <div class="cf-specs-img">
 <img alt="Kit completo CoreSync, imagen final del producto" src="/assets/img/products/smartwatch/hero.jpg" width="560" height="560" loading="lazy" decoding="async"/>
