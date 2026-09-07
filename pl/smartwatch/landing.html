@@ -2,32 +2,39 @@
 <html lang="pl">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>CoreSync™ Smartwatch | Trendtopia Polska</title>
-<meta name="description" content="Odkryj CoreSync™, smartwatch dostępny w trendtopia-store.com. Monitoruj aktywność, tętno, sen i więcej. 199,00 zł, płatność przy odbiorze.">
+<title>CoreSync™ Smartwatch | Łączność, aktywność i autonomia | Trendtopia Polska</title>
+<meta name="description" content="Odkryj CoreSync™, smartwatch do rozmów, powiadomień, codziennej aktywności i odpoczynku, z autonomią do 10 dni i kompatybilnością z iOS oraz Android.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://trendtopia-store.com/pl/smartwatch/landing.html">
 <meta property="og:locale" content="pl_PL">
-<meta property="og:title" content="CoreSync™ Smartwatch | Trendtopia Polska">
-<meta property="og:description" content="Odkryj CoreSync™, smartwatch dostępny w trendtopia-store.com. Monitoruj aktywność, tętno, sen i więcej. 199,00 zł, płatność przy odbiorze.">
+<meta property="og:title" content="CoreSync™ Smartwatch | Łączność, aktywność i autonomia | Trendtopia Polska">
+<meta property="og:description" content="Odkryj CoreSync™, smartwatch do rozmów, powiadomień, codziennej aktywności i odpoczynku, z autonomią do 10 dni i kompatybilnością z iOS oraz Android.">
 <meta property="og:url" content="https://trendtopia-store.com/pl/smartwatch/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/smartwatch/hero.jpg">
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'pl',
   PRODUCT_SLUG: 'smartwatch',
   COOKIE_TEXT: 'Używamy plików cookie technicznych i stron trzecich, aby poprawić Twoje doświadczenie i do celów analitycznych.',
   COOKIE_ACCEPT: 'Akceptuję',
+  COOKIE_ACCEPT_ALL: 'Akceptuj wszystko',
+  COOKIE_REJECT: 'Odrzuć nieistotne',
+  COOKIE_MANAGE: 'Zarządzaj preferencjami',
+  COOKIE_SAVE: 'Zapisz preferencje',
+  COOKIE_CHANGE: 'Zmień ustawienia plików cookie',
   COOKIE_LEARN: 'Dowiedz się więcej'
-};
+});
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,7 +45,7 @@ window.SITE_CONFIG = {
 <link rel="stylesheet" href="/assets/css/components.css">
 <script src="/assets/js/tracking.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
-<!-- CoreSync™ — Landing ES (slug: smartwatch) -->
+<!-- CoreSync™ — Landing PL (slug: smartwatch) -->
 <style>
 /* ---------- RESET / BASE ---------- */
 .cf-lp *{margin:0;padding:0;box-sizing:border-box}
@@ -80,18 +87,24 @@ window.SITE_CONFIG = {
   display:flex;align-items:center;
   min-height:32px;
 }
-.cf-topbar__store{
-  display:inline-flex;align-items:center;gap:8px;
-  text-decoration:none;color:#fff;flex:0 0 auto;
+.cf-topbar__logo-link{
+  display:inline-flex;align-items:center;
+  text-decoration:none;flex:0 0 auto;
   position:relative;z-index:1;
 }
-.cf-topbar__store:hover{opacity:.9}
+.cf-topbar__logo-link:hover{opacity:.9}
+.cf-topbar__wordmark{
+  display:inline-flex;align-items:center;
+  text-decoration:none;color:#fff;flex:0 0 auto;
+  margin-left:8px;
+}
+.cf-topbar__wordmark:hover{opacity:.9}
 .cf-topbar__logo{
   width:32px;height:auto;flex:0 0 auto;
 }
-.cf-topbar__store .site-logo__text{font-size:1rem}
-.cf-topbar__store .site-logo__text-primary{color:#fff}
-.cf-topbar__store .site-logo__text-accent{
+.cf-topbar__wordmark .site-logo__text{font-size:1rem}
+.cf-topbar__wordmark .site-logo__text-primary{color:#fff}
+.cf-topbar__wordmark .site-logo__text-accent{
   background:linear-gradient(135deg,#fff 0%,#ffe8d6 100%);
   -webkit-background-clip:text;background-clip:text;
   color:transparent;-webkit-text-fill-color:transparent;
@@ -106,12 +119,7 @@ window.SITE_CONFIG = {
 
 /* ---------- HERO ---------- */
 .cf-hero{padding:26px 0 10px;text-align:center}
-.cf-brand{
-  display:inline-block;font-size:15px;font-weight:700;letter-spacing:3px;
-  color:var(--cf-orange);border:2px solid var(--cf-orange);
-  padding:5px 16px;border-radius:30px;margin-bottom:16px;
-}
-.cf-hero h1{font-size:30px;margin-bottom:14px}
+.cf-hero h1{font-size:30px;margin-bottom:14px;max-width:900px;margin-left:auto;margin-right:auto}
 .cf-hero h1 .hl{color:var(--cf-orange)}
 .cf-hero .lead{font-size:16px;color:var(--cf-gray);max-width:640px;margin:0 auto 14px}
 .cf-hero .lead strong{color:var(--cf-dark)}
@@ -189,6 +197,7 @@ window.SITE_CONFIG = {
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
 .cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
 .cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
 .cf-form input.is-invalid{border-color:var(--cf-red)}
@@ -200,9 +209,12 @@ window.SITE_CONFIG = {
 .cf-avatars{display:flex;justify-content:center;margin:8px 0}
 .cf-avatars img{width:34px;height:34px;border-radius:50%;border:2px solid #fff;margin-left:-8px}
 .cf-avatars img:first-child{margin-left:0}
-.cf-social-proof small{color:var(--cf-gray)}
-
-/* ---------- BLOQUES DE CARACTERÍSTICAS ---------- */
+.cf-form-privacy{
+  font-size:12px;color:var(--cf-gray);text-align:center;margin-top:12px;line-height:1.5;
+}
+.cf-form-privacy a{color:var(--cf-gray);text-decoration:underline;
+}
+.cf-form-privacy a:hover{color:var(--cf-dark)}
 .cf-section-title{text-align:center;font-size:24px;margin:36px auto 24px;max-width:720px}
 .cf-features{max-width:820px;margin:0 auto}
 .cf-feature{margin-bottom:6px}
@@ -282,7 +294,7 @@ window.SITE_CONFIG = {
 @media(max-width:600px){
   .cf-wrap{padding:0 16px}
   .cf-hero{padding:20px 0 6px}
-  .cf-hero h1{font-size:23px}
+  .cf-hero h1{font-size:22px;line-height:1.3;max-width:100%}
   .cf-price .now{font-size:36px}
   .cf-hero-img{
     margin:16px 0 10px;
@@ -308,8 +320,12 @@ window.SITE_CONFIG = {
   }
   .cf-specs-img img{aspect-ratio:1/1;object-fit:cover}
   .cf-package{padding:18px}
-  .cf-topbar__inner{align-items:center;text-align:left}
-  .cf-topbar__store{justify-content:flex-start}
+  .cf-topbar__inner{justify-content:flex-start;text-align:left}
+  .cf-topbar__wordmark{
+    position:absolute;left:50%;top:50%;
+    transform:translate(-50%,-50%);
+    margin-left:0;
+  }
 }
 
 /* ---------- FOOTER (override cf-lp reset) ---------- */
@@ -352,6 +368,14 @@ window.SITE_CONFIG = {
   height:auto;
   margin:0 auto 1rem;
 }
+.cf-lp .site-footer__list .site-footer__link-btn{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
+  text-align:left;
+}
+.cf-lp .site-footer__list .site-footer__link-btn:focus-visible{
+  outline:2px solid var(--cf-orange);outline-offset:2px;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -363,19 +387,20 @@ window.SITE_CONFIG = {
 <div class="cf-lp" lang="pl">
 <div class="cf-topbar">
 <div class="cf-wrap cf-topbar__inner">
-<a href="/" class="site-logo cf-topbar__store" aria-label="trendtopia-store.com">
+<a href="/" class="cf-topbar__logo-link" aria-label="Trendtopia">
 <img class="cf-topbar__logo" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="32" height="32" loading="eager" decoding="async">
+</a>
+<a href="/" class="site-logo cf-topbar__wordmark" aria-label="trendtopia-store.com">
 <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
 </a>
-<span class="cf-topbar__product">CoreSync™ — Monitoruj zdrowie 24/7</span>
 </div>
 </div>
 <section class="cf-hero">
 <div class="cf-wrap">
-<span class="cf-brand">CORESYNC™</span>
-<h1><span class="hl">CoreSync</span>: kontroluj tętno, sen i tlen we krwi przez całą dobę — jakość premium w uczciwej cenie</h1>
+<h1><span class="hl">CoreSync</span>: llamadas, notificaciones, actividad y hasta 10 días de batería en tu muñeca</h1>
+<p class="lead">Wygodny i wszechstronny smartwatch, który utrzymuje Cię w kontakcie, śledzi codzienną aktywność i pozwala przeglądać dane z jednej aplikacji.</p>
 <div class="cf-hero-img">
-<img alt="Kompletny zestaw CoreSync: zegarek, paski, ładowarka, instrukcja i aplikacja w telefonie" src="/assets/img/products/smartwatch/hero.jpg" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
+<img alt="Kompletny zestaw CoreSync: smartwatch, paski, ładowarka, instrukcja i aplikacja w telefonie" src="/assets/img/products/smartwatch/hero.jpg" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
 </div>
 <div class="cf-stars">
 <span class="star">★★★★★</span>
@@ -383,14 +408,13 @@ window.SITE_CONFIG = {
 <span class="rev">+4100 prawdziwych kupujących</span>
 </div>
 <ul class="cf-feats">
-<li><span><strong>VitalSync 24/7:</strong> tętno, tlen i sen monitorowane bez wysiłku.</span></li>
-<li><span><strong>Do 10 dni na baterii.</strong></span></li>
-<li><span><strong>Połączenia i powiadomienia na nadgarstku,</strong> kompatybilny z iOS/Android.</span></li>
-<li><span><strong>Wodoodporny (5ATM).</strong></span></li>
-<li><span><strong>Zawiera zapasowy pasek.</strong></span></li>
+<li><span><strong>Do 10 dni autonomii</strong>, aby towarzyszyć Ci dłużej.</span></li>
+<li><span><strong>Rozmowy i powiadomienia na nadgarstku,</strong> kompatybilny z iOS i Android.</span></li>
+<li><span><strong>Codzienna aktywność i odpoczynek</strong> na pierwszy rzut oka w aplikacji.</span></li>
+<li><span><strong>Wodoodporność 5ATM</strong> na co dzień.</span></li>
+<li><span><strong>Zapasowy pasek, ładowarka i 2 osłony ochronne w zestawie.</strong></span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">🔥 Oferta ważna do wyczerpania zapasów</div>
 <span class="disc">-50% DZIŚ</span>
 <div class="cf-price"><span class="now">199,00 zł</span><span class="old">398,00 zł</span></div>
 <div class="cf-save-line">Oszczędzasz 199,00 zł</div>
@@ -407,9 +431,9 @@ window.SITE_CONFIG = {
 
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
-<h2>Podaj dane, aby dowiedzieć się więcej o CoreSync</h2>
+<h2>Podaj dane, aby zamówić CoreSync</h2>
+<p class="cf-form-privacy">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych w celu obsługi zamówienia. Zobacz <a href="/pl/privacy-policy.html">Politykę prywatności</a>.</p>
 <p class="sub">Zamów dziś i <strong>wygodnie zapłać przy odbiorze.</strong></p>
-<p class="cf-form-urgency">⚠️ Ostatnie sztuki w magazynie</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Imię i nazwisko*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Imię i nazwisko" required aria-required="true"><br>
@@ -426,29 +450,19 @@ window.SITE_CONFIG = {
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="b8326e3eb2c8bd4345a5a7b1ec4397f181131c7e" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Tak, chcę CoreSync</button>
+<button name="submit" type="submit">ZAMÓW CORESYNC</button>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+<p class="cf-form-privacy">Twoje dane zostaną wykorzystane do obsługi zamówienia. Zobacz <a href="/pl/privacy-policy.html">Politykę prywatności</a>.</p>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
 <p>Ocena 4,6/5 na podstawie ponad <span class="num">4100</span> prawdziwych kupujących</p>
 <div class="cf-avatars">
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=12"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=32"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=45"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=56"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=18"/>
+<img alt="" src="https://i.pravatar.cc/40?img=12" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=32" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=45" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=56" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=18" width="40" height="40"/>
 </div>
 <small>Prawdziwi kupujący • Zweryfikowane zakupy</small>
 </div>
@@ -456,49 +470,50 @@ subidInput.value = campaign;
 </section>
 
 <div class="cf-wrap">
-<h2 class="cf-section-title">Trzy powody, by włączyć CoreSync w swój codzienny rytm</h2>
+<h2 class="cf-section-title">Trzy powody, by włączyć CoreSync w codzienną rutynę</h2>
 </div>
 <div class="cf-features">
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="Profesjonalista z CoreSync monitorujący zdrowie na nadgarstku" src="/assets/img/products/smartwatch/feature-1.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="Mężczyzna korzystający ze smartwatcha CoreSync w ciągu dnia" src="/assets/img/products/smartwatch/feature-1.webp" loading="lazy" decoding="async" width="1024" height="1024"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">01 — ZDROWIE NA NADGARSTKU, BEZ KOMPLIKACJI</div>
-<h3 class="cf-feature-title">❤️ VitalSync 24/7</h3>
+<div class="cf-feature-eyebrow">01 — TWÓJ DZIEŃ NA PIERWSZY RZUT OKA</div>
+<h3 class="cf-feature-title">Aktywność i rutyny bez komplikacji</h3>
 <div class="cf-feature-badges">
-<span class="cf-feature-badge">Tętno</span>
-<span class="cf-feature-badge">Tlen</span>
-<span class="cf-feature-badge">Sen</span>
+<span class="cf-feature-badge">Kroki</span>
+<span class="cf-feature-badge">Aktywność</span>
+<span class="cf-feature-badge">Odpoczynek</span>
 </div>
-<p>Monitoruj tętno, tlen we krwi i jakość snu przez całą dobę. Idealny do treningu, lepszego wypoczynku lub zrozumienia, jak czuje się Twój organizm. Możesz śledzić kroki w ciągu dnia, spożyte kalorie, godziny snu i wszystko, co potrzebne, by utrzymać się w doskonałej formie.</p>
+<p>Sprawdzaj kroki, codzienną aktywność i okresy odpoczynku z zegarka i aplikacji. Wszystko uporządkowane prosto, abyś mógł przejrzeć rutynę na pierwszy rzut oka.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="CoreSync na stoliku nocnym ze statystykami snu i aktywności w aplikacji" src="/assets/img/products/smartwatch/feature-2.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="CoreSync obok smartfona z zapisami aktywności i odpoczynku" src="/assets/img/products/smartwatch/feature-2.webp" loading="lazy" decoding="async" width="1024" height="1024"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">02 — ZROZUM SWÓJ SEN NAPRAWDĘ</div>
-<h3 class="cf-feature-title">😴 Kontrola snu i regeneracji</h3>
+<div class="cf-feature-eyebrow">02 — ODPOCZYNEK I PRZEGLĄD RUTYNY</div>
+<h3 class="cf-feature-title">Łatwy dostęp do informacji o odpoczynku</h3>
 <div class="cf-feature-badges">
-<span class="cf-feature-badge">Fazy snu</span>
-<span class="cf-feature-badge">Tlen nocny</span>
+<span class="cf-feature-badge">Rejestr snu</span>
+<span class="cf-feature-badge">Historia dzienna</span>
 <span class="cf-feature-badge">Aplikacja w zestawie</span>
 </div>
-<p>Łatwo poznasz jakość snu dzięki trybowi nocnemu, który analizuje fazy snu, wzorce oddechu, tętno i chrapanie, aby zapewnić idealny odpoczynek. Co więcej, tryb nocny utrzymuje ekran wyłączony, aby nie oślepiać w ciemności sypialni.</p>
+<p>Prowadź rejestr okresów snu i sprawdzaj dane po przebudzeniu w aplikacji. Możesz obserwować rutyny odpoczynku w czasie w prosty, wizualny sposób.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
-<img class="cf-feature-img" alt="Rodzina spokojna dzięki monitorowaniu tętna CoreSync" src="/assets/img/products/smartwatch/feature-3.webp?v=2" width="1024" height="1024" loading="lazy" decoding="async"/>
+<img class="cf-feature-img" alt="Osoba korzystająca z CoreSync w codziennym otoczeniu" src="/assets/img/products/smartwatch/feature-3.webp?v=2" loading="lazy" decoding="async" width="1024" height="1024"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">03 — WSZYSTKO, CZEGO POTRZEBUJESZ, NIC NADMIARU</div>
-<h3 class="cf-feature-title">📦 Kompletny zestaw gotowy do użycia</h3>
+<div class="cf-feature-eyebrow">03 — WSZYSTKO, CZEGO POTRZEBUJESZ, NIC WIĘCEJ</div>
+<h3 class="cf-feature-title">Kompletny zestaw gotowy do użycia</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">1 zapasowy pasek</span>
 <span class="cf-feature-badge">2 osłony</span>
 <span class="cf-feature-badge">Ładowarka w zestawie</span>
 </div>
-<p>Zawiera zegarek, 1 zapasowy pasek, 2 osłony, ładowarkę i instrukcję obsługi. Kompatybilny z iOS i Android, wodoodporny (5ATM) i z autonomią do 10 dni, dzięki której zapomnisz o ładowarkach i kablach.</p>
+<p>CoreSync jest gotowy od pierwszego dnia: smartwatch, zapasowy pasek, dwie osłony, ładowarka i instrukcja. Kompatybilny z iOS i Android, wodoodporność 5ATM i do 10 dni autonomii w zależności od użytkowania i ustawień.</p>
+<p class="cf-disclaimer" style="margin:12px 0 0;text-align:left">*Autonomia może się różnić w zależności od użytkowania, ustawień i aktywnych funkcji.</p>
 </div></div>
 </div>
 
@@ -511,18 +526,18 @@ subidInput.value = campaign;
 <h2 class="cf-section-title">Inne marki vs CoreSync</h2>
 <table class="cf-compare">
 <tr><th>Zwykły smartwatch</th><th>CoreSync</th></tr>
-<tr><td>Częste ładowanie może stać się częścią Twojej rutyny</td><td><strong>Do 10 dni autonomii</strong></td></tr>
-<tr><td>Ładowanie w nocy oznacza utratę części dziennego monitorowania</td><td><strong>Ciągłe monitorowanie 24/7</strong>, kontroluj zdrowie przez cały dzień</td></tr>
-<tr><td>Zbyt wiele metryk, menu i funkcji psuje doświadczenie</td><td><strong>VitalSync skupia kluczowe dane</strong> w przejrzystym, łatwym interfejsie</td></tr>
-<tr><td>Przesadzone wzornictwo utrudnia codzienną wygodę</td><td><strong>Dopracowany, wygodny design</strong>, stworzony na cały dzień</td></tr>
-<tr><td>Niektóre modele wiążą Cię z jednym ekosystemem</td><td><strong>Kompatybilny z iOS i Android</strong>, bez ograniczeń platformy</td></tr>
-<tr><td>Podobny design u innych marek może kosztować nawet 3 razy więcej</td><td><strong>Design, autonomia i funkcje za jedyne 199 zł</strong></td></tr>
+<tr><td>Częste ładowanie może stać się częścią rutyny</td><td><strong>Do 10 dni autonomii</strong> w zależności od użytkowania i ustawień</td></tr>
+<tr><td>Ważne funkcje mogą być rozproszone w różnych menu</td><td><strong>Rozmowy, powiadomienia i codzienne zapisy</strong> w prostej obsłudze</td></tr>
+<tr><td>Zbyt wiele metryk i opcji może utrudniać korzystanie</td><td><strong>Podstawowe informacje</strong> uporządkowane przejrzyście</td></tr>
+<tr><td>Niektóre modele mogą być niewygodne przez wiele godzin</td><td><strong>Przemyślany design</strong> na cały dzień</td></tr>
+<tr><td>Niektóre modele wiążą Cię z jednym ekosystemem</td><td><strong>Kompatybilny z iOS i Android</strong></td></tr>
+<tr><td>Podobne funkcje często w droższych modelach</td><td><strong>Design, autonomia i łączność w uczciwej cenie</strong></td></tr>
 </table>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Kup teraz CoreSync</a></div>
 </div>
 
 <div class="cf-wrap">
-<h2 class="cf-section-title">Co mówią ci, którzy dbają o zdrowie z CoreSync</h2>
+<h2 class="cf-section-title">Co mówią osoby, które już korzystają z CoreSync</h2>
 <div class="cf-reviews">
 <div class="cf-review">
 <img alt="Javier R. z CoreSync w przerwie w pracy" src="/assets/img/products/smartwatch/review-1.jpg" width="130" height="130" loading="lazy" decoding="async"/>
@@ -555,15 +570,17 @@ subidInput.value = campaign;
 <div class="cf-wrap">
 <h2 class="cf-section-title">Główne cechy CoreSync™</h2>
 <ul class="cf-specs">
-<li><strong>Typ:</strong> Smartwatch z VitalSync 24/7: tętno, tlen we krwi i monitorowanie snu.</li>
-<li><strong>Wyświetlacz:</strong> HD podświetlany 2".</li>
-<li><strong>Bateria:</strong> Długotrwała bateria, do 10 dni bez ładowania.</li>
+<li><strong>Typ:</strong> Smartwatch do łączności, codziennej aktywności i śledzenia rutyn.</li>
+<li><strong>Wyświetlacz:</strong> Podświetlany ekran HD 2".</li>
+<li><strong>Bateria:</strong> Do 10 dni autonomii w zależności od użytkowania i ustawień.</li>
 <li><strong>Odporność:</strong> Wodoodporność 5ATM.</li>
-<li><strong>Kompatybilność:</strong> iOS i Android, aplikacja w zestawie.</li>
-<li><strong>Łączność:</strong> Odbieraj wiadomości, odbieraj połączenia… wszystko, czego potrzebujesz na nadgarstku.</li>
-<li><strong>W zestawie:</strong> 1 zapasowy pasek, ładowarka i instrukcja obsługi.</li>
+<li><strong>Kompatybilność:</strong> iOS i Android przez aplikację w zestawie.</li>
+<li><strong>Łączność:</strong> Rozmowy i powiadomienia prosto z nadgarstka.</li>
+<li><strong>Seguimiento:</strong> Aktywność diaria, pasos y registros de descanso.</li>
+<li><strong>Incluye:</strong> 1 zapasowy pasek, 2 osłony, cargador y manual de instrucciones.</li>
 <li><strong>Gwarancja:</strong> 24 miesiące.</li>
 </ul>
+<p class="cf-medical-disclaimer">Ten produkt nie jest wyrobem medycznym i nie jest przeznaczony do diagnozowania, zapobiegania ani leczenia chorób.</p>
 <p class="cf-disclaimer">*Zawsze czytaj dołączoną instrukcję i używaj produktu zgodnie z zaleceniami producenta.</p>
 <div class="cf-specs-img">
 <img alt="Kompletny zestaw CoreSync, zdjęcie produktu" src="/assets/img/products/smartwatch/hero.jpg" width="560" height="560" loading="lazy" decoding="async"/>
@@ -588,7 +605,7 @@ subidInput.value = campaign;
 
 <section class="cf-form-sec">
 <div class="cf-wrap">
-<h2>Podaj dane, aby dowiedzieć się więcej o CoreSync</h2>
+<h2>Podaj dane, aby zamówić CoreSync</h2>
 <p class="sub">Zamów dziś i <strong>wygodnie zapłać przy odbiorze.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name2">Imię i nazwisko*</label>
@@ -606,29 +623,19 @@ subidInput.value = campaign;
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="b8326e3eb2c8bd4345a5a7b1ec4397f181131c7e" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Chcę wiedzieć więcej</button>
+<button name="submit" type="submit">ZAMÓW CORESYNC</button>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+<p class="cf-form-privacy">Twoje dane zostaną wykorzystane do obsługi zamówienia. Zobacz <a href="/pl/privacy-policy.html">Politykę prywatności</a>.</p>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
 <p>Ocena 4,6/5 na podstawie ponad <span class="num">4100</span> prawdziwych kupujących</p>
 <div class="cf-avatars">
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=12"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=32"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=45"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=56"/>
-<img alt="" width="40" height="40" src="https://i.pravatar.cc/40?img=18"/>
+<img alt="" src="https://i.pravatar.cc/40?img=12" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=32" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=45" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=56" width="40" height="40"/>
+<img alt="" src="https://i.pravatar.cc/40?img=18" width="40" height="40"/>
 </div>
 <small>Prawdziwi kupujący • Zweryfikowane zakupy</small>
 </div>
@@ -639,24 +646,28 @@ subidInput.value = campaign;
 <h2 class="cf-section-title">❓ Najczęstsze pytania</h2>
 <div class="cf-faq">
 <details>
-<summary>📱 Czy działa z moim iPhone'em lub Androidem?</summary>
-<p>Tak. CoreSync działa z iOS i Android. Pobierz aplikację, sparuj zegarek w kilka minut i zacznij śledzić dane zdrowotne.</p>
+<summary>📱 Czy działa z iPhone i Android?</summary>
+<p>Tak. CoreSync działa z iOS i Android. Pobierz aplikację, sparuj zegarek i skonfiguruj funkcje z telefonu.</p>
 </details>
 <details>
-<summary>🔋 Jak długo naprawdę trzyma bateria?</summary>
-<p>Przy normalnym użytkowaniu (powiadomienia, sen i tętno) bateria może wytrzymać do 10 dni. Zależy od intensywnego GPS lub częstych połączeń.</p>
+<summary>🔋 Jak długo trzyma bateria?</summary>
+<p>CoreSync może osiągnąć do 10 dni autonomii w zależności od użytkowania, ustawień, rozmów, powiadomień i aktywnych funkcji.</p>
 </details>
 <details>
-<summary>💧 Czy mogę brać prysznic lub pływać w zegarku?</summary>
-<p>CoreSync ma wodoodporność 5ATM — nadaje się do prysznica, mycia rąk i codziennego użytku. Nie zalecamy głębokiego nurkowania ani ekstremalnych sportów wodnych.</p>
+<summary>💧 Czy ma wodoodporność?</summary>
+<p>CoreSync ma wodoodporność 5ATM. Sprawdź instrukcję i zalecenia producenta dotyczące warunków użytkowania.</p>
 </details>
 <details>
-<summary>😴 Co dokładnie mierzy podczas snu?</summary>
-<p>Rejestruje fazy snu, czas trwania, tlen we krwi w nocy i inne wzorce odpoczynku, by zrozumieć, czemu budzisz się bardziej lub mniej wypoczęty.</p>
+<summary>😴 Czy mogę sprawdzać zapisy odpoczynku?</summary>
+<p>Tak. CoreSync może rejestrować informacje o okresach snu, abyś mógł sprawdzać rutyny odpoczynku w aplikacji.</p>
+</details>
+<details>
+<summary>📞 Czy mogę odbierać rozmowy i powiadomienia?</summary>
+<p>Tak. Po połączeniu z telefonem CoreSync umożliwia rozmowy i powiadomienia prosto z nadgarstka.</p>
 </details>
 <details>
 <summary>💰 Czy mogę zapłacić przy odbiorze?</summary>
-<p>Tak. Płacisz gotówką kurierowi po otrzymaniu zamówienia w domu.</p>
+<p>Tak. Płacisz kurierowi po otrzymaniu zamówienia, zgodnie z warunkami dostawy dla Twojego regionu.</p>
 </details>
 </div>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Kup teraz CoreSync</a></div>
@@ -677,11 +688,12 @@ subidInput.value = campaign;
       <ul class="site-footer__list">
         <li><a href="/pl/about-us.html">O nas</a></li>
         <li><a href="/pl/contact-us.html">Kontakt</a></li>
-        <li><a href="/pl/privacy-policy.html">Polityka prywatności</a></li>
+        <li><a href="/pl/privacy-policy.html">Politykę prywatności</a></li>
         <li><a href="/pl/terms-conditions.html">Regulamin</a></li>
         <li><a href="/pl/cookie-policy.html">Polityka cookies</a></li>
         <li><a href="/pl/shipping-policy.html">Polityka wysyłki</a></li>
         <li><a href="/pl/refund-policy.html">Polityka zwrotów</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Zmień ustawienia plików cookie</button></li>
       </ul>
     </div>
     <div>
@@ -703,7 +715,7 @@ subidInput.value = campaign;
 (function () {
   var MSGS = {
     name: 'Wpisz imię i nazwisko.',
-    address: 'Wpisz adres.',
+    address: 'Wpisz adres dostawy.',
     tel: 'Wpisz prawidłowy numer telefonu.',
     generic: 'Nie udało się wysłać zamówienia. Spróbuj ponownie.',
     submitting: 'Wysyłanie…'
@@ -783,6 +795,12 @@ subidInput.value = campaign;
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
       var result = validateForm(form);
 
       if (!result.valid) {
@@ -793,9 +811,11 @@ subidInput.value = campaign;
         return;
       }
 
+      form.dataset.submitting = 'true';
       live.textContent = '';
       var btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.textContent.indexOf(MSGS.submitting) === -1) {
+      if (btn) {
+        btn.disabled = true;
         btn.dataset.originalText = btn.textContent;
         btn.textContent = MSGS.submitting;
       }
@@ -803,8 +823,28 @@ subidInput.value = campaign;
   }
 
   document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.querySelectorAll('.site-footer .tt-cookie-change-link').forEach(function (btn) {
+    if (btn.dataset.cookiePrefsBound === '1') return;
+    btn.dataset.cookiePrefsBound = '1';
+    btn.addEventListener('click', function () {
+      if (typeof window.ttOpenCookiePreferences === 'function') {
+        window.ttOpenCookiePreferences();
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var campaign = params.get('utm_campaign') || '';
+    document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+      subidInput.value = campaign;
+    });
+  });
 })();
 </script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 
 </body>
 </html>

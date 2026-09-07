@@ -23,13 +23,18 @@
 <meta property="og:url" content="https://trendtopia-store.com/es/smartwatch/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/smartwatch/hero.jpg">
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'es',
   PRODUCT_SLUG: 'smartwatch',
   COOKIE_TEXT: 'Usamos cookies técnicas y de terceros para mejorar tu experiencia y para análisis.',
   COOKIE_ACCEPT: 'Aceptar',
+  COOKIE_ACCEPT_ALL: 'Aceptar todo',
+  COOKIE_REJECT: 'Rechazar no esenciales',
+  COOKIE_MANAGE: 'Gestionar preferencias',
+  COOKIE_SAVE: 'Guardar preferencias',
+  COOKIE_CHANGE: 'Cambiar preferencias de cookies',
   COOKIE_LEARN: 'Más información'
-};
+});
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -192,6 +197,7 @@ window.SITE_CONFIG = {
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
 .cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
 .cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
 .cf-form input.is-invalid{border-color:var(--cf-red)}
@@ -362,6 +368,14 @@ window.SITE_CONFIG = {
   height:auto;
   margin:0 auto 1rem;
 }
+.cf-lp .site-footer__list .site-footer__link-btn{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
+  text-align:left;
+}
+.cf-lp .site-footer__list .site-footer__link-btn:focus-visible{
+  outline:2px solid var(--cf-orange);outline-offset:2px;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -439,17 +453,6 @@ window.SITE_CONFIG = {
 <button name="submit" type="submit">PEDIR MI CORESYNC</button>
 </div>
 <p class="cf-form-privacy">Tus datos se utilizarán para gestionar tu solicitud. Consulta nuestra <a href="/es/privacy-policy.html">Política de privacidad</a>.</p>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -623,17 +626,6 @@ subidInput.value = campaign;
 <button name="submit" type="submit">PEDIR MI CORESYNC</button>
 </div>
 <p class="cf-form-privacy">Tus datos se utilizarán para gestionar tu solicitud. Consulta nuestra <a href="/es/privacy-policy.html">Política de privacidad</a>.</p>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -701,6 +693,7 @@ subidInput.value = campaign;
         <li><a href="/es/cookie-policy.html">Política de cookies</a></li>
         <li><a href="/es/shipping-policy.html">Política de envío</a></li>
         <li><a href="/es/refund-policy.html">Política de reembolso</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Cambiar preferencias de cookies</button></li>
       </ul>
     </div>
     <div>
@@ -802,6 +795,12 @@ subidInput.value = campaign;
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
       var result = validateForm(form);
 
       if (!result.valid) {
@@ -812,9 +811,11 @@ subidInput.value = campaign;
         return;
       }
 
+      form.dataset.submitting = 'true';
       live.textContent = '';
       var btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.textContent.indexOf(MSGS.submitting) === -1) {
+      if (btn) {
+        btn.disabled = true;
         btn.dataset.originalText = btn.textContent;
         btn.textContent = MSGS.submitting;
       }
@@ -822,8 +823,28 @@ subidInput.value = campaign;
   }
 
   document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.querySelectorAll('.site-footer .tt-cookie-change-link').forEach(function (btn) {
+    if (btn.dataset.cookiePrefsBound === '1') return;
+    btn.dataset.cookiePrefsBound = '1';
+    btn.addEventListener('click', function () {
+      if (typeof window.ttOpenCookiePreferences === 'function') {
+        window.ttOpenCookiePreferences();
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var campaign = params.get('utm_campaign') || '';
+    document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+      subidInput.value = campaign;
+    });
+  });
 })();
 </script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 
 </body>
 </html>

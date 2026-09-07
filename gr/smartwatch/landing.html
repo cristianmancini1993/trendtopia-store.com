@@ -2,12 +2,14 @@
 <html lang="el">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -21,13 +23,18 @@
 <meta property="og:url" content="https://trendtopia-store.com/gr/smartwatch/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/smartwatch/hero.jpg">
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'gr',
   PRODUCT_SLUG: 'smartwatch',
   COOKIE_TEXT: 'Χρησιμοποιούμε τεχνικά cookies και cookies τρίτων για να βελτιώσουμε την εμπειρία σας και για αναλυτικά στοιχεία.',
   COOKIE_ACCEPT: 'Αποδοχή',
+  COOKIE_ACCEPT_ALL: 'Αποδοχή όλων',
+  COOKIE_REJECT: 'Απόρριψη μη απαραίτητων',
+  COOKIE_MANAGE: 'Διαχείριση προτιμήσεων',
+  COOKIE_SAVE: 'Αποθήκευση προτιμήσεων',
+  COOKIE_CHANGE: 'Αλλαγή προτιμήσεων cookies',
   COOKIE_LEARN: 'Μάθετε περισσότερα'
-};
+});
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -190,6 +197,7 @@ window.SITE_CONFIG = {
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
 .cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
 .cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
 .cf-form input.is-invalid{border-color:var(--cf-red)}
@@ -357,6 +365,14 @@ window.SITE_CONFIG = {
   height:auto;
   margin:0 auto 1rem;
 }
+.cf-lp .site-footer__list .site-footer__link-btn{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
+  text-align:left;
+}
+.cf-lp .site-footer__list .site-footer__link-btn:focus-visible{
+  outline:2px solid var(--cf-orange);outline-offset:2px;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -393,14 +409,13 @@ window.SITE_CONFIG = {
 <li><span><strong>Κλήσεις και ειδοποιήσεις στον καρπό,</strong> συμβατό με iOS και Android.</span></li>
 <li><span><strong>Καθημερινή δραστηριότητα και ξεκούραση</strong> με μια ματιά από την εφαρμογή.</span></li>
 <li><span><strong>Αδιαβροχία 5ATM</strong> για την καθημερινή σας ρουτίνα.</span></li>
-<li><span><strong>Επιπλέον λουράκι, φορτιστής και 2 προστατευτικά καλύμματα included.</strong></span></li>
+<li><span><strong>Επιπλέον λουράκι, φορτιστής και 2 προστατευτικά καλύμματα που περιλαμβάνεται.</strong></span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">🔥 Η προσφορά ισχύει μέχρι εξαντλήσεως αποθέματος</div>
 <span class="disc">-50% ΣΗΜΕΡΑ</span>
 <div class="cf-price"><span class="now">69,00 €</span><span class="old">138,00 €</span></div>
 <div class="cf-save-line">Εξοικονομείτε 69,00 €</div>
-<a class="cf-cta" href="#cf-formulario">Ναι, θέλω το CoreSync μου</a>
+<a class="cf-cta" href="#cf-formulario">ΠΑΡΑΓΓΕΙΛΕ CORESYNC</a>
 <div class="cf-trust">
 <span>🚚 Δωρεάν αποστολή 24–48 ώρ.</span>
 <span>💶 Αντικαταβολή</span>
@@ -413,9 +428,9 @@ window.SITE_CONFIG = {
 
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
-<h2>Εισάγετε τα στοιχεία σας για περισσότερες πληροφορίες σχετικά με το CoreSync</h2>
+<h2>Εισαγάγετε τα στοιχεία σας για να παραγγείλετε το CoreSync</h2>
+<p class="cf-form-privacy">Με την αποστολή της φόρμας, αποδέχεστε την επεξεργασία των δεδομένων σας για τη διαχείριση της παραγγελίας. Δείτε την <a href="/gr/privacy-policy.html">Πολιτική απορρήτου</a>.</p>
 <p class="sub">Παραγγείλτε σήμερα και <strong>πληρώστε άνετα με αντικαταβολή.</strong></p>
-<p class="cf-form-urgency">⚠️ Τελευταία τεμάχια σε απόθεμα, εκμεταλλευτείτε τώρα την έκπτωση 50%</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Ονοματεπώνυμο*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Ονοματεπώνυμο" required aria-required="true"><br>
@@ -432,19 +447,8 @@ window.SITE_CONFIG = {
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="f9c80134e3e627afb228790d616668b0b70aa1c4" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Ναι, θέλω το CoreSync μου</button>
+<button name="submit" type="submit">ΠΑΡΑΓΓΕΙΛΕ CORESYNC</button>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -488,7 +492,7 @@ subidInput.value = campaign;
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">Καταγραφή ύπνου</span>
 <span class="cf-feature-badge">Ημερήσιο ιστορικό</span>
-<span class="cf-feature-badge">Εφαρμογή included</span>
+<span class="cf-feature-badge">Εφαρμογή που περιλαμβάνεται</span>
 </div>
 <p>Κρατήστε καταγραφή των περιόδων ύπνου σας και δείτε τα δεδομένα σας όταν ξυπνάτε από την εφαρμογή. Έτσι μπορείτε να παρακολουθείτε τις ρουτίνες ξεκούρασης σας με τον καιρό με απλό και οπτικό τρόπο.</p>
 </div></div>
@@ -502,7 +506,7 @@ subidInput.value = campaign;
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">1 επιπλέον λουράκι</span>
 <span class="cf-feature-badge">2 προστατευτικά</span>
-<span class="cf-feature-badge">Φορτιστής included</span>
+<span class="cf-feature-badge">Φορτιστής που περιλαμβάνεται</span>
 </div>
 <p>Το CoreSync φτάνει έτοιμο να σας συνοδεύει από την πρώτη μέρα: smartwatch, επιπλέον λουράκι, δύο προστατευτικά, φορτιστής και εγχειρίδιο οδηγιών. Συμβατό με iOS και Android, αδιαβροχία 5ATM και έως 10 ημέρες αυτονομίας ανάλογα με τη χρήση και τις ρυθμίσεις.</p>
 <p class="cf-disclaimer" style="margin:12px 0 0;text-align:left">*Η αυτονομία μπορεί να διαφέρει ανάλογα με τη χρήση, τις ρυθμίσεις και τις ενεργές λειτουργίες.</p>
@@ -566,13 +570,14 @@ subidInput.value = campaign;
 <li><strong>Οθόνη:</strong> HD οπισθοφωτιζόμενη 2".</li>
 <li><strong>Μπαταρία:</strong> Έως 10 ημέρες αυτονομίας ανάλογα με τη χρήση και τις ρυθμίσεις.</li>
 <li><strong>Αντοχή:</strong> Αδιαβροχία 5ATM.</li>
-<li><strong>Συμβατότητα:</strong> Συμβατό με iOS και Android μέσω της εφαρμογής included.</li>
+<li><strong>Συμβατότητα:</strong> Συμβατό με iOS και Android μέσω της εφαρμογής που περιλαμβάνεται.</li>
 <li><strong>Συνδεσιμότητα:</strong> Κλήσεις και ειδοποιήσεις απευθείας στον καρπό.</li>
 <li><strong>Παρακολούθηση:</strong> Καθημερινή δραστηριότητα, βήματα και καταγραφές ξεκούρασης.</li>
 <li><strong>Περιλαμβάνει:</strong> 1 επιπλέον λουράκι, 2 προστατευτικά, φορτιστή και εγχειρίδιο οδηγιών.</li>
 <li><strong>Εγγύηση:</strong> 24 μήνες.</li>
 </ul>
-<p class="cf-disclaimer">*Διαβάστε πάντα το εγχειρίδιο included και χρησιμοποιείτε το προϊόν σύμφωνα με τις συστάσεις του κατασκευαστή.</p>
+<p class="cf-medical-disclaimer">Το προϊόν αυτό δεν αποτελεί ιατροτεχνολογικό προϊόν και δεν προορίζεται για τη διάγνωση, την πρόληψη ή τη θεραπεία ασθενειών.</p>
+<p class="cf-disclaimer">*Διαβάστε πάντα το εγχειρίδιο που περιλαμβάνεται και χρησιμοποιείτε το προϊόν σύμφωνα με τις συστάσεις του κατασκευαστή.</p>
 <div class="cf-specs-img">
 <img alt="Πλήρες σετ CoreSync, εικόνα προϊόντος" src="/assets/img/products/smartwatch/hero.jpg" width="560" height="560" loading="lazy" decoding="async"/>
 </div>
@@ -583,7 +588,7 @@ subidInput.value = campaign;
 <li>✅ <strong>1× Επιπλέον λουράκι</strong></li>
 <li>✅ <strong>2× Προστατευτικά οθόνης/σώματος</strong></li>
 <li>✅ <strong>1× Φορτιστής + καλώδιο</strong></li>
-<li>📘 Εγχειρίδιο οδηγιών included</li>
+<li>📘 Εγχειρίδιο οδηγιών που περιλαμβάνεται</li>
 <li>📱 Εφαρμογή συμβατή με iOS και Android</li>
 <li>🚚 Δωρεάν αποστολή εντός 24–48 ωρών</li>
 <li>💳 Αντικαταβολή</li>
@@ -596,7 +601,7 @@ subidInput.value = campaign;
 
 <section class="cf-form-sec">
 <div class="cf-wrap">
-<h2>Εισάγετε τα στοιχεία σας για περισσότερες πληροφορίες σχετικά με το CoreSync</h2>
+<h2>Εισαγάγετε τα στοιχεία σας για να παραγγείλετε το CoreSync</h2>
 <p class="sub">Παραγγείλτε σήμερα και <strong>πληρώστε άνετα με αντικαταβολή.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name2">Ονοματεπώνυμο*</label>
@@ -614,19 +619,8 @@ subidInput.value = campaign;
 <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
 <input name="_key" type="hidden" value="f9c80134e3e627afb228790d616668b0b70aa1c4" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Θέλω να μάθω περισσότερα</button>
+<button name="submit" type="submit">ΠΑΡΑΓΓΕΙΛΕ CORESYNC</button>
 </div>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-var params = new URLSearchParams(window.location.search);
-var campaign = params.get("utm_campaign") || "";
-document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
-subidInput.value = campaign;
-});
-});
-</script>
-<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -694,6 +688,7 @@ subidInput.value = campaign;
         <li><a href="/gr/cookie-policy.html">Πολιτική cookies</a></li>
         <li><a href="/gr/shipping-policy.html">Πολιτική αποστολής</a></li>
         <li><a href="/gr/refund-policy.html">Πολιτική επιστροφών</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Αλλαγή προτιμήσεων cookies</button></li>
       </ul>
     </div>
     <div>
@@ -795,6 +790,12 @@ subidInput.value = campaign;
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
       var result = validateForm(form);
 
       if (!result.valid) {
@@ -805,9 +806,11 @@ subidInput.value = campaign;
         return;
       }
 
+      form.dataset.submitting = 'true';
       live.textContent = '';
       var btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.textContent.indexOf(MSGS.submitting) === -1) {
+      if (btn) {
+        btn.disabled = true;
         btn.dataset.originalText = btn.textContent;
         btn.textContent = MSGS.submitting;
       }
@@ -815,8 +818,28 @@ subidInput.value = campaign;
   }
 
   document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.querySelectorAll('.site-footer .tt-cookie-change-link').forEach(function (btn) {
+    if (btn.dataset.cookiePrefsBound === '1') return;
+    btn.dataset.cookiePrefsBound = '1';
+    btn.addEventListener('click', function () {
+      if (typeof window.ttOpenCookiePreferences === 'function') {
+        window.ttOpenCookiePreferences();
+      }
+    });
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var campaign = params.get('utm_campaign') || '';
+    document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+      subidInput.value = campaign;
+    });
+  });
 })();
 </script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 
 </body>
 </html>
