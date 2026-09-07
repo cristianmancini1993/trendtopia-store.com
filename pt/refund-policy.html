@@ -3,13 +3,14 @@
 <html lang="pt">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Número do pedido (você o encontrará na confirmação)</li>
 <li>Produto para devolver</li>
 <li>Motivo da devolução (opcional, mas útil para melhorar nosso serviço)</li>
-<li>IBAN para o reembolso</li>
+<li>Confirmação de que deseja receber o reembolso por transferência bancária, se aplicável</li>
 </ul>
 <p>Enviaremos a você as instruções detalhadas de devolução dentro de 24 horas.</p>
 <h2>3. Condição do produto</h2>
@@ -62,7 +63,7 @@
 <li>Produto danificado durante o transporte</li>
 </ul>
 <h2>5. Cronograma de reembolso</h2>
-<p>O reembolso é emitido no prazo de 14 dias após a recepção do produto devolvido, por transferência bancária para o IBAN fornecido pelo cliente. O reembolso cobre o valor total pago, excluindo quaisquer custos de envio de devolução suportados pelo cliente.</p>
+<p>O reembolso é emitido no prazo de 14 dias após a recepção do produto devolvido. Quando for necessário um reembolso por transferência bancária, a nossa equipa de apoio facultará um procedimento seguro para fornecer os dados bancários. O reembolso cobre o valor total pago, excluindo os custos de envio de devolução suportados pelo cliente.</p>
 <h2>6. Produto com defeito</h2>
 <p>No caso de um produto defeituoso ou não conforme, você tem o direito - à sua escolha - de:</p>
 <ul>

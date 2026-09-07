@@ -3,13 +3,14 @@
 <html lang="fr">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Numéro de commande (vous le trouverez dans la confirmation)</li>
 <li>Produit à retourner</li>
 <li>Raison du retour (facultatif mais utile pour améliorer notre service)</li>
-<li>IBAN pour le remboursement</li>
+<li>Confirmation que vous souhaitez recevoir le remboursement par virement bancaire, le cas échéant</li>
 </ul>
 <p>Nous vous enverrons les instructions de retour détaillées dans les 24 heures.</p>
 <h2>3. État du produit</h2>
@@ -62,7 +63,7 @@
 <li>Produit endommagé pendant le transport</li>
 </ul>
 <h2>5. Délai de remboursement</h2>
-<p>Le remboursement est effectué dans les 14 jours suivant la réception du produit retourné, par virement bancaire sur l'IBAN fourni par le client. Le remboursement couvre la totalité du montant payé, hors éventuels frais de retour supportés par le client.</p>
+<p>Le remboursement est effectué dans les 14 jours suivant la réception du produit retourné. Lorsqu'un remboursement par virement bancaire est nécessaire, notre équipe d'assistance fournira une procédure sécurisée pour communiquer les coordonnées bancaires. Le remboursement couvre le montant total payé, hors frais de retour à la charge du client.</p>
 <h2>6. Produit défectueux</h2>
 <p>En cas de produit défectueux ou non conforme, vous avez le droit — à votre choix — de :</p>
 <ul>

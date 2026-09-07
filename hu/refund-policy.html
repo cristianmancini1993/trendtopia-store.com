@@ -3,13 +3,14 @@
 <html lang="hu">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Rendelési szám (a visszaigazolásban találja)</li>
 <li>Visszaküldendő termék</li>
 <li>A visszaküldés oka (nem kötelező, de hasznos a szolgáltatásunk fejlesztéséhez)</li>
-<li>IBAN a visszatérítéshez</li>
+<li>Megerősítés, hogy banki átutalással kéri a visszatérítést, ha alkalmazható</li>
 </ul>
 <p>24 órán belül elküldjük Önnek a részletes visszaküldési útmutatót.</p>
 <h2>3. A termék állapota</h2>
@@ -62,7 +63,7 @@
 <li>A termék szállítás közben sérült</li>
 </ul>
 <h2>5. Visszatérítési idővonal</h2>
-<p>A visszatérítés a visszaküldött termék kézhezvételétől számított 14 napon belül, banki átutalással történik a vásárló által megadott IBAN számra. A visszatérítés a teljes kifizetett összeget fedezi, kivéve a vevőt terhelő szállítási költségeket.</p>
+<p>A visszatérítés a visszaküldött termék kézhezvételétől számított 14 napon belül történik. Ha banki átutalásos visszatérítés szükséges, ügyfélszolgálatunk biztonságos eljárást biztosít a banki adatok megadásához. A visszatérítés a teljes kifizetett összeget fedezi, a vevő által viselt visszaküldési költségek kivételével.</p>
 <h2>6. Hibás termék</h2>
 <p>Hibás vagy nem megfelelő termék esetén Önnek joga van – választása szerint – az alábbiakra:</p>
 <ul>

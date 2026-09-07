@@ -3,13 +3,14 @@
 <html lang="sl">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Številka naročila (najdete jo v potrditvi)</li>
 <li>Izdelek za vračilo</li>
 <li>Razlog za vračilo (izbirno, vendar koristno za izboljšanje naše storitve)</li>
-<li>IBAN za vračilo</li>
+<li>Potrditev, da želite vračilo kupnine z bančnim nakazilom, če je to primerno</li>
 </ul>
 <p>Podrobna navodila za vračilo vam bomo poslali v 24 urah.</p>
 <h2>3. Stanje izdelka</h2>
@@ -62,7 +63,7 @@
 <li>Izdelek poškodovan med transportom</li>
 </ul>
 <h2>5. Časovnica vračila</h2>
-<p>Vračilo kupnine se izvrši v 14 dneh po prejemu vrnjenega izdelka, in sicer z bančnim nakazilom na IBAN, ki ga navede kupec. Povračilo krije celoten plačani znesek, brez morebitnih stroškov povratnega pošiljanja, ki jih krije stranka.</p>
+<p>Vračilo kupnine se izvrši v 14 dneh po prejemu vrnjenega izdelka. Ko je potrebno vračilo z bančnim nakazilom, naša ekipa za podporo zagotovi varen postopek za posredovanje bančnih podatkov. Povračilo krije celoten plačani znesek, brez morebitnih stroškov povratnega pošiljanja, ki jih krije stranka.</p>
 <h2>6. Pokvarjen izdelek</h2>
 <p>V primeru pokvarjenega ali neustreznega izdelka imate pravico – po vaši izbiri – do:</p>
 <ul>

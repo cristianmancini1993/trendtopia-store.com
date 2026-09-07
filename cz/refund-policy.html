@@ -3,13 +3,14 @@
 <html lang="cs">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Číslo objednávky (najdete ho v potvrzení)</li>
 <li>Produkt k vrácení</li>
 <li>Důvod vrácení (volitelné, ale užitečné pro zlepšení našich služeb)</li>
-<li>IBAN pro vrácení peněz</li>
+<li>Potvrzení, že si přejete vrácení peněz bankovním převodem, pokud je to relevantní</li>
 </ul>
 <p>Do 24 hodin vám zašleme podrobné pokyny k vrácení.</p>
 <h2>3. Stav produktu</h2>
@@ -62,7 +63,7 @@
 <li>Výrobek poškozen během přepravy</li>
 </ul>
 <h2>5. Časová osa vrácení peněz</h2>
-<p>Vrácení peněz je vydáno do 14 dnů od obdržení vráceného produktu bankovním převodem na číslo IBAN poskytnuté zákazníkem. Vrácená částka pokrývá celou zaplacenou částku, bez jakýchkoli nákladů na zpáteční dopravu, které nese zákazník.</p>
+<p>Vrácení peněz proběhne do 14 dnů od obdržení vráceného produktu. Je-li nutné vrácení peněz bankovním převodem, náš tým podpory poskytne bezpečný postup pro sdělení bankovních údajů. Vrácená částka pokrývá celou zaplacenou částku, bez nákladů na zpáteční dopravu hrazených zákazníkem.</p>
 <h2>6. Vadný výrobek</h2>
 <p>V případě vadného nebo nevyhovujícího produktu máte právo – dle vlastního výběru – na:</p>
 <ul>

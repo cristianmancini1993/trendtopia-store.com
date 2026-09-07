@@ -3,13 +3,14 @@
 <html lang="de">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Bestellnummer (Sie finden diese in der Bestätigung)</li>
 <li>Produkt zur Rückgabe</li>
 <li>Grund der Rücksendung (optional, aber hilfreich zur Verbesserung unseres Service)</li>
-<li>IBAN für die Rückerstattung</li>
+<li>Bestätigung, dass Sie die Erstattung per Banküberweisung wünschen, falls zutreffend</li>
 </ul>
 <p>Wir senden Ihnen innerhalb von 24 Stunden die detaillierten Rücksendeanweisungen.</p>
 <h2>3. Produktzustand</h2>
@@ -62,7 +63,7 @@
 <li>Produkt beim Transport beschädigt</li>
 </ul>
 <h2>5. Zeitplan für die Rückerstattung</h2>
-<p>Die Rückerstattung erfolgt innerhalb von 14 Tagen nach Erhalt des zurückgegebenen Produkts per Banküberweisung auf die vom Kunden angegebene IBAN. Die Rückerstattung umfasst den gesamten gezahlten Betrag, abzüglich etwaiger vom Kunden zu tragender Rücksendekosten.</p>
+<p>Die Rückerstattung erfolgt innerhalb von 14 Tagen nach Erhalt des zurückgegebenen Produkts. Ist eine Erstattung per Banküberweisung erforderlich, stellt unser Support-Team ein sicheres Verfahren zur Übermittlung der Bankdaten bereit. Die Rückerstattung umfasst den gesamten gezahlten Betrag, abzüglich vom Kunden zu tragender Rücksendekosten.</p>
 <h2>6. Defektes Produkt</h2>
 <p>Im Falle eines fehlerhaften oder nicht konformen Produkts haben Sie nach Ihrer Wahl das Recht:</p>
 <ul>

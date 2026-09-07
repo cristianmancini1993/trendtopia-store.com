@@ -3,13 +3,14 @@
 <html lang="lv">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Pasūtījuma numurs (to atradīsit apstiprinājumā)</li>
 <li>Prece, kas jāatgriež</li>
 <li>Atgriešanas iemesls (nav obligāti, bet noder mūsu pakalpojuma uzlabošanai)</li>
-<li>IBAN par naudas atmaksu</li>
+<li>Apstiprinājums, ka vēlaties naudas atmaksu ar bankas pārskaitījumu, ja attiecināms</li>
 </ul>
 <p>Mēs nosūtīsim jums detalizētus atgriešanas norādījumus 24 stundu laikā.</p>
 <h2>3. Produkta stāvoklis</h2>
@@ -62,7 +63,7 @@
 <li>Produkts bojāts transportēšanas laikā</li>
 </ul>
 <h2>5. Atmaksas laika skala</h2>
-<p>Naudas atmaksa tiek izsniegta 14 dienu laikā no atgrieztās preces saņemšanas, ar bankas pārskaitījumu uz klienta norādīto IBAN. Atmaksa sedz visu samaksāto summu, izņemot atgriešanas piegādes izmaksas, ko sedz klients.</p>
+<p>Naudas atmaksa tiek izsniegta 14 dienu laikā no atgrieztās preces saņemšanas. Ja nepieciešama atmaksa ar bankas pārskaitījumu, mūsu atbalsta komanda nodrošinās drošu procedūru bankas datu sniegšanai. Atmaksa sedz visu samaksāto summu, izņemot atgriešanas piegādes izmaksas, ko sedz klients.</p>
 <h2>6. Bojāta prece</h2>
 <p>Bojāta vai neatbilstoša produkta gadījumā jums ir tiesības pēc jūsu izvēles:</p>
 <ul>

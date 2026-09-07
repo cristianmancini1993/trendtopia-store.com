@@ -2,13 +2,14 @@
 <html lang="it">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -47,8 +48,8 @@
       <li>Numero d'ordine (lo trovi nella conferma)</li>
       <li>Prodotto da restituire</li>
       <li>Motivo del reso (opzionale ma utile per migliorare il servizio)</li>
-      <li>IBAN per il rimborso</li>
-    </ul>
+      <li>Conferma che desideri ricevere il rimborso tramite bonifico bancario, se applicabile</li>
+</ul>
     <p>Ti invieremo le istruzioni dettagliate per la restituzione entro 24 ore.</p>
 
     <h2>3. Condizioni del prodotto</h2>
@@ -69,7 +70,7 @@
     </ul>
 
     <h2>5. Tempi di rimborso</h2>
-    <p>Il rimborso viene erogato <strong>entro 14 giorni</strong> dal ricevimento del prodotto reso, tramite bonifico bancario sul conto indicato dal cliente. Il rimborso è completo dell'importo pagato, escluse eventuali spese di reso a carico del cliente.</p>
+    <p>Il rimborso viene erogato <strong>entro 14 giorni</strong> dal ricevimento del prodotto reso. Quando è necessario un rimborso tramite bonifico bancario, il nostro team di assistenza fornirà una procedura sicura per comunicare i dati bancari. Il rimborso copre l'intero importo pagato, escluse eventuali spese di reso a carico del cliente.</p>
 
     <h2>6. Prodotto difettoso</h2>
     <p>In caso di prodotto difettoso o non conforme, hai diritto a tua scelta a:</p>

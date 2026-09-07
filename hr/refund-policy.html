@@ -3,13 +3,14 @@
 <html lang="hr">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Broj narudžbe (naći ćete ga u potvrdi)</li>
 <li>Proizvod za povrat</li>
 <li>Razlog povrata (neobavezno, ali korisno za poboljšanje naše usluge)</li>
-<li>IBAN za povrat novca</li>
+<li>Potvrda da želite povrat novca bankovnom doznakom, ako je primjenjivo</li>
 </ul>
 <p>Poslat ćemo vam detaljne upute za povrat u roku od 24 sata.</p>
 <h2>3. Stanje proizvoda</h2>
@@ -62,7 +63,7 @@
 <li>Proizvod oštećen tijekom transporta</li>
 </ul>
 <h2>5. Vremenski okvir povrata</h2>
-<p>Povrat novca se vrši u roku od 14 dana od primitka vraćenog proizvoda, bankovnom doznakom na IBAN koji je dostavio kupac. Povrat novca pokriva puni plaćeni iznos, isključujući sve troškove povratne dostave koje snosi kupac.</p>
+<p>Povrat novca izvršava se u roku od 14 dana od primitka vraćenog proizvoda. Kada je potreban povrat bankovnom doznakom, naš tim podrške osigurat će siguran postupak za dostavu bankovnih podataka. Povrat pokriva puni plaćeni iznos, isključujući troškove povratne dostave koje snosi kupac.</p>
 <h2>6. Neispravan proizvod</h2>
 <p>U slučaju neispravnog ili nesukladnog proizvoda, imate pravo — po vlastitom izboru — na:</p>
 <ul>

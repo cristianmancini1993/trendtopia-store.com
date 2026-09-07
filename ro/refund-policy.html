@@ -3,13 +3,14 @@
 <html lang="ro">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -43,7 +44,7 @@
 <li>Numărul comenzii (il veți găsi în confirmare)</li>
 <li>Produs de returnat</li>
 <li>Motivul returnării (opțional, dar util pentru îmbunătățirea serviciului nostru)</li>
-<li>IBAN pentru rambursare</li>
+<li>Confirmarea că doriți rambursarea prin transfer bancar, dacă este cazul</li>
 </ul>
 <p>Vă vom trimite instrucțiunile detaliate de returnare în termen de 24 de ore.</p>
 <h2>3. Starea produsului</h2>
@@ -62,7 +63,7 @@
 <li>Produs deteriorat în timpul transportului</li>
 </ul>
 <h2>5. Termenul de rambursare</h2>
-<p>Rambursarea se face in termen de 14 zile de la primirea produsului returnat, prin transfer bancar la codul IBAN furnizat de client. Rambursarea acoperă întreaga sumă plătită, excluzând orice costuri de transport de retur suportate de client.</p>
+<p>Rambursarea se face în termen de 14 zile de la primirea produsului returnat. Când este necesară rambursarea prin transfer bancar, echipa noastră de asistență va furniza o procedură sigură pentru transmiterea datelor bancare. Rambursarea acoperă întreaga sumă plătită, excluzând costurile de transport de retur suportate de client.</p>
 <h2>6. Produs defect</h2>
 <p>În cazul unui produs defect sau neconform, aveți dreptul, la alegerea dvs., să:</p>
 <ul>
