@@ -1,100 +1,66 @@
 # OWNER_EVIDENCE_REQUIRED.md
 
-Items that **cannot** be resolved from code alone. Cursor applied conservative removals where evidence was missing; restore only when documentation exists.
-
-Updated: 2026-09-08
+Updated: 2026-09-08 — minimal list only
 
 ---
 
-## CoreSync (ES / PL / GR)
+## CoreSync — 5ATM water resistance
 
-### Product specifications (still visible in copy — substantiation if Google asks)
-
-| Claim | Status on landing | Evidence needed |
-|-------|-------------------|-----------------|
-| Battery “do 10 dni” / “hasta 10 días” | Still in hero/specs | Manufacturer battery test sheet |
-| 5ATM water resistance | Still in specs | Certification / manual limits |
-| 2" HD display | Still in specs | Product datasheet |
-| iOS / Android compatibility | Still in copy | Minimum OS versions |
-| Wellness (heart rate, sleep, steps) | Wellness wording + medical disclaimer | Confirm non-medical device classification |
-
-### Removed conservatively — restore only with evidence
-
-| Removed element | Was on | Restore when |
-|-----------------|--------|--------------|
-| Old price 98 € / 398 zł / 138 € | Hero price box | Verifiable price history |
-| “-50%” / “HOY” / “DZIŚ” | Hero, topbar, meta | Dated campaign config |
-| “+4100 compradores” / buyer counts | Hero, social proof | CRM or analytics export |
-| “Verified buyer” badges | Reviews | Verification methodology |
-| Aggregate rating in JSON-LD (if removed) | Structured data | Same as review source |
-
-### AdRice (confirm in panel — IDs unchanged in code)
-
-- ES: offer **3137** / lp **3171**
-- PL: offer **3141** / lp **3175**
-- GR: offer **1842** / lp **1862**
-
-### Operational
-
-- COD availability per market
-- Actual shipping SLA per carrier/region (policy text updated; ops confirmation)
+**VISIBLE CLAIM:** Resistencia al agua 5ATM en specs (ES/PL/GR)  
+**WHY:** No manufacturer certificate in repo  
+**REQUIRED DOCUMENT:** Datasheet / test report  
+**CURRENT STATUS:** Kept with “según uso” wording; substantiate if Google asks  
+**RESTORE/KEEP:** Keep after evidence; soften/remove if challenged without docs
 
 ---
 
-## Casa Fuego (PL / CZ / SK)
+## CoreSync — Battery up to 10 days
 
-### Product (substantiation if challenged)
-
-| Topic | Notes |
-|-------|-------|
-| Non-stick coating / PFOA | Material datasheet |
-| Induction / oven / max temperatures | Compatibility chart |
-| Handle thermal behaviour | “Zawsze chłodne” softened to descriptive copy — full claim needs test data |
-| 12-piece pack contents | List vs product images |
-
-### Removed conservatively
-
-| Removed | Restore when |
-|---------|--------------|
-| Old prices (798 zł, 3 998 Kč, 178 €) | Price history |
-| “-50%” / urgency | Campaign dates |
-| “3200+” buyer counts | Analytics source |
-| Verified review badges | Verification policy |
-
-### AdRice
-
-- PL: **3179** / **3213**
-- CZ: **3251** / **3285**
-- SK: **3702** / **3742**
+**VISIBLE CLAIM:** “Hasta 10 días” / “Do 10 dni” / “Έως 10 ημέρες”  
+**WHY:** No battery test matrix in repo  
+**REQUIRED DOCUMENT:** Manufacturer battery life spec  
+**CURRENT STATUS:** Kept with usage disclaimers  
+**RESTORE/KEEP:** Keep after evidence
 
 ---
 
-## Home (`/`)
+## CoreSync — Pack contents
 
-| Topic | Status |
-|-------|--------|
-| “Up to 50% off”, Zero risk, 4100/3842 counts | **REMOVED SAFELY** |
-| “18 countries”, “1 hour response”, “certified suppliers” | Review `en/about-us.html` — softened; substantiate if reinstating |
-| International routing | **FIXED** — ES/PL/GR picker; confirm if more locales needed |
-
----
-
-## Legal / identity (not code-fixable)
-
-- **GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED** (Hong Kong) vs EU consumer jurisdiction
-- GDPR international transfers (privacy policies)
-- Warranty “24 months” vs statutory minimum per country
+**VISIBLE CLAIM:** Spare strap, 2 protectors, charger, manual  
+**WHY:** No BOM/packaging list in repo  
+**REQUIRED DOCUMENT:** Supplier pack list vs images  
+**CURRENT STATUS:** Visible on landing  
+**RESTORE/KEEP:** Align copy/images after confirmation
 
 ---
 
-## SEO / Ads policy (owner decision)
+## Casa Fuego — Materials & compatibility
 
-- **`noindex,nofollow`** on all ad landings — intentional for paid traffic; confirm with SEO/Ads strategy before changing
+**VISIBLE CLAIM:** Non-stick, induction/gas/ceramic, 12 pieces  
+**WHY:** No material datasheet  
+**REQUIRED DOCUMENT:** Product spec sheet  
+**CURRENT STATUS:** Absolutes removed; descriptive copy only  
+**RESTORE/KEEP:** Restore specific claims only with docs
 
 ---
 
-## How to restore removed marketing
+## Promotions removed (can restore with evidence)
 
-1. Provide evidence file or AdRice/campaign config in repo or shared doc
-2. Request Cursor update — do not re-add without source
-3. Update JSON-LD and visible DOM together
+**ITEMS:** Old prices, -50%, HOY/DZIŠ, +4100/+3200 counts, verified badges  
+**CURRENT STATUS:** REMOVED_SAFELY from 7 destination URLs  
+**RESTORE/KEEP:** Restore only with price history / analytics export / campaign dates
+
+---
+
+## AdRice panel confirmation
+
+**VISIBLE CLAIM:** offer/lp IDs per market  
+**REQUIRED DOCUMENT:** AdRice panel screenshot that IDs are active  
+**CURRENT STATUS:** Code VERIFIED (ES 3137/3171, PL 3141/3175, GR 1842/1862, CF PL/CZ/SK)
+
+---
+
+## noindex on ad landings
+
+**DECISION NEEDED:** Confirm intentional for paid-only destinations  
+**CURRENT STATUS:** Present on all 7 landings; AdsBot HTTP 200 VERIFIED

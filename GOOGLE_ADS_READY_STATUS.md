@@ -1,18 +1,18 @@
 # GOOGLE_ADS_READY_STATUS.md
 
-Updated: 2026-09-08 (post conservative compliance pass)
+Updated: 2026-09-08 (final pass)
+
+---
 
 ## ES CoreSync — `/es/smartwatch/landing.html`
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- Removed unverified -50%, old price, HOY urgency
-- Removed +4100 buyer counts and verified badges
-- Shipping aligned to policy (24–48 h laborables tras confirmación)
-- AdRice 3137/3171, consent, anti-double-submit verified
+**BLOCKERS:** None (technical)
 
-**Remaining (OWNER):** Technical specs (10 días, 5ATM) if Google requests substantiation — not blocking HTTP/forms/consent.
+**OWNER EVIDENCE:** Specs 10 días / 5ATM if Google requests substantiation
+
+**LEGAL:** HK entity + EU consumer (see `LEGAL_REVIEW_REQUIRED.md`)
 
 ---
 
@@ -20,13 +20,11 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- H1 and specs fully Polish (no Spanish)
-- PLN terms corrected
-- Same conservative promo/review removals as ES
-- AdRice 3141/3175 verified
+**BLOCKERS:** None (technical)
 
-**Remaining (OWNER):** Product spec documentation if challenged.
+**VERIFIED:** H1/specs 100% PL; Terms PLN; offer 3141/lp 3175; shipping aligned
+
+**OWNER EVIDENCE:** Product datasheet if challenged
 
 ---
 
@@ -34,10 +32,9 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- HTTP 200 stable (502 not reproduced)
-- Promo/review conservative cleanup
-- AdRice 1842/1862 verified
+**BLOCKERS:** None (technical)
+
+**VERIFIED:** HTTP 10/10 × 200 (502 NOT_REPRODUCIBLE); offer 1842/lp 1862
 
 ---
 
@@ -45,10 +42,9 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- Country picker ES / PL / GR (no forced ES-only)
-- Removed Zero risk, 50% claims, verified review counts
-- Shipping wording moderated
+**BLOCKERS:** None (technical)
+
+**VERIFIED:** ES/PL/GR market picker; no Zero risk / fake counts
 
 ---
 
@@ -56,14 +52,9 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- 30-day returns consistent
-- PLN pricing only (no fake discount)
-- Removed 3200 counts / verified
-- Softened absolute cold-handle claim
-- Shipping aligned to policy
+**BLOCKERS:** None (technical)
 
-**Remaining (OWNER):** Material/pack substantiation if Google asks.
+**VERIFIED:** PLN; 30 dni; thank-you gtag PLN; offer 3179/3213
 
 ---
 
@@ -71,9 +62,9 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- CZK terms + landing currency aligned
-- Promo/review cleanup, 30-day returns
+**BLOCKERS:** None (technical)
+
+**VERIFIED:** CZK terms + thank-you; 30 dní; offer 3251/3285
 
 ---
 
@@ -81,19 +72,14 @@ Updated: 2026-09-08 (post conservative compliance pass)
 
 **STATUS:** TECHNICALLY READY FOR GOOGLE ADS REVIEW
 
-**Fixes applied:**
-- EUR pricing consistent
-- Promo/review cleanup, 30-day returns
+**BLOCKERS:** None (technical)
+
+**VERIFIED:** EUR consistent; 30 dní; offer 3702/3742
 
 ---
 
-## LEGAL REVIEW REQUIRED (non-blocking for technical deploy)
+## Note
 
-- HK entity + EU consumer policies jurisdiction
-- GDPR international transfers wording
+`noindex,nofollow` on ad landings — owner decision (AdsBot access VERIFIED).
 
----
-
-## Note on `noindex`
-
-All ad landings use `noindex,nofollow` — intentional for paid traffic; AdsBot access verified (HTTP 200).
+La página está técnicamente preparada para solicitar revisión. La decisión definitiva corresponde a Google Ads.

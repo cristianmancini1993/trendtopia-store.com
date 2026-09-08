@@ -18,6 +18,7 @@ ok("PL specs sin Seguimiento/Incluye", "Seguimiento" not in pl and "Incluye:" no
 ok("PL sw js-v2=1", pl.count("forms/html/js-v2/") == 1)
 ok("PL sw anti-submit", "form.dataset.submitting" in pl)
 ok("PL sw medical disclaimer", "nie jest wyrobem medycznym" in pl)
+ok("PL sw package shipping aligned", "roboczych po potwierdzeniu telefonicznym" in pl and pl.count("roboczych po potwierdzeniu telefonicznym") >= 2)
 
 for geo in ("pl", "cz", "sk"):
     t = (ROOT / f"{geo}/casa-fuego/landing.html").read_text(encoding="utf-8")
@@ -32,8 +33,14 @@ for geo in ("pl", "cz", "sk"):
 czt = (ROOT / "cz/terms-conditions.html").read_text(encoding="utf-8")
 ok("CZ terms korun", "korun" in czt.lower() and "eurech" not in czt.lower())
 
+plt = (ROOT / "pl/terms-conditions.html").read_text(encoding="utf-8")
+ok("PL terms PLN", "PLN" in plt and "złotych polskich" in plt.lower())
+
 ty = (ROOT / "cz/casa-fuego/thank-you.html").read_text(encoding="utf-8")
 ok("CZ TY currency CZK", "'currency': 'CZK'" in ty)
+
+plty = (ROOT / "pl/casa-fuego/thank-you.html").read_text(encoding="utf-8")
+ok("PL CF TY currency PLN", "'currency': 'PLN'" in plty)
 
 for geo, offer, lp in (
     ("es", "3137", "3171"),
@@ -55,7 +62,8 @@ for r in (
     "AUDIT_REPORT_GOOGLE_ADS.md",
     "OWNER_EVIDENCE_REQUIRED.md",
     "TECHNICAL_TEST_RESULTS.md",
-    "TODO_BEFORE_GOOGLE_ADS_REVIEW.md",
+    "GOOGLE_ADS_READY_STATUS.md",
+    "LEGAL_REVIEW_REQUIRED.md",
 ):
     ok(f"report {r}", (ROOT / r).is_file())
 

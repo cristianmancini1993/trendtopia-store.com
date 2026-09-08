@@ -1,145 +1,111 @@
 # TECHNICAL_TEST_RESULTS.md
 
-Updated: 2026-09-08 (final regression pass)
+Updated: 2026-09-08 (final pass)
 
-## Local verification
+---
 
-| Check | Result |
+## ES CoreSync — `https://trendtopia-store.com/es/smartwatch/landing.html`
+
+| Field | Result |
 |-------|--------|
-| `scripts/_audit_7urls.py` | 0 CURSOR issues (6 USUARIO: intentional `noindex`) |
-| `scripts/_verify_audit_fixes.py` | 36/36 PASS |
-| PL Spanish leak (`Seguimiento`, `Incluye`, etc.) | 0 matches |
-| PL terms currency | PLN ✓ |
-| CZ terms currency | Kč ✓ |
-| Smartwatch fake discount / 4100 / HOY (local) | Removed ✓ |
-| Casa Fuego fake discount / 3200 / verified (local) | Removed ✓ |
-| Home Zero risk / 50% / verified counts | Removed ✓ |
+| HTTP | 200 — **VERIFIED** |
+| Final URL | Same — **VERIFIED** |
+| Redirects | None — **VERIFIED** |
+| Browser | NOT_VERIFIED |
+| Mobile | NOT_VERIFIED |
+| Console | NOT_VERIFIED |
+| Network | No 5xx on main document — **VERIFIED** |
+| Form | POST AdRice; offer=3137, lp=3171 — **VERIFIED** |
+| Double submit | `dataset.submitting` — **VERIFIED** (code) |
+| Consent Mode | default before gtag — **VERIFIED** (code) |
+| Cookies runtime | NOT_VERIFIED |
+| Tracking | js-v2 ×1 — **VERIFIED** |
+| SEO | lang=es, canonical self — **VERIFIED** |
+| Legal links | `/es/*` footer — **VERIFIED** |
+| Responsive | NOT_VERIFIED |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## HTTP (AdsBot-Google-Mobile) — production
+## PL CoreSync — `https://trendtopia-store.com/pl/smartwatch/landing.html`
 
-| URL | HTTP | Redirect | Final URL | Result |
-|-----|------|----------|-----------|--------|
-| `/es/smartwatch/landing.html` | 200 | none | same | PASS |
-| `/pl/smartwatch/landing.html` | 200 | none | same | PASS |
-| `/gr/smartwatch/landing.html` | 200 | none | same | PASS |
-| `/` | 200 | none | same | PASS |
-| `/pl/casa-fuego/landing.html` | 200 | none | same | PASS |
-| `/cz/casa-fuego/landing.html` | 200 | none | same | PASS |
-| `/sk/casa-fuego/landing.html` | 200 | none | same | PASS |
-
-**GR stability:** 5/5 consecutive requests → 200 (502 NOT REPRODUCIBLE)
+| Field | Result |
+|-------|--------|
+| HTTP | 200 — **VERIFIED** |
+| i18n | No Spanish leak — **VERIFIED** |
+| Terms PLN | PLN in terms — **VERIFIED** |
+| Form | offer=3141, lp=3175 — **VERIFIED** |
+| Shipping | Hero + package aligned — **VERIFIED** |
+| Consent / Form / Tracking | Same as ES — **VERIFIED** (code) |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## Content checks (production, post-conservative pass)
+## GR CoreSync — `https://trendtopia-store.com/gr/smartwatch/landing.html`
 
-| URL | Promo/urgency | i18n | Currency | Notes |
-|-----|---------------|------|----------|-------|
-| ES CoreSync | PASS (no 98€/4100/HOY) | ES ✓ | EUR 49 € | offer 3137 / lp 3171 |
-| PL CoreSync | PASS | PL ✓ (no Spanish) | 199 zł only | offer 3141 / lp 3175 |
-| GR CoreSync | PASS | EL ✓ | EUR | offer 1842 / lp 1862 |
-| Home | PASS | EN ✓ | — | ES/PL/GR picker present |
-| PL Casa Fuego | PASS | PL ✓ | PLN | 30 dni, offer 3179/3213 |
-| CZ Casa Fuego | PASS | CS ✓ | Kč | 30 dní, offer 3251/3285 |
-| SK Casa Fuego | PASS | SK ✓ | EUR | 30 dní, offer 3702/3742 |
+| Field | Result |
+|-------|--------|
+| HTTP | 10/10 × 200 AdsBot — **VERIFIED** |
+| 502 historical | NOT_REPRODUCIBLE |
+| Form | offer=1842, lp=1862 — **VERIFIED** |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## Per-URL detail
+## Home — `https://trendtopia-store.com/`
 
-### ES CoreSync — `/es/smartwatch/landing.html`
-
-- **HTTP:** 200
-- **Final URL:** `https://trendtopia-store.com/es/smartwatch/landing.html`
-- **Browser:** Not automated (static + HTTP only)
-- **Mobile:** Not automated
-- **Console:** NOT VERIFIED (no browser automation)
-- **Network:** Essential assets load over HTTPS; no 5xx observed
-- **Form:** POST AdRice; offer=3137, lp=3171; anti-double-submit present
-- **Consent:** `consent-default.js` before gtag — PASS (code)
-- **Cookies:** NOT VERIFIED runtime (accept/reject/persist)
-- **SEO:** lang=es, canonical `/es/smartwatch/landing.html`, noindex intentional
-- **Responsive:** NOT VERIFIED (manual viewports)
-- **Legal links:** Footer links to `/es/*` policies — present
-- **Result:** TECHNICALLY READY
-
-### PL CoreSync — `/pl/smartwatch/landing.html`
-
-- **HTTP:** 200
-- **Form:** offer=3141, lp=3175
-- **i18n:** H1 and specs fully Polish — VERIFIED
-- **Terms:** PLN in `pl/terms-conditions.html` — VERIFIED
-- **Result:** TECHNICALLY READY
-
-### GR CoreSync — `/gr/smartwatch/landing.html`
-
-- **HTTP:** 200 × 5 stable
-- **Form:** offer=1842, lp=1862
-- **Result:** TECHNICALLY READY
-
-### Home — `/`
-
-- **HTTP:** 200
-- **Routing:** Country picker ES / PL / GR — no forced ES-only CTA
-- **Claims:** Zero risk, 50% off, verified counts removed
-- **Result:** TECHNICALLY READY
-
-### PL Casa Fuego — `/pl/casa-fuego/landing.html`
-
-- **HTTP:** 200
-- **Returns:** 30 dni consistent with policy
-- **Form:** offer=3179, lp=3213; js-v2 ×1; anti-submit
-- **Result:** TECHNICALLY READY
-
-### CZ Casa Fuego — `/cz/casa-fuego/landing.html`
-
-- **HTTP:** 200
-- **Terms:** Kč in `cz/terms-conditions.html`
-- **Thank-you:** gtag currency CZK
-- **Result:** TECHNICALLY READY
-
-### SK Casa Fuego — `/sk/casa-fuego/landing.html`
-
-- **HTTP:** 200
-- **Currency:** EUR consistent
-- **Result:** TECHNICALLY READY
+| Field | Result |
+|-------|--------|
+| HTTP | 200 — **VERIFIED** |
+| Routing | ES/PL/GR picker; `#coresSync-markets` — **VERIFIED** |
+| Aggressive claims | Removed — **VERIFIED** |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## Consent Mode v2 (code order)
+## PL Casa Fuego — `https://trendtopia-store.com/pl/casa-fuego/landing.html`
 
-| Step | Status |
-|------|--------|
-| dataLayer created | PASS |
-| gtag defined | PASS |
-| consent default (denied) before tags | PASS |
-| ad_storage / analytics_storage / ad_user_data / ad_personalization | Present in consent-default.js |
-
-**Runtime banner test:** NOT VERIFIED
-
----
-
-## robots.txt
-
-- Does not block AdsBot or landing paths — PASS (static review)
+| Field | Result |
+|-------|--------|
+| HTTP | 200 — **VERIFIED** |
+| Returns | 30 dni — **VERIFIED** |
+| Currency | PLN; TY gtag PLN — **VERIFIED** |
+| Form | offer=3179, lp=3213 — **VERIFIED** |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## Tests executed
+## CZ Casa Fuego — `https://trendtopia-store.com/cz/casa-fuego/landing.html`
 
-1. `scripts/_audit_7urls.py`
-2. `scripts/_verify_audit_fixes.py`
-3. `scripts/_prod_check_7urls.py` (production HTTP + content)
-4. GR 5× HTTP stability
-5. grep regression: PL Spanish strings, EUR in PL/CZ terms, promo remnants
+| Field | Result |
+|-------|--------|
+| HTTP | 200 — **VERIFIED** |
+| Terms / TY | Kč / CZK — **VERIFIED** |
+| Returns | 30 dní — **VERIFIED** |
+| **Result** | **TECHNICALLY READY** |
 
 ---
 
-## Limitations (external)
+## SK Casa Fuego — `https://trendtopia-store.com/sk/casa-fuego/landing.html`
 
-- No Playwright/Cypress in repo
-- Consent accept/reject/persistence not browser-tested
-- Responsive viewports not manually tested in this pass
-- AdsBot HTML vs browser HTML not diffed byte-for-byte
+| Field | Result |
+|-------|--------|
+| HTTP | 200 — **VERIFIED** |
+| Currency | EUR — **VERIFIED** |
+| Returns | 30 dní — **VERIFIED** |
+| **Result** | **TECHNICALLY READY** |
+
+---
+
+## Automated tests executed
+
+1. `scripts/_audit_7urls.py` — 0 CURSOR
+2. `scripts/_verify_audit_fixes.py` — 40/40 PASS
+3. `scripts/_prod_check_7urls.py` — 7/7 PASS
+4. GR HTTP × 10 stability
+
+## Tests NOT POSSIBLE
+
+- Consent banner accept/reject/persist (no browser automation)
+- Responsive viewports manual
+- Live form POST (no real orders)
