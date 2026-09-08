@@ -2,12 +2,14 @@
 <html lang="pl">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -21,13 +23,18 @@
 <meta property="og:url" content="https://trendtopia-store.com/pl/casa-fuego/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/casa-fuego/hero.webp">
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'pl',
   PRODUCT_SLUG: 'casa-fuego',
   COOKIE_TEXT: 'Używamy plików cookie, aby ulepszać działanie strony i analizować ruch.',
   COOKIE_ACCEPT: 'Akceptuję',
+  COOKIE_ACCEPT_ALL: 'Akceptuj wszystko',
+  COOKIE_REJECT: 'Odrzuć nieistotne',
+  COOKIE_MANAGE: 'Zarządzaj preferencjami',
+  COOKIE_SAVE: 'Zapisz preferencje',
+  COOKIE_CHANGE: 'Zmień ustawienia plików cookie',
   COOKIE_LEARN: 'Dowiedz się więcej'
-};
+});
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -96,7 +103,7 @@ window.SITE_CONFIG = {
 .cf-stars .num{font-weight:700}
 .cf-stars .rev{color:var(--cf-gray);font-size:13px}
 
-/* ---------- LISTA DE VENTAJAS ---------- */
+/* ---------- LISTA ZALET ---------- */
 .cf-feats{max-width:620px;margin:22px auto;list-style:none}
 .cf-feats li{
   display:flex;gap:12px;align-items:flex-start;
@@ -106,7 +113,7 @@ window.SITE_CONFIG = {
 .cf-feats li::before{content:"✓";color:var(--cf-orange);font-weight:800;font-size:17px;flex:0 0 auto}
 .cf-feats li strong{color:var(--cf-dark)}
 
-/* ---------- CAJA DE PRECIO ---------- */
+/* ---------- SEKCJA CENY ---------- */
 .cf-price-box{
   background:linear-gradient(180deg,#ffffff,var(--cf-light));
   border:2px solid var(--cf-orange);border-radius:18px;
@@ -155,6 +162,7 @@ window.SITE_CONFIG = {
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
 .cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
 .cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
 .cf-form input.is-invalid{border-color:var(--cf-red)}
@@ -300,6 +308,14 @@ window.SITE_CONFIG = {
   margin-top:8px;
   line-height:1.7;
 }
+.cf-lp .site-footer__list .site-footer__link-btn{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
+  text-align:left;
+}
+.cf-lp .site-footer__list .site-footer__link-btn:focus-visible{
+  outline:2px solid var(--cf-orange);outline-offset:2px;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -333,7 +349,6 @@ window.SITE_CONFIG = {
 <li><span><strong>12 pasujących elementów:</strong> patelnia, garnki, pokrywki i akcesoria — wszystko, czego potrzebujesz.</span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">OFERTA WAŻNA TYLKO DO WYCZERPANIA ZAPASÓW!</div>
 <span class="disc">-50%</span>
 <div class="cf-price"><span class="now">399,00 zł</span><span class="old">798,00 zł</span></div>
 <div class="cf-save-line">Dziś oszczędzasz 399,00 zł</div>
@@ -342,15 +357,17 @@ window.SITE_CONFIG = {
 <span>🚚 Dostawa w ciągu 24–48 godzin</span>
 <span>💶 Płatność przy odbiorze</span>
 <span>🛡️ 24 miesiące gwarancji</span>
-<span>↩️ 14 dni na zwrot</span>
+<span>↩️ Zwrot do 30 dni</span>
 </div>
 </div>
 </div>
 </section>
 
+<p class="cf-sold-by">Sprzedawane przez trendtopia-store.com</p>
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Podaj dane i zamów Casa Fuego</h2>
+<p class="cf-form-privacy">Wysyłając formularz, wyrażasz zgodę na przetwarzanie danych w celu obsługi zamówienia. Zobacz <a href="/pl/privacy-policy.html">Politykę prywatności</a>.</p>
 <p class="sub">Zamów dziś i <strong>wygodnie zapłać przy odbiorze.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Imię i nazwisko*</label>
@@ -368,7 +385,6 @@ window.SITE_CONFIG = {
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Zamów teraz</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -500,16 +516,12 @@ window.SITE_CONFIG = {
 <div class="cf-package">
 <h3>🎁 Wszystko w zestawie Casa Fuego™</h3>
 <ul>
-<li>✅ <strong>1× Patelnia nieprzywierająca Ø22 cm</strong></li>
-<li>✅ <strong>1× Garnek Ø18 cm ze szklaną pokrywką</strong></li>
-<li>✅ <strong>1× Garnek Ø22 cm ze szklaną pokrywką</strong></li>
-<li>✅ <strong>1× Garnek Ø16 cm z pokrywką</strong></li>
-<li>✅ <strong>6× Akcesoria kuchenne + tarka 3 w 1</strong></li>
-<li>📘 Instrukcja użytkowania i pielęgnacji</li>
-<li>🚚 Szybka dostawa w ciągu 24–48 godzin</li>
+<li>✅ <strong>1× Zestaw kuchenny Casa Fuego 12 elementów</strong></li>
+<li>📘 Instrukcja obsługi w zestawie</li>
+<li>🚚 Szybka dostawa 24–48 h</li>
 <li>💳 Płatność przy odbiorze</li>
-<li>🔄 14 dni na zwrot</li>
-<li>🛡️ Oficjalna 24-miesięczna gwarancja</li>
+<li>🔄 Masz do 30 dni na zwrot produktu.</li>
+<li>🛡️ Gwarancja 24 miesiące</li>
 </ul>
 <div class="pkg-price">399,00 zł <span class="old">798,00 zł</span><span class="off">-50%</span></div>
 </div>
@@ -535,7 +547,6 @@ window.SITE_CONFIG = {
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Zamów teraz</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -594,6 +605,7 @@ window.SITE_CONFIG = {
         <li><a href="/pl/privacy-policy.html">Polityka prywatności</a></li>
         <li><a href="/pl/terms-conditions.html">Regulamin</a></li>
         <li><a href="/pl/cookie-policy.html">Polityka cookies</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Zmień ustawienia plików cookie</button></li>
         <li><a href="/pl/shipping-policy.html">Polityka wysyłki</a></li>
         <li><a href="/pl/refund-policy.html">Polityka zwrotów</a></li>
       </ul>
@@ -697,6 +709,12 @@ window.SITE_CONFIG = {
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
       var result = validateForm(form);
 
       if (!result.valid) {
@@ -707,9 +725,11 @@ window.SITE_CONFIG = {
         return;
       }
 
+      form.dataset.submitting = 'true';
       live.textContent = '';
       var btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.textContent.indexOf(MSGS.submitting) === -1) {
+      if (btn) {
+        btn.disabled = true;
         btn.dataset.originalText = btn.textContent;
         btn.textContent = MSGS.submitting;
       }
@@ -717,8 +737,19 @@ window.SITE_CONFIG = {
   }
 
   document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.querySelectorAll('.site-footer .tt-cookie-change-link').forEach(function (btn) {
+    if (btn.dataset.cookiePrefsBound === '1') return;
+    btn.dataset.cookiePrefsBound = '1';
+    btn.addEventListener('click', function () {
+      if (typeof window.ttOpenCookiePreferences === 'function') {
+        window.ttOpenCookiePreferences();
+      }
+    });
+  });
 })();
 </script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 
 </body>
 </html>

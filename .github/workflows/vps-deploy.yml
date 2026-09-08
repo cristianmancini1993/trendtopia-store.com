@@ -8,6 +8,10 @@ on:
       - "es/**"
       - "pl/smartwatch/**"
       - "gr/smartwatch/**"
+      - "pl/casa-fuego/**"
+      - "cz/casa-fuego/**"
+      - "sk/casa-fuego/**"
+      - "cz/terms-conditions.html"
       - "*/refund-policy.html"
       - "assets/**"
       - ".github/workflows/vps-deploy.yml"
@@ -26,7 +30,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_SSH_PASSWORD }}
-          source: "index.html,es,pl/smartwatch,gr/smartwatch,assets/js/consent-default.js,assets/js/main.js,assets/js/tracking.js,assets/css/components.css,bg/refund-policy.html,cz/refund-policy.html,de/refund-policy.html,ee/refund-policy.html,en/refund-policy.html,es/refund-policy.html,fr/refund-policy.html,gr/refund-policy.html,hr/refund-policy.html,hu/refund-policy.html,it/refund-policy.html,lt/refund-policy.html,lv/refund-policy.html,pl/refund-policy.html,pt/refund-policy.html,ro/refund-policy.html,si/refund-policy.html,sk/refund-policy.html"
+          source: "index.html,es,pl/smartwatch,gr/smartwatch,pl/casa-fuego,cz/casa-fuego,sk/casa-fuego,cz/terms-conditions.html,assets/js/consent-default.js,assets/js/main.js,assets/js/tracking.js,assets/css/components.css,bg/refund-policy.html,cz/refund-policy.html,de/refund-policy.html,ee/refund-policy.html,en/refund-policy.html,es/refund-policy.html,fr/refund-policy.html,gr/refund-policy.html,hr/refund-policy.html,hu/refund-policy.html,it/refund-policy.html,lt/refund-policy.html,lv/refund-policy.html,pl/refund-policy.html,pt/refund-policy.html,ro/refund-policy.html,si/refund-policy.html,sk/refund-policy.html"
           target: "/tmp/tt-deploy-audit"
           strip_components: 0
 
@@ -42,11 +46,15 @@ jobs:
             updated=0
             for base in /var/www/trendtopia-store.com /var/www/adclickmobile.com /var/www/html /root/trendtopia-store.com; do
               if [ -d "$base" ]; then
-                mkdir -p "$base/es" "$base/pl/smartwatch" "$base/gr/smartwatch" "$base/assets/js" "$base/assets/css"
+                mkdir -p "$base/es" "$base/pl/smartwatch" "$base/gr/smartwatch" "$base/pl/casa-fuego" "$base/cz/casa-fuego" "$base/sk/casa-fuego" "$base/cz" "$base/assets/js" "$base/assets/css"
                 cp -f /tmp/tt-deploy-audit/index.html "$base/index.html"
                 rsync -a /tmp/tt-deploy-audit/es/ "$base/es/"
                 rsync -a /tmp/tt-deploy-audit/pl/smartwatch/ "$base/pl/smartwatch/"
                 rsync -a /tmp/tt-deploy-audit/gr/smartwatch/ "$base/gr/smartwatch/"
+                rsync -a /tmp/tt-deploy-audit/pl/casa-fuego/ "$base/pl/casa-fuego/"
+                rsync -a /tmp/tt-deploy-audit/cz/casa-fuego/ "$base/cz/casa-fuego/"
+                rsync -a /tmp/tt-deploy-audit/sk/casa-fuego/ "$base/sk/casa-fuego/"
+                cp -f /tmp/tt-deploy-audit/cz/terms-conditions.html "$base/cz/terms-conditions.html" 2>/dev/null || true
                 cp -f /tmp/tt-deploy-audit/assets/js/consent-default.js "$base/assets/js/" 2>/dev/null || true
                 cp -f /tmp/tt-deploy-audit/assets/js/main.js "$base/assets/js/" 2>/dev/null || true
                 cp -f /tmp/tt-deploy-audit/assets/js/tracking.js "$base/assets/js/" 2>/dev/null || true
@@ -66,11 +74,15 @@ jobs:
             fi
             root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')
             if [ -n "$root" ] && [ -d "$root" ]; then
-              mkdir -p "$root/es" "$root/pl/smartwatch" "$root/gr/smartwatch" "$root/assets/js" "$root/assets/css"
+              mkdir -p "$root/es" "$root/pl/smartwatch" "$root/gr/smartwatch" "$root/pl/casa-fuego" "$root/cz/casa-fuego" "$root/sk/casa-fuego" "$root/cz" "$root/assets/js" "$root/assets/css"
               cp -f /tmp/tt-deploy-audit/index.html "$root/index.html"
               rsync -a /tmp/tt-deploy-audit/es/ "$root/es/"
               rsync -a /tmp/tt-deploy-audit/pl/smartwatch/ "$root/pl/smartwatch/"
               rsync -a /tmp/tt-deploy-audit/gr/smartwatch/ "$root/gr/smartwatch/"
+              rsync -a /tmp/tt-deploy-audit/pl/casa-fuego/ "$root/pl/casa-fuego/"
+              rsync -a /tmp/tt-deploy-audit/cz/casa-fuego/ "$root/cz/casa-fuego/"
+              rsync -a /tmp/tt-deploy-audit/sk/casa-fuego/ "$root/sk/casa-fuego/"
+              cp -f /tmp/tt-deploy-audit/cz/terms-conditions.html "$root/cz/terms-conditions.html" 2>/dev/null || true
               cp -f /tmp/tt-deploy-audit/assets/js/consent-default.js "$root/assets/js/" 2>/dev/null || true
               cp -f /tmp/tt-deploy-audit/assets/js/main.js "$root/assets/js/" 2>/dev/null || true
               cp -f /tmp/tt-deploy-audit/assets/js/tracking.js "$root/assets/js/" 2>/dev/null || true

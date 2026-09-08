@@ -2,12 +2,14 @@
 <html lang="cs">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -21,13 +23,18 @@
 <meta property="og:url" content="https://trendtopia-store.com/cz/casa-fuego/landing.html">
 <meta property="og:image" content="https://trendtopia-store.com/assets/img/products/casa-fuego/hero.webp">
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'cz',
   PRODUCT_SLUG: 'casa-fuego',
-  COOKIE_TEXT: 'Používáme soubory cookie ke zlepšení vašeho uživatelského prostředí a pro analytické účely.',
+  COOKIE_TEXT: 'Používáme technické soubory cookie a soubory cookie třetích stran pro zlepšení vašeho zážitku a analytiku.',
   COOKIE_ACCEPT: 'Přijmout',
+  COOKIE_ACCEPT_ALL: 'Přijmout vše',
+  COOKIE_REJECT: 'Odmítnout nepodstatné',
+  COOKIE_MANAGE: 'Spravovat preference',
+  COOKIE_SAVE: 'Uložit preference',
+  COOKIE_CHANGE: 'Změnit nastavení souborů cookie',
   COOKIE_LEARN: 'Více informací'
-};
+});
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -155,6 +162,7 @@ window.SITE_CONFIG = {
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
 .cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
 .cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
 .cf-form input.is-invalid{border-color:var(--cf-red)}
@@ -300,6 +308,14 @@ window.SITE_CONFIG = {
   margin-top:8px;
   line-height:1.7;
 }
+.cf-lp .site-footer__list .site-footer__link-btn{
+  background:none;border:none;padding:0;margin:0;
+  font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
+  text-align:left;
+}
+.cf-lp .site-footer__list .site-footer__link-btn:focus-visible{
+  outline:2px solid var(--cf-orange);outline-offset:2px;
+}
 @media (min-width:768px){
   .cf-lp .site-footer{padding:72px 0 48px}
   .cf-lp .site-footer__grid{gap:48px}
@@ -333,7 +349,6 @@ window.SITE_CONFIG = {
 <li><span><strong>12 sladěných dílů:</strong> pánev, hrnce, víčka a náčiní — vše potřebné, nic navíc.</span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">NABÍDKA PLATÍ POUZE DO VYČERPÁNÍ ZÁSOB!</div>
 <span class="disc">-50 %</span>
 <div class="cf-price"><span class="now">1 999 Kč</span><span class="old">3 998 Kč</span></div>
 <div class="cf-save-line">Dnes ušetříte 1 999 Kč</div>
@@ -342,15 +357,17 @@ window.SITE_CONFIG = {
 <span>🚚 Doručení do 24–48 hodin</span>
 <span>💶 Platba na dobírku</span>
 <span>🛡️ 24měsíční záruka</span>
-<span>↩️ 14denní právo na vrácení</span>
+<span>↩️ Vrácení do 30 dnů</span>
 </div>
 </div>
 </div>
 </section>
 
+<p class="cf-sold-by">Prodává trendtopia-store.com</p>
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Zadejte údaje a objednejte Casa Fuego</h2>
+<p class="cf-form-privacy">Odesláním formuláře souhlasíte se zpracováním údajů za účelem vyřízení objednávky. Viz <a href="/cz/privacy-policy.html">Zásady ochrany osobních údajů</a>.</p>
 <p class="sub">Objednejte dnes a <strong>pohodlně plaťte na dobírku.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
 <label class="cf-lbl" for="name">Jméno a příjmení*</label>
@@ -368,7 +385,6 @@ window.SITE_CONFIG = {
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Objednat nyní</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -508,8 +524,8 @@ window.SITE_CONFIG = {
 <li>📘 Návod k použití a údržbě v balení</li>
 <li>🚚 Rychlé doručení do 24–48 hodin</li>
 <li>💳 Platba na dobírku</li>
-<li>🔄 14denní právo na vrácení</li>
-<li>🛡️ Oficiální 24měsíční záruka</li>
+<li>🔄 Na vrácení zboží máte až 30 dní.</li>
+<li>🛡️ Záruka 24 měsíců</li>
 </ul>
 <div class="pkg-price">1 999 Kč <span class="old">3 998 Kč</span><span class="off">-50 %</span></div>
 </div>
@@ -535,7 +551,6 @@ window.SITE_CONFIG = {
 <div style="margin-top: 10px; text-align: center">
 <button name="submit" type="submit">Objednat nyní</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -594,6 +609,7 @@ window.SITE_CONFIG = {
         <li><a href="/cz/privacy-policy.html">Zásady ochrany osobních údajů</a></li>
         <li><a href="/cz/terms-conditions.html">Smluvní podmínky</a></li>
         <li><a href="/cz/cookie-policy.html">Zásady používání souborů cookie</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Změnit nastavení souborů cookie</button></li>
         <li><a href="/cz/shipping-policy.html">Zásady dopravy</a></li>
         <li><a href="/cz/refund-policy.html">Zásady vrácení peněz</a></li>
       </ul>
@@ -697,6 +713,12 @@ window.SITE_CONFIG = {
     });
 
     form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
       var result = validateForm(form);
 
       if (!result.valid) {
@@ -707,9 +729,11 @@ window.SITE_CONFIG = {
         return;
       }
 
+      form.dataset.submitting = 'true';
       live.textContent = '';
       var btn = form.querySelector('button[type="submit"]');
-      if (btn && btn.textContent.indexOf(MSGS.submitting) === -1) {
+      if (btn) {
+        btn.disabled = true;
         btn.dataset.originalText = btn.textContent;
         btn.textContent = MSGS.submitting;
       }
@@ -717,8 +741,19 @@ window.SITE_CONFIG = {
   }
 
   document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.querySelectorAll('.site-footer .tt-cookie-change-link').forEach(function (btn) {
+    if (btn.dataset.cookiePrefsBound === '1') return;
+    btn.dataset.cookiePrefsBound = '1';
+    btn.addEventListener('click', function () {
+      if (typeof window.ttOpenCookiePreferences === 'function') {
+        window.ttOpenCookiePreferences();
+      }
+    });
+  });
 })();
 </script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 
 </body>
 </html>
