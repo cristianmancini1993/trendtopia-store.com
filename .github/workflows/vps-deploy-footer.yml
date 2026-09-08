@@ -1,0 +1,76 @@
+name: Deploy footer to VPS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "pl/casa-fuego/**"
+      - "cz/casa-fuego/**"
+      - "sk/casa-fuego/**"
+      - "assets/css/components.css"
+      - ".github/workflows/vps-deploy-footer.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy-footer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload footer files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_SSH_PASSWORD }}
+          source: "index.html,pl/casa-fuego,cz/casa-fuego,sk/casa-fuego,assets/css/components.css"
+          target: "/tmp/tt-deploy-footer"
+          strip_components: 0
+          timeout: 300s
+          command_timeout: 10m
+          overwrite: true
+
+      - name: Install footer on web roots
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_SSH_PASSWORD }}
+          script_stop: true
+          script: |
+            set -e
+            updated=0
+            install_footer() {
+              local base="$1"
+              [ -d "$base" ] || return 0
+              if [ -f /tmp/tt-deploy-footer/index.html ]; then
+                cp -f /tmp/tt-deploy-footer/index.html "$base/index.html"
+              fi
+              mkdir -p "$base/assets/css"
+              if [ -f /tmp/tt-deploy-footer/assets/css/components.css ]; then
+                cp -f /tmp/tt-deploy-footer/assets/css/components.css "$base/assets/css/components.css"
+              fi
+              for geo in pl/casa-fuego cz/casa-fuego sk/casa-fuego; do
+                if [ -d "/tmp/tt-deploy-footer/$geo" ]; then
+                  mkdir -p "$base/$(dirname "$geo")"
+                  rsync -a "/tmp/tt-deploy-footer/$geo/" "$base/$geo/"
+                fi
+              done
+              echo "Updated footer at $base"
+              updated=1
+            }
+            for base in /var/www/trendtopia-store.com /var/www/adclickmobile.com /var/www/html /root/trendtopia-store.com; do
+              install_footer "$base"
+            done
+            if [ "$updated" -eq 1 ]; then
+              exit 0
+            fi
+            root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')
+            if [ -n "$root" ] && [ -d "$root" ]; then
+              install_footer "$root"
+              exit 0
+            fi
+            echo "Could not locate web root"
+            exit 1
