@@ -80,7 +80,9 @@ def audit_file(key: str, path: Path) -> None:
     if 'noindex' in t and key.endswith(("_sw", "_cf")):
         add(key, "USUARIO", "MEDIO", "Landing con noindex (puede ser intencional Ads)")
 
-    if key == "home" and "/es/smartwatch/landing.html" in t:
+    if key == "home" and "/es/smartwatch/landing.html" in t and "/pl/smartwatch/landing.html" in t:
+        pass  # international picker OK
+    elif key == "home" and "/es/smartwatch/landing.html" in t:
         add(key, "USUARIO", "MEDIO", "Home CTA apunta solo a ES smartwatch")
 
 

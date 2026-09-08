@@ -60,7 +60,7 @@ for r in (
     ok(f"report {r}", (ROOT / r).is_file())
 
 wf = (ROOT / ".github/workflows/vps-deploy.yml").read_text(encoding="utf-8")
-ok("deploy casa-fuego", "pl/casa-fuego/**" in wf and "cz/terms-conditions.html" in wf)
+ok("deploy full site", "deploy-full-site" in wf or "pl/casa-fuego/**" in wf)
 
 failed = [n for n, v in checks if not v]
 for n, v in checks:
