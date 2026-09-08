@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,27 +33,8 @@
   .contact-form textarea { width: 100%; padding: 0.75rem 1rem; border: 2px solid var(--color-border); border-radius: var(--radius); font-size: 1rem; font-family: inherit; min-height: 140px; resize: vertical; }
   .contact-form textarea:focus { outline: none; border-color: var(--color-primary); }
 </style>
-<script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use technical and third-party cookies.', COOKIE_ACCEPT: 'Accept', COOKIE_LEARN: 'Learn more' };</script>
+<script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
 <script src="/assets/js/main.js" defer></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const subject = encodeURIComponent('[trendtopia-store.com] Inquiry from ' + (data.get('name') || ''));
-    const body = encodeURIComponent(
-      'Name: ' + (data.get('name') || '') + '\n' +
-      'Email: ' + (data.get('email') || '') + '\n' +
-      'Phone: ' + (data.get('phone') || '') + '\n' +
-      'Order number: ' + (data.get('order') || '') + '\n\n' +
-      'Message:\n' + (data.get('message') || '')
-    );
-    window.location.href = 'mailto:info@trendtopia-store.com?subject=' + subject + '&body=' + body;
-  });
-});
-</script>
 </head>
 <body>
 
@@ -90,41 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
         <p>陶敬宾<br>RM 01, 15/F, Goldsland Building 22-26<br>Minden Avenue, Tsim Sha Tsui, KL<br>Tsim Sha Tsui<br>Kowloon<br>Hong Kong</p>
       </div>
 
-      <div class="contact-card">
-        <div class="contact-card__icon">💬</div>
-        <h3>Frequently asked questions</h3>
-        <p>Before reaching out, take a look at the FAQs — you might find an immediate answer:</p>
-        <p><a href="/en/hypertrimmer/landing.html#faq" style="color:var(--color-primary);text-decoration:underline">Go to FAQ →</a></p>
-      </div>
     </div>
 
-    <form class="contact-form" id="contact-form" novalidate>
-      <h2 style="text-align:center;margin-bottom:0.5rem">Send us a message</h2>
-      <p style="text-align:center;color:var(--color-text-muted);margin-bottom:1.5rem;font-size:0.875rem">Fill in the form and your email client will open with the message ready to send to info@trendtopia-store.com</p>
-
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="c-name">Full name *</label>
-        <input class="cod-form__input" type="text" id="c-name" name="name" required minlength="3">
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="c-email">Email *</label>
-        <input class="cod-form__input" type="email" id="c-email" name="email" required>
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="c-phone">Phone (optional)</label>
-        <input class="cod-form__input" type="tel" id="c-phone" name="phone">
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="c-order">Order number (if you've already purchased)</label>
-        <input class="cod-form__input" type="text" id="c-order" name="order">
-      </div>
-      <div class="cod-form__field">
-        <label class="cod-form__label" for="c-message">Your message *</label>
-        <textarea id="c-message" name="message" required></textarea>
-      </div>
-      <button type="submit" class="cta-button">Send message</button>
-      <p style="text-align:center;margin-top:1rem;font-size:0.875rem;color:var(--color-text-muted)">🔒 We handle your data according to our <a href="/en/privacy-policy.html" style="color:var(--color-primary)">Privacy Policy</a></p>
-    </form>
+    <p style="margin-top:2rem;text-align:center;font-size:1rem">To contact us, write to <a href="mailto:info@trendtopia-store.com" style="font-weight:700;color:var(--color-primary)">info@trendtopia-store.com</a>. Include your name, order number (if applicable) and your message. We do not collect personal data through this page URL.</p>
   </div>
 </main>
 

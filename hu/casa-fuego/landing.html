@@ -2,12 +2,14 @@
 <html lang="hu">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -312,7 +314,6 @@
 <li><span><strong>12 egymáshoz illő darab:</strong> serpenyő, lábasok, fazék, fedők és eszközök — minden, amire szükséged van, semmi felesleges.</span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">AZ AJÁNLAT CSAK A KÉSZLET EREJÉIG ÉRVÉNYES!</div>
 <span class="disc">-50%</span>
 <div class="cf-price"><span class="now">31.999 Ft</span><span class="old">63.998 Ft</span></div>
 <div class="cf-save-line">Ma 31.999 Ft-ot takarít meg</div>
@@ -327,9 +328,11 @@
 </div>
 </section>
 
+<p class="cf-sold-by">Értékesíti: trendtopia-store.com</p>
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Add meg adataidat, és rendeld meg a Casa Fuego-t</h2>
+<p class="cf-form-privacy">Az űrlap elküldésével hozzájárul adatai kezeléséhez a rendelés feldolgozásához. Lásd: <a href="/hu/privacy-policy.html">Adatvédelmi irányelvek</a>.</p>
 <p class="sub">Rendeld meg még ma, és <strong>fizess kényelmesen utánvéttel.</strong></p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
 <label class="cf-lbl" for="name">Keresztnév Vezetéknév*</label>

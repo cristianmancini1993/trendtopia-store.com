@@ -2,12 +2,14 @@
 <html lang="cs">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -318,7 +320,6 @@
 <li><span><strong>2 řemínky + 2 ochranné kryty</strong> vyměnitelné v balení.</span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">🔥 NABÍDKA PLATÍ DO VYPRODÁNÍ ZÁSOB</div>
 <span class="disc">-50% DNES</span>
 <div class="cf-price"><span class="now">1.499,00 Kč</span><span class="old">2.998,00 Kč</span></div>
 <div class="cf-save-line">Dnes ušetříte 1.499,00 Kč</div>
@@ -336,8 +337,8 @@
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Zadejte údaje a objednejte CoreSync</h2>
+<p class="cf-form-privacy">Odesláním formuláře souhlasíte se zpracováním údajů za účelem vyřízení objednávky. Viz <a href="/cz/privacy-policy.html">Zásady ochrany osobních údajů</a>.</p>
 <p class="sub">Objednejte dnes a <strong>pohodlně plaťte na dobírku.</strong></p>
-<p class="cf-form-urgency">⚠️ Zbývá jen pár kusů za tuto cenu.</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
 <label class="cf-lbl" for="name">Jméno a příjmení*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Jméno a příjmení" required><br>
@@ -420,6 +421,7 @@
 
 </div>
 <div class="cf-wrap">
+<p class="cf-medical-disclaimer">Tento produkt není zdravotnický prostředek a není určen k diagnostice, prevenci ani léčbě onemocnění.</p>
 <p class="cf-disclaimer">*Výsledky se mohou lišit podle použití a nastavení zařízení.</p>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">OBJEDNAT MŮJ CORESYNC</a></div>
 </div>

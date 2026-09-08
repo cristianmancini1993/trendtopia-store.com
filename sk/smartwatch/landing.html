@@ -2,12 +2,14 @@
 <html lang="sk">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -318,7 +320,6 @@
 <li><span><strong>2 remienky + 2 ochranné kryty</strong> vymeniteľné v balení.</span></li>
 </ul>
 <div class="cf-price-box">
-<div class="stock">🔥 PONUKA PLATÍ DO VYPREDANIA ZÁSOB</div>
 <span class="disc">-50% DNES</span>
 <div class="cf-price"><span class="now">99,00 €</span><span class="old">1198,00 €</span></div>
 <div class="cf-save-line">Dnes ušetríte 99,00 €</div>
@@ -336,8 +337,8 @@
 <section class="cf-form-sec" id="cf-formulario">
 <div class="cf-wrap">
 <h2>Zadajte údaje a objednajte CoreSync</h2>
+<p class="cf-form-privacy">Odoslaním formulára súhlasíte so spracovaním údajov na vybavenie objednávky. Pozrite <a href="/sk/privacy-policy.html">Zásady ochrany osobných údajov</a>.</p>
 <p class="sub">Objednajte dnes a <strong>pohodlne plaťte na dobierku.</strong></p>
-<p class="cf-form-urgency">⚠️ Zostáva len pár kusov za túto cenu.</p>
 <form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
 <label class="cf-lbl" for="name">Meno a priezvisko*</label>
 <input id="name" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required><br>
@@ -420,6 +421,7 @@
 
 </div>
 <div class="cf-wrap">
+<p class="cf-medical-disclaimer">Tento produkt nie je zdravotnícka pomôcka a nie je určený na diagnostiku, prevenciu ani liečbu ochorení.</p>
 <p class="cf-disclaimer">*Výsledky sa môžu líšiť podľa používania a nastavení zariadenia.</p>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">OBJEDNAŤ MÔJ CORESYNC</a></div>
 </div>

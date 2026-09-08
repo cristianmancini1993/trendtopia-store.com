@@ -3,13 +3,14 @@
 <html lang="pl">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -35,25 +36,6 @@
 </style>
 <script>window.SITE_CONFIG = { GEO: 'pl', COOKIE_TEXT: 'Używamy plików cookie technicznych i stron trzecich.', COOKIE_ACCEPT: 'Akceptuję', COOKIE_LEARN: 'Dowiedz się więcej' };</script>
 <script defer="" src="/assets/js/main.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const subject = encodeURIComponent('[trendtopia-store.com] Inquiry from ' + (data.get('name') || ''));
-    const body = encodeURIComponent(
-      'Name: ' + (data.get('name') || '') + '\n' +
-      'Email: ' + (data.get('email') || '') + '\n' +
-      'Phone: ' + (data.get('phone') || '') + '\n' +
-      'Order number: ' + (data.get('order') || '') + '\n\n' +
-      'Message:\n' + (data.get('message') || '')
-    );
-    window.location.href = 'mailto:info@trendtopia-store.com?subject=' + subject + '&body=' + body;
-  });
-});
-</script>
 </head>
 <body>
 <header class="site-header"><div class="site-header__inner">
@@ -83,41 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
 <div class="contact-card__icon">📍</div>
 <h3>Siedziba</h3>
 <p>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</p>
-<p>陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kongłochy</p>
-</div>
-<div class="contact-card">
-<div class="contact-card__icon">💬</div>
-<h3>Często zadawane pytania</h3>
-<p>Zanim się skontaktujesz, przejrzyj często zadawane pytania – być może znajdziesz natychmiastową odpowiedź:</p>
-<p><a href="/pl/hypertrimmer/landing.html#faq" style="color:var(--color-primary);text-decoration:underline">Go to FAQ →</a></p>
+<p>陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hongkong</p>
 </div>
 </div>
-<form class="contact-form" id="contact-form" novalidate="">
-<h2 style="text-align:center;margin-bottom:0.5rem">Wyślij nam wiadomość</h2>
-<p style="text-align:center;color:var(--color-text-muted);margin-bottom:1.5rem;font-size:0.875rem">Wypełnij formularz, a Twój klient poczty e-mail otworzy się z wiadomością gotową do wysłania na adres info@trendtopia-store.com</p>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-name">Imię i nazwisko *</label>
-<input class="cod-form__input" id="c-name" minlength="3" name="name" required="" type="text"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-email">E-mail *</label>
-<input class="cod-form__input" id="c-email" name="email" required="" type="email"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-phone">Telefon (opcjonalnie)</label>
-<input class="cod-form__input" id="c-phone" name="phone" type="tel"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-order">Numer zamówienia (jeśli już dokonałeś zakupu)</label>
-<input class="cod-form__input" id="c-order" name="order" type="text"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-message">Twoja wiadomość *</label>
-<textarea id="c-message" name="message" required=""></textarea>
-</div>
-<button class="cta-button" type="submit">Wyślij wiadomość</button>
-<p style="text-align:center;margin-top:1rem;font-size:0.875rem;color:var(--color-text-muted)">🔒 We handle your data according to our <a href="/pl/privacy-policy.html" style="color:var(--color-primary)">Privacy Policy</a></p>
-</form>
+<p style="margin-top:2rem;text-align:center;font-size:1rem">Skontaktuj się z nami mailowo: <a href="mailto:info@trendtopia-store.com" style="font-weight:700;color:var(--color-primary)">info@trendtopia-store.com</a>. Podaj imię i nazwisko, numer zamówienia (jeśli dotyczy) oraz treść wiadomości. Nie zbieramy danych osobowych przez adres URL tej strony.</p>
 </div>
 </main>
 <footer class="site-footer"><div class="container">
@@ -134,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
 </ul></div>
 <div><h4 class="site-footer__heading">Kontakt</h4><ul class="site-footer__list">
 <li>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</li>
-<li>陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kongłochy</li>
+<li>陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hongkong</li>
 <li><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></li>
 </ul></div>
 </div>

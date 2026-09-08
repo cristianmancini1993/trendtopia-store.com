@@ -3,13 +3,14 @@
 <html lang="sk">
 <head>
 <!-- Google tag (gtag.js) -->
+<script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'AW-18327321473');
+  window.SITE_CONFIG = window.SITE_CONFIG || {};
+  window.SITE_CONFIG.GOOGLE_TAG_ID = window.SITE_CONFIG.GOOGLE_TAG_ID || 'AW-18327321473';
 </script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
@@ -35,25 +36,6 @@
 </style>
 <script>window.SITE_CONFIG = { GEO: 'sk', COOKIE_TEXT: 'Používame technické súbory cookie a súbory cookie tretích strán.', COOKIE_ACCEPT: 'Súhlasím', COOKIE_LEARN: 'Viac informácií' };</script>
 <script defer="" src="/assets/js/main.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const data = new FormData(form);
-    const subject = encodeURIComponent('[trendtopia-store.com] Inquiry from ' + (data.get('name') || ''));
-    const body = encodeURIComponent(
-      'Name: ' + (data.get('name') || '') + '\n' +
-      'Email: ' + (data.get('email') || '') + '\n' +
-      'Phone: ' + (data.get('phone') || '') + '\n' +
-      'Order number: ' + (data.get('order') || '') + '\n\n' +
-      'Message:\n' + (data.get('message') || '')
-    );
-    window.location.href = 'mailto:info@trendtopia-store.com?subject=' + subject + '&body=' + body;
-  });
-});
-</script>
 </head>
 <body>
 <header class="site-header"><div class="site-header__inner">
@@ -85,39 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <p>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</p>
 <p>陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong</p>
 </div>
-<div class="contact-card">
-<div class="contact-card__icon">💬</div>
-<h3>Často kladené otázky</h3>
-<p>Pred kontaktovaním si pozrite často kladené otázky – možno nájdete okamžitú odpoveď:</p>
-<p>Prejdite na FAQ →</p>
 </div>
-</div>
-<form class="contact-form" id="contact-form" novalidate="">
-<h2 style="text-align:center;margin-bottom:0.5rem">Pošlite nám správu</h2>
-<p style="text-align:center;color:var(--color-text-muted);margin-bottom:1.5rem;font-size:0.875rem">Vyplňte formulár a váš e-mailový klient sa otvorí so správou pripravenou na odoslanie na adresu info@trendtopia-store.com</p>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-name">Celé meno *</label>
-<input class="cod-form__input" id="c-name" minlength="3" name="name" required="" type="text"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-email">E-mail *</label>
-<input class="cod-form__input" id="c-email" name="email" required="" type="email"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-phone">Telefón (voliteľné)</label>
-<input class="cod-form__input" id="c-phone" name="phone" type="tel"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-order">Číslo objednávky (ak ste už zakúpili)</label>
-<input class="cod-form__input" id="c-order" name="order" type="text"/>
-</div>
-<div class="cod-form__field">
-<label class="cod-form__label" for="c-message">Vaša správa *</label>
-<textarea id="c-message" name="message" required=""></textarea>
-</div>
-<button class="cta-button" type="submit">Odoslať správu</button>
-<p style="text-align:center;margin-top:1rem;font-size:0.875rem;color:var(--color-text-muted)">🔒 S vašimi údajmi narábame podľa našich Zásad ochrany osobných údajov</p>
-</form>
+<p style="margin-top:2rem;text-align:center;font-size:1rem">Kontaktujte nás e-mailom na <a href="mailto:info@trendtopia-store.com" style="font-weight:700;color:var(--color-primary)">info@trendtopia-store.com</a>. Uveďte meno, číslo objednávky (ak máte) a správu. Osobné údaje nezhromažďujeme prostredníctvom URL tejto stránky.</p>
 </div>
 </main>
 <footer class="site-footer"><div class="container">
