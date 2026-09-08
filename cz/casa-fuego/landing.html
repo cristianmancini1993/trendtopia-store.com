@@ -308,6 +308,13 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   margin-top:8px;
   line-height:1.7;
 }
+.cf-lp .site-footer__brand{display:inline-block}
+.cf-lp .site-footer__brand-mark{
+  display:block;
+  width:75px;
+  height:auto;
+  margin:0 auto 1rem;
+}
 .cf-lp .site-footer__list .site-footer__link-btn{
   background:none;border:none;padding:0;margin:0;
   font:inherit;color:inherit;text-decoration:underline;cursor:pointer;
@@ -594,9 +601,12 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <footer class="site-footer"><div class="container">
   <div class="site-footer__grid">
     <div>
-      <a href="/" class="site-logo">
-        <span class="site-logo__text" style="display:inline"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
-      </a>
+      <div class="site-footer__brand">
+        <img class="site-footer__brand-mark" src="/assets/img/site/logo-transparent.png?v=1" alt="Trendtopia" width="75" height="75" loading="lazy" decoding="async">
+        <a href="/" class="site-logo">
+          <span class="site-logo__text" style="display:inline"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
+        </a>
+      </div>
     </div>
     <div>
       <h4 class="site-footer__heading">Informace</h4>
@@ -606,9 +616,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
         <li><a href="/cz/privacy-policy.html">Zásady ochrany osobních údajů</a></li>
         <li><a href="/cz/terms-conditions.html">Smluvní podmínky</a></li>
         <li><a href="/cz/cookie-policy.html">Zásady používání souborů cookie</a></li>
-        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Změnit nastavení souborů cookie</button></li>
         <li><a href="/cz/shipping-policy.html">Zásady dopravy</a></li>
         <li><a href="/cz/refund-policy.html">Zásady vrácení peněz</a></li>
+        <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Změnit nastavení souborů cookie</button></li>
       </ul>
     </div>
     <div>
