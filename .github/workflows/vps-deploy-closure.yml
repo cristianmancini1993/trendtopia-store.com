@@ -1,0 +1,69 @@
+name: Deploy closure fixes to VPS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "es/smartwatch/landing.html"
+      - "pl/smartwatch/landing.html"
+      - "gr/smartwatch/landing.html"
+      - "gr/privacy-policy.html"
+      - "gr/refund-policy.html"
+      - ".github/workflows/vps-deploy-closure.yml"
+  workflow_dispatch:
+
+jobs:
+  deploy-closure:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Upload closure files
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_SSH_PASSWORD }}
+          source: "es/smartwatch/landing.html,pl/smartwatch/landing.html,gr/smartwatch/landing.html,gr/privacy-policy.html,gr/refund-policy.html"
+          target: "/tmp/tt-deploy-closure"
+          strip_components: 0
+          timeout: 300s
+          command_timeout: 10m
+          overwrite: true
+
+      - name: Install closure files on web roots
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_SSH_PASSWORD }}
+          script_stop: true
+          script: |
+            set -e
+            updated=0
+            install_closure() {
+              local base="$1"
+              [ -d "$base" ] || return 0
+              for f in es/smartwatch/landing.html pl/smartwatch/landing.html gr/smartwatch/landing.html gr/privacy-policy.html gr/refund-policy.html; do
+                if [ -f "/tmp/tt-deploy-closure/$f" ]; then
+                  mkdir -p "$base/$(dirname "$f")"
+                  cp -f "/tmp/tt-deploy-closure/$f" "$base/$f"
+                fi
+              done
+              echo "Updated closure files at $base"
+              updated=1
+            }
+            for base in /var/www/trendtopia-store.com /var/www/adclickmobile.com /var/www/html /root/trendtopia-store.com; do
+              install_closure "$base"
+            done
+            if [ "$updated" -eq 1 ]; then
+              exit 0
+            fi
+            root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')
+            if [ -n "$root" ] && [ -d "$root" ]; then
+              install_closure "$root"
+              exit 0
+            fi
+            echo "Could not locate web root"
+            exit 1
