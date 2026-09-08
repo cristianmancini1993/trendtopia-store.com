@@ -6,6 +6,7 @@ on:
     paths:
       - "es/smartwatch/landing.html"
       - "pl/smartwatch/landing.html"
+      - "pl/smartwatch/thank-you.html"
       - "gr/smartwatch/landing.html"
       - "gr/privacy-policy.html"
       - "gr/refund-policy.html"
@@ -25,7 +26,7 @@ jobs:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_SSH_PASSWORD }}
-          source: "es/smartwatch/landing.html,pl/smartwatch/landing.html,gr/smartwatch/landing.html,gr/privacy-policy.html,gr/refund-policy.html"
+          source: "es/smartwatch/landing.html,pl/smartwatch/landing.html,pl/smartwatch/thank-you.html,gr/smartwatch/landing.html,gr/privacy-policy.html,gr/refund-policy.html,assets/js/tracking.js"
           target: "/tmp/tt-deploy-closure"
           strip_components: 0
           timeout: 300s
@@ -45,7 +46,7 @@ jobs:
             install_closure() {
               local base="$1"
               [ -d "$base" ] || return 0
-              for f in es/smartwatch/landing.html pl/smartwatch/landing.html gr/smartwatch/landing.html gr/privacy-policy.html gr/refund-policy.html; do
+              for f in es/smartwatch/landing.html pl/smartwatch/landing.html pl/smartwatch/thank-you.html gr/smartwatch/landing.html gr/privacy-policy.html gr/refund-policy.html assets/js/tracking.js; do
                 if [ -f "/tmp/tt-deploy-closure/$f" ]; then
                   mkdir -p "$base/$(dirname "$f")"
                   cp -f "/tmp/tt-deploy-closure/$f" "$base/$f"

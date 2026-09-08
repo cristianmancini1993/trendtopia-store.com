@@ -202,26 +202,42 @@ body { background: #f8fafc; }
 </style>
 
 <script>
-window.SITE_CONFIG = {
+window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   GEO: 'pl',
   PRODUCT_SLUG: 'casa-fuego',
   CURRENCY: 'PLN',
   PRICE: 399.0,
+  GOOGLE_TAG_ID: 'AW-18327321473',
+  GOOGLE_ADS_CONVERSION_SEND_TO: 'AW-18327321473/S692CKfLieocEIH3kqNE',
+  CONVERSION_VALUE: 399.0,
+  CONVERSION_CURRENCY: 'PLN',
   META_PIXEL_ID: '',
-  GOOGLE_TAG_ID: '',
-  GOOGLE_ADS_CONVERSION_ID: '',
-  TY_CONVERSION_LABEL: '',
   COOKIE_TEXT: 'Używamy plików cookie technicznych i stron trzecich, aby poprawić Twoje doświadczenie i do celów analitycznych.',
   COOKIE_ACCEPT: 'Akceptuję',
   COOKIE_LEARN: 'Dowiedz się więcej'
-};
+});
 </script>
 <script src="/assets/js/tracking.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
 <script>
-// Trigger Purchase / conversion event after page load
 window.addEventListener('load', function () {
-  if (window.trackPurchase) window.trackPurchase(399.0, 'PLN');
+  function fireConversion() {
+    if (window.fireLifepickshopThankYouConversion) {
+      window.fireLifepickshopThankYouConversion({ value: 399.0, currency: 'PLN' });
+    }
+  }
+  if (window.__ttGtagConfigured) {
+    fireConversion();
+    return;
+  }
+  var attempts = 0;
+  var timer = setInterval(function () {
+    attempts += 1;
+    if (window.__ttGtagConfigured || attempts >= 30) {
+      clearInterval(timer);
+      fireConversion();
+    }
+  }, 100);
 });
 </script>
 </head>
@@ -314,21 +330,6 @@ window.addEventListener('load', function () {
   </div>
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Wszelkie prawa zastrzeżone. <a href="/">trendtopia-store.com</a></div>
 </div></footer>
-
-
-
-
-
-<!-- Event snippet for Purchase - account 709 - Otger (1) conversion page -->
-<script>
-  gtag('event', 'conversion', {
-      'send_to': 'AW-18327321473/S692CKfLieocEIH3kqNE',
-      'value': 19,
-      'currency': 'PLN',
-      'transaction_id': ''
-      // 'new_customer': true /* calculate dynamically, populate with true/false */,
-  });
-</script>
 
 </body>
 </html>

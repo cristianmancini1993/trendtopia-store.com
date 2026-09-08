@@ -120,7 +120,8 @@
     const action = form.action || '';
     return form.classList.contains('tm-order-form')
       || action.indexOf('supertrendaffiliateprogram.com') !== -1
-      || action.indexOf('unbreakable-offers.com') !== -1;
+      || action.indexOf('unbreakable-offers.com') !== -1
+      || action.indexOf('adricenetwork.com') !== -1;
   }
 
   function bindCashboltSubmitTracking(form) {
