@@ -55,7 +55,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   --cf-gray:#6b5c53;
   --cf-light:#fbf3ee;
   --cf-red:#d63b2f;
-  --cf-gold:#ffb400;
   font-family:'Poppins','Segoe UI',system-ui,-apple-system,sans-serif;
   color:var(--cf-dark);
   line-height:1.55;
@@ -80,18 +79,19 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 .cf-hero-grid{
   display:grid;gap:28px;align-items:center;
 }
+.cf-hero-copy{text-align:center}
 .cf-brand{
   display:inline-block;font-size:13px;font-weight:700;letter-spacing:2px;
   color:var(--cf-orange);border:2px solid var(--cf-orange);
   padding:5px 14px;border-radius:30px;margin-bottom:14px;
 }
-.cf-hero h1{font-size:clamp(1.55rem,4.5vw,2.15rem);margin-bottom:12px;line-height:1.18}
+.cf-hero h1{font-size:clamp(1.55rem,4.5vw,2.15rem);margin:0 auto 12px;line-height:1.18;max-width:720px}
 .cf-hero h1 .hl{color:var(--cf-orange)}
-.cf-hero .lead{font-size:16px;color:var(--cf-gray);max-width:560px;margin:0 0 12px;line-height:1.65}
+.cf-hero .lead{font-size:16px;color:var(--cf-gray);max-width:560px;margin:0 auto 12px;line-height:1.65}
 .cf-hero .lead strong{color:var(--cf-dark)}
-.cf-hero-img{margin:0 auto;max-width:560px;width:100%;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(43,26,18,.12)}
+.cf-hero-img{margin:16px auto 20px;max-width:560px;width:100%;border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(43,26,18,.12)}
 .cf-hero-img img{width:100%;aspect-ratio:1/1;object-fit:cover}
-.cf-sold-by{text-align:center;font-size:12px;color:var(--cf-gray);margin:8px 0 0;padding:0 24px}
+.cf-sold-by{text-align:center;font-size:12px;color:var(--cf-gray);margin:0 0 8px;padding:0 24px}
 .cf-form-privacy{text-align:center;font-size:13px;color:var(--cf-gray);margin-bottom:10px;max-width:520px;margin-left:auto;margin-right:auto}
 .cf-form-privacy a{color:var(--cf-orange-dark);text-decoration:underline}
 
@@ -178,12 +178,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 .cf-disclaimer{text-align:center;font-size:12px;color:var(--cf-gray);font-style:italic;margin:18px auto;max-width:640px}
 
 
-/* ---------- DESTACADOS FACTUALES ---------- */
-.cf-highlights{max-width:680px;margin:0 auto;background:var(--cf-light);border-radius:16px;padding:24px 26px}
-.cf-highlights li{list-style:none;padding:10px 0;border-bottom:1px solid #ece0d8;font-size:15px;display:flex;gap:10px;align-items:flex-start;line-height:1.55;color:var(--cf-gray)}
-.cf-highlights li:last-child{border-bottom:none}
-.cf-highlights li::before{content:"•";color:var(--cf-orange);font-weight:800;font-size:18px;flex:0 0 auto;line-height:1.2}
-
 /* ---------- TABLA COMPARATIVA ---------- */
 .cf-compare{max-width:680px;margin:0 auto;border-collapse:collapse;width:100%;overflow:hidden;border-radius:14px}
 .cf-compare th,.cf-compare td{padding:12px 14px;font-size:14px;text-align:left;border-bottom:1px solid #f0e3da}
@@ -219,11 +213,8 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 .cf-sticky-cta__price{font-size:18px;font-weight:800;color:var(--cf-orange);white-space:nowrap}
 .cf-sticky-cta .cf-cta{margin:0;padding:12px 22px;font-size:15px;flex:1;text-align:center;max-width:220px}
 @media(min-width:900px){
-  .cf-hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
-  .cf-hero-copy{text-align:left}
-  .cf-feats,.cf-price-box{margin-left:0;margin-right:0}
-.cf-price-box{text-align:left}
-  .cf-trust{justify-content:flex-start}
+  .cf-hero-copy .cf-price-box{margin-left:auto;margin-right:auto;text-align:center}
+  .cf-hero-copy .cf-price-box .cf-trust{justify-content:center}
 }
 
 /* ---------- FAQ ---------- */
@@ -322,21 +313,24 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <body>
 
 <div class="cf-lp" lang="cs">
-<div class="cf-topbar">Doručení zdarma · Platba na dobírku · Vrácení 30 dní</div>
+<div class="cf-topbar">Platba na dobírku · Vrácení 30 dní</div>
 <section class="cf-hero">
 <div class="cf-wrap cf-hero-grid">
 <div class="cf-hero-copy">
 <span class="cf-brand">CASA FUEGO™</span>
-<h1>Pomáhá rozvádět teplo po dně: <span class="hl">Casa Fuego</span> je sada z nerezové oceli s 5vrstvým dnem</h1>
-<p class="lead">Sada 6 dílů s poklicí, se skleněnými poklicemi; 5vrstvé dno pomáhá rozvádět teplo po dně — vhodná pro indukci, plyn, sklokeramiku a elektrickou desku.</p>
-<p class="lead"><strong>Nerezová ocel odolná proti korozi.</strong> Rychle se zahřeje a pomáhá udržet teplo a déle udrží teplo pro každodenní použití.</p>
+<h1><span class="hl">Casa Fuego</span>: sada z nerezové oceli s 5vrstvým dnem</h1>
+<div class="cf-hero-img">
+<img alt="Kompletní sada Casa Fuego z nerezové oceli" src="/assets/img/products/casa-fuego/hero.webp" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
+</div>
+<p class="lead">Sada 6 dílů s poklicí; 5vrstvé dno pomáhá rozvádět teplo po dně — vhodná pro indukci, plyn, sklokeramiku a elektrickou desku.</p>
+<p class="lead"><strong>Nerezová ocel odolná proti korozi.</strong> 5vrstvé dno pomáhá rozvádět teplo po dně během vaření.</p>
 <ul class="cf-feats">
 <li><span><strong>5vrstvé dno:</strong> pomáhá rozvádět teplo po dně nádobí.</span></li>
-<li><span><strong>Kvalitní nerezová ocel:</strong> odolná proti korozi a trvanlivá.</span></li>
+<li><span><strong>Nerezová ocel:</strong> odolná proti korozi a určená pro běžné použití v kuchyni.</span></li>
 <li><span><strong>Vhodná pro všechny zdroje tepla:</strong> indukce, plyn, sklokeramika a elektrická deska.</span></li>
 <li><span><strong>Skleněné poklice:</strong> kontrolujte vaření bez zvedání poklice.</span></li>
-<li><span><strong>Hrana pro usnadnění nalévání:</strong> speciálně tvarovaná hrana pro nalévání bez kapání.</span></li>
-<li><span><strong>Ergonomické úchyty odolné vůči teplu:</strong> pohodlný a jistý úchop.</span></li>
+<li><span><strong>Hrana pro usnadnění nalévání:</strong> speciálně tvarovaná pro snadnější nalévání.</span></li>
+<li><span><strong>Ergonomické úchyty:</strong> usnadňují uchopení; použijte tepelnou ochranu, pokud se zahřejí.</span></li>
 <li><span><strong>Sada 6 dílů s poklicí:</strong> 4 hrnce, rendlík a pánev na každý den.</span></li>
 </ul>
 <div class="cf-price-box">
@@ -348,9 +342,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <span>↩️ Vrácení do 30 dní</span>
 </div>
 </div>
-</div>
-<div class="cf-hero-img">
-<img alt="Kompletní sada Casa Fuego z nerezové oceli" src="/assets/img/products/casa-fuego/hero.webp" width="620" height="620" loading="eager" fetchpriority="high" decoding="async"/>
 </div>
 </div>
 </section>
@@ -396,20 +387,19 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <span class="cf-feature-badge">Rozvod tepla</span>
 <span class="cf-feature-badge">Vhodné na indukci</span>
 </div>
-<p>5vrstvé dno pomáhá rozvádět teplo po celém dně, nejen uprostřed. Zahřeje se rychle a rovnoměrně a je vhodné pro všechny zdroje tepla: indukci, plyn, sklokeramiku a elektrickou desku.</p>
+<p>5vrstvé dno pomáhá rozvádět teplo po dně během vaření. Sada je vhodná pro indukci, plyn, sklokeramiku a elektrickou desku.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
 <img class="cf-feature-img" alt="Nerezová ocel Casa Fuego" src="/assets/img/products/casa-fuego/feature-steel.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">02 — Odolná a trvanlivá nerezová ocel</div>
-<h3 class="cf-feature-title">🛡️ Kvalitní nerezová ocel</h3>
+<div class="cf-feature-eyebrow">02 — Nerezová ocel odolná proti korozi</div>
+<h3 class="cf-feature-title">🛡️ Nerezová ocel</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">Odolná proti korozi</span>
-<span class="cf-feature-badge">Udržuje teplo</span>
 </div>
-<p>Vyrobeno z nerezové oceli odolné proti korozi, navrženo s důrazem na trvanlivost. Déle udrží teplo a zachová si vzhled při každodenním používání. Nerezová ocel je navíc recyklovatelný materiál.</p>
+<p>Díly jsou vyrobeny z nerezové oceli odolné proti korozi a určené pro běžné použití v kuchyni. Pro zachování povrchu postupujte podle pokynů výrobce k používání a čištění.</p>
 </div></div>
 </div>
 
@@ -420,10 +410,10 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <h3 class="cf-feature-title">🖐️ Hrana pro nalévání a ergonomické úchyty</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">Hrana pro nalévání</span>
-<span class="cf-feature-badge">Úchyty odolné vůči teplu</span>
+<span class="cf-feature-badge">Ergonomické úchyty</span>
 <span class="cf-feature-badge">Skleněné poklice</span>
 </div>
-<p>Speciálně tvarovaná hrana usnadňuje nalévání; ergonomické úchyty nabízejí pohodlný úchop — při delším vaření použijte chňapku. Skleněné poklice umožňují vidět vaření a kvalitní materiály usnadňují čištění.</p>
+<p>Speciálně tvarovaná hrana usnadňuje nalévání a ergonomické úchyty usnadňují uchopení. Skleněné poklice umožňují sledovat vaření bez zvedání poklice. Použijte tepelnou ochranu, pokud se úchyty zahřejí.</p>
 </div></div>
 </div>
 
@@ -441,20 +431,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <tr><td>Dno</td><td>5vrstvé; pomáhá rozvádět teplo po dně nádobí.</td></tr>
 <tr><td>Kompatibilita</td><td>Indukce, plyn, sklokeramika a elektrická deska.</td></tr>
 <tr><td>Poklice</td><td>Tvrzené sklo pro kontrolu vaření bez zvedání poklice.</td></tr>
-<tr><td>Úchyty</td><td>Ergonomické, odolné vůči teplu; při delším vaření použijte chňapku.</td></tr>
+<tr><td>Úchyty</td><td>Ergonomický design; použijte tepelnou ochranu, pokud se během používání zahřejí.</td></tr>
 <tr><td>Obsah sady</td><td>4 hrnce, rendlík a pánev s poklicemi (podrobnosti níže).</td></tr>
 </table>
-<div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Objednat Casa Fuego</a></div>
-</div>
-
-<div class="cf-wrap">
-<h2 class="cf-section-title">Co vyniká u této sady</h2>
-<ul class="cf-highlights">
-<li>5vrstvé dno, které pomáhá rozvádět teplo po dně nádobí.</li>
-<li>Nerezová ocel odolná proti korozi.</li>
-<li>Skleněné poklice u každého ze 6 dílů.</li>
-<li>Kompletní sada 6 dílů se sladěnými poklicemi (4 hrnce, rendlík a pánev).</li>
-</ul>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Objednat Casa Fuego</a></div>
 </div>
 
@@ -465,7 +444,7 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <li><strong>Materiál:</strong> nerezová ocel odolná proti korozi.</li>
 <li><strong>Dno:</strong> 5vrstvé pomáhající rozvádět teplo po dně.</li>
 <li><strong>Poklice:</strong> z tvrzeného skla, pro kontrolu vaření bez zvedání poklice.</li>
-<li><strong>Úchyty:</strong> ergonomické a odolné vůči teplu.</li>
+<li><strong>Úchyty:</strong> ergonomické; použijte tepelnou ochranu, pokud se během používání zahřejí.</li>
 <li><strong>Hrana:</strong> speciálně tvarovaná, usnadňuje nalévání.</li>
 <li><strong>Kompatibilita:</strong> indukce, plyn, sklokeramika a elektrická deska.</li>
 <li><strong>Díly:</strong> 4 hrnce s poklicí (2,1 l · 2,9 l · 3,9 l · 6,6 l), rendlík s poklicí (2,1 l) a pánev s poklicí (3,4 l).</li>
@@ -492,7 +471,7 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <li>💳 Platba na dobírku</li>
 <li>🔄 Na vrácení produktu máte 30 dní.</li>
 </ul>
-<div class="pkg-price">1 999 Kč</div>
+<div class="pkg-price">Jen za 1 999 Kč</div>
 </div>
 </div>
 
@@ -538,11 +517,11 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 </details>
 <details>
 <summary>🖐️ Rozhřátí se úchyty?</summary>
-<p>Úchyty jsou ergonomické a navržené tak, aby byly odolné vůči teplu. Přesto při delším vaření doporučujeme pro jistotu použít chňapku.</p>
+<p>Úchyty mají ergonomický design, ale během používání se mohou zahřát. Před dotykem použijte chňapku nebo tepelnou ochranu.</p>
 </details>
 <details>
 <summary>🧽 Snadno se čistí?</summary>
-<p>Kvalitní materiály a povrchová úprava usnadňují čištění při každodenním používání. Vždy postupujte podle doporučení výrobce.</p>
+<p>Při čištění a údržbě postupujte podle pokynů dodaných s produktem.</p>
 </details>
 <details>
 <summary>💰 Mohu zaplatit na dobírku?</summary>
@@ -588,10 +567,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Všetky práva vyhradené. <a href="/">trendtopia-store.com</a></div>
 </div></footer>
 
-</div>
-
-<script>
-
 <div class="cf-sticky-cta">
 <div class="cf-sticky-cta__inner">
 <span class="cf-sticky-cta__price">1 999 Kč</span>
@@ -599,6 +574,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 </div>
 </div>
 
+</div>
+
+<script>
 (function () {
   var MSGS = {
     name: 'Vyplňte prosím jméno a příjmení.',
