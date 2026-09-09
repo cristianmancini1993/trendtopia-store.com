@@ -55,7 +55,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   --cf-gray:#6b5c53;
   --cf-light:#fbf3ee;
   --cf-red:#d63b2f;
-  --cf-gold:#ffb400;
   font-family:'Poppins','Segoe UI',system-ui,-apple-system,sans-serif;
   color:var(--cf-dark);
   line-height:1.55;
@@ -178,12 +177,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 .cf-disclaimer{text-align:center;font-size:12px;color:var(--cf-gray);font-style:italic;margin:18px auto;max-width:640px}
 
 
-/* ---------- DESTACADOS FACTUALES ---------- */
-.cf-highlights{max-width:680px;margin:0 auto;background:var(--cf-light);border-radius:16px;padding:24px 26px}
-.cf-highlights li{list-style:none;padding:10px 0;border-bottom:1px solid #ece0d8;font-size:15px;display:flex;gap:10px;align-items:flex-start;line-height:1.55;color:var(--cf-gray)}
-.cf-highlights li:last-child{border-bottom:none}
-.cf-highlights li::before{content:"•";color:var(--cf-orange);font-weight:800;font-size:18px;flex:0 0 auto;line-height:1.2}
-
 /* ---------- TABLA COMPARATIVA ---------- */
 .cf-compare{max-width:680px;margin:0 auto;border-collapse:collapse;width:100%;overflow:hidden;border-radius:14px}
 .cf-compare th,.cf-compare td{padding:12px 14px;font-size:14px;text-align:left;border-bottom:1px solid #f0e3da}
@@ -221,9 +214,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 @media(min-width:900px){
   .cf-hero-grid{grid-template-columns:1.05fr .95fr;gap:40px}
   .cf-hero-copy{text-align:left}
-  .cf-feats,.cf-price-box{margin-left:0;margin-right:0}
-.cf-price-box{text-align:left}
-  .cf-trust{justify-content:flex-start}
+  .cf-feats{margin-left:0;margin-right:0}
+  .cf-hero-copy .cf-price-box{margin-left:auto;margin-right:auto;text-align:center}
+  .cf-hero-copy .cf-price-box .cf-trust{justify-content:center}
 }
 
 /* ---------- FAQ ---------- */
@@ -322,21 +315,21 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <body>
 
 <div class="cf-lp" lang="es">
-<div class="cf-topbar">Envío rápido · Pago contra reembolso · Devolución 30 días</div>
+<div class="cf-topbar">Envío en 24–48 h laborables tras la confirmación telefónica · Pago contra reembolso · Devolución hasta 30 días</div>
 <section class="cf-hero">
 <div class="cf-wrap cf-hero-grid">
 <div class="cf-hero-copy">
 <span class="cf-brand">CASA FUEGO™</span>
-<h1>Ayuda a distribuir el calor por la base: <span class="hl">Casa Fuego</span> es un set de acero inoxidable con fondo de 5 capas</h1>
+<h1><span class="hl">Casa Fuego</span>: set de acero inoxidable con fondo de 5 capas</h1>
 <p class="lead">Set de 6 piezas con tapa; el fondo de 5 capas ayuda a distribuir el calor por la base — compatible con inducción, gas, vitrocerámica y placa eléctrica.</p>
-<p class="lead"><strong>Acero inoxidable resistente a la corrosión.</strong> Se calienta con rapidez y ayuda a retener el calor durante más tiempo, para un rendimiento duradero en el día a día.</p>
+<p class="lead"><strong>Acero inoxidable resistente a la corrosión.</strong> El fondo de 5 capas ayuda a distribuir el calor por la base durante la cocción.</p>
 <ul class="cf-feats">
 <li><span><strong>Fondo de 5 capas:</strong> ayuda a distribuir el calor por la base.</span></li>
-<li><span><strong>Acero inoxidable de calidad:</strong> resistente a la corrosión y pensado para durar.</span></li>
+<li><span><strong>Acero inoxidable:</strong> resistente a la corrosión y pensado para el uso habitual en la cocina.</span></li>
 <li><span><strong>Compatible con todas las fuentes de calor:</strong> inducción, gas, vitrocerámica y placa eléctrica.</span></li>
 <li><span><strong>Tapas de cristal templado:</strong> controla la cocción sin necesidad de destapar.</span></li>
 <li><span><strong>Borde para facilitar el vertido:</strong> el borde con forma especial está diseñado para facilitar el vertido.</span></li>
-<li><span><strong>Asas ergonómicas resistentes al calor:</strong> un agarre cómodo y seguro.</span></li>
+<li><span><strong>Asas ergonómicas:</strong> su diseño facilita el agarre; utiliza protección térmica si se calientan.</span></li>
 <li><span><strong>Set de 6 piezas con tapa:</strong> 4 ollas, 1 cacerola y 1 sartén para el día a día.</span></li>
 </ul>
 <div class="cf-price-box">
@@ -396,20 +389,19 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <span class="cf-feature-badge">Distribución del calor</span>
 <span class="cf-feature-badge">Apto para inducción</span>
 </div>
-<p>El fondo de 5 capas ayuda a distribuir el calor por toda la base, no solo en el centro. Se calienta con rapidez y es compatible con inducción, gas, vitrocerámica y placa eléctrica: inducción, gas, vitrocerámica y placa eléctrica.</p>
+<p>El fondo de 5 capas ayuda a distribuir el calor por la base durante la cocción. El set es compatible con inducción, gas, vitrocerámica y placa eléctrica.</p>
 </div></div>
 </div>
 
 <div class="cf-feature">
 <img class="cf-feature-img" alt="Acero inoxidable de Casa Fuego" src="/assets/img/products/casa-fuego/feature-steel.webp" width="1024" height="1024" loading="lazy" decoding="async"/>
 <div class="cf-wrap"><div class="cf-feature-body">
-<div class="cf-feature-eyebrow">02 — Acero inoxidable resistente y duradero</div>
-<h3 class="cf-feature-title">🛡️ Acero inoxidable de calidad</h3>
+<div class="cf-feature-eyebrow">02 — Acero inoxidable resistente a la corrosión</div>
+<h3 class="cf-feature-title">🛡️ Acero inoxidable</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">Resistente a la corrosión</span>
-<span class="cf-feature-badge">Retiene el calor</span>
 </div>
-<p>Fabricado en acero inoxidable resistente a la corrosión, pensado para un rendimiento duradero. Retiene el calor durante más tiempo y mantiene su aspecto con el uso diario. Además, el acero inoxidable es un material reciclable.</p>
+<p>Las piezas están fabricadas en acero inoxidable resistente a la corrosión y pensadas para el uso habitual en la cocina. Para conservar el acabado, sigue las instrucciones de uso y limpieza del fabricante.</p>
 </div></div>
 </div>
 
@@ -420,10 +412,10 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <h3 class="cf-feature-title">🖐️ Borde para facilitar el vertido y asas ergonómicas</h3>
 <div class="cf-feature-badges">
 <span class="cf-feature-badge">Borde para vertido</span>
-<span class="cf-feature-badge">Asas resistentes al calor</span>
+<span class="cf-feature-badge">Asas ergonómicas</span>
 <span class="cf-feature-badge">Tapas de cristal</span>
 </div>
-<p>El borde con forma especial está diseñado para facilitar el vertido; las asas ergonómicas ofrecen un agarre cómodo — usa protección si se calientan. Las tapas de cristal templado dejan ver la cocción y los materiales de calidad facilitan la limpieza.</p>
+<p>El borde con forma especial está diseñado para facilitar el vertido y las asas ergonómicas facilitan el agarre. Las tapas de cristal templado permiten ver la cocción sin destapar. Utiliza protección térmica si las asas se calientan.</p>
 </div></div>
 </div>
 
@@ -441,20 +433,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <tr><td>Fondo</td><td>5 capas; ayuda a distribuir el calor por la base.</td></tr>
 <tr><td>Compatibilidad</td><td>Inducción, gas, vitrocerámica y placa eléctrica.</td></tr>
 <tr><td>Tapas</td><td>Cristal templado para controlar la cocción sin destapar.</td></tr>
-<tr><td>Asas</td><td>Ergonómicas, diseñadas para resistir el calor; usa protección si se calientan.</td></tr>
+<tr><td>Asas</td><td>Diseño ergonómico; utiliza protección térmica si se calientan durante el uso.</td></tr>
 <tr><td>Contenido del set</td><td>4 ollas, 1 cacerola y 1 sartén con tapas (ver detalle más abajo).</td></tr>
 </table>
-<div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Pedir Casa Fuego</a></div>
-</div>
-
-<div class="cf-wrap">
-<h2 class="cf-section-title">Lo que destaca del set</h2>
-<ul class="cf-highlights">
-<li>Fondo de 5 capas que ayuda a distribuir el calor por la base.</li>
-<li>Acero inoxidable resistente a la corrosión.</li>
-<li>Tapas de cristal templado incluidas en las 6 piezas.</li>
-<li>Set completo de 6 piezas con tapas a juego (4 ollas, cacerola y sartén).</li>
-</ul>
 <div class="cf-cta-wrap"><a class="cf-cta" href="#cf-formulario">Pedir Casa Fuego</a></div>
 </div>
 
@@ -465,7 +446,7 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <li><strong>Material:</strong> acero inoxidable resistente a la corrosión.</li>
 <li><strong>Fondo:</strong> de 5 capas que ayuda a distribuir el calor por la base.</li>
 <li><strong>Tapas:</strong> de cristal templado, para controlar la cocción sin destapar.</li>
-<li><strong>Asas:</strong> ergonómicas y resistentes al calor.</li>
+<li><strong>Asas:</strong> ergonómicas; utiliza protección térmica si se calientan durante el uso.</li>
 <li><strong>Borde:</strong> con forma especial diseñado para facilitar el vertido.</li>
 <li><strong>Compatibilidad:</strong> inducción, gas, vitrocerámica y placa eléctrica.</li>
 <li><strong>Componentes:</strong> 4 ollas con tapa (2,1 L · 2,9 L · 3,9 L · 6,6 L), 1 cacerola con tapa (2,1 L) y 1 sartén con tapa (3,4 L).</li>
@@ -492,7 +473,7 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <li>💳 Pago contra reembolso</li>
 <li>🔄 Tienes hasta 30 días para devolver el producto.</li>
 </ul>
-<div class="pkg-price">89,00 €</div>
+<div class="pkg-price">Por solo 89,00 €</div>
 </div>
 </div>
 
@@ -538,11 +519,11 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 </details>
 <details>
 <summary>🖐️ ¿Se calientan las asas?</summary>
-<p>Las asas son ergonómicas y están pensadas para resistir el calor. Aun así, si cocinas mucho tiempo, te recomendamos usar una manopla por precaución.</p>
+<p>Las asas tienen un diseño ergonómico, pero pueden calentarse durante el uso. Utiliza una manopla o protección térmica antes de tocarlas.</p>
 </details>
 <details>
 <summary>🧽 ¿Es fácil de limpiar?</summary>
-<p>Los materiales de calidad y el acabado facilitan la limpieza en el uso diario. Sigue siempre las indicaciones del fabricante.</p>
+<p>Para la limpieza y el mantenimiento, sigue las indicaciones incluidas con el producto.</p>
 </details>
 <details>
 <summary>💰 ¿Puedo pagar contra reembolso?</summary>
@@ -588,10 +569,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Todos los derechos reservados. <a href="/">trendtopia-store.com</a></div>
 </div></footer>
 
-</div>
-
-<script>
-
 <div class="cf-sticky-cta">
 <div class="cf-sticky-cta__inner">
 <span class="cf-sticky-cta__price">89,00 €</span>
@@ -599,6 +576,9 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 </div>
 </div>
 
+</div>
+
+<script>
 (function () {
   var MSGS = {
     name: 'Introduce tu nombre y apellidos.',
