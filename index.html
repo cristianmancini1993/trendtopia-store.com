@@ -115,9 +115,9 @@
 }
 
 .trust-row {
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-  background: white;
+  border: 2px solid #0f172a;
+  background: linear-gradient(90deg, #b8460f, #e8611c);
+  color: #fff;
 }
 .trust-row__inner {
   max-width: 1100px;
@@ -130,17 +130,18 @@
 .trust-row__item {
   padding: 1.25rem 1rem;
   text-align: center;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid rgba(255, 255, 255, 0.28);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
 }
 .trust-row__item:last-child { border-right: none; }
 @media (min-width: 768px) {
   .trust-row__item { border-bottom: none; }
-  .trust-row__item:nth-child(2n) { border-right: 1px solid var(--color-border); }
+  .trust-row__item:nth-child(2n) { border-right: 1px solid rgba(255, 255, 255, 0.28); }
+  .trust-row__item:nth-child(4) { border-right: none; }
 }
 .trust-row__icon { font-size: 1.5rem; margin-bottom: 0.25rem; display: block; }
-.trust-row__label { font-size: 0.875rem; font-weight: 600; }
-.trust-row__sub { font-size: 0.75rem; color: var(--color-text-light); }
+.trust-row__label { font-size: 0.875rem; font-weight: 600; color: #fff; }
+.trust-row__sub { font-size: 0.75rem; color: rgba(255, 255, 255, 0.88); }
 
 .featured {
   padding: 4rem 1rem;
@@ -167,7 +168,7 @@
   grid-template-columns: 1fr;
   gap: 0;
   background: white;
-  border: 1px solid var(--color-border);
+  border: 2px solid #0f172a;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
@@ -262,7 +263,9 @@
 
 .categories {
   padding: 4rem 1rem;
-  background: var(--color-bg-alt);
+  background: linear-gradient(90deg, #b8460f, #e8611c);
+  color: #fff;
+  border: 2px solid #0f172a;
 }
 .categories__container { max-width: 1100px; margin: 0 auto; }
 .categories__title {
@@ -270,10 +273,11 @@
   font-size: 2rem;
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
+  color: #fff;
 }
 .categories__subtitle {
   text-align: center;
-  color: var(--color-text-muted);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 2.5rem;
 }
 .cat-grid {
@@ -284,7 +288,7 @@
 @media (min-width: 768px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
 .cat-tile {
   background: white;
-  border: 1px solid var(--color-border);
+  border: 2px solid #0f172a;
   border-radius: 0.75rem;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -308,8 +312,7 @@
   color: var(--color-text-light);
 }
 .cat-tile--available {
-  border-color: var(--color-primary);
-  border-width: 2px;
+  border-color: #0f172a;
 }
 .cat-tile--available:hover {
   background: var(--color-success-bg);
@@ -337,32 +340,49 @@
   gap: 1.5rem;
 }
 @media (min-width: 768px) { .why__grid { grid-template-columns: repeat(3, 1fr); } }
-.why__item { text-align: center; padding: 1rem; }
+.why__item {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background: #fff;
+  border: 2px solid #0f172a;
+  border-radius: 0.75rem;
+}
 .why__icon { font-size: 2.5rem; margin-bottom: 1rem; display: block; }
 .why__heading { font-size: 1.125rem; margin-bottom: 0.5rem; }
 .why__text { color: var(--color-text-muted); line-height: 1.6; font-size: 0.95rem; }
 
-.reviews-summary {
-  padding: 3rem 1rem;
-  background: var(--color-bg-alt);
-  text-align: center;
+/* Home header — orange bar, white wordmark */
+.site-header {
+  background: linear-gradient(90deg, #b8460f, #e8611c);
+  border: 2px solid #0f172a;
 }
-.reviews-summary__score {
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--color-warning);
-  line-height: 1;
-  margin-bottom: 0.25rem;
+.site-header .site-logo,
+.site-header .site-logo__text-primary {
+  color: #fff;
 }
-.reviews-summary__stars {
-  font-size: 1.5rem;
-  color: var(--color-warning);
-  letter-spacing: 0.1em;
+.site-header .site-logo__text-accent {
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #fff;
+  -webkit-text-fill-color: #fff;
 }
-.reviews-summary__count {
-  color: var(--color-text-muted);
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+.site-header__nav a {
+  color: rgba(255, 255, 255, 0.92);
+}
+.site-header__nav a:hover {
+  color: #fff;
+}
+
+/* Very thin outline on white text over orange bands (#0f172a = footer) */
+.site-header :is(.site-logo, .site-logo__text, .site-logo__text-primary, .site-logo__text-accent, .site-header__nav a),
+.trust-row :is(.trust-row__label, .trust-row__sub),
+.categories :is(.categories__title, .categories__subtitle) {
+  text-shadow:
+    -0.5px 0 0 #0f172a,
+    0.5px 0 0 #0f172a,
+    0 -0.5px 0 #0f172a,
+    0 0.5px 0 #0f172a;
 }
 </style>
 
@@ -392,10 +412,9 @@
     <h1 class="hero__title">Curated products. Useful design.<br><em>Selected offers.</em></h1>
     <p class="hero__subtitle">Hand-picked items for home, garden, and everyday life. Delivery typically in 24–48 business hours after order confirmation, with cash on delivery in supported European countries.</p>
     <div class="hero__markets" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:0.5rem">
-    <a href="/es/smartwatch/landing.html" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem">CoreSync — España</a>
-    <a href="/pl/smartwatch/landing.html" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem;background:var(--color-primary)">CoreSync — Polska</a>
-    <a href="/gr/smartwatch/landing.html" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem;background:#2563eb">CoreSync — Ελλάδα</a>
-  </div>
+      <a href="#setOfPots-markets" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem">Set of Pots™ — Choose language</a>
+      <a href="#coresSync-markets" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem;background:var(--color-primary)">CoreSync™ — Choose language</a>
+    </div>
   </section>
 
   <!-- TRUST ROW -->
@@ -455,12 +474,12 @@
     <div class="categories__container">
       <h2 class="categories__title">Explore our collections</h2>
       <p class="categories__subtitle">Six categories of carefully curated products. New items added every week.</p>
-      <div class="cat-grid">
-        <div class="cat-tile">
+      <div class="cat-grid" id="setOfPots-markets">
+        <a href="#setOfPots-markets" class="cat-tile cat-tile--available">
           <span class="cat-tile__icon">🏠</span>
           <span class="cat-tile__name">Home &amp; Kitchen</span>
-          <span class="cat-tile__status">Coming soon</span>
-        </div>
+          <span class="cat-tile__status">Set of Pots™ — View page</span>
+        </a>
         <div class="cat-tile">
           <span class="cat-tile__icon">🌱</span>
           <span class="cat-tile__name">Garden</span>
@@ -512,12 +531,6 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- REVIEWS SUMMARY -->
-  <section class="reviews-summary">
-    <div class="reviews-summary__score">4.8</div>
-    <div class="reviews-summary__stars">★★★★★</div>
   </section>
 
 </main>
