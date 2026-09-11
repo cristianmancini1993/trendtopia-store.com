@@ -16,7 +16,7 @@
 <title>trendtopia-store.com — Curated products. Useful design. Selected offers.</title>
 <meta name="description" content="Hand-picked items for home, garden, and everyday life. 24–48h business days, cash on delivery across 18 European countries. 30-day refund, 24-month warranty.">
 <meta name="contact" content="info@trendtopia-store.com">
-<meta name="theme-color" content="#16a34a">
+<meta name="theme-color" content="#e8611c">
 
 <link rel="canonical" href="/">
 <meta property="og:type" content="website">
@@ -108,6 +108,23 @@
   transition: all 0.2s;
 }
 .hero__cta:hover { background: var(--color-primary); transform: translateY(-2px); }
+.hero__markets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+.hero__markets .hero__cta {
+  font-size: 0.95rem;
+  padding: 0.75rem 1.25rem;
+}
+.hero__markets .hero__cta--accent {
+  background: var(--color-primary);
+}
+.hero__markets .hero__cta--accent:hover {
+  background: var(--color-primary-dark);
+}
 @media (min-width: 768px) {
   .hero { padding: 6rem 1rem 4rem; }
   .hero__title { font-size: 3.75rem; }
@@ -384,6 +401,140 @@
     0 -0.5px 0 #0f172a,
     0 0.5px 0 #0f172a;
 }
+
+/* ===== Mobile layout & touch targets (home only) ===== */
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { overflow-x: clip; }
+
+.featured__cta,
+.cat-tile,
+.hero__markets .hero__cta {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .site-header .site-header__inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.65rem max(0.75rem, env(safe-area-inset-right)) 0.65rem max(0.75rem, env(safe-area-inset-left));
+  }
+  .site-header .site-logo__text { font-size: 1.05rem; }
+  .site-header__nav {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    font-size: 0.8125rem;
+  }
+  .site-header__nav a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.25rem 0.35rem;
+  }
+
+  .hero {
+    padding: 2.25rem max(1rem, env(safe-area-inset-right)) 2rem max(1rem, env(safe-area-inset-left));
+  }
+  .hero__eyebrow { font-size: 0.6875rem; letter-spacing: 0.12em; }
+  .hero__title { font-size: 1.7rem; }
+  .hero__subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    padding: 0 0.25rem;
+  }
+  .hero__markets {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__markets .hero__cta {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.3;
+    min-height: 48px;
+    box-sizing: border-box;
+  }
+
+  .trust-row__item { padding: 0.875rem 0.5rem; }
+  .trust-row__label { font-size: 0.8125rem; line-height: 1.35; }
+  .trust-row__sub { font-size: 0.6875rem; line-height: 1.35; }
+
+  .featured {
+    padding: 2.5rem max(0.75rem, env(safe-area-inset-right)) 2.5rem max(0.75rem, env(safe-area-inset-left));
+  }
+  .featured__title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .featured__card { border-radius: 0.75rem; }
+  .featured__body { padding: 1.25rem 1rem; }
+  .featured__name { font-size: 1.5rem; }
+  .featured__desc { font-size: 0.9375rem; margin-bottom: 1rem; }
+  .featured__rating { font-size: 0.8125rem; margin-bottom: 1rem; }
+  .featured__cta { width: 100%; box-sizing: border-box; min-height: 48px; }
+  #coresSync-markets {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    word-break: break-word;
+  }
+  #coresSync-markets a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.15rem 0.35rem;
+  }
+
+  .categories {
+    padding: 2.5rem max(0.75rem, env(safe-area-inset-right)) 2.5rem max(0.75rem, env(safe-area-inset-left));
+  }
+  .categories__title { font-size: 1.5rem; }
+  .categories__subtitle {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  .cat-grid { grid-template-columns: 1fr; gap: 0.75rem; }
+  .cat-tile {
+    min-height: auto;
+    padding: 1.125rem 0.875rem;
+    min-height: 48px;
+  }
+  .cat-tile__name { font-size: 0.9375rem; }
+  .cat-tile__status {
+    font-size: 0.6875rem;
+    letter-spacing: 0.03em;
+    line-height: 1.35;
+    max-width: 100%;
+  }
+
+  .why {
+    padding: 2.5rem max(0.75rem, env(safe-area-inset-right)) 2.5rem max(0.75rem, env(safe-area-inset-left));
+  }
+  .why__title { font-size: 1.5rem; margin-bottom: 1.5rem; }
+  .why__text { font-size: 0.9375rem; }
+
+  #deal,
+  #why,
+  #setOfPots-markets,
+  #coresSync-markets {
+    scroll-margin-top: 0.5rem;
+  }
+
+  .site-footer .container {
+    padding-left: max(var(--space-4), env(safe-area-inset-left));
+    padding-right: max(var(--space-4), env(safe-area-inset-right));
+    padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header .site-logo__text { font-size: 0.92rem; }
+  .hero__title { font-size: 1.45rem; }
+  .site-header__nav { gap: 0.25rem 0.65rem; font-size: 0.75rem; }
+}
 </style>
 
 <script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
@@ -411,9 +562,9 @@
     <span class="hero__eyebrow">⭐ Hand-picked weekly</span>
     <h1 class="hero__title">Curated products. Useful design.<br><em>Selected offers.</em></h1>
     <p class="hero__subtitle">Hand-picked items for home, garden, and everyday life. Delivery typically in 24–48 business hours after order confirmation, with cash on delivery in supported European countries.</p>
-    <div class="hero__markets" style="display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center;margin-top:0.5rem">
-      <a href="#setOfPots-markets" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem">Set of Pots™ — Choose language</a>
-      <a href="#coresSync-markets" class="hero__cta" style="font-size:0.95rem;padding:0.75rem 1.25rem;background:var(--color-primary)">CoreSync™ — Choose language</a>
+    <div class="hero__markets">
+      <a href="#setOfPots-markets" class="hero__cta">Set of Pots™ — Choose language</a>
+      <a href="#coresSync-markets" class="hero__cta hero__cta--accent">CoreSync™ — Choose language</a>
     </div>
   </section>
 
