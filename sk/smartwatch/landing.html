@@ -140,6 +140,13 @@
   transition:background .15s ease;
 }
 .cf-form button:hover{background:var(--cf-orange-dark)}
+.cf-form button:disabled{opacity:.72;cursor:not-allowed;transform:none}
+.cf-form button:focus-visible{outline:2px solid var(--cf-dark);outline-offset:2px}
+.cf-form input:focus-visible{outline:2px solid var(--cf-orange);outline-offset:2px}
+.cf-form input.is-invalid{border-color:var(--cf-red)}
+.cf-field-error{display:block;color:var(--cf-red);font-size:12px;margin:-8px 0 10px;text-align:left}
+.cf-form-status:empty{display:none}
+.cf-form-status{color:var(--cf-red);font-size:14px;text-align:center;margin-bottom:12px;font-weight:600}
 .cf-social-proof{text-align:center;margin-top:18px}
 .cf-social-proof .num{font-weight:700}
 .cf-avatars{display:flex;justify-content:center;margin:8px 0}
@@ -339,23 +346,25 @@
 <h2>Zadajte údaje a objednajte CoreSync</h2>
 <p class="cf-form-privacy">Odoslaním formulára súhlasíte so spracovaním údajov na vybavenie objednávky. Pozrite <a href="/sk/privacy-policy.html">Zásady ochrany osobných údajov</a>.</p>
 <p class="sub">Objednajte dnes a <strong>pohodlne plaťte na dobierku.</strong></p>
-<form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
-<label class="cf-lbl" for="name">Meno a priezvisko*</label>
-<input id="name" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required><br>
-<label class="cf-lbl" for="street-address">Doručovacia adresa*</label>
-<input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Doručovacia adresa" required><br>
+<form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
+<label class="cf-lbl" for="name">Meno Priezvisko*</label>
+<input id="name" type="text" name="name" autocomplete="name" placeholder="Meno Priezvisko" required aria-required="true"><br>
+<label class="cf-lbl" for="street-address">Adresa*</label>
+<input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa" required aria-required="true"><br>
 <label class="cf-lbl" for="tel">Telefón*</label>
-<input id="tel" type="tel" name="tel" autocomplete="tel" placeholder="Telefón" required><br>
-<input name="uid" type="hidden" value="TODO-UID" />
-<input name="offer" type="hidden" value="TODO-OFFER" />
-<input name="lp" type="hidden" value="TODO-LP" />
+<input id="tel" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true"><br>
+<input name="uid" type="hidden" value="019e5f4e-b178-7d63-91e1-6fda72088957" />
+<input name="offer" type="hidden" value="3844" />
+<input name="lp" type="hidden" value="3884" />
+<input name="subid" id="subid" type="hidden" value="" />
+<input name="tmfp" id="tmfp" type="hidden" value="" />
 <input name="thankyoupage" type="hidden" value="https://trendtopia-store.com/sk/smartwatch/thank-you.html"/>
-<input name="webhook" type="hidden" value="TODO-WEBHOOK"/>
-<input name="_key" type="hidden" value="TODO-KEY" />
+<input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
+<input name="_key" type="hidden" value="66707fb480e35968a3bbc2deb5ab65f19740b2f0" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Áno, chcem CoreSync za 99,00 €</button>
+<button name="submit" type="submit">Objednajte si teraz</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+<p class="cf-form-privacy">Vaše údaje použijeme na vybavenie objednávky. Pozrite <a href="/sk/privacy-policy.html">Zásady ochrany osobných údajov</a>.</p>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -508,23 +517,25 @@
 <div class="cf-wrap">
 <h2>Zadajte údaje a objednajte CoreSync</h2>
 <p class="sub">Objednajte dnes a <strong>pohodlne plaťte na dobierku.</strong></p>
-<form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post">
-<label class="cf-lbl" for="name2">Meno a priezvisko*</label>
-<input id="name2" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required><br>
-<label class="cf-lbl" for="street-address2">Doručovacia adresa*</label>
-<input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Doručovacia adresa" required><br>
+<form class="cf-form tm-order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
+<label class="cf-lbl" for="name2">Meno Priezvisko*</label>
+<input id="name2" type="text" name="name" autocomplete="name" placeholder="Meno Priezvisko" required aria-required="true"><br>
+<label class="cf-lbl" for="street-address2">Adresa*</label>
+<input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa" required aria-required="true"><br>
 <label class="cf-lbl" for="tel2">Telefón*</label>
-<input id="tel2" type="tel" name="tel" autocomplete="tel" placeholder="Telefón" required><br>
-<input name="uid" type="hidden" value="TODO-UID" />
-<input name="offer" type="hidden" value="TODO-OFFER" />
-<input name="lp" type="hidden" value="TODO-LP" />
+<input id="tel2" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true"><br>
+<input name="uid" type="hidden" value="019e5f4e-b178-7d63-91e1-6fda72088957" />
+<input name="offer" type="hidden" value="3844" />
+<input name="lp" type="hidden" value="3884" />
+<input name="subid" id="subid2" type="hidden" value="" />
+<input name="tmfp" id="tmfp2" type="hidden" value="" />
 <input name="thankyoupage" type="hidden" value="https://trendtopia-store.com/sk/smartwatch/thank-you.html"/>
-<input name="webhook" type="hidden" value="TODO-WEBHOOK"/>
-<input name="_key" type="hidden" value="TODO-KEY" />
+<input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei"/>
+<input name="_key" type="hidden" value="66707fb480e35968a3bbc2deb5ab65f19740b2f0" />
 <div style="margin-top: 10px; text-align: center">
-<button name="submit" type="submit">Odoslať objednávku</button>
+<button name="submit" type="submit">Objednajte si teraz</button>
 </div>
-<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
+<p class="cf-form-privacy">Vaše údaje použijeme na vybavenie objednávky. Pozrite <a href="/sk/privacy-policy.html">Zásady ochrany osobných údajov</a>.</p>
 </form>
 <div class="cf-social-proof">
 <div class="cf-stars" style="justify-content:center"><span class="star">★★★★★</span></div>
@@ -602,5 +613,129 @@
 
 </div>
 
+<script>
+(function () {
+  var MSGS = {
+    name: 'Zadajte meno a priezvisko.',
+    address: 'Zadajte adresu doručenia.',
+    tel: 'Zadajte platné telefónne číslo.',
+    generic: 'Objednávku sa nepodarilo odoslať. Skúste to znova.',
+    submitting: 'Odosielanie…'
+  };
+
+  function errId(input) {
+    return input.id + '-error';
+  }
+
+  function validateInput(input) {
+    var val = input.value.trim();
+    var msg = '';
+
+    if (input.name === 'name') {
+      if (!val || val.length < 3 || /\d/.test(val)) msg = MSGS.name;
+    } else if (input.name === 'street-address') {
+      if (!val || val.length < 5) msg = MSGS.address;
+    } else if (input.name === 'tel') {
+      var digits = val.replace(/\D/g, '');
+      if (!val || digits.length < 7 || digits.length > 16) msg = MSGS.tel;
+    }
+
+    var err = document.getElementById(errId(input));
+    if (msg) {
+      input.setCustomValidity(msg);
+      if (err) {
+        err.textContent = msg;
+        err.hidden = false;
+      }
+      input.classList.add('is-invalid');
+      input.setAttribute('aria-invalid', 'true');
+    } else {
+      input.setCustomValidity('');
+      if (err) {
+        err.textContent = '';
+        err.hidden = true;
+      }
+      input.classList.remove('is-invalid');
+      input.removeAttribute('aria-invalid');
+    }
+    return !msg;
+  }
+
+  function validateForm(form) {
+    var valid = true;
+    var firstInvalid = null;
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
+      if (!validateInput(input)) {
+        valid = false;
+        if (!firstInvalid) firstInvalid = input;
+      }
+    });
+    return { valid: valid, firstInvalid: firstInvalid };
+  }
+
+  function wireForm(form) {
+    var live = document.createElement('div');
+    live.className = 'cf-form-status';
+    live.setAttribute('aria-live', 'polite');
+    live.setAttribute('role', 'status');
+    form.insertBefore(live, form.firstChild);
+
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
+      var err = document.createElement('span');
+      err.id = errId(input);
+      err.className = 'cf-field-error';
+      err.hidden = true;
+      input.insertAdjacentElement('afterend', err);
+      input.setAttribute('aria-describedby', err.id);
+
+      input.addEventListener('input', function () {
+        if (input.classList.contains('is-invalid')) validateInput(input);
+      });
+      input.addEventListener('blur', function () {
+        validateInput(input);
+      });
+    });
+
+    form.addEventListener('submit', function (e) {
+      if (form.dataset.submitting === 'true') {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        return;
+      }
+
+      var result = validateForm(form);
+
+      if (!result.valid) {
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        live.textContent = MSGS.generic;
+        if (result.firstInvalid) result.firstInvalid.focus();
+        return;
+      }
+
+      form.dataset.submitting = 'true';
+      live.textContent = '';
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) {
+        btn.disabled = true;
+        btn.dataset.originalText = btn.textContent;
+        btn.textContent = MSGS.submitting;
+      }
+    }, true);
+  }
+
+  document.querySelectorAll('.cf-form.tm-order-form').forEach(wireForm);
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var params = new URLSearchParams(window.location.search);
+    var campaign = params.get('utm_campaign') || '';
+    document.querySelectorAll('input[name="subid"]').forEach(function (subidInput) {
+      if (!subidInput.value) subidInput.value = campaign;
+    });
+  });
+})();
+</script>
+<script src="https://offers.adricenetwork.com/forms/tmfp/" crossorigin="anonymous" defer></script>
+<script src="https://offers.adricenetwork.com/forms/html/js-v2/" async></script>
 </body>
 </html>
