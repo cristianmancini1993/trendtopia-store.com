@@ -41,9 +41,17 @@
     hr: 'hr', hu: 'hu', it: 'it', lt: 'lt', lv: 'lv', pl: 'pl', pt: 'pt', ro: 'ro', si: 'sl', sk: 'sk'
   };
 
+  /**
+   * Header selector: English + locales that have a live product landing on site.
+   * Derived from EN_HOME_MARKETS (same geos linked on the English home).
+   */
+  var LOCALES_WITH_LANDING = { en: true };
+  EN_HOME_MARKETS.setOfPots.forEach(function (g) { LOCALES_WITH_LANDING[g] = true; });
+  EN_HOME_MARKETS.coreSync.forEach(function (g) { LOCALES_WITH_LANDING[g] = true; });
+
   var SELECT_LOCALES = ['en'].concat(
     Object.keys(LOCALE_LABELS)
-      .filter(function (k) { return k !== 'en'; })
+      .filter(function (k) { return k !== 'en' && LOCALES_WITH_LANDING[k]; })
       .sort(function (a, b) { return LOCALE_LABELS[a].localeCompare(LOCALE_LABELS[b], undefined, { sensitivity: 'base' }); })
   );
 
@@ -358,7 +366,11 @@
     var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
     var i;
     for (i = 0; i < NAV_TO_LOCALE.length; i++) {
-      if (nav.indexOf(NAV_TO_LOCALE[i][0]) === 0) return NAV_TO_LOCALE[i][1];
+      if (nav.indexOf(NAV_TO_LOCALE[i][0]) === 0) {
+        var detected = NAV_TO_LOCALE[i][1];
+        if (isSelectableLocale(detected)) return detected;
+        break;
+      }
     }
     return 'en';
   }
