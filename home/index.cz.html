@@ -89,6 +89,13 @@
   margin-right: auto;
 }
 .hero__title em { color: var(--color-urgency); font-style: normal; }
+.hero__title .site-logo__text-accent {
+  background: linear-gradient(135deg, #fdba74 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 .hero__subtitle {
   font-size: 1.125rem;
   color: var(--color-text-muted);
@@ -697,7 +704,7 @@ body { overflow-x: clip; }
   <!-- HERO -->
   <section class="hero">
     <span class="hero__eyebrow" data-i18n="hero_eyebrow">⭐ Týdenní výběr</span>
-    <h1 class="hero__title" data-i18n-html="hero_title">Pečlivě vybrané, navržené pro vás.</h1>
+    <h1 class="hero__title" data-i18n-html="hero_title">Pečlivě vybrané, <span class="site-logo__text-accent">navržené pro vás.</span></h1>
     <p class="hero__subtitle" data-i18n="hero_subtitle">Pečujeme o každý detail — od výběru až po doručení k vašim dveřím. Doručení do 24–48 pracovních hodin a platba na dobírku, vaše jistota je naší prioritou.</p>
     <div class="hero__markets">
       <a href="#our-products" class="hero__cta hero__cta--accent" data-i18n="hero_cta">Naše produkty</a>
