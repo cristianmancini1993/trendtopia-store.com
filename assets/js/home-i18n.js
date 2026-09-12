@@ -9,6 +9,12 @@
   var CASA_FUEGO_GEOS = ['cz', 'de', 'es', 'hu', 'lt', 'pl', 'pt', 'sk'];
   var CORESYNC_GEOS = ['bg', 'cz', 'de', 'ee', 'en', 'es', 'fr', 'gr', 'hr', 'hu', 'it', 'lt', 'lv', 'pl', 'pt', 'ro', 'si', 'sk'];
 
+  /** English home: only live campaign landings (others stay in repo for future use). */
+  var EN_HOME_MARKETS = {
+    setOfPots: ['es', 'pl', 'sk', 'cz'],
+    coreSync: ['es', 'pl', 'gr']
+  };
+
   var LOCALE_LABELS = {
     bg: 'Български',
     cz: 'Čeština',
@@ -50,7 +56,10 @@
   });
 
   var LOCALE_MARKETS = {
-    en: { setOfPots: CASA_FUEGO_GEOS.slice(), coreSync: CORESYNC_GEOS.slice() }
+    en: {
+      setOfPots: EN_HOME_MARKETS.setOfPots.slice(),
+      coreSync: EN_HOME_MARKETS.coreSync.slice()
+    }
   };
   SELECT_LOCALES.forEach(function (geo) {
     if (geo === 'en') return;
@@ -414,6 +423,9 @@
     var codes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale][productKey]) || [];
     var list = MARKETS[productKey].filter(function (m) {
       return codes.indexOf(m.code) !== -1;
+    });
+    list.sort(function (a, b) {
+      return codes.indexOf(a.code) - codes.indexOf(b.code);
     });
     if (!picker) return;
     if (!list.length) {
