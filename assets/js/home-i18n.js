@@ -63,6 +63,113 @@
   var LOCALE_GEO = {};
   SELECT_LOCALES.forEach(function (g) { LOCALE_GEO[g] = g; });
 
+  /** Current offer prices from product landings (home only — do not edit landings). */
+  var PRODUCT_PRICES = {
+    coreSync: {
+      bg: '69,00 €', cz: '1.499,00 Kč', de: '69,00 €', ee: '99,00 €', en: '99,00 €',
+      es: '49,00 €', fr: '99,00 €', gr: '69,00 €', hr: '99,00 €', hu: '31.999 Ft',
+      it: '99,00 €', lt: '54,00 €', lv: '69,00 €', pl: '199,00 zł', pt: '66,00 €',
+      ro: '339,00 lei', si: '99,00 €', sk: '99,00 €'
+    },
+    setOfPots: {
+      cz: '1 999 Kč', de: '109,00 €', es: '89,00 €', hu: '31.999 Ft',
+      lt: '89,00 €', pl: '399,00 zł', pt: '99,00 €', sk: '89,00 €'
+    }
+  };
+
+  var PRICED_LINES = {
+    en: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Get it now for only {price}',
+      product_coreSync_priced: 'CoreSync™ — Get it now for only {price}'
+    },
+    es: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Consíguelo ya por solo {price}',
+      product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}'
+    },
+    pt: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Obtenha já por apenas {price}',
+      product_coreSync_priced: 'CoreSync™ — Obtenha já por apenas {price}'
+    },
+    pl: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Zgarnij już za jedyne {price}',
+      product_coreSync_priced: 'CoreSync™ — Zgarnij już za jedyne {price}'
+    },
+    de: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Jetzt für nur {price}',
+      product_coreSync_priced: 'CoreSync™ — Jetzt für nur {price}'
+    },
+    fr: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Obtenez-le dès maintenant pour seulement {price}',
+      product_coreSync_priced: 'CoreSync™ — Obtenez-le dès maintenant pour seulement {price}'
+    },
+    it: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Ottienilo ora a soli {price}',
+      product_coreSync_priced: 'CoreSync™ — Ottienilo ora a soli {price}'
+    },
+    gr: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Αποκτήστε το τώρα μόνο με {price}',
+      product_coreSync_priced: 'CoreSync™ — Αποκτήστε το τώρα μόνο με {price}'
+    },
+    sk: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Zaobstarajte si ho už od {price}',
+      product_coreSync_priced: 'CoreSync™ — Zaobstarajte si ho už od {price}'
+    },
+    cz: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Pořiďte si ho už za {price}',
+      product_coreSync_priced: 'CoreSync™ — Pořiďte si ho už za {price}'
+    },
+    hu: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Szerezze be most mindössze {price}',
+      product_coreSync_priced: 'CoreSync™ — Szerezze be most mindössze {price}'
+    },
+    lt: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Gaukite jau dabar tik už {price}',
+      product_coreSync_priced: 'CoreSync™ — Gaukite jau dabar tik už {price}'
+    },
+    lv: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Iegūstiet to jau tagad tikai par {price}',
+      product_coreSync_priced: 'CoreSync™ — Iegūstiet to jau tagad tikai par {price}'
+    },
+    ro: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Obțineți-l acum pentru doar {price}',
+      product_coreSync_priced: 'CoreSync™ — Obțineți-l acum pentru doar {price}'
+    },
+    bg: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Вземете го сега само за {price}',
+      product_coreSync_priced: 'CoreSync™ — Вземете го сега само за {price}'
+    },
+    hr: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Nabavite odmah za samo {price}',
+      product_coreSync_priced: 'CoreSync™ — Nabavite odmah za samo {price}'
+    },
+    si: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Poiščite ga zdaj za samo {price}',
+      product_coreSync_priced: 'CoreSync™ — Poiščite ga zdaj za samo {price}'
+    },
+    ee: {
+      featured_name_priced: 'CoreSync™ — {price}',
+      product_setOfPots_priced: 'Set of Pots™ — Hankige kohe vaid {price} eest',
+      product_coreSync_priced: 'CoreSync™ — Hankige kohe vaid {price} eest'
+    }
+  };
+
   var MESSAGES = {
     en: {
       lang_label: 'Language / region',
@@ -253,6 +360,51 @@
     return (MESSAGES.en[key] != null ? MESSAGES.en[key] : '');
   }
 
+  function pricedLine(locale, key, price) {
+    var pack = PRICED_LINES[locale] || PRICED_LINES.en;
+    var tpl = (pack && pack[key]) || (PRICED_LINES.en && PRICED_LINES.en[key]) || '{price}';
+    return tpl.replace(/\{price\}/g, price);
+  }
+
+  function applyProductPricing(locale) {
+    var geo = locale;
+    var useChooserCopy = locale === 'en';
+
+    var featName = document.querySelector('.featured__name[data-i18n="featured_name"]');
+    if (featName) {
+      if (useChooserCopy) {
+        featName.textContent = msg(locale, 'featured_name');
+      } else {
+        var corePrice = PRODUCT_PRICES.coreSync[geo];
+        featName.textContent = corePrice
+          ? pricedLine(locale, 'featured_name_priced', corePrice)
+          : msg(locale, 'featured_name');
+      }
+    }
+
+    document.querySelectorAll('[data-i18n="product_setOfPots_title"]').forEach(function (el) {
+      if (useChooserCopy) {
+        el.textContent = msg(locale, 'product_setOfPots_title');
+        return;
+      }
+      var p = PRODUCT_PRICES.setOfPots[geo];
+      el.textContent = p
+        ? pricedLine(locale, 'product_setOfPots_priced', p)
+        : msg(locale, 'product_setOfPots_title');
+    });
+
+    document.querySelectorAll('[data-i18n="product_coreSync_title"]').forEach(function (el) {
+      if (useChooserCopy) {
+        el.textContent = msg(locale, 'product_coreSync_title');
+        return;
+      }
+      var p = PRODUCT_PRICES.coreSync[geo];
+      el.textContent = p
+        ? pricedLine(locale, 'product_coreSync_priced', p)
+        : msg(locale, 'product_coreSync_title');
+    });
+  }
+
   function marketLabel(locale, code) {
     return (code || '').toUpperCase();
   }
@@ -311,6 +463,8 @@
     document.querySelectorAll('[data-market-links]').forEach(function (el) {
       renderMarketLinks(locale, el.getAttribute('data-market-links'), el);
     });
+
+    applyProductPricing(locale);
 
     var featured = document.querySelector('[data-home-feature="coresync"]');
     var coreCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].coreSync) || [];
