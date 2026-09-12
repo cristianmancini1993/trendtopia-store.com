@@ -454,7 +454,46 @@
   border: 2px solid #0f172a;
 }
 .site-header .site-header__inner {
-  justify-content: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.home-lang { flex: 0 0 auto; }
+.home-lang__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.home-lang__select {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 0.5rem;
+  padding: 0.4rem 1.75rem 0.4rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  max-width: 13rem;
+  background-image: linear-gradient(45deg, transparent 50%, #fff 50%), linear-gradient(135deg, #fff 50%, transparent 50%);
+  background-position: calc(100% - 14px) calc(50% + 1px), calc(100% - 9px) calc(50% + 1px);
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+}
+.home-lang__select:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.home-lang__select option {
+  color: #0f172a;
+  background-color: #fff;
+  font-weight: 600;
 }
 .site-header .site-logo,
 .site-header .site-logo__text-primary {
@@ -497,12 +536,13 @@ body { overflow-x: clip; }
 
 @media (max-width: 767px) {
   .site-header .site-header__inner {
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
     gap: 0.5rem;
     padding: 0.65rem max(0.75rem, env(safe-area-inset-right)) 0.65rem max(0.75rem, env(safe-area-inset-left));
   }
   .site-header .site-logo__text { font-size: 1.05rem; }
+  .home-lang__select { max-width: 9.5rem; font-size: 0.75rem; padding-right: 1.5rem; }
   .site-header__nav {
     width: 100%;
     justify-content: center;
@@ -624,6 +664,7 @@ body { overflow-x: clip; }
 
 <script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
 <script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/home-i18n.js" defer></script>
 </head>
 <body>
 
@@ -632,18 +673,24 @@ body { overflow-x: clip; }
     <a href="/" class="site-logo" aria-label="trendtopia-store.com home">
       <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
     </a>
+    <div class="home-lang">
+      <label class="home-lang__label" for="home-locale-select" data-i18n="lang_label">Language / region</label>
+      <select id="home-locale-select" class="home-lang__select" aria-label="Language / region">
+        <option value="en">English</option>
+      </select>
+    </div>
   </div>
 </header>
 
-<main>
+<main data-home-i18n-root>
 
   <!-- HERO -->
   <section class="hero">
-    <span class="hero__eyebrow">⭐ Hand-picked weekly</span>
-    <h1 class="hero__title">Curated products. Useful design.<br><em>Selected offers.</em></h1>
-    <p class="hero__subtitle">Hand-picked items for home, garden, and everyday life. Delivery typically in 24–48 business hours after order confirmation, with cash on delivery in supported European countries.</p>
+    <span class="hero__eyebrow" data-i18n="hero_eyebrow">⭐ Hand-picked weekly</span>
+    <h1 class="hero__title" data-i18n-html="hero_title">Curated products. Useful design.<br><em>Selected offers.</em></h1>
+    <p class="hero__subtitle" data-i18n="hero_subtitle">Hand-picked items for home, garden, and everyday life. Delivery typically in 24–48 business hours after order confirmation, with cash on delivery in supported European countries.</p>
     <div class="hero__markets">
-      <a href="#our-products" class="hero__cta hero__cta--accent">Our products</a>
+      <a href="#our-products" class="hero__cta hero__cta--accent" data-i18n="hero_cta">Our products</a>
     </div>
   </section>
 
@@ -652,32 +699,32 @@ body { overflow-x: clip; }
     <div class="trust-row__inner">
       <div class="trust-row__item">
         <span class="trust-row__icon">🚚</span>
-        <div class="trust-row__label">24–48h business days</div>
-        <div class="trust-row__sub">free shipping</div>
+        <div class="trust-row__label" data-i18n="trust_1_label">24–48h business days</div>
+        <div class="trust-row__sub" data-i18n="trust_1_sub">free shipping</div>
       </div>
       <div class="trust-row__item">
         <span class="trust-row__icon">💵</span>
-        <div class="trust-row__label">Cash on delivery</div>
-        <div class="trust-row__sub">no prepayment</div>
+        <div class="trust-row__label" data-i18n="trust_2_label">Cash on delivery</div>
+        <div class="trust-row__sub" data-i18n="trust_2_sub">no prepayment</div>
       </div>
       <div class="trust-row__item">
         <span class="trust-row__icon">↩️</span>
-        <div class="trust-row__label">30-day refund</div>
-        <div class="trust-row__sub">see refund policy</div>
+        <div class="trust-row__label" data-i18n="trust_3_label">30-day refund</div>
+        <div class="trust-row__sub" data-i18n="trust_3_sub">see refund policy</div>
       </div>
       <div class="trust-row__item">
         <span class="trust-row__icon">🛡️</span>
-        <div class="trust-row__label">24-month warranty</div>
-        <div class="trust-row__sub">manufacturer defects</div>
+        <div class="trust-row__label" data-i18n="trust_4_label">24-month warranty</div>
+        <div class="trust-row__sub" data-i18n="trust_4_sub">manufacturer defects</div>
       </div>
     </div>
   </section>
 
   <!-- FEATURED DEAL -->
-  <section class="featured" id="deal">
+  <section class="featured" id="deal" data-home-feature="coresync">
     <div class="featured__container">
-      <div class="featured__eyebrow">⭐ Today's novelty</div>
-      <h2 class="featured__title">Featured product</h2>
+      <div class="featured__eyebrow" data-i18n="featured_eyebrow">⭐ Today's novelty</div>
+      <h2 class="featured__title" data-i18n="featured_title">Featured product</h2>
       <article class="featured__card">
         <div class="featured__photo">
           
@@ -687,14 +734,14 @@ body { overflow-x: clip; }
           </picture>
         </div>
         <div class="featured__body">
-          <div class="featured__category">Tech &amp; Smart</div>
-          <h3 class="featured__name">CoreSync™</h3>
+          <div class="featured__category" data-i18n="featured_category">Tech &amp; Smart</div>
+          <h3 class="featured__name" data-i18n="featured_name">CoreSync™</h3>
           
-          <p class="featured__desc">A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.</p>
+          <p class="featured__desc" data-i18n="featured_desc">A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.</p>
         </div>
-        <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card">
-          <span class="home-market-picker__title">CoreSync™ — Choose your country to see price and availability</span>
-          <span class="home-market-picker__links"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a></span>
+        <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
+          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Choose your country to see price and availability</span>
+          <span class="home-market-picker__links" data-market-links="coreSync"></span>
         </div>
       </article>
     </div>
@@ -703,20 +750,20 @@ body { overflow-x: clip; }
   <!-- CATEGORIES -->
   <section class="categories" id="our-products">
     <div class="categories__container">
-      <h2 class="categories__title">Explore our collections</h2>
-      <p class="categories__subtitle">Choose a product and your language to open the product page.</p>
+      <h2 class="categories__title" data-i18n="collections_title">Explore our collections</h2>
+      <p class="categories__subtitle" data-i18n="collections_subtitle">Offers shown for your selected country. Tap a link to open the product page.</p>
       <div class="home-market-pickers">
-        <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb">
+        <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="setOfPots">
           <div class="home-market-picker__content">
-            <span class="home-market-picker__title">Set of Pots™ — Choose your country to see price and availability</span>
-            <span class="home-market-picker__links"><a href="/es/casa-fuego/landing.html">ES</a> · <a href="/pl/casa-fuego/landing.html">PL</a> · <a href="/sk/casa-fuego/landing.html">SK</a> · <a href="/cz/casa-fuego/landing.html">CZ</a></span>
+            <span class="home-market-picker__title" data-i18n="product_setOfPots_title">Set of Pots™ — Choose your country to see price and availability</span>
+            <span class="home-market-picker__links" data-market-links="setOfPots"></span>
           </div>
           <img class="home-market-picker__thumb" src="/assets/img/products/casa-fuego/hero.webp" alt="" width="72" height="72" loading="lazy" decoding="async">
         </div>
-        <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb">
+        <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="coreSync">
           <div class="home-market-picker__content">
-            <span class="home-market-picker__title">CoreSync™ — Choose your country to see price and availability</span>
-            <span class="home-market-picker__links"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a></span>
+            <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Choose your country to see price and availability</span>
+            <span class="home-market-picker__links" data-market-links="coreSync"></span>
           </div>
           <img class="home-market-picker__thumb" src="/assets/img/products/smartwatch/hero.jpg?v=2" alt="" width="72" height="72" loading="lazy" decoding="async">
         </div>
@@ -727,22 +774,22 @@ body { overflow-x: clip; }
   <!-- WHY US -->
   <section class="why" id="why">
     <div class="why__container">
-      <h2 class="why__title">Why trendtopia-store.com</h2>
+      <h2 class="why__title" data-i18n="why_title">Why trendtopia-store.com</h2>
       <div class="why__grid">
         <div class="why__item">
           <span class="why__icon">🎯</span>
-          <h3 class="why__heading">Hand-picked products</h3>
-          <p class="why__text">We test every item before adding it to our catalog. No filler, no gadgets — only products that solve real problems.</p>
+          <h3 class="why__heading" data-i18n="why_1_heading">Hand-picked products</h3>
+          <p class="why__text" data-i18n="why_1_text">We test every item before adding it to our catalog. No filler, no gadgets — only products that solve real problems.</p>
         </div>
         <div class="why__item">
           <span class="why__icon">💵</span>
-          <h3 class="why__heading">No prepayment, ever</h3>
-          <p class="why__text">Pay cash to the courier when you receive the package. If you're not happy, refuse the delivery. Clear pricing and policies on every product page.</p>
+          <h3 class="why__heading" data-i18n="why_2_heading">No prepayment, ever</h3>
+          <p class="why__text" data-i18n="why_2_text">Pay cash to the courier when you receive the package. If you're not happy, refuse the delivery. Clear pricing and policies on every product page.</p>
         </div>
         <div class="why__item">
           <span class="why__icon">🤝</span>
-          <h3 class="why__heading">Local customer service</h3>
-          <p class="why__text">Native-language support across 18 European countries. Contact us via the support email on each page</p>
+          <h3 class="why__heading" data-i18n="why_3_heading">Local customer service</h3>
+          <p class="why__text" data-i18n="why_3_text">Native-language support across 18 European countries. Contact us via the support email on each page</p>
         </div>
       </div>
     </div>
@@ -761,15 +808,15 @@ body { overflow-x: clip; }
       </div>
     </div>
     <div>
-      <h4 class="site-footer__heading">Information</h4>
+      <h4 class="site-footer__heading" data-i18n="footer_info">Information</h4>
       <ul class="site-footer__list">
-        <li><a href="/en/about-us.html">About us</a></li>
-        <li><a href="/en/contact-us.html">Contact us</a></li>
-        <li><a href="/en/privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="/en/terms-conditions.html">Terms &amp; Conditions</a></li>
-        <li><a href="/en/cookie-policy.html">Cookie Policy</a></li>
-        <li><a href="/en/shipping-policy.html">Shipping Policy</a></li>
-        <li><a href="/en/refund-policy.html">Refund Policy</a></li>
+        <li><a href="/en/about-us.html" data-i18n="footer_about" data-i18n-href="about-us.html">About us</a></li>
+        <li><a href="/en/contact-us.html" data-i18n="footer_contact" data-i18n-href="contact-us.html">Contact us</a></li>
+        <li><a href="/en/privacy-policy.html" data-i18n="footer_privacy" data-i18n-href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="/en/terms-conditions.html" data-i18n="footer_terms" data-i18n-href="terms-conditions.html">Terms &amp; Conditions</a></li>
+        <li><a href="/en/cookie-policy.html" data-i18n="footer_cookie" data-i18n-href="cookie-policy.html">Cookie Policy</a></li>
+        <li><a href="/en/shipping-policy.html" data-i18n="footer_shipping" data-i18n-href="shipping-policy.html">Shipping Policy</a></li>
+        <li><a href="/en/refund-policy.html" data-i18n="footer_refund" data-i18n-href="refund-policy.html">Refund Policy</a></li>
         <li><button type="button" class="site-footer__link-btn tt-cookie-change-link">Change cookie preferences</button></li>
       </ul>
     </div>
