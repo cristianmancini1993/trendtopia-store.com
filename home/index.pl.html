@@ -90,11 +90,20 @@
 }
 .hero__title em { color: var(--color-urgency); font-style: normal; }
 .hero__title .site-logo__text-accent {
-  background: linear-gradient(135deg, #fdba74 0%, #f97316 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  color: #e8611c;
+  -webkit-text-fill-color: #e8611c;
+  text-shadow:
+    -0.5px -0.5px 0 #0f172a,
+    0.5px -0.5px 0 #0f172a,
+    -0.5px 0.5px 0 #0f172a,
+    0.5px 0.5px 0 #0f172a,
+    -0.5px 0 0 #0f172a,
+    0.5px 0 0 #0f172a,
+    0 -0.5px 0 #0f172a,
+    0 0.5px 0 #0f172a;
 }
 .hero__subtitle {
   font-size: 1.125rem;
