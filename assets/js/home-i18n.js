@@ -840,7 +840,7 @@
       delta = rect.bottom - (window.innerHeight - bottomPad);
     }
     if (Math.abs(delta) < 4) return;
-    window.scrollTo({ top: window.scrollY + delta * 0.5, behavior: 'smooth' });
+    window.scrollTo({ top: window.scrollY + delta * 0.25, behavior: 'smooth' });
   }
 
   function bindFeaturedCtaScroll() {
