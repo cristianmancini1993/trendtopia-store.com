@@ -190,6 +190,9 @@
   var MESSAGES = {
     en: {
       lang_label: 'Language / region',
+      page_title: 'trendtopia-store.com — Curated products. Useful design. Selected offers.',
+      page_description: 'Hand-picked items for home, garden, and everyday life. 24–48h business days, cash on delivery across 18 European countries. 30-day refund, 24-month warranty.',
+      logo_aria: 'trendtopia-store.com home',
       hero_eyebrow: '⭐ Hand-picked weekly',
       hero_title: 'Curated products. Useful design.<br><em>Selected offers.</em>',
       hero_subtitle: 'Hand-picked items for home, garden, and everyday life. Delivery typically in 24–48 business hours after order confirmation, with cash on delivery in supported European countries.',
@@ -207,6 +210,7 @@
       featured_category: 'Tech & Smart',
       featured_name: 'CoreSync™',
       featured_desc: 'A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.',
+      featured_img_alt: 'CoreSync — complete smartwatch kit with spare strap, charger, manual and mobile app',
       collections_title: 'Explore our collections',
       collections_subtitle: 'Offers shown for your selected country. Tap a link to open the product page.',
       product_setOfPots_title: 'Set of Pots™ — Choose your country to see price and availability',
@@ -226,10 +230,22 @@
       footer_cookie: 'Cookie Policy',
       footer_shipping: 'Shipping Policy',
       footer_refund: 'Refund Policy',
-      footer_rights: 'All rights reserved.'
+      footer_rights: 'All rights reserved.',
+      footer_contact_heading: 'Contact',
+      footer_cookie_change: 'Change cookie preferences',
+      cookie_text: 'We use necessary cookies and, with your consent, analytics and advertising cookies.',
+      cookie_accept_all: 'Accept all',
+      cookie_reject: 'Reject non-essential',
+      cookie_manage: 'Manage preferences',
+      cookie_save: 'Save preferences',
+      cookie_change: 'Change cookie preferences',
+      cookie_learn: 'Learn more'
     },
     es: {
       lang_label: 'Idioma / país',
+      page_title: 'trendtopia-store.com — Productos seleccionados. Diseño útil. Ofertas elegidas.',
+      page_description: 'Artículos para hogar, jardín y día a día. Entrega en 24–48 h laborables, contra reembolso en países disponibles. Devolución 30 días, garantía 24 meses.',
+      logo_aria: 'Inicio trendtopia-store.com',
       hero_eyebrow: '⭐ Selección semanal',
       hero_title: 'Productos seleccionados. Diseño útil.<br><em>Ofertas elegidas.</em>',
       hero_subtitle: 'Artículos elegidos para hogar, jardín y día a día. Entrega habitual en 24–48 h laborables tras confirmar el pedido, con pago contra reembolso en los países disponibles.',
@@ -246,18 +262,19 @@
       featured_title: 'Producto destacado',
       featured_category: 'Tecnología',
       featured_name: 'CoreSync™',
-      featured_desc: 'Smartwatch versátil para mantenerte conectado, seguir tu actividad diaria y consultar tus rutinas de descanso desde una app. Hasta 10 días de batería, resistencia al agua 5ATM, app iOS/Android incluida.',
+      featured_desc: 'Smartwatch versátil para mantenerte conectado, seguir tu actividad diaria y consultar tus rutinas de descanso desde una app. Hasta 10 días de batería, resistencia al agua 5ATM, app iOS/Android incluida. Kit completo con correa de repuesto y protectores de pantalla.',
+      featured_img_alt: 'CoreSync — kit completo de smartwatch con correa extra, cargador, manual y app móvil',
       collections_title: 'Explora nuestras colecciones',
       collections_subtitle: 'Ofertas para tu país seleccionado. Pulsa un enlace para abrir la página del producto.',
       product_setOfPots_title: 'Set of Pots™ — Elige tu país para ver precio y disponibilidad',
       product_coreSync_title: 'CoreSync™ — Elige tu país para ver precio y disponibilidad',
       why_title: 'Por qué trendtopia-store.com',
       why_1_heading: 'Productos seleccionados',
-      why_1_text: 'Probamos cada artículo antes de incluirlo en el catálogo.',
+      why_1_text: 'Probamos cada artículo antes de incluirlo en el catálogo. Sin relleno ni gadgets: solo productos que resuelven problemas reales.',
       why_2_heading: 'Sin prepago',
-      why_2_text: 'Pagas al repartidor al recibir el paquete.',
+      why_2_text: 'Pagas al repartidor al recibir el paquete. Si no te convence, rechaza el envío. Precios y políticas claras en cada página de producto.',
       why_3_heading: 'Atención en tu idioma',
-      why_3_text: 'Soporte en idioma local en 18 países europeos.',
+      why_3_text: 'Soporte en tu idioma en 18 países europeos. Escríbenos al correo de atención de cada página.',
       footer_info: 'Información',
       footer_about: 'Sobre nosotros',
       footer_contact: 'Contáctanos',
@@ -266,7 +283,16 @@
       footer_cookie: 'Política de cookies',
       footer_shipping: 'Política de envío',
       footer_refund: 'Política de reembolso',
-      footer_rights: 'Todos los derechos reservados.'
+      footer_rights: 'Todos los derechos reservados.',
+      footer_contact_heading: 'Contacto',
+      footer_cookie_change: 'Cambiar preferencias de cookies',
+      cookie_text: 'Usamos cookies necesarias y, con tu consentimiento, cookies analíticas y publicitarias.',
+      cookie_accept_all: 'Aceptar todo',
+      cookie_reject: 'Rechazar no esenciales',
+      cookie_manage: 'Gestionar preferencias',
+      cookie_save: 'Guardar preferencias',
+      cookie_change: 'Cambiar preferencias de cookies',
+      cookie_learn: 'Más información'
     },
     pt: {
       lang_label: 'Idioma / região',
@@ -310,33 +336,215 @@
     },
     pl: {
       lang_label: 'Język / kraj',
+      page_title: 'trendtopia-store.com — Wybrane produkty. Praktyczny design. Oferty.',
+      page_description: 'Produkty do domu, ogrodu i codziennego życia. Dostawa zwykle w 24–48 h roboczych, płatność przy odbiorze w dostępnych krajach. Zwrot 30 dni, gwarancja 24 miesiące.',
+      logo_aria: 'Strona główna trendtopia-store.com',
+      hero_eyebrow: '⭐ Cotygodniowy wybór',
+      hero_title: 'Wybrane produkty. Praktyczny design.<br><em>Starannie dobrane oferty.</em>',
+      hero_subtitle: 'Produkty do domu, ogrodu i na co dzień. Dostawa zwykle w 24–48 godzin roboczych po potwierdzeniu zamówienia, z płatnością przy odbiorze w obsługiwanych krajach Europy.',
       hero_cta: 'Nasze produkty',
+      trust_1_label: '24–48 h robocze',
+      trust_1_sub: 'darmowa dostawa',
+      trust_2_label: 'Płatność przy odbiorze',
+      trust_2_sub: 'bez przedpłaty',
+      trust_3_label: 'Zwrot 30 dni',
+      trust_3_sub: 'zobacz politykę zwrotów',
+      trust_4_label: 'Gwarancja 24 miesiące',
+      trust_4_sub: 'wady produkcyjne',
+      featured_eyebrow: '⭐ Nowość dnia',
+      featured_title: 'Polecany produkt',
+      featured_category: 'Technologia',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Wszechstronny smartwatch: połączenie z telefonem, śledzenie aktywności i przegląd nawyków snu w jednej aplikacji. Do 10 dni na baterii, wodoszczelność 5ATM, aplikacja na iOS/Android. Komplet z dodatkowym paskiem i foliami na ekran.',
+      featured_img_alt: 'CoreSync — kompletny zestaw smartwatch z dodatkowym paskiem, ładowarką, instrukcją i aplikacją',
+      collections_title: 'Poznaj nasze kolekcje',
       collections_subtitle: 'Oferty dla wybranego kraju. Kliknij link, aby otworzyć stronę produktu.',
       product_setOfPots_title: 'Set of Pots™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
       product_coreSync_title: 'CoreSync™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
+      why_title: 'Dlaczego trendtopia-store.com',
+      why_1_heading: 'Starannie wybrane produkty',
+      why_1_text: 'Testujemy każdy produkt przed dodaniem do katalogu. Bez zbędnych gadżetów — tylko rzeczy, które rozwiązują realne problemy.',
+      why_2_heading: 'Bez przedpłaty',
+      why_2_text: 'Płacisz kurierowi przy odbiorze paczki. Jeśli produkt Ci nie pasuje, możesz odmówić odbioru. Jasne ceny i zasady na każdej stronie produktu.',
+      why_3_heading: 'Obsługa w Twoim języku',
+      why_3_text: 'Wsparcie w języku lokalnym w 18 krajach Europy. Kontakt przez adres e-mail podany na każdej stronie.',
+      footer_info: 'Informacje',
       footer_about: 'O nas',
-      footer_contact: 'Kontakt'
+      footer_contact: 'Kontakt',
+      footer_contact_heading: 'Kontakt',
+      footer_privacy: 'Polityka prywatności',
+      footer_terms: 'Regulamin',
+      footer_cookie: 'Polityka plików cookie',
+      footer_shipping: 'Polityka wysyłki',
+      footer_refund: 'Polityka zwrotów',
+      footer_rights: 'Wszelkie prawa zastrzeżone.',
+      footer_cookie_change: 'Zmień ustawienia plików cookie',
+      cookie_text: 'Używamy niezbędnych plików cookie oraz — za Twoją zgodą — analitycznych i reklamowych.',
+      cookie_accept_all: 'Akceptuj wszystkie',
+      cookie_reject: 'Odrzuć opcjonalne',
+      cookie_manage: 'Zarządzaj ustawieniami',
+      cookie_save: 'Zapisz ustawienia',
+      cookie_change: 'Zmień ustawienia plików cookie',
+      cookie_learn: 'Dowiedz się więcej'
     },
     gr: {
       lang_label: 'Γλώσσα / χώρα',
+      page_title: 'trendtopia-store.com — Επιλεγμένα προϊόντα. Χρήσιμος σχεδιασμός. Προσφορές.',
+      page_description: 'Προϊόντα για το σπίτι, τον κήπο και την καθημερινότητα. Παράδοση συνήθως σε 24–48 ώρες εργασίας, αντικαταβολή όπου διατίθεται. Επιστροφή 30 ημερών, εγγύηση 24 μηνών.',
+      logo_aria: 'Αρχική trendtopia-store.com',
+      hero_eyebrow: '⭐ Εβδομαδιαία επιλογή',
+      hero_title: 'Επιλεγμένα προϊόντα. Χρήσιμος σχεδιασμός.<br><em>Προσεκτικά επιλεγμένες προσφορές.</em>',
+      hero_subtitle: 'Προϊόντα για σπίτι, κήπο και καθημερινότητα. Παράδοση συνήθως εντός 24–48 ωρών εργασίας μετά την επιβεβαίωση, με αντικαταβολή στις υποστηριζόμενες χώρες της Ευρώπης.',
       hero_cta: 'Τα προϊόντα μας',
-      collections_subtitle: 'Προσφορές για τη χώρα που επιλέξατε.',
+      trust_1_label: '24–48 ώρες εργασίας',
+      trust_1_sub: 'δωρεάν αποστολή',
+      trust_2_label: 'Αντικαταβολή',
+      trust_2_sub: 'χωρίς προπληρωμή',
+      trust_3_label: 'Επιστροφή 30 ημερών',
+      trust_3_sub: 'δείτε την πολιτική επιστροφών',
+      trust_4_label: 'Εγγύηση 24 μηνών',
+      trust_4_sub: 'εργοστασιακά ελαττώματα',
+      featured_eyebrow: '⭐ Νέα πρόταση της ημέρας',
+      featured_title: 'Προτεινόμενο προϊόν',
+      featured_category: 'Τεχνολογία',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Ευέλικτο smartwatch για επικοινωνία, παρακολούθηση δραστηριότητας και ύπνου από μία εφαρμογή. Έως 10 ημέρες μπαταρίας, αντίσταση νερού 5ATM, εφαρμογή iOS/Android. Πλήρες κιτ με επιπλέον λουράκι και προστατευτικά οθόνης.',
+      featured_img_alt: 'CoreSync — πλήρες κιτ smartwatch με επιπλέον λουράκι, φορτιστή, εγχειρίδιο και εφαρμογή',
+      collections_title: 'Εξερευνήστε τις συλλογές μας',
+      collections_subtitle: 'Προσφορές για τη χώρα που επιλέξατε. Πατήστε έναν σύνδεσμο για τη σελίδα του προϊόντος.',
       product_setOfPots_title: 'Set of Pots™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
       product_coreSync_title: 'CoreSync™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
+      why_title: 'Γιατί trendtopia-store.com',
+      why_1_heading: 'Επιλεγμένα προϊόντα',
+      why_1_text: 'Δοκιμάζουμε κάθε προϊόν πριν το προσθέσουμε στον κατάλογο. Χωρίς περιττά gadgets — μόνο λύσεις σε πραγματικά προβλήματα.',
+      why_2_heading: 'Χωρίς προπληρωμή',
+      why_2_text: 'Πληρώνετε τον courier κατά την παράδοση. Αν δεν σας ταιριάζει, μπορείτε να αρνηθείτε την παραλαβή. Σαφείς τιμές και πολιτικές σε κάθε σελίδα προϊόντος.',
+      why_3_heading: 'Υποστήριξη στη γλώσσα σας',
+      why_3_text: 'Υποστήριξη στα εθνικά 18 ευρωπαϊκών χωρών. Επικοινωνήστε μέσω του email υποστήριξης σε κάθε σελίδα.',
+      footer_info: 'Πληροφορίες',
       footer_about: 'Σχετικά με εμάς',
-      footer_contact: 'Επικοινωνία'
+      footer_contact: 'Επικοινωνία',
+      footer_contact_heading: 'Επικοινωνία',
+      footer_privacy: 'Πολιτική απορρήτου',
+      footer_terms: 'Όροι και προϋποθέσεις',
+      footer_cookie: 'Πολιτική cookies',
+      footer_shipping: 'Πολιτική αποστολών',
+      footer_refund: 'Πολιτική επιστροφών',
+      footer_rights: 'Με την επιφύλαξη παντός δικαιώματος.',
+      footer_cookie_change: 'Αλλαγή προτιμήσεων cookies',
+      cookie_text: 'Χρησιμοποιούμε απαραίτητα cookies και, με τη συγκατάθεσή σας, αναλυτικά και διαφημιστικά cookies.',
+      cookie_accept_all: 'Αποδοχή όλων',
+      cookie_reject: 'Απόρριψη μη απαραίτητων',
+      cookie_manage: 'Διαχείριση προτιμήσεων',
+      cookie_save: 'Αποθήκευση προτιμήσεων',
+      cookie_change: 'Αλλαγή προτιμήσεων cookies',
+      cookie_learn: 'Περισσότερα'
     },
     sk: {
       lang_label: 'Jazyk / krajina',
+      page_title: 'trendtopia-store.com — Vybrané produkty. Užitočný dizajn. Ponuky.',
+      page_description: 'Produkty pre domácnosť, záhradu a každodenný život. Doručenie zvyčajne do 24–48 hodín, dobierka v dostupných krajinách. Vrátenie do 30 dní, 24-mesačná záruka.',
+      logo_aria: 'Domov trendtopia-store.com',
+      hero_eyebrow: '⭐ Týždenný výber',
+      hero_title: 'Vybrané produkty. Užitočný dizajn.<br><em>Starostlivo vybrané ponuky.</em>',
+      hero_subtitle: 'Produkty pre domácnosť, záhradu a každodenný život. Doručenie zvyčajne do 24–48 pracovných hodín po potvrdení objednávky, s dobierkou v podporovaných krajinách Európy.',
       hero_cta: 'Naše produkty',
+      trust_1_label: '24–48 prac. hodín',
+      trust_1_sub: 'doprava zdarma',
+      trust_2_label: 'Dobierka',
+      trust_2_sub: 'bez predplatby',
+      trust_3_label: 'Vrátenie do 30 dní',
+      trust_3_sub: 'pozrite si pravidlá vrátenia',
+      trust_4_label: '24-mesačná záruka',
+      trust_4_sub: 'výrobné vady',
+      featured_eyebrow: '⭐ Novinka dňa',
+      featured_title: 'Odporúčaný produkt',
+      featured_category: 'Technológie',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Univerzálne smart hodinky na prepojenie s telefónom, sledovanie aktivity a spánku v jednej aplikácii. Až 10 dní výdrž, vodotesnosť 5ATM, aplikácia pre iOS/Android. Kompletná sada s náhradným remienkom a ochrannými fóliami.',
+      featured_img_alt: 'CoreSync — kompletná sada smart hodiniek s náhradným remienkom, nabíjačkou, návodom a aplikáciou',
+      collections_title: 'Preskúmajte naše kolekcie',
+      collections_subtitle: 'Ponuky pre vybranú krajinu. Kliknite na odkaz a otvorte stránku produktu.',
       product_setOfPots_title: 'Set of Pots™ — Vyberte krajinu pre cenu a dostupnosť',
-      footer_about: 'O nás'
+      product_coreSync_title: 'CoreSync™ — Vyberte krajinu pre cenu a dostupnosť',
+      why_title: 'Prečo trendtopia-store.com',
+      why_1_heading: 'Starostlivo vybrané produkty',
+      why_1_text: 'Každý produkt testujeme pred zaradením do katalógu. Žiadne zbytočné gadgety — len veci, ktoré riešia skutočné problémy.',
+      why_2_heading: 'Bez predplatby',
+      why_2_text: 'Platíte kuriérovi pri prevzatí balíka. Ak vám nevyhovuje, môžete doručenie odmietnuť. Jasné ceny a pravidlá na každej stránke produktu.',
+      why_3_heading: 'Podpora vo vašom jazyku',
+      why_3_text: 'Podpora v lokálnom jazyku v 18 európskych krajinách. Kontaktujte nás e-mailom uvedeným na každej stránke.',
+      footer_info: 'Informácie',
+      footer_about: 'O nás',
+      footer_contact: 'Kontakt',
+      footer_contact_heading: 'Kontakt',
+      footer_privacy: 'Zásady ochrany súkromia',
+      footer_terms: 'Obchodné podmienky',
+      footer_cookie: 'Zásady cookies',
+      footer_shipping: 'Prepravné podmienky',
+      footer_refund: 'Pravidlá vrátenia',
+      footer_rights: 'Všetky práva vyhradené.',
+      footer_cookie_change: 'Zmeniť nastavenia súborov cookie',
+      cookie_text: 'Používame nevyhnutné cookies a so súhlasom aj analytické a reklamné cookies.',
+      cookie_accept_all: 'Prijať všetko',
+      cookie_reject: 'Odmietnuť nepovinné',
+      cookie_manage: 'Spravovať nastavenia',
+      cookie_save: 'Uložiť nastavenia',
+      cookie_change: 'Zmeniť nastavenia súborov cookie',
+      cookie_learn: 'Viac informácií'
     },
     cz: {
       lang_label: 'Jazyk / země',
+      page_title: 'trendtopia-store.com — Vybrané produkty. Užitečný design. Nabídky.',
+      page_description: 'Produkty pro domácnost, zahradu a každodenní život. Doručení obvykle do 24–48 hodin, dobírka v dostupných zemích. Vrácení do 30 dnů, 24měsíční záruka.',
+      logo_aria: 'Domů trendtopia-store.com',
+      hero_eyebrow: '⭐ Týdenní výběr',
+      hero_title: 'Vybrané produkty. Užitečný design.<br><em>Pečlivě vybrané nabídky.</em>',
+      hero_subtitle: 'Produkty pro domácnost, zahradu a každodenní život. Doručení obvykle do 24–48 pracovních hodin po potvrzení objednávky, s dobírkou v podporovaných evropských zemích.',
       hero_cta: 'Naše produkty',
+      trust_1_label: '24–48 prac. hodin',
+      trust_1_sub: 'doprava zdarma',
+      trust_2_label: 'Dobírka',
+      trust_2_sub: 'bez předplatby',
+      trust_3_label: 'Vrácení do 30 dnů',
+      trust_3_sub: 'viz pravidla vrácení',
+      trust_4_label: '24měsíční záruka',
+      trust_4_sub: 'vady z výroby',
+      featured_eyebrow: '⭐ Novinka dne',
+      featured_title: 'Doporučený produkt',
+      featured_category: 'Technologie',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Univerzální chytré hodinky pro propojení s telefonem, sledování aktivity a spánku v jedné aplikaci. Až 10 dní výdrž, voděodolnost 5ATM, aplikace pro iOS/Android. Kompletní sada s náhradním řemínkem a ochrannými fóliemi.',
+      featured_img_alt: 'CoreSync — kompletní sada chytrých hodinek s náhradním řemínkem, nabíječkou, návodem a aplikací',
+      collections_title: 'Prohlédněte si naše kolekce',
+      collections_subtitle: 'Nabídky pro vybranou zemi. Klepněte na odkaz a otevřete stránku produktu.',
       product_setOfPots_title: 'Set of Pots™ — Zvolte zemi pro cenu a dostupnost',
-      footer_about: 'O nás'
+      product_coreSync_title: 'CoreSync™ — Zvolte zemi pro cenu a dostupnost',
+      why_title: 'Proč trendtopia-store.com',
+      why_1_heading: 'Pečlivě vybrané produkty',
+      why_1_text: 'Každý produkt testujeme před zařazením do katalogu. Žádné zbytečné gadgety — jen věci, které řeší skutečné problémy.',
+      why_2_heading: 'Bez předplatby',
+      why_2_text: 'Platíte kurýrovi při převzetí balíku. Pokud vám nevyhovuje, můžete doručení odmítnout. Jasné ceny a pravidla na každé stránce produktu.',
+      why_3_heading: 'Podpora ve vašem jazyce',
+      why_3_text: 'Podpora v místním jazyce v 18 evropských zemích. Kontaktujte nás e-mailem uvedeným na každé stránce.',
+      footer_info: 'Informace',
+      footer_about: 'O nás',
+      footer_contact: 'Kontakt',
+      footer_contact_heading: 'Kontakt',
+      footer_privacy: 'Zásady ochrany osobních údajů',
+      footer_terms: 'Obchodní podmínky',
+      footer_cookie: 'Zásady cookies',
+      footer_shipping: 'Přepravní podmínky',
+      footer_refund: 'Pravidla vrácení',
+      footer_rights: 'Všechna práva vyhrazena.',
+      footer_cookie_change: 'Změnit nastavení cookies',
+      cookie_text: 'Používáme nezbytné cookies a se souhlasem také analytické a reklamní cookies.',
+      cookie_accept_all: 'Přijmout vše',
+      cookie_reject: 'Odmítnout nepovinné',
+      cookie_manage: 'Spravovat předvolby',
+      cookie_save: 'Uložit předvolby',
+      cookie_change: 'Změnit nastavení cookies',
+      cookie_learn: 'Více informací'
     }
   };
 
@@ -385,6 +593,43 @@
     var pack = PRICED_LINES[locale] || PRICED_LINES.en;
     var tpl = (pack && pack[key]) || (PRICED_LINES.en && PRICED_LINES.en[key]) || '{price}';
     return tpl.replace(/\{price\}/g, price);
+  }
+
+  function applySiteConfig(locale) {
+    var geo = locale === 'en' ? 'en' : locale;
+    window.SITE_CONFIG = window.SITE_CONFIG || {};
+    window.SITE_CONFIG.GEO = geo;
+    var map = [
+      ['cookie_text', 'COOKIE_TEXT'],
+      ['cookie_accept_all', 'COOKIE_ACCEPT_ALL'],
+      ['cookie_reject', 'COOKIE_REJECT'],
+      ['cookie_manage', 'COOKIE_MANAGE'],
+      ['cookie_save', 'COOKIE_SAVE'],
+      ['cookie_change', 'COOKIE_CHANGE'],
+      ['cookie_learn', 'COOKIE_LEARN']
+    ];
+    map.forEach(function (pair) {
+      var val = msg(locale, pair[0]);
+      if (val) window.SITE_CONFIG[pair[1]] = val;
+    });
+  }
+
+  function applyDocumentMeta(locale) {
+    var title = msg(locale, 'page_title');
+    if (title) document.title = title;
+    var desc = msg(locale, 'page_description');
+    if (desc) {
+      var meta = document.querySelector('meta[name="description"]');
+      if (meta) meta.setAttribute('content', desc);
+    }
+    document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
+      var alt = msg(locale, el.getAttribute('data-i18n-alt'));
+      if (alt) el.setAttribute('alt', alt);
+    });
+    document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+      var label = msg(locale, el.getAttribute('data-i18n-aria'));
+      if (label) el.setAttribute('aria-label', label);
+    });
   }
 
   function applyProductPricing(locale) {
@@ -483,6 +728,9 @@
       var page = el.getAttribute('data-i18n-href');
       el.setAttribute('href', '/' + geo + '/' + page);
     });
+
+    applyDocumentMeta(locale);
+    applySiteConfig(locale);
 
     document.querySelectorAll('[data-market-links]').forEach(function (el) {
       renderMarketLinks(locale, el.getAttribute('data-market-links'), el);
