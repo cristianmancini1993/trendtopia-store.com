@@ -370,6 +370,10 @@
   border-left: none;
   border-right: none;
   border-bottom: none;
+  scroll-margin-top: 0;
+}
+#coresSync-markets-links {
+  scroll-margin-top: calc(4.25rem + env(safe-area-inset-top, 0px));
 }
 
 .categories {
@@ -658,9 +662,11 @@ body { overflow-x: clip; }
   #deal,
   #why,
   #our-products,
-  #setOfPots-markets,
-  #coresSync-markets {
+  #setOfPots-markets {
     scroll-margin-top: 0.5rem;
+  }
+  #coresSync-markets-links {
+    scroll-margin-top: calc(3.75rem + env(safe-area-inset-top, 0px));
   }
 
   .site-footer .container {
@@ -761,11 +767,11 @@ body { overflow-x: clip; }
           <h3 class="featured__name" data-i18n="featured_name">CoreSync™ — 49,00 €</h3>
           
           <p class="featured__desc" data-i18n="featured_desc">Smartwatch versátil para mantenerte conectado, seguir tu actividad diaria y consultar tus rutinas de descanso desde una app. Hasta 10 días de batería, resistencia al agua 5ATM, app iOS/Android incluida. Kit completo con correa de repuesto y protectores de pantalla.</p>
-          <a class="featured__cta" href="#coresSync-markets" data-i18n="featured_cta">Consíguelo ya</a>
+          <a class="featured__cta" href="#coresSync-markets-links" data-i18n="featured_cta">Consíguelo ya</a>
         </div>
         <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
           <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Consíguelo ya por solo 49,00 €</span>
-          <span class="home-market-picker__links" data-market-links="coreSync"><a href="/es/smartwatch/landing.html">ES</a></span>
+          <span id="coresSync-markets-links" class="home-market-picker__links" data-market-links="coreSync"><a href="/es/smartwatch/landing.html">ES</a></span>
         </div>
       </article>
     </div>

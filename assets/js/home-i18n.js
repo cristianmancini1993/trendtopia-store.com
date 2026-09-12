@@ -821,6 +821,36 @@
     }
   }
 
+  function scrollToFeaturedCountryLinks(e) {
+    var btn = e.currentTarget;
+    if (!btn || btn.getAttribute('href') !== '#coresSync-markets-links') return;
+    e.preventDefault();
+    var links = document.getElementById('coresSync-markets-links');
+    if (!links) return;
+    var header = document.querySelector('.site-header');
+    var headerGap = 12;
+    var headerH = header ? header.getBoundingClientRect().height : 0;
+    var minTop = headerH + headerGap;
+    var bottomPad = 20;
+    var rect = links.getBoundingClientRect();
+    var delta = 0;
+    if (rect.top < minTop) {
+      delta = rect.top - minTop;
+    } else if (rect.bottom > window.innerHeight - bottomPad) {
+      delta = rect.bottom - (window.innerHeight - bottomPad);
+    }
+    if (Math.abs(delta) < 4) return;
+    window.scrollTo({ top: window.scrollY + delta, behavior: 'smooth' });
+  }
+
+  function bindFeaturedCtaScroll() {
+    document.querySelectorAll('a.featured__cta[href="#coresSync-markets-links"]').forEach(function (btn) {
+      if (btn.dataset.featuredCtaScrollBound === '1') return;
+      btn.dataset.featuredCtaScrollBound = '1';
+      btn.addEventListener('click', scrollToFeaturedCountryLinks);
+    });
+  }
+
   function bindLocaleSelect(select) {
     if (!select || select.dataset.homeI18nBound === '1') return;
     select.dataset.homeI18nBound = '1';
@@ -853,6 +883,7 @@
     }
     applyLocale(locale);
     bindLocaleSelect(select);
+    bindFeaturedCtaScroll();
   }
 
   if (document.readyState === 'loading') {
