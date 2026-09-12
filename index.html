@@ -324,6 +324,39 @@
 .home-market-picker--on-orange .home-market-picker__links a {
   color: #fff;
 }
+.home-market-picker--with-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  text-align: left;
+}
+.home-market-picker__content {
+  flex: 1;
+  min-width: 0;
+}
+.home-market-picker__thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid #0f172a;
+  flex-shrink: 0;
+  background: #fff;
+}
+.home-market-pickers {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.featured__card .home-market-picker--in-card {
+  margin: 0;
+  grid-column: 1 / -1;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+}
 
 .categories {
   padding: 4rem 1rem;
@@ -645,10 +678,6 @@ body { overflow-x: clip; }
     <div class="featured__container">
       <div class="featured__eyebrow">⭐ Today's novelty</div>
       <h2 class="featured__title">Featured product</h2>
-      <div id="coresSync-markets" class="home-market-picker home-market-picker--light">
-        <span class="home-market-picker__title">CoreSync™ — Choose language</span>
-        <span class="home-market-picker__links"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a></span>
-      </div>
       <article class="featured__card">
         <div class="featured__photo">
           
@@ -664,6 +693,10 @@ body { overflow-x: clip; }
           <p class="featured__desc">A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.</p>
           <a href="#coresSync-markets" class="featured__cta">Choose language →</a>
         </div>
+        <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card">
+          <span class="home-market-picker__title">CoreSync™ — Choose language</span>
+          <span class="home-market-picker__links"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a></span>
+        </div>
       </article>
     </div>
   </section>
@@ -672,41 +705,21 @@ body { overflow-x: clip; }
   <section class="categories">
     <div class="categories__container">
       <h2 class="categories__title">Explore our collections</h2>
-      <p class="categories__subtitle">Six categories of carefully curated products. New items added every week.</p>
-      <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange">
-        <span class="home-market-picker__title">Set of Pots™ — Choose language</span>
-        <span class="home-market-picker__links"><a href="/es/casa-fuego/landing.html">ES</a> · <a href="/pl/casa-fuego/landing.html">PL</a> · <a href="/sk/casa-fuego/landing.html">SK</a> · <a href="/cz/casa-fuego/landing.html">CZ</a></span>
-      </div>
-      <div class="cat-grid">
-        <a href="#setOfPots-markets" class="cat-tile cat-tile--available">
-          <span class="cat-tile__icon">🏠</span>
-          <span class="cat-tile__name">Home &amp; Kitchen</span>
-          <span class="cat-tile__status">Set of Pots™ — View page</span>
-        </a>
-        <div class="cat-tile">
-          <span class="cat-tile__icon">🌱</span>
-          <span class="cat-tile__name">Garden</span>
-          <span class="cat-tile__status">Coming soon</span>
+      <p class="categories__subtitle">Choose a product and your language to open the product page.</p>
+      <div class="home-market-pickers">
+        <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb">
+          <div class="home-market-picker__content">
+            <span class="home-market-picker__title">Set of Pots™ — Choose language</span>
+            <span class="home-market-picker__links"><a href="/es/casa-fuego/landing.html">ES</a> · <a href="/pl/casa-fuego/landing.html">PL</a> · <a href="/sk/casa-fuego/landing.html">SK</a> · <a href="/cz/casa-fuego/landing.html">CZ</a></span>
+          </div>
+          <img class="home-market-picker__thumb" src="/assets/img/products/casa-fuego/hero.webp" alt="" width="72" height="72" loading="lazy" decoding="async">
         </div>
-        <a href="#coresSync-markets" class="cat-tile cat-tile--available">
-          <span class="cat-tile__icon">⚡</span>
-          <span class="cat-tile__name">Tech &amp; Smart</span>
-          <span class="cat-tile__status">CoreSync™ — View page</span>
-        </a>
-        <div class="cat-tile">
-          <span class="cat-tile__icon">🌿</span>
-          <span class="cat-tile__name">Wellness</span>
-          <span class="cat-tile__status">Coming soon</span>
-        </div>
-        <div class="cat-tile">
-          <span class="cat-tile__icon">🎯</span>
-          <span class="cat-tile__name">Leisure</span>
-          <span class="cat-tile__status">Coming soon</span>
-        </div>
-        <div class="cat-tile">
-          <span class="cat-tile__icon">🎁</span>
-          <span class="cat-tile__name">Gift Ideas</span>
-          <span class="cat-tile__status">Coming soon</span>
+        <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb">
+          <div class="home-market-picker__content">
+            <span class="home-market-picker__title">CoreSync™ — Choose language</span>
+            <span class="home-market-picker__links"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a></span>
+          </div>
+          <img class="home-market-picker__thumb" src="/assets/img/products/smartwatch/hero.jpg?v=2" alt="" width="72" height="72" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
