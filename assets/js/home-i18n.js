@@ -14,7 +14,7 @@
   /** English home: only live campaign landings (others stay in repo for future use). */
   var EN_HOME_MARKETS = {
     setOfPots: ['es', 'pl', 'sk', 'cz'],
-    coreSync: ['es', 'pl', 'gr']
+    coreSync: ['es', 'pl', 'gr', 'sk']
   };
 
   var LOCALE_LABELS = {
@@ -88,7 +88,7 @@
       bg: '69,00 €', cz: '1.499,00 Kč', de: '69,00 €', ee: '99,00 €', en: '99,00 €',
       es: '49,00 €', fr: '99,00 €', gr: '69,00 €', hr: '99,00 €', hu: '31.999 Ft',
       it: '99,00 €', lt: '54,00 €', lv: '69,00 €', pl: '199,00 zł', pt: '66,00 €',
-      ro: '339,00 lei', si: '99,00 €', sk: '99,00 €'
+      ro: '339,00 lei', si: '99,00 €', sk: '64,00 €'
     },
     setOfPots: {
       cz: '1 999 Kč', de: '109,00 €', es: '89,00 €', hu: '31.999 Ft',
