@@ -663,6 +663,12 @@
     if (desc) {
       var meta = document.querySelector('meta[name="description"]');
       if (meta) meta.setAttribute('content', desc);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', desc);
+    }
+    if (title) {
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', title);
     }
     document.querySelectorAll('[data-i18n-alt]').forEach(function (el) {
       var alt = msg(locale, el.getAttribute('data-i18n-alt'));

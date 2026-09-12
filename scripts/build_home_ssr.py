@@ -139,6 +139,22 @@ def set_img_alt(html: str, key: str, value: str) -> str:
     )
 
 
+def set_i18n_html(html: str, key: str, value: str) -> str:
+    """Replace inner HTML up to the element's own closing tag (not nested tags like </em>)."""
+    pattern = (
+        rf'(<(\w+)[^>]*\bdata-i18n-html="{re.escape(key)}"[^>]*>)'
+        rf"(.*?)"
+        rf"(</\2>)"
+    )
+    return re.sub(
+        pattern,
+        lambda m: m.group(1) + value + m.group(4),
+        html,
+        count=1,
+        flags=re.S | re.I,
+    )
+
+
 def render_locale(template: str, locale: str, data: dict, select_locales: list[str], locale_markets: dict) -> str:
     html = template
     html_lang = data["HTML_LANG"].get(locale, locale)
@@ -151,7 +167,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
 
     hero_val = msg(data, locale, "hero_title")
     if hero_val:
-        html = set_attr(html, "i18n-html", "hero_title", hero_val, is_html=True)
+        html = set_i18n_html(html, "hero_title", hero_val)
 
     i18n_keys = set(re.findall(r'data-i18n="([^"]+)"', html))
     i18n_keys.discard("hero_title")
@@ -277,6 +293,12 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
             html,
             count=1,
         )
+        html = re.sub(
+            r'<meta property="og:description" content="[^"]*"',
+            f'<meta property="og:description" content="{escape(desc)}"',
+            html,
+            count=1,
+        )
 
     cfg_geo = "en" if locale == "en" else locale
     cookie_pairs = [
@@ -302,12 +324,6 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         count=1,
     )
 
-    html = html.replace(
-        '<script src="/assets/js/home-i18n.js" defer></script>',
-        '<script src="/assets/js/home-i18n-data.js" defer></script>\n'
-        '<script src="/assets/js/home-i18n.js" defer></script>',
-        1,
-    )
     return html
 
 
