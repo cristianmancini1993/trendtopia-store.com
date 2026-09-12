@@ -596,6 +596,16 @@
     return document.documentElement.getAttribute('data-ssr-locale');
   }
 
+  function readQueryLang() {
+    var match = /[?&]lang=([^&]+)/.exec(window.location.search || '');
+    if (!match) return '';
+    try {
+      return normalizeLocale(decodeURIComponent(match[1].replace(/\+/g, ' ')));
+    } catch (e) {
+      return normalizeLocale(match[1]);
+    }
+  }
+
   function detectLocale() {
     var cookieLoc = normalizeLocale(readCookieLocale() || '');
     if (cookieLoc && isSelectableLocale(cookieLoc)) return cookieLoc;
@@ -795,7 +805,7 @@
       localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {}
     if (getSsrLocale()) {
-      window.location.reload();
+      window.location.href = '/?lang=' + encodeURIComponent(next);
       return;
     }
     applyLocale(next);
@@ -805,6 +815,16 @@
     var select = document.getElementById('home-locale-select');
     var ssr = normalizeLocale(getSsrLocale() || '');
     if (ssr && isSelectableLocale(ssr)) {
+      var qLang = readQueryLang();
+      if (qLang && isSelectableLocale(qLang)) {
+        writeCookieLocale(qLang);
+        try {
+          localStorage.setItem(STORAGE_KEY, qLang);
+        } catch (e) {}
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '/');
+        }
+      }
       if (select && select.value !== ssr) select.value = ssr;
       if (select) {
         select.addEventListener('change', function () {

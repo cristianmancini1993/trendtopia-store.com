@@ -119,6 +119,26 @@ def set_attr(html: str, attr: str, key: str, value: str, *, is_html: bool = Fals
     return re.sub(pattern, repl, html, count=1, flags=re.S | re.I)
 
 
+def set_logo_aria(html: str, value: str) -> str:
+    safe = value.replace('"', "&quot;")
+    return re.sub(
+        r'(<a[^>]*class="site-logo"[^>]*aria-label=")[^"]*(")',
+        rf"\1{safe}\2",
+        html,
+        count=1,
+    )
+
+
+def set_img_alt(html: str, key: str, value: str) -> str:
+    safe = escape(value)
+    return re.sub(
+        rf'(<img[^>]*data-i18n-alt="{re.escape(key)}"[^>]*alt=")[^"]*(")',
+        rf"\1{safe}\2",
+        html,
+        count=1,
+    )
+
+
 def render_locale(template: str, locale: str, data: dict, select_locales: list[str], locale_markets: dict) -> str:
     html = template
     html_lang = data["HTML_LANG"].get(locale, locale)
@@ -143,12 +163,11 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
     for key in re.findall(r'data-i18n-alt="([^"]+)"', html):
         val = msg(data, locale, key)
         if val:
-            html = set_attr(html, "i18n-alt", key, val)
+            html = set_img_alt(html, key, val)
 
-    for key in re.findall(r'data-i18n-aria="([^"]+)"', html):
-        val = msg(data, locale, key)
-        if val:
-            html = set_attr(html, "i18n-aria", key, val)
+    logo_aria = msg(data, locale, "logo_aria")
+    if logo_aria:
+        html = set_logo_aria(html, logo_aria)
 
     geo = locale
     html = re.sub(
