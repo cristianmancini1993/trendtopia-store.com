@@ -131,12 +131,29 @@ def set_logo_aria(html: str, value: str) -> str:
 
 def set_img_alt(html: str, key: str, value: str) -> str:
     safe = escape(value)
-    return re.sub(
-        rf'(<img[^>]*data-i18n-alt="{re.escape(key)}"[^>]*alt=")[^"]*(")',
-        rf"\1{safe}\2",
-        html,
-        count=1,
-    )
+    pattern = rf'<img[^>]*data-i18n-alt="{re.escape(key)}"[^>]*>'
+
+    def fix(m: re.Match[str]) -> str:
+        tag = m.group(0)
+        if re.search(r'\balt="', tag):
+            return re.sub(r'\balt="[^"]*"', f'alt="{safe}"', tag, count=1)
+        return tag[:-1] + f' alt="{safe}">'
+
+    return re.sub(pattern, fix, html, count=1)
+
+
+def set_i18n_hrefs(html: str, geo: str) -> str:
+    def fix_anchor(m: re.Match[str]) -> str:
+        tag = m.group(0)
+        page_m = re.search(r'data-i18n-href="([^"]+)"', tag)
+        if not page_m:
+            return tag
+        href = f"/{geo}/{page_m.group(1)}"
+        if re.search(r'\bhref="', tag):
+            return re.sub(r'\bhref="[^"]*"', f'href="{href}"', tag, count=1)
+        return tag.replace("<a ", f'<a href="{href}" ', 1)
+
+    return re.sub(r"<a[^>]*\bdata-i18n-href=\"[^\"]+\"[^>]*>", fix_anchor, html)
 
 
 def set_i18n_html(html: str, key: str, value: str) -> str:
@@ -186,11 +203,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         html = set_logo_aria(html, logo_aria)
 
     geo = locale
-    html = re.sub(
-        r'(<a[^>]*data-i18n-href="([^"]+)"[^>]*href=")[^"]*(")',
-        lambda m: m.group(1) + f"/{geo}/{m.group(2)}" + m.group(3),
-        html,
-    )
+    html = set_i18n_hrefs(html, geo)
 
     prices = data["PRODUCT_PRICES"]
     use_chooser = locale == "en"
