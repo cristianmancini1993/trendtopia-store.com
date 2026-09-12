@@ -801,26 +801,17 @@
     try {
       localStorage.setItem(STORAGE_KEY, locale);
     } catch (e) {}
-  }
-
-  function navigateHomeLocale(next) {
-    writeCookieLocale(next);
-    try {
-      localStorage.setItem(STORAGE_KEY, next);
-    } catch (e) {}
-    if (getSsrLocale()) {
-      window.location.replace('/?lang=' + encodeURIComponent(next));
-      return;
-    }
-    applyLocale(next);
+    document.documentElement.setAttribute('data-ssr-locale', locale);
   }
 
   function onLocaleSelectChange(select) {
     var next = normalizeLocale(select.value);
     if (!isSelectableLocale(next)) next = 'en';
-    var current = normalizeLocale(getSsrLocale() || readCookieLocale() || '');
-    if (getSsrLocale() && next === current) return;
-    navigateHomeLocale(next);
+    var ssrBefore = normalizeLocale(getSsrLocale() || '');
+    applyLocale(next);
+    if (ssrBefore && next !== ssrBefore) {
+      window.location.replace('/?lang=' + encodeURIComponent(next));
+    }
   }
 
   function bindLocaleSelect(select) {
@@ -831,7 +822,6 @@
       onLocaleSelectChange(select);
     }
     select.addEventListener('change', onPick);
-    select.addEventListener('input', onPick);
     if (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -840,29 +830,20 @@
     }
   }
 
-  function persistLocalePreference(locale) {
-    writeCookieLocale(locale);
-    try {
-      localStorage.setItem(STORAGE_KEY, locale);
-    } catch (e) {}
-  }
-
   function init() {
     var select = document.getElementById('home-locale-select');
     var ssr = normalizeLocale(getSsrLocale() || '');
+    var locale;
     if (ssr && isSelectableLocale(ssr)) {
       var qLang = readQueryLang();
-      var effective = qLang && isSelectableLocale(qLang) ? qLang : ssr;
-      persistLocalePreference(effective);
+      locale = qLang && isSelectableLocale(qLang) ? qLang : ssr;
       if (qLang && isSelectableLocale(qLang) && window.history && window.history.replaceState) {
         window.history.replaceState(null, '', '/');
       }
-      if (select && select.value !== effective) select.value = effective;
-      bindLocaleSelect(select);
-      return;
+    } else {
+      populateLocaleSelect();
+      locale = detectLocale();
     }
-    populateLocaleSelect();
-    var locale = detectLocale();
     applyLocale(locale);
     bindLocaleSelect(select);
   }
