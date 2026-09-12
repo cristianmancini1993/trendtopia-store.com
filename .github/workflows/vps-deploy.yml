@@ -12,13 +12,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Build pre-rendered home (SSR)
+        run: |
+          pip install dukpy
+          python scripts/make_home_i18n_data.py
+          python scripts/build_home_ssr.py
+
       - name: Upload full site
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
           password: ${{ secrets.VPS_SSH_PASSWORD }}
-          source: "index.html,assets,bg,cz,de,ee,en,es,fr,gr,hr,hu,it,lt,lv,pl,pt,ro,si,sk,robots.txt,sitemap.xml,favicon.svg,CNAME"
+          source: "index.html,index.template.html,home,assets,bg,cz,de,ee,en,es,fr,gr,hr,hu,it,lt,lv,pl,pt,ro,si,sk,robots.txt,sitemap.xml,favicon.svg,CNAME,scripts/nginx-home-locale.conf,scripts/nginx-home-locale-server.conf"
           target: "/tmp/tt-deploy-full"
           strip_components: 0
           timeout: 600s
@@ -41,7 +47,18 @@ jobs:
               [ -d "$base" ] || return 0
               mkdir -p "$base/assets"
               cp -f /tmp/tt-deploy-full/index.html "$base/index.html"
+              rsync -a /tmp/tt-deploy-full/home/ "$base/home/"
               rsync -a /tmp/tt-deploy-full/assets/ "$base/assets/"
+              if [ -f /tmp/tt-deploy-full/scripts/nginx-home-locale.conf ]; then
+                mkdir -p /etc/nginx/conf.d /etc/nginx/snippets
+                cp -f /tmp/tt-deploy-full/scripts/nginx-home-locale.conf /etc/nginx/conf.d/trendtopia-home-locale-maps.conf
+                cp -f /tmp/tt-deploy-full/scripts/nginx-home-locale-server.conf /etc/nginx/snippets/trendtopia-home-locale.conf
+              fi
+              for site in /etc/nginx/sites-enabled/trendtopia-store.com /etc/nginx/sites-available/trendtopia-store.com; do
+                if [ -f "$site" ] && ! grep -q 'snippets/trendtopia-home-locale.conf' "$site"; then
+                  sed -i '/root /a \    include /etc/nginx/snippets/trendtopia-home-locale.conf;' "$site" 2>/dev/null || true
+                fi
+              done
               for geo in $GEOS; do
                 if [ -d "/tmp/tt-deploy-full/$geo" ]; then
                   mkdir -p "$base/$geo"
@@ -60,6 +77,9 @@ jobs:
               install_site "$base"
             done
             if [ "$updated" -eq 1 ]; then
+              if nginx -t 2>/dev/null; then
+                systemctl reload nginx 2>/dev/null || service nginx reload 2>/dev/null || true
+              fi
               exit 0
             fi
             root=$(nginx -T 2>/dev/null | awk '/^[[:space:]]*root /{print $2}' | head -1 | tr -d ';')

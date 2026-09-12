@@ -8,6 +8,7 @@
 #
 #     root /var/www/trendtopia-store.com;
 #     index index.html;
+#     include /etc/nginx/snippets/trendtopia-home-locale.conf;
 #
 #     ssl_certificate /etc/letsencrypt/live/trendtopia-store.com/fullchain.pem;
 #     ssl_certificate_key /etc/letsencrypt/live/trendtopia-store.com/privkey.pem;
@@ -15,6 +16,9 @@
 #     location / {
 #         try_files $uri $uri/ =404;
 #     }
+#
+# Maps: copy scripts/nginx-home-locale.conf → /etc/nginx/conf.d/trendtopia-home-locale-maps.conf
+# Snippet: scripts/nginx-home-locale-server.conf → /etc/nginx/snippets/trendtopia-home-locale.conf
 # }
 #
 # server {
