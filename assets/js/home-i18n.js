@@ -821,12 +821,29 @@
     }
   }
 
+  var featuredCtaMaxScrollPx = null;
+  function cssCmToPx(cm) {
+    var probe = document.createElement('div');
+    probe.style.cssText = 'position:absolute;visibility:hidden;height:' + cm + 'cm;width:0;pointer-events:none';
+    document.body.appendChild(probe);
+    var px = probe.getBoundingClientRect().height;
+    document.body.removeChild(probe);
+    return px;
+  }
+  function featuredCtaMobileMaxScrollPx() {
+    if (featuredCtaMaxScrollPx == null) {
+      featuredCtaMaxScrollPx = cssCmToPx(2);
+    }
+    return featuredCtaMaxScrollPx;
+  }
+
   function scrollToFeaturedCountryLinks(e) {
     var btn = e.currentTarget;
     if (!btn || btn.getAttribute('href') !== '#coresSync-markets-links') return;
     e.preventDefault();
     var links = document.getElementById('coresSync-markets-links');
     if (!links) return;
+    var isMobile = window.matchMedia('(max-width: 767px)').matches;
     var header = document.querySelector('.site-header');
     var headerGap = 12;
     var headerH = header ? header.getBoundingClientRect().height : 0;
@@ -840,7 +857,14 @@
       delta = rect.bottom - (window.innerHeight - bottomPad);
     }
     if (Math.abs(delta) < 4) return;
-    window.scrollTo({ top: window.scrollY + delta * 0.25, behavior: 'smooth' });
+
+    var scrollDelta = delta * 0.25;
+    if (isMobile) {
+      var cap = featuredCtaMobileMaxScrollPx();
+      if (delta > 0) scrollDelta = Math.min(delta, cap);
+      else scrollDelta = Math.max(delta, -cap);
+    }
+    window.scrollTo({ top: window.scrollY + scrollDelta, behavior: 'smooth' });
   }
 
   function bindFeaturedCtaScroll() {
