@@ -803,18 +803,48 @@
     } catch (e) {}
   }
 
-  function onLocaleSelectChange(select) {
-    var next = normalizeLocale(select.value);
-    if (!isSelectableLocale(next)) next = 'en';
+  function navigateHomeLocale(next) {
     writeCookieLocale(next);
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {}
     if (getSsrLocale()) {
-      window.location.href = '/?lang=' + encodeURIComponent(next);
+      window.location.replace('/?lang=' + encodeURIComponent(next));
       return;
     }
     applyLocale(next);
+  }
+
+  function onLocaleSelectChange(select) {
+    var next = normalizeLocale(select.value);
+    if (!isSelectableLocale(next)) next = 'en';
+    var current = normalizeLocale(getSsrLocale() || readCookieLocale() || '');
+    if (getSsrLocale() && next === current) return;
+    navigateHomeLocale(next);
+  }
+
+  function bindLocaleSelect(select) {
+    if (!select || select.dataset.homeI18nBound === '1') return;
+    select.dataset.homeI18nBound = '1';
+    var form = select.form;
+    function onPick() {
+      onLocaleSelectChange(select);
+    }
+    select.addEventListener('change', onPick);
+    select.addEventListener('input', onPick);
+    if (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        onPick();
+      });
+    }
+  }
+
+  function persistLocalePreference(locale) {
+    writeCookieLocale(locale);
+    try {
+      localStorage.setItem(STORAGE_KEY, locale);
+    } catch (e) {}
   }
 
   function init() {
@@ -822,31 +852,19 @@
     var ssr = normalizeLocale(getSsrLocale() || '');
     if (ssr && isSelectableLocale(ssr)) {
       var qLang = readQueryLang();
-      if (qLang && isSelectableLocale(qLang)) {
-        writeCookieLocale(qLang);
-        try {
-          localStorage.setItem(STORAGE_KEY, qLang);
-        } catch (e) {}
-        if (window.history && window.history.replaceState) {
-          window.history.replaceState(null, '', '/');
-        }
+      var effective = qLang && isSelectableLocale(qLang) ? qLang : ssr;
+      persistLocalePreference(effective);
+      if (qLang && isSelectableLocale(qLang) && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '/');
       }
-      if (select && select.value !== ssr) select.value = ssr;
-      if (select) {
-        select.addEventListener('change', function () {
-          onLocaleSelectChange(select);
-        });
-      }
+      if (select && select.value !== effective) select.value = effective;
+      bindLocaleSelect(select);
       return;
     }
     populateLocaleSelect();
     var locale = detectLocale();
     applyLocale(locale);
-    if (select) {
-      select.addEventListener('change', function () {
-        onLocaleSelectChange(select);
-      });
-    }
+    bindLocaleSelect(select);
   }
 
   if (document.readyState === 'loading') {

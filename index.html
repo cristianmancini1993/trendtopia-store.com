@@ -458,6 +458,7 @@
   gap: 0.75rem;
 }
 .home-lang { flex: 0 0 auto; }
+.home-lang__form { display: contents; }
 .home-lang__label {
   position: absolute;
   width: 1px;
@@ -665,7 +666,7 @@ body { overflow-x: clip; }
 <script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260312" defer></script>
 </head>
 <body>
 
@@ -675,8 +676,9 @@ body { overflow-x: clip; }
       <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
     </a>
     <div class="home-lang">
-      <label class="home-lang__label" for="home-locale-select" data-i18n="lang_label">Language / region</label>
-      <select id="home-locale-select" class="home-lang__select" aria-label="Language / region">
+      <form class="home-lang__form" action="/" method="get">
+        <label class="home-lang__label" for="home-locale-select" data-i18n="lang_label">Language / region</label>
+        <select id="home-locale-select" name="lang" class="home-lang__select" aria-label="Language / region">
         <option value="en" selected>English</option>
         <option value="es">Español</option>
         <option value="pl">Polski</option>
@@ -684,6 +686,7 @@ body { overflow-x: clip; }
         <option value="cz">Čeština</option>
         <option value="gr">Ελληνικά</option>
       </select>
+      </form>
     </div>
   </div>
 </header>
