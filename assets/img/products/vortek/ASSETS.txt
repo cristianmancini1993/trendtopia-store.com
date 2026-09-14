@@ -1,0 +1,12 @@
+Iron Oak Pro / Vortek (offer 3228) — expected WebP files for sk/vortek-3228/landing.html:
+
+  hero.webp
+  feature-battery-swap.webp
+  feature-one-handed.webp
+  feature-spare-chain.webp
+  review-avatar-m.webp
+  review-avatar-a.webp
+  review-avatar-l.webp
+
+Until uploaded, the hero uses onerror → /assets/img/placeholder.svg.
+Copy assets from devicepathhub CDN or creative pack when available.
