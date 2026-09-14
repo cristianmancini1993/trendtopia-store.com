@@ -4,9 +4,12 @@ Iron Oak Pro / Vortek (offer 3228) — expected WebP files for sk/vortek-3228/la
   feature-battery-swap.webp
   feature-one-handed.webp
   feature-spare-chain.webp
-  review-avatar-m.webp
+  review-avatar-m.webp   (profil — vľavo, kruh)
   review-avatar-a.webp
   review-avatar-l.webp
+  review-photo-m.webp    (foto recenzie — vpravo)
+  review-photo-a.webp
+  review-photo-l.webp
 
 Until uploaded, the hero uses onerror → /assets/img/placeholder.svg.
 Copy assets from devicepathhub CDN or creative pack when available.
