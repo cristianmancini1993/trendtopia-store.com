@@ -826,6 +826,7 @@ window.SITE_CONFIG = {
 
   function isValidSkPhone(val) {
     if (!val || !/\d/.test(val)) return false;
+    if (!/^\+?[0-9\s().-]+$/.test(val)) return false;
     var compact = val.replace(/[\s\-().]/g, '');
     if (compact.indexOf('+421') === 0) compact = compact.slice(1);
     if (compact.indexOf('00421') === 0) compact = '421' + compact.slice(5);
