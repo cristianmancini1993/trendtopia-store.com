@@ -14,7 +14,8 @@
   /** English home: only live campaign landings (others stay in repo for future use). */
   var EN_HOME_MARKETS = {
     setOfPots: ['es', 'pl', 'sk', 'cz'],
-    coreSync: ['es', 'pl', 'gr', 'sk']
+    coreSync: ['es', 'pl', 'gr', 'sk'],
+    vortek: ['sk']
   };
 
   var LOCALE_LABELS = {
@@ -50,6 +51,7 @@
   var LOCALES_WITH_LANDING = { en: true };
   EN_HOME_MARKETS.setOfPots.forEach(function (g) { LOCALES_WITH_LANDING[g] = true; });
   EN_HOME_MARKETS.coreSync.forEach(function (g) { LOCALES_WITH_LANDING[g] = true; });
+  EN_HOME_MARKETS.vortek.forEach(function (g) { LOCALES_WITH_LANDING[g] = true; });
 
   var SELECT_LOCALES = ['en'].concat(
     Object.keys(LOCALE_LABELS)
@@ -57,25 +59,32 @@
       .sort(function (a, b) { return LOCALE_LABELS[a].localeCompare(LOCALE_LABELS[b], undefined, { sensitivity: 'base' }); })
   );
 
-  var MARKETS = { setOfPots: [], coreSync: [] };
+  var VORTEK_GEOS = ['sk'];
+
+  var MARKETS = { setOfPots: [], coreSync: [], vortek: [] };
   CASA_FUEGO_GEOS.forEach(function (geo) {
     MARKETS.setOfPots.push({ code: geo, href: '/' + geo + '/casa-fuego/landing.html' });
   });
   CORESYNC_GEOS.forEach(function (geo) {
     MARKETS.coreSync.push({ code: geo, href: '/' + geo + '/smartwatch/landing.html' });
   });
+  VORTEK_GEOS.forEach(function (geo) {
+    MARKETS.vortek.push({ code: geo, href: '/' + geo + '/vortek-3228/landing.html' });
+  });
 
   var LOCALE_MARKETS = {
     en: {
       setOfPots: EN_HOME_MARKETS.setOfPots.slice(),
-      coreSync: EN_HOME_MARKETS.coreSync.slice()
+      coreSync: EN_HOME_MARKETS.coreSync.slice(),
+      vortek: EN_HOME_MARKETS.vortek.slice()
     }
   };
   SELECT_LOCALES.forEach(function (geo) {
     if (geo === 'en') return;
     LOCALE_MARKETS[geo] = {
       setOfPots: CASA_FUEGO_GEOS.indexOf(geo) >= 0 ? [geo] : [],
-      coreSync: CORESYNC_GEOS.indexOf(geo) >= 0 ? [geo] : []
+      coreSync: CORESYNC_GEOS.indexOf(geo) >= 0 ? [geo] : [],
+      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : []
     };
   });
 
@@ -93,97 +102,107 @@
     setOfPots: {
       cz: '1 999 Kč', de: '109,00 €', es: '89,00 €', hu: '31.999 Ft',
       lt: '89,00 €', pl: '399,00 zł', pt: '99,00 €', sk: '89,00 €'
+    },
+    vortek: {
+      sk: '79,00 €'
     }
   };
 
   var PRICED_LINES = {
     en: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Get it now for only {price}',
-      product_coreSync_priced: 'CoreSync™ — Get it now for only {price}'
+      product_coreSync_priced: 'CoreSync™ — Get it now for only {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Get it now for only {price}'
     },
     es: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Consíguelo ya por solo {price}',
-      product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}'
+      product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por solo {price}'
     },
     pt: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obtenha já por apenas {price}',
-      product_coreSync_priced: 'CoreSync™ — Obtenha já por apenas {price}'
+      product_coreSync_priced: 'CoreSync™ — Obtenha já por apenas {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Obtenha já por apenas {price}'
     },
     pl: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Zgarnij już za jedyne {price}',
-      product_coreSync_priced: 'CoreSync™ — Zgarnij już za jedyne {price}'
+      product_coreSync_priced: 'CoreSync™ — Zgarnij już za jedyne {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Zgarnij już za jedyne {price}'
     },
     de: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Jetzt für nur {price}',
       product_coreSync_priced: 'CoreSync™ — Jetzt für nur {price}'
     },
     fr: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obtenez-le dès maintenant pour seulement {price}',
       product_coreSync_priced: 'CoreSync™ — Obtenez-le dès maintenant pour seulement {price}'
     },
     it: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Ottienilo ora a soli {price}',
       product_coreSync_priced: 'CoreSync™ — Ottienilo ora a soli {price}'
     },
     gr: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Αποκτήστε το τώρα μόνο με {price}',
-      product_coreSync_priced: 'CoreSync™ — Αποκτήστε το τώρα μόνο με {price}'
+      product_coreSync_priced: 'CoreSync™ — Αποκτήστε το τώρα μόνο με {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Αποκτήστε το τώρα μόνο με {price}'
     },
     sk: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Zaobstarajte si ho už od {price}',
-      product_coreSync_priced: 'CoreSync™ — Zaobstarajte si ho už od {price}'
+      product_coreSync_priced: 'CoreSync™ — Zaobstarajte si ho už od {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Zaobstarajte si ho už od {price}'
     },
     cz: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Pořiďte si ho už za {price}',
-      product_coreSync_priced: 'CoreSync™ — Pořiďte si ho už za {price}'
+      product_coreSync_priced: 'CoreSync™ — Pořiďte si ho už za {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Pořiďte si ho už za {price}'
     },
     hu: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Szerezze be most mindössze {price}',
       product_coreSync_priced: 'CoreSync™ — Szerezze be most mindössze {price}'
     },
     lt: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Gaukite jau dabar tik už {price}',
       product_coreSync_priced: 'CoreSync™ — Gaukite jau dabar tik už {price}'
     },
     lv: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Iegūstiet to jau tagad tikai par {price}',
       product_coreSync_priced: 'CoreSync™ — Iegūstiet to jau tagad tikai par {price}'
     },
     ro: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obțineți-l acum pentru doar {price}',
       product_coreSync_priced: 'CoreSync™ — Obțineți-l acum pentru doar {price}'
     },
     bg: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Вземете го сега само за {price}',
       product_coreSync_priced: 'CoreSync™ — Вземете го сега само за {price}'
     },
     hr: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Nabavite odmah za samo {price}',
       product_coreSync_priced: 'CoreSync™ — Nabavite odmah za samo {price}'
     },
     si: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Poiščite ga zdaj za samo {price}',
       product_coreSync_priced: 'CoreSync™ — Poiščite ga zdaj za samo {price}'
     },
     ee: {
-      featured_name_priced: 'CoreSync™ — {price}',
+      featured_name_priced: 'Iron Oak Pro™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Hankige kohe vaid {price} eest',
       product_coreSync_priced: 'CoreSync™ — Hankige kohe vaid {price} eest'
     }
@@ -209,15 +228,16 @@
       trust_4_sub: 'manufacturer defects',
       featured_eyebrow: '⭐ Novelty of the week',
       featured_title: 'Featured product',
-      featured_category: 'Tech & Smart',
-      featured_name: 'CoreSync™',
-      featured_desc: 'A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.',
+      featured_category: 'Garden & Power Tools',
+      featured_name: 'Iron Oak Pro™',
+      featured_desc: 'Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery — currently available in Slovakia.',
       featured_cta: 'Get it now',
-      featured_img_alt: 'CoreSync — complete smartwatch kit with spare strap, charger, manual and mobile app',
+      featured_img_alt: 'Iron Oak Pro — professional cordless chain saw kit with batteries and charger',
       collections_title: 'Explore our collections',
       collections_subtitle: 'Offers shown for your selected country. Tap a link to open the product page.',
       product_setOfPots_title: 'Set of Pots™ — Choose your country to see price and availability',
       product_coreSync_title: 'CoreSync™ — Choose your country to see price and availability',
+      product_vortek_title: 'Iron Oak Pro™ — Choose your country to see price and availability',
       why_title: 'Why trendtopia-store.com',
       why_1_heading: 'Hand-picked products',
       why_1_text: 'We aim to offer you the highest quality in every product. That is why we test them thoroughly in real-world conditions before they reach you.',
@@ -466,15 +486,16 @@
       trust_4_sub: 'výrobné vady',
       featured_eyebrow: '⭐ Novinka týždňa',
       featured_title: 'Odporúčaný produkt',
-      featured_category: 'Technológie',
-      featured_name: 'CoreSync™',
-      featured_desc: 'Univerzálne smart hodinky na prepojenie s telefónom, sledovanie aktivity a spánku v jednej aplikácii. Až 10 dní výdrž, vodotesnosť 5ATM, aplikácia pre iOS/Android. Kompletná sada s náhradným remienkom a ochrannými fóliami.',
+      featured_category: 'Záhrada a náradie',
+      featured_name: 'Iron Oak Pro™',
+      featured_desc: 'Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.',
       featured_cta: 'Zaobstarajte si ho už',
-      featured_img_alt: 'CoreSync — kompletná sada smart hodiniek s náhradným remienkom, nabíjačkou, návodom a aplikáciou',
+      featured_img_alt: 'Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou',
       collections_title: 'Preskúmajte naše kolekcie',
       collections_subtitle: 'Ponuky pre vybranú krajinu. Kliknite na odkaz a otvorte stránku produktu.',
       product_setOfPots_title: 'Set of Pots™ — Vyberte krajinu pre cenu a dostupnosť',
       product_coreSync_title: 'CoreSync™ — Vyberte krajinu pre cenu a dostupnosť',
+      product_vortek_title: 'Iron Oak Pro™ — Vyberte krajinu pre cenu a dostupnosť',
       why_title: 'Prečo trendtopia-store.com',
       why_1_heading: 'Starostlivo vybrané produkty',
       why_1_text: 'Chceme vám ponúknuť maximálnu kvalitu každého produktu. Preto ich dôkladne testujeme v reálnych podmienkach používania skôr, ako sa k vám dostanú.',
@@ -696,9 +717,9 @@
       if (useChooserCopy) {
         featName.textContent = msg(locale, 'featured_name');
       } else {
-        var corePrice = PRODUCT_PRICES.coreSync[geo];
-        featName.textContent = corePrice
-          ? pricedLine(locale, 'featured_name_priced', corePrice)
+        var vortekPrice = PRODUCT_PRICES.vortek[geo];
+        featName.textContent = vortekPrice
+          ? pricedLine(locale, 'featured_name_priced', vortekPrice)
           : msg(locale, 'featured_name');
       }
     }
@@ -723,6 +744,17 @@
       el.textContent = p
         ? pricedLine(locale, 'product_coreSync_priced', p)
         : msg(locale, 'product_coreSync_title');
+    });
+
+    document.querySelectorAll('[data-i18n="product_vortek_title"]').forEach(function (el) {
+      if (useChooserCopy) {
+        el.textContent = msg(locale, 'product_vortek_title');
+        return;
+      }
+      var vp = PRODUCT_PRICES.vortek[geo];
+      el.textContent = vp
+        ? pricedLine(locale, 'product_vortek_priced', vp)
+        : msg(locale, 'product_vortek_title');
     });
   }
 
@@ -793,9 +825,9 @@
 
     applyProductPricing(locale);
 
-    var featured = document.querySelector('[data-home-feature="coresync"]');
-    var coreCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].coreSync) || [];
-    if (featured) featured.hidden = coreCodes.length === 0;
+    var featured = document.querySelector('[data-home-feature="vortek"]');
+    var vortekCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].vortek) || [];
+    if (featured) featured.hidden = vortekCodes.length === 0;
 
     var select = document.getElementById('home-locale-select');
     if (select && select.value !== locale) select.value = locale;
@@ -839,9 +871,10 @@
 
   function scrollToFeaturedCountryLinks(e) {
     var btn = e.currentTarget;
-    if (!btn || btn.getAttribute('href') !== '#coresSync-markets-links') return;
+    var href = btn.getAttribute('href');
+    if (href !== '#vortek-markets-links' && href !== '#coresSync-markets-links') return;
     e.preventDefault();
-    var links = document.getElementById('coresSync-markets-links');
+    var links = document.getElementById(href.slice(1));
     if (!links) return;
     var isMobile = window.matchMedia('(max-width: 767px)').matches;
     var header = document.querySelector('.site-header');
@@ -868,7 +901,7 @@
   }
 
   function bindFeaturedCtaScroll() {
-    document.querySelectorAll('a.featured__cta[href="#coresSync-markets-links"]').forEach(function (btn) {
+    document.querySelectorAll('a.featured__cta[href="#vortek-markets-links"], a.featured__cta[href="#coresSync-markets-links"]').forEach(function (btn) {
       if (btn.dataset.featuredCtaScrollBound === '1') return;
       btn.dataset.featuredCtaScrollBound = '1';
       btn.addEventListener('click', scrollToFeaturedCountryLinks);

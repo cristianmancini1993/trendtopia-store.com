@@ -47,7 +47,7 @@ def compute_select_locales(data: dict) -> list[str]:
     labels = data["LOCALE_LABELS"]
     en_home = data["EN_HOME_MARKETS"]
     with_landing = {"en"}
-    for g in en_home["setOfPots"] + en_home["coreSync"]:
+    for g in en_home["setOfPots"] + en_home["coreSync"] + en_home.get("vortek", []):
         with_landing.add(g)
     rest = sorted(
         (k for k in labels if k != "en" and k in with_landing),
@@ -60,10 +60,12 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
     casa = data["CASA_FUEGO_GEOS"]
     core = data["CORESYNC_GEOS"]
     en_home = data["EN_HOME_MARKETS"]
+    vortek = en_home.get("vortek", ["sk"])
     markets = {
         "en": {
             "setOfPots": list(en_home["setOfPots"]),
             "coreSync": list(en_home["coreSync"]),
+            "vortek": list(vortek),
         }
     }
     for geo in select_locales:
@@ -72,6 +74,7 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
         markets[geo] = {
             "setOfPots": [geo] if geo in casa else [],
             "coreSync": [geo] if geo in core else [],
+            "vortek": [geo] if geo in vortek else [],
         }
     return markets
 
@@ -97,6 +100,8 @@ def market_hrefs(data: dict, locale_markets: dict, locale: str, product: str) ->
     for code in codes:
         if product == "setOfPots":
             href = f"/{code}/casa-fuego/landing.html"
+        elif product == "vortek":
+            href = f"/{code}/vortek-3228/landing.html"
         else:
             href = f"/{code}/smartwatch/landing.html"
         hrefs.append((code.upper(), href))
@@ -210,9 +215,9 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
 
     feat = msg(data, locale, "featured_name")
     if not use_chooser:
-        cp = prices["coreSync"].get(locale)
-        if cp:
-            feat = priced_line(data, locale, "featured_name_priced", cp)
+        vp = prices.get("vortek", {}).get(locale)
+        if vp:
+            feat = priced_line(data, locale, "featured_name_priced", vp)
     html = set_attr(html, "i18n", "featured_name", feat)
 
     def product_title(key_priced: str, key_plain: str, price_map: dict) -> str:
@@ -225,6 +230,9 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
 
     pots_title = product_title("product_setOfPots_priced", "product_setOfPots_title", prices["setOfPots"])
     core_title = product_title("product_coreSync_priced", "product_coreSync_title", prices["coreSync"])
+    vortek_title = product_title(
+        "product_vortek_priced", "product_vortek_title", prices.get("vortek", {})
+    )
     html = re.sub(
         r'(<[^>]*data-i18n="product_setOfPots_title"[^>]*>)(.*?)(</[^>]+>)',
         lambda m: m.group(1) + escape(pots_title) + m.group(3),
@@ -237,8 +245,14 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         html,
         flags=re.S,
     )
+    html = re.sub(
+        r'(<[^>]*data-i18n="product_vortek_title"[^>]*>)(.*?)(</[^>]+>)',
+        lambda m: m.group(1) + escape(vortek_title) + m.group(3),
+        html,
+        flags=re.S,
+    )
 
-    for product, attr in (("setOfPots", "setOfPots"), ("coreSync", "coreSync")):
+    for product, attr in (("setOfPots", "setOfPots"), ("coreSync", "coreSync"), ("vortek", "vortek")):
         pairs = market_hrefs(data, locale_markets, locale, product)
         inner = links_html(pairs)
         pattern = rf'(<span[^>]*data-market-links="{attr}"[^>]*>)(.*?)(</span>)'
@@ -255,10 +269,10 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
                 count=1,
             )
 
-    core_codes = locale_markets.get(locale, {}).get("coreSync", [])
-    if not core_codes:
+    vortek_codes = locale_markets.get(locale, {}).get("vortek", [])
+    if not vortek_codes:
         html = re.sub(
-            r'(<section[^>]*data-home-feature="coresync"[^>]*)(>)',
+            r'(<section[^>]*data-home-feature="vortek"[^>]*)(>)',
             r"\1 hidden>",
             html,
             count=1,
