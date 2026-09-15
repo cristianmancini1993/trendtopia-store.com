@@ -331,5 +331,41 @@ window.addEventListener('load', function () {
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — Wszelkie prawa zastrzeżone. <a href="/">trendtopia-store.com</a></div>
 </div></footer>
 
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var config = window.SITE_CONFIG || {};
+  var orderId = params.get('uid') || params.get('order_id') ||
+    params.get('transaction_id') || params.get('tid') ||
+    config.UID || config.uid || config.ORDER_UID || config.order_uid ||
+    config.ORDER_ID || config.order_id || config.TRANSACTION_ID ||
+    config.transaction_id || '';
+  var offerId = config.OFFER_ID || config.offer_id ||
+    config.CASHBOLT_OFFER_ID || config.PRODUCT_SLUG || window.location.pathname;
+  var storageKey = 'conv_fired_' + (orderId || offerId);
+
+  if (sessionStorage.getItem(storageKey) === '1') return;
+
+  var transactionId = orderId;
+  if (!transactionId) {
+    var transactionKey = 'conv_transaction_' + offerId;
+    transactionId = sessionStorage.getItem(transactionKey);
+    if (!transactionId) {
+      transactionId = offerId + '_' + Date.now() + '_' +
+        Math.random().toString(36).slice(2);
+      sessionStorage.setItem(transactionKey, transactionId);
+    }
+  }
+
+  gtag('event', 'conversion', {
+      'send_to': 'AW-18327321473/S692CKfLieocEIH3kqNE',
+      'value': 199.0,
+      'currency': 'PLN',
+      'transaction_id': transactionId
+  });
+  sessionStorage.setItem(storageKey, '1');
+})();
+</script>
+
 </body>
 </html>

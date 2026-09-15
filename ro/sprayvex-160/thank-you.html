@@ -218,12 +218,6 @@ window.SITE_CONFIG = {
 </script>
 <script src="/assets/js/tracking.js" defer></script>
 <script src="/assets/js/main.js" defer></script>
-<script>
-// Trigger Purchase / conversion event after page load
-window.addEventListener('load', function () {
-  if (window.trackPurchase) window.trackPurchase(419, 'RON');
-});
-</script>
 </head>
 <body>
 
@@ -321,13 +315,40 @@ window.addEventListener('load', function () {
 
 <!-- Event snippet for Purchase - account 709 - Otger (1) conversion page -->
 <script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var config = window.SITE_CONFIG || {};
+  var orderId = params.get('uid') || params.get('order_id') ||
+    params.get('transaction_id') || params.get('tid') ||
+    config.UID || config.uid || config.ORDER_UID || config.order_uid ||
+    config.ORDER_ID || config.order_id || config.TRANSACTION_ID ||
+    config.transaction_id || '';
+  var offerId = config.OFFER_ID || config.offer_id ||
+    config.CASHBOLT_OFFER_ID || config.PRODUCT_SLUG || window.location.pathname;
+  var storageKey = 'conv_fired_' + (orderId || offerId);
+
+  if (sessionStorage.getItem(storageKey) === '1') return;
+
+  var transactionId = orderId;
+  if (!transactionId) {
+    var transactionKey = 'conv_transaction_' + offerId;
+    transactionId = sessionStorage.getItem(transactionKey);
+    if (!transactionId) {
+      transactionId = offerId + '_' + Date.now() + '_' +
+        Math.random().toString(36).slice(2);
+      sessionStorage.setItem(transactionKey, transactionId);
+    }
+  }
+
   gtag('event', 'conversion', {
       'send_to': 'AW-18327321473/S692CKfLieocEIH3kqNE',
       'value': 17.0,
       'currency': 'EUR',
-      'transaction_id': ''
+      'transaction_id': transactionId
       // 'new_customer': true /* calculate dynamically, populate with true/false */,
   });
+  sessionStorage.setItem(storageKey, '1');
+})();
 </script>
 
 </body>
