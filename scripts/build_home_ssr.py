@@ -61,11 +61,13 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
     core = data["CORESYNC_GEOS"]
     en_home = data["EN_HOME_MARKETS"]
     vortek = en_home.get("vortek", ["sk"])
+    vortek_browse = list(vortek)
     markets = {
         "en": {
             "setOfPots": list(en_home["setOfPots"]),
             "coreSync": list(en_home["coreSync"]),
             "vortek": list(vortek),
+            "vortekCol": vortek_browse,
         }
     }
     for geo in select_locales:
@@ -75,6 +77,7 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
             "setOfPots": [geo] if geo in casa else [],
             "coreSync": [geo] if geo in core else [],
             "vortek": [geo] if geo in vortek else [],
+            "vortekCol": vortek_browse,
         }
     return markets
 
@@ -109,7 +112,7 @@ def market_hrefs(data: dict, locale_markets: dict, locale: str, product: str) ->
     for code in codes:
         if product == "setOfPots":
             href = f"/{code}/casa-fuego/landing.html"
-        elif product == "vortek":
+        elif product in ("vortek", "vortekCol"):
             href = f"/{code}/vortek-3228/landing.html"
         else:
             href = f"/{code}/smartwatch/landing.html"
@@ -267,7 +270,12 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         flags=re.S,
     )
 
-    for product, attr in (("setOfPots", "setOfPots"), ("coreSync", "coreSync"), ("vortek", "vortek")):
+    for product, attr in (
+        ("setOfPots", "setOfPots"),
+        ("coreSync", "coreSync"),
+        ("vortek", "vortek"),
+        ("vortekCol", "vortekCol"),
+    ):
         pairs = market_hrefs(data, locale_markets, locale, product)
         inner = links_html(pairs)
         pattern = rf'(<span[^>]*data-market-links="{attr}"[^>]*>)(.*?)(</span>)'

@@ -61,7 +61,7 @@
 
   var VORTEK_GEOS = ['sk'];
 
-  var MARKETS = { setOfPots: [], coreSync: [], vortek: [] };
+  var MARKETS = { setOfPots: [], coreSync: [], vortek: [], vortekCol: [] };
   CASA_FUEGO_GEOS.forEach(function (geo) {
     MARKETS.setOfPots.push({ code: geo, href: '/' + geo + '/casa-fuego/landing.html' });
   });
@@ -69,14 +69,19 @@
     MARKETS.coreSync.push({ code: geo, href: '/' + geo + '/smartwatch/landing.html' });
   });
   VORTEK_GEOS.forEach(function (geo) {
-    MARKETS.vortek.push({ code: geo, href: '/' + geo + '/vortek-3228/landing.html' });
+    var vortekHref = { code: geo, href: '/' + geo + '/vortek-3228/landing.html' };
+    MARKETS.vortek.push(vortekHref);
+    MARKETS.vortekCol.push(vortekHref);
   });
+
+  var vortekBrowseCodes = EN_HOME_MARKETS.vortek.slice();
 
   var LOCALE_MARKETS = {
     en: {
       setOfPots: EN_HOME_MARKETS.setOfPots.slice(),
       coreSync: EN_HOME_MARKETS.coreSync.slice(),
-      vortek: EN_HOME_MARKETS.vortek.slice()
+      vortek: EN_HOME_MARKETS.vortek.slice(),
+      vortekCol: vortekBrowseCodes.slice()
     }
   };
   SELECT_LOCALES.forEach(function (geo) {
@@ -84,7 +89,8 @@
     LOCALE_MARKETS[geo] = {
       setOfPots: CASA_FUEGO_GEOS.indexOf(geo) >= 0 ? [geo] : [],
       coreSync: CORESYNC_GEOS.indexOf(geo) >= 0 ? [geo] : [],
-      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : []
+      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : [],
+      vortekCol: vortekBrowseCodes.slice()
     };
   });
 
