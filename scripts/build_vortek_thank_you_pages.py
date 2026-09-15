@@ -20,6 +20,11 @@ SPECS = [
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
             ("<li><a href=\"/es/about-us.html\">Sobre nosotros</a></li>", "<li><a href=\"/es/about-us.html\">Quiénes somos</a></li>"),
             ("<li><a href=\"/es/contact-us.html\">Contáctanos</a></li>", "<li><a href=\"/es/contact-us.html\">Contacto</a></li>"),
+            ('aria-label="trendtopia-store.com home"', 'aria-label="Página de inicio de trendtopia-store.com"'),
+            (
+                'alt="El equipo trendtopia-store trabajando: call center y logística contra reembolso"',
+                'alt="El equipo de trendtopia-store trabajando: centro de atención telefónica y logística de pago contra reembolso"',
+            ),
         ],
     },
     {
@@ -36,6 +41,7 @@ SPECS = [
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
+            ('aria-label="trendtopia-store.com home"', 'aria-label="trendtopia-store.com pagrindinis puslapis"'),
         ],
     },
     {
@@ -52,6 +58,11 @@ SPECS = [
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
+            ('aria-label="trendtopia-store.com home"', 'aria-label="Strona główna trendtopia-store.com"'),
+            (
+                'alt="Zespół trendtopia-store w pracy: call center i logistyka COD"',
+                'alt="Zespół trendtopia-store w pracy: telefoniczne centrum obsługi i logistyka płatności przy odbiorze"',
+            ),
         ],
     },
     {
@@ -68,6 +79,11 @@ SPECS = [
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
+            ('aria-label="trendtopia-store.com home"', 'aria-label="trendtopia-store.com sākumlapa"'),
+            (
+                'alt="trendtopia-store komanda darbā: zvanu centrs un COD loģistika"',
+                'alt="trendtopia-store komanda darbā: zvanu centrs un pēcapmaksas loģistika"',
+            ),
         ],
     },
 ]
