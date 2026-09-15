@@ -74,9 +74,17 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
         markets[geo] = {
             "setOfPots": [geo] if geo in casa else [],
             "coreSync": [geo] if geo in core else [],
-            "vortek": [geo] if geo in vortek else list(vortek),
+            "vortek": [geo] if geo in vortek else [],
         }
     return markets
+
+
+def home_featured_product(locale: str, locale_markets: dict) -> str:
+    if locale == "sk":
+        return "vortek"
+    if locale_markets.get(locale, {}).get("coreSync"):
+        return "coresync"
+    return "coresync"
 
 
 def msg(data: dict, locale: str, key: str) -> str:
@@ -214,11 +222,17 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
     use_chooser = locale == "en"
 
     feat = msg(data, locale, "featured_name")
+    feat_vortek = msg(data, locale, "featured_vortek_name")
     if not use_chooser:
+        cp = prices["coreSync"].get(locale)
+        if cp:
+            feat = priced_line(data, locale, "featured_name_priced", cp)
         vp = prices.get("vortek", {}).get(locale)
         if vp:
-            feat = priced_line(data, locale, "featured_name_priced", vp)
+            feat_vortek = priced_line(data, locale, "featured_vortek_name_priced", vp)
     html = set_attr(html, "i18n", "featured_name", feat)
+    if feat_vortek:
+        html = set_attr(html, "i18n", "featured_vortek_name", feat_vortek)
 
     def product_title(key_priced: str, key_plain: str, price_map: dict) -> str:
         if use_chooser:
@@ -269,14 +283,22 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
                 count=1,
             )
 
-    vortek_codes = locale_markets.get(locale, {}).get("vortek", [])
-    if not vortek_codes:
-        html = re.sub(
-            r'(<section[^>]*data-home-feature="vortek"[^>]*)(>)',
-            r"\1 hidden>",
-            html,
-            count=1,
-        )
+    featured_key = home_featured_product(locale, locale_markets)
+    for key in ("coresync", "vortek"):
+        if key == featured_key:
+            html = re.sub(
+                rf'(<section[^>]*data-home-feature="{key}"[^>]*)\shidden>',
+                r"\1>",
+                html,
+                count=1,
+            )
+        else:
+            html = re.sub(
+                rf'(<section[^>]*data-home-feature="{key}"[^>]*)(>)',
+                r"\1 hidden>",
+                html,
+                count=1,
+            )
 
     labels = data["LOCALE_LABELS"]
     opts = []

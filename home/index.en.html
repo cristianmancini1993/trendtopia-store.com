@@ -688,7 +688,7 @@ body { overflow-x: clip; }
 <script>window.SITE_CONFIG = { GEO: 'en', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js?v=20260312b" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260315b" defer></script>
 </head>
 <body>
 
@@ -751,24 +751,47 @@ body { overflow-x: clip; }
     </div>
   </section>
 
-  <!-- FEATURED DEAL -->
-  <section class="featured" id="deal" data-home-feature="vortek">
+  <!-- FEATURED DEAL (product depends on locale: CoreSync or Iron Oak Pro SK) -->
+  <div id="deal">
+  <section class="featured" data-home-feature="coresync">
     <div class="featured__container">
       <div class="featured__eyebrow" data-i18n="featured_eyebrow">⭐ Novelty of the week</div>
       <h2 class="featured__title" data-i18n="featured_title">Featured product</h2>
       <article class="featured__card">
         <div class="featured__photo">
-          
           <picture>
-            <source type="image/webp" srcset="/assets/img/products/vortek/hero.webp?v=3">
-            <img src="/assets/img/products/vortek/hero.webp?v=3" alt="Iron Oak Pro — professional cordless chain saw kit with batteries and charger" data-i18n-alt="featured_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
+            <source type="image/webp" srcset="/assets/img/products/smartwatch/hero.webp?v=2">
+            <img src="/assets/img/products/smartwatch/hero.jpg?v=2" alt="CoreSync — complete smartwatch kit with spare strap, charger, manual and mobile app" data-i18n-alt="featured_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
           </picture>
         </div>
         <div class="featured__body">
-          <div class="featured__category" data-i18n="featured_category">Garden &amp; Power Tools</div>
-          <h3 class="featured__name" data-i18n="featured_name">Iron Oak Pro™</h3>
-          
-          <p class="featured__desc" data-i18n="featured_desc">Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery — currently available in Slovakia.</p>
+          <div class="featured__category" data-i18n="featured_category">Tech &amp; Smart</div>
+          <h3 class="featured__name" data-i18n="featured_name">CoreSync™</h3>
+          <p class="featured__desc" data-i18n="featured_desc">A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.</p>
+          <a class="featured__cta" href="#coresSync-markets-links" data-i18n="featured_cta">Get it now</a>
+        </div>
+        <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
+          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Choose your country to see price and availability</span>
+          <span id="coresSync-markets-links" class="home-market-picker__links" data-market-links="coreSync"><a href="/es/smartwatch/landing.html">ES</a> · <a href="/pl/smartwatch/landing.html">PL</a> · <a href="/gr/smartwatch/landing.html">GR</a> · <a href="/sk/smartwatch/landing.html">SK</a></span>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="featured" data-home-feature="vortek" hidden>
+    <div class="featured__container">
+      <div class="featured__eyebrow" data-i18n="featured_eyebrow">⭐ Novelty of the week</div>
+      <h2 class="featured__title" data-i18n="featured_title">Featured product</h2>
+      <article class="featured__card">
+        <div class="featured__photo">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/products/vortek/hero.webp?v=3">
+            <img src="/assets/img/products/vortek/hero.webp?v=3" alt="Iron Oak Pro — professional cordless chain saw kit with batteries and charger" data-i18n-alt="featured_vortek_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
+          </picture>
+        </div>
+        <div class="featured__body">
+          <div class="featured__category" data-i18n="featured_vortek_category">Garden &amp; Power Tools</div>
+          <h3 class="featured__name" data-i18n="featured_vortek_name">Iron Oak Pro™</h3>
+          <p class="featured__desc" data-i18n="featured_vortek_desc">Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery.</p>
           <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta">Get it now</a>
         </div>
         <div id="vortek-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="vortek">
@@ -778,6 +801,7 @@ body { overflow-x: clip; }
       </article>
     </div>
   </section>
+  </div>
 
   <!-- CATEGORIES -->
   <section class="categories" id="our-products">

@@ -84,7 +84,7 @@
     LOCALE_MARKETS[geo] = {
       setOfPots: CASA_FUEGO_GEOS.indexOf(geo) >= 0 ? [geo] : [],
       coreSync: CORESYNC_GEOS.indexOf(geo) >= 0 ? [geo] : [],
-      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : EN_HOME_MARKETS.vortek.slice()
+      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : []
     };
   });
 
@@ -110,99 +110,101 @@
 
   var PRICED_LINES = {
     en: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Get it now for only {price}',
       product_coreSync_priced: 'CoreSync™ — Get it now for only {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Get it now for only {price}'
+      product_vortek_priced: 'Iron Oak Pro™ — Get it now for only {price}',
+      featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
     },
     es: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Consíguelo ya por solo {price}',
       product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}',
       product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por solo {price}'
     },
     pt: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obtenha já por apenas {price}',
       product_coreSync_priced: 'CoreSync™ — Obtenha já por apenas {price}',
       product_vortek_priced: 'Iron Oak Pro™ — Obtenha já por apenas {price}'
     },
     pl: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Zgarnij już za jedyne {price}',
       product_coreSync_priced: 'CoreSync™ — Zgarnij już za jedyne {price}',
       product_vortek_priced: 'Iron Oak Pro™ — Zgarnij już za jedyne {price}'
     },
     de: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Jetzt für nur {price}',
       product_coreSync_priced: 'CoreSync™ — Jetzt für nur {price}'
     },
     fr: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obtenez-le dès maintenant pour seulement {price}',
       product_coreSync_priced: 'CoreSync™ — Obtenez-le dès maintenant pour seulement {price}'
     },
     it: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Ottienilo ora a soli {price}',
       product_coreSync_priced: 'CoreSync™ — Ottienilo ora a soli {price}'
     },
     gr: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Αποκτήστε το τώρα μόνο με {price}',
       product_coreSync_priced: 'CoreSync™ — Αποκτήστε το τώρα μόνο με {price}',
       product_vortek_priced: 'Iron Oak Pro™ — Αποκτήστε το τώρα μόνο με {price}'
     },
     sk: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Zaobstarajte si ho už od {price}',
       product_coreSync_priced: 'CoreSync™ — Zaobstarajte si ho už od {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Zaobstarajte si ho už od {price}'
+      product_vortek_priced: 'Iron Oak Pro™ — Zaobstarajte si ho už od {price}',
+      featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
     },
     cz: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Pořiďte si ho už za {price}',
       product_coreSync_priced: 'CoreSync™ — Pořiďte si ho už za {price}',
       product_vortek_priced: 'Iron Oak Pro™ — Pořiďte si ho už za {price}'
     },
     hu: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Szerezze be most mindössze {price}',
       product_coreSync_priced: 'CoreSync™ — Szerezze be most mindössze {price}'
     },
     lt: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Gaukite jau dabar tik už {price}',
       product_coreSync_priced: 'CoreSync™ — Gaukite jau dabar tik už {price}'
     },
     lv: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Iegūstiet to jau tagad tikai par {price}',
       product_coreSync_priced: 'CoreSync™ — Iegūstiet to jau tagad tikai par {price}'
     },
     ro: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Obțineți-l acum pentru doar {price}',
       product_coreSync_priced: 'CoreSync™ — Obțineți-l acum pentru doar {price}'
     },
     bg: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Вземете го сега само за {price}',
       product_coreSync_priced: 'CoreSync™ — Вземете го сега само за {price}'
     },
     hr: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Nabavite odmah za samo {price}',
       product_coreSync_priced: 'CoreSync™ — Nabavite odmah za samo {price}'
     },
     si: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Poiščite ga zdaj za samo {price}',
       product_coreSync_priced: 'CoreSync™ — Poiščite ga zdaj za samo {price}'
     },
     ee: {
-      featured_name_priced: 'Iron Oak Pro™ — {price}',
+      featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Hankige kohe vaid {price} eest',
       product_coreSync_priced: 'CoreSync™ — Hankige kohe vaid {price} eest'
     }
@@ -228,11 +230,15 @@
       trust_4_sub: 'manufacturer defects',
       featured_eyebrow: '⭐ Novelty of the week',
       featured_title: 'Featured product',
-      featured_category: 'Garden & Power Tools',
-      featured_name: 'Iron Oak Pro™',
-      featured_desc: 'Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery — currently available in Slovakia.',
+      featured_category: 'Tech & Smart',
+      featured_name: 'CoreSync™',
+      featured_desc: 'A versatile smartwatch to stay connected, track daily activity and review your rest routines from one app. Up to 10 days of battery, 5ATM water resistance, iOS/Android app included. Complete kit with spare strap and screen protectors.',
       featured_cta: 'Get it now',
-      featured_img_alt: 'Iron Oak Pro — professional cordless chain saw kit with batteries and charger',
+      featured_img_alt: 'CoreSync — complete smartwatch kit with spare strap, charger, manual and mobile app',
+      featured_vortek_category: 'Garden & Power Tools',
+      featured_vortek_name: 'Iron Oak Pro™',
+      featured_vortek_desc: 'Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery.',
+      featured_vortek_img_alt: 'Iron Oak Pro — professional cordless chain saw kit with batteries and charger',
       collections_title: 'Explore our collections',
       collections_subtitle: 'Offers shown for your selected country. Tap a link to open the product page.',
       product_setOfPots_title: 'Set of Pots™ — Choose your country to see price and availability',
@@ -283,11 +289,15 @@
       trust_4_sub: 'defectos de fabricación',
       featured_eyebrow: '⭐ Novedad de la semana',
       featured_title: 'Producto destacado',
-      featured_category: 'Jardín y herramientas',
-      featured_name: 'Iron Oak Pro™',
-      featured_desc: 'Motosierra a batería para jardín y trabajos exteriores. Motor brushless 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena diamantada. Contra reembolso — disponible en Eslovaquia.',
+      featured_category: 'Tecnología',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Smartwatch versátil para mantenerte conectado, seguir tu actividad diaria y consultar tus rutinas de descanso desde una app. Hasta 10 días de batería, resistencia al agua 5ATM, app iOS/Android incluida. Kit completo con correa de repuesto y protectores de pantalla.',
       featured_cta: 'Consíguelo ya',
-      featured_img_alt: 'Iron Oak Pro — motosierra profesional a batería con baterías y cargador',
+      featured_img_alt: 'CoreSync — kit completo de smartwatch con correa extra, cargador, manual y app móvil',
+      featured_vortek_category: 'Jardín y herramientas',
+      featured_vortek_name: 'Iron Oak Pro™',
+      featured_vortek_desc: 'Motosierra a batería para jardín y trabajos exteriores. Motor brushless 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena diamantada. Contra reembolso.',
+      featured_vortek_img_alt: 'Iron Oak Pro — motosierra profesional a batería con baterías y cargador',
       collections_title: 'Explora nuestras colecciones',
       collections_subtitle: 'Ofertas para tu país seleccionado. Pulsa un enlace para abrir la página del producto.',
       product_setOfPots_title: 'Set of Pots™ — Elige tu país para ver precio y disponibilidad',
@@ -487,11 +497,15 @@
       trust_4_sub: 'výrobné vady',
       featured_eyebrow: '⭐ Novinka týždňa',
       featured_title: 'Odporúčaný produkt',
-      featured_category: 'Záhrada a náradie',
-      featured_name: 'Iron Oak Pro™',
-      featured_desc: 'Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.',
+      featured_category: 'Technológie',
+      featured_name: 'CoreSync™',
+      featured_desc: 'Univerzálne smart hodinky na prepojenie s telefónom, sledovanie aktivity a spánku v jednej aplikácii. Až 10 dní výdrž, vodotesnosť 5ATM, aplikácia pre iOS/Android. Kompletná sada s náhradným remienkom a ochrannými fóliami.',
       featured_cta: 'Zaobstarajte si ho už',
-      featured_img_alt: 'Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou',
+      featured_img_alt: 'CoreSync — kompletná sada smart hodiniek s náhradným remienkom, nabíjačkou, návodom a aplikáciou',
+      featured_vortek_category: 'Záhrada a náradie',
+      featured_vortek_name: 'Iron Oak Pro™',
+      featured_vortek_desc: 'Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.',
+      featured_vortek_img_alt: 'Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou',
       collections_title: 'Preskúmajte naše kolekcie',
       collections_subtitle: 'Ponuky pre vybranú krajinu. Kliknite na odkaz a otvorte stránku produktu.',
       product_setOfPots_title: 'Set of Pots™ — Vyberte krajinu pre cenu a dostupnosť',
@@ -709,20 +723,40 @@
     });
   }
 
+  function homeFeaturedProduct(locale) {
+    if (locale === 'sk') return 'vortek';
+    var coreCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].coreSync) || [];
+    if (coreCodes.length) return 'coresync';
+    return 'coresync';
+  }
+
   function applyProductPricing(locale) {
     var geo = locale;
     var useChooserCopy = locale === 'en';
+    var featuredKey = homeFeaturedProduct(locale);
 
-    var featName = document.querySelector('.featured__name[data-i18n="featured_name"]');
-    if (featName) {
+    var coreFeatName = document.querySelector(
+      '[data-home-feature="coresync"] .featured__name[data-i18n="featured_name"]'
+    );
+    if (coreFeatName) {
       if (useChooserCopy) {
-        featName.textContent = msg(locale, 'featured_name');
+        coreFeatName.textContent = msg(locale, 'featured_name');
       } else {
-        var vortekPrice = PRODUCT_PRICES.vortek[geo];
-        featName.textContent = vortekPrice
-          ? pricedLine(locale, 'featured_name_priced', vortekPrice)
+        var corePrice = PRODUCT_PRICES.coreSync[geo];
+        coreFeatName.textContent = corePrice
+          ? pricedLine(locale, 'featured_name_priced', corePrice)
           : msg(locale, 'featured_name');
       }
+    }
+
+    var vortekFeatName = document.querySelector(
+      '[data-home-feature="vortek"] .featured__name[data-i18n="featured_vortek_name"]'
+    );
+    if (vortekFeatName) {
+      var vortekPrice = PRODUCT_PRICES.vortek[geo];
+      vortekFeatName.textContent = vortekPrice
+        ? pricedLine(locale, 'featured_vortek_name_priced', vortekPrice)
+        : msg(locale, 'featured_vortek_name');
     }
 
     document.querySelectorAll('[data-i18n="product_setOfPots_title"]').forEach(function (el) {
@@ -826,9 +860,11 @@
 
     applyProductPricing(locale);
 
-    var featured = document.querySelector('[data-home-feature="vortek"]');
-    var vortekCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].vortek) || [];
-    if (featured) featured.hidden = vortekCodes.length === 0;
+    var featuredKey = homeFeaturedProduct(locale);
+    document.querySelectorAll('[data-home-feature]').forEach(function (section) {
+      var key = section.getAttribute('data-home-feature');
+      section.hidden = key !== featuredKey;
+    });
 
     var select = document.getElementById('home-locale-select');
     if (select && select.value !== locale) select.value = locale;

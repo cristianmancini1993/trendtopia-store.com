@@ -688,7 +688,7 @@ body { overflow-x: clip; }
 <script>window.SITE_CONFIG = { GEO: 'sk', COOKIE_TEXT: 'Používame nevyhnutné cookies a so súhlasom aj analytické a reklamné cookies.', COOKIE_ACCEPT_ALL: 'Prijať všetko', COOKIE_REJECT: 'Odmietnuť nepovinné', COOKIE_MANAGE: 'Spravovať nastavenia', COOKIE_SAVE: 'Uložiť nastavenia', COOKIE_CHANGE: 'Zmeniť nastavenia súborov cookie', COOKIE_LEARN: 'Viac informácií' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js?v=20260312b" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260315b" defer></script>
 </head>
 <body>
 
@@ -751,25 +751,48 @@ body { overflow-x: clip; }
     </div>
   </section>
 
-  <!-- FEATURED DEAL -->
-  <section class="featured" id="deal" data-home-feature="vortek">
+  <!-- FEATURED DEAL (product depends on locale: CoreSync or Iron Oak Pro SK) -->
+  <div id="deal">
+  <section class="featured" data-home-feature="coresync" hidden>
     <div class="featured__container">
       <div class="featured__eyebrow" data-i18n="featured_eyebrow">⭐ Novinka týždňa</div>
       <h2 class="featured__title" data-i18n="featured_title">Odporúčaný produkt</h2>
       <article class="featured__card">
         <div class="featured__photo">
-          
           <picture>
-            <source type="image/webp" srcset="/assets/img/products/vortek/hero.webp?v=3">
-            <img src="/assets/img/products/vortek/hero.webp?v=3" alt="Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou" data-i18n-alt="featured_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
+            <source type="image/webp" srcset="/assets/img/products/smartwatch/hero.webp?v=2">
+            <img src="/assets/img/products/smartwatch/hero.jpg?v=2" alt="CoreSync — kompletná sada smart hodiniek s náhradným remienkom, nabíjačkou, návodom a aplikáciou" data-i18n-alt="featured_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
           </picture>
         </div>
         <div class="featured__body">
-          <div class="featured__category" data-i18n="featured_category">Záhrada a náradie</div>
-          <h3 class="featured__name" data-i18n="featured_name">Iron Oak Pro™ — 79,00 €</h3>
-          
-          <p class="featured__desc" data-i18n="featured_desc">Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.</p>
-          <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta">Zaobstarajte si ho už</a>
+          <div class="featured__category" data-i18n="featured_category">Technológie</div>
+          <h3 class="featured__name" data-i18n="featured_name">CoreSync™ — 64,00 €</h3>
+          <p class="featured__desc" data-i18n="featured_desc">Univerzálne smart hodinky na prepojenie s telefónom, sledovanie aktivity a spánku v jednej aplikácii. Až 10 dní výdrž, vodotesnosť 5ATM, aplikácia pre iOS/Android. Kompletná sada s náhradným remienkom a ochrannými fóliami.</p>
+          <a class="featured__cta" href="#coresSync-markets-links" data-i18n="featured_cta">Zaobstarajte si ho už</a>
+        </div>
+        <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
+          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Zaobstarajte si ho už od 64,00 €</span>
+          <span id="coresSync-markets-links" class="home-market-picker__links" data-market-links="coreSync"><a href="/sk/smartwatch/landing.html">SK</a></span>
+        </div>
+      </article>
+    </div>
+  </section>
+  <section class="featured" data-home-feature="vortek">
+    <div class="featured__container">
+      <div class="featured__eyebrow" data-i18n="featured_eyebrow">⭐ Novelty of the week</div>
+      <h2 class="featured__title" data-i18n="featured_title">Featured product</h2>
+      <article class="featured__card">
+        <div class="featured__photo">
+          <picture>
+            <source type="image/webp" srcset="/assets/img/products/vortek/hero.webp?v=3">
+            <img src="/assets/img/products/vortek/hero.webp?v=3" alt="Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou" data-i18n-alt="featured_vortek_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
+          </picture>
+        </div>
+        <div class="featured__body">
+          <div class="featured__category" data-i18n="featured_vortek_category">Záhrada a náradie</div>
+          <h3 class="featured__name" data-i18n="featured_vortek_name">Iron Oak Pro™ — 79,00 €</h3>
+          <p class="featured__desc" data-i18n="featured_vortek_desc">Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.</p>
+          <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta">Get it now</a>
         </div>
         <div id="vortek-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="vortek">
           <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Zaobstarajte si ho už od 79,00 €</span>
@@ -778,6 +801,7 @@ body { overflow-x: clip; }
       </article>
     </div>
   </section>
+  </div>
 
   <!-- CATEGORIES -->
   <section class="categories" id="our-products">
