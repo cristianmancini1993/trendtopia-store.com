@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<!-- Iron Oak Pro PL — offer 3231 · lp 3265 · 299.00 PLN -->
 <!-- Google tag (gtag.js) -->
 <script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
@@ -518,9 +517,6 @@ window.SITE_CONFIG = {
       <label class="vk-lbl" for="street-address">Adres<span>*</span></label>
       <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adres" required>
 
-      <label class="vk-lbl" for="postal-code">Kod pocztowy<span>*</span></label>
-      <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" placeholder="Kod pocztowy" required>
-
       <label class="vk-lbl" for="address-level2">Miejscowość</label>
       <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Miejscowość">
 
@@ -814,7 +810,6 @@ window.SITE_CONFIG = {
     name: 'Wpisz imię i nazwisko.',
     address: 'Wpisz adres dostawy.',
     tel: 'Wpisz prawidłowy polski numer telefonu.',
-    postalCode: 'Wpisz prawidłowy kod pocztowy w formacie 00-001.',
     generic: 'Nie udało się wysłać zamówienia. Spróbuj ponownie.',
     submitting: 'Wysyłanie…'
   };
@@ -842,8 +837,6 @@ window.SITE_CONFIG = {
       if (!val || val.length < 5) msg = MSGS.address;
     } else if (input.name === 'tel') {
       if (!isValidLocalPhone(val)) msg = MSGS.tel;
-    } else if (input.name === 'postal-code') {
-      if (!/^\d{2}-?\d{3}$/.test(val)) msg = MSGS.postalCode;
     }
     var err = document.getElementById(errId(input));
     if (msg) {
@@ -862,7 +855,7 @@ window.SITE_CONFIG = {
 
   function validateForm(form) {
     var valid = true, firstInvalid = null;
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       if (!validateInput(input)) { valid = false; if (!firstInvalid) firstInvalid = input; }
     });
     return { valid: valid, firstInvalid: firstInvalid };
@@ -875,7 +868,7 @@ window.SITE_CONFIG = {
     live.setAttribute('role', 'status');
     form.insertBefore(live, form.firstChild);
 
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       var err = document.createElement('span');
       err.id = errId(input);
       err.className = 'vk-field-error';

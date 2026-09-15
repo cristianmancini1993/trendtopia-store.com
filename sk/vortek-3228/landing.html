@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
-<!-- Iron Oak Pro SK — offer 3228 · lp 3262 · 79,00 EUR -->
 <!-- Google tag (gtag.js) -->
 <script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
@@ -518,9 +517,6 @@ window.SITE_CONFIG = {
       <label class="vk-lbl" for="street-address">Adresa doručenia<span>*</span></label>
       <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa doručenia" required aria-required="true">
 
-      <label class="vk-lbl" for="postal-code">PSČ<span>*</span></label>
-      <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" inputmode="numeric" placeholder="Napr. 811 01" required aria-required="true">
-
       <label class="vk-lbl" for="address-level2">Mesto alebo obec</label>
       <input id="address-level2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Mesto alebo obec">
 
@@ -737,9 +733,6 @@ window.SITE_CONFIG = {
       <label class="vk-lbl" for="street-address2">Adresa doručenia<span>*</span></label>
       <input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa doručenia" required aria-required="true">
 
-      <label class="vk-lbl" for="postal-code2">PSČ<span>*</span></label>
-      <input id="postal-code2" type="text" name="postal-code" autocomplete="postal-code" inputmode="numeric" placeholder="Napr. 811 01" required aria-required="true">
-
       <label class="vk-lbl" for="address-level2-2">Mesto alebo obec</label>
       <input id="address-level2-2" type="text" name="address-level2" autocomplete="address-level2" placeholder="Mesto alebo obec">
 
@@ -859,7 +852,6 @@ window.SITE_CONFIG = {
     name: 'Zadajte meno a priezvisko.',
     address: 'Zadajte adresu doručenia.',
     tel: 'Zadajte platné slovenské telefónne číslo.',
-    postalCode: 'Zadajte platné PSČ vo formáte 811 01.',
     generic: 'Objednávku sa nepodarilo odoslať. Skúste to znova.',
     submitting: 'Odosielanie…'
   };
@@ -897,8 +889,6 @@ window.SITE_CONFIG = {
       if (!val || val.length < 5) msg = MSGS.address;
     } else if (input.name === 'tel') {
       if (!isValidSkPhone(val)) msg = MSGS.tel;
-    } else if (input.name === 'postal-code') {
-      if (!/^\d{3}\s?\d{2}$/.test(val)) msg = MSGS.postalCode;
     }
     var err = document.getElementById(errId(input));
     if (msg) {
@@ -917,7 +907,7 @@ window.SITE_CONFIG = {
 
   function validateForm(form) {
     var valid = true, firstInvalid = null;
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       if (!validateInput(input)) { valid = false; if (!firstInvalid) firstInvalid = input; }
     });
     return { valid: valid, firstInvalid: firstInvalid };
@@ -930,7 +920,7 @@ window.SITE_CONFIG = {
     live.setAttribute('role', 'status');
     form.insertBefore(live, form.firstChild);
 
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       var err = document.createElement('span');
       err.id = errId(input);
       err.className = 'vk-field-error';

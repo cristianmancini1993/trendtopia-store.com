@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-<!-- Iron Oak Pro LT — offer 1427 · lp 1447 · 64.00 EUR -->
 <!-- Google tag (gtag.js) -->
 <script src="/assets/js/consent-default.js"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18327321473"></script>
@@ -808,7 +807,6 @@ window.SITE_CONFIG = {
     name: 'Įveskite vardą ir pavardę.',
     address: 'Įveskite pristatymo adresą.',
     tel: 'Įveskite galiojantį Lietuvos telefono numerį.',
-    postalCode: 'Įveskite galiojantį 5 skaitmenų pašto kodą.',
     generic: 'Užsakymo pateikti nepavyko. Bandykite dar kartą.',
     submitting: 'Siunčiama…'
   };
@@ -837,8 +835,6 @@ window.SITE_CONFIG = {
       if (!val || val.length < 5) msg = MSGS.address;
     } else if (input.name === 'tel') {
       if (!isValidLocalPhone(val)) msg = MSGS.tel;
-    } else if (input.name === 'postal-code') {
-      if (!/^\d{5}$/.test(val)) msg = MSGS.postalCode;
     }
     var err = document.getElementById(errId(input));
     if (msg) {
@@ -857,7 +853,7 @@ window.SITE_CONFIG = {
 
   function validateForm(form) {
     var valid = true, firstInvalid = null;
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       if (!validateInput(input)) { valid = false; if (!firstInvalid) firstInvalid = input; }
     });
     return { valid: valid, firstInvalid: firstInvalid };
@@ -870,7 +866,7 @@ window.SITE_CONFIG = {
     live.setAttribute('role', 'status');
     form.insertBefore(live, form.firstChild);
 
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"], input[name="postal-code"]').forEach(function (input) {
+    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {
       var err = document.createElement('span');
       err.id = errId(input);
       err.className = 'vk-field-error';
