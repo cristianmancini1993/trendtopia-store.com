@@ -87,7 +87,7 @@ window.SITE_CONFIG = {
   display:flex;align-items:center;justify-content:center;
   color:#fff;font-weight:900;font-size:15px;flex:0 0 auto;
 }
-.vk-logo__mark img{width:32px;height:32px;object-fit:contain}
+.vk-logo__mark img,.vk-logo__mark svg{width:32px;height:32px;object-fit:contain;display:block;flex:0 0 auto}
 .vk-logo__text{font-size:1.05rem;font-weight:800;color:#fff}
 .vk-logo__text span{color:#a855f7;opacity:1}
 .vk-header__badge{
@@ -211,6 +211,14 @@ window.SITE_CONFIG = {
   max-width:420px;margin:0 auto 1rem;text-align:center;font-size:0.78rem;
   color:var(--vk-urgency);font-weight:700;
 }
+.vk-form-tel-hint{
+  font-size:0.78rem;color:var(--vk-gray);margin:-4px 0 0.75rem;line-height:1.45;text-align:left;
+}
+.vk-form-confirm-line{
+  font-size:0.78rem;color:var(--vk-dark);font-weight:600;margin:0.65rem 0 0.5rem;
+  text-align:center;line-height:1.4;
+}
+.vk-form button.vk-submit-order{font-size:0.92rem;line-height:1.35;padding:0.95rem 0.75rem}
 
 /* ---------- FEATURES ---------- */
 .vk-section-title{text-align:center;font-size:1.5rem;margin:2.5rem auto 1.5rem;max-width:640px}
@@ -265,6 +273,7 @@ window.SITE_CONFIG = {
   min-height:165px;background:var(--vk-bg-alt);
   image-rendering:auto;
 }
+.vk-review--no-shot .vk-review__body{max-width:none}
 .vk-review .rv-name{font-weight:700;font-size:0.92rem}
 .vk-review .rv-loc{color:var(--vk-gray-light);font-size:0.78rem;margin-bottom:0.3rem}
 .vk-review .rv-stars{color:var(--vk-warning);font-size:0.9rem;margin-bottom:0.4rem}
@@ -383,7 +392,7 @@ window.SITE_CONFIG = {
 <header class="vk-header">
   <div class="vk-header__inner">
     <a href="/" class="vk-logo" aria-label="trendtopia-store.com">
-      <span class="vk-logo__mark"><img src="/favicon.svg" alt="" width="32" height="32"></span>
+      <span class="vk-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#a855f7" width="32" height="32" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg></span>
       <span class="vk-logo__text">trendtopia-store<span>.com</span></span>
     </a>
     <span class="vk-header__badge"><span>Doručenie 24–48 h</span><span>Platba na dobierku</span></span>
@@ -465,7 +474,8 @@ window.SITE_CONFIG = {
       <input id="name" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required aria-required="true">
 
       <label class="vk-lbl" for="tel">Telefón<span>*</span></label>
-      <input id="tel" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true">
+      <input id="tel" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true" aria-describedby="tel-hint">
+      <p class="vk-form-tel-hint" id="tel-hint">Po odoslaní objednávky vám náš operátor zavolá na potvrdenie údajov a objednávky. Zadajte telefónne číslo, na ktorom vás môžeme zastihnúť.</p>
 
       <label class="vk-lbl" for="street-address">Adresa doručenia<span>*</span></label>
       <input id="street-address" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa doručenia" required aria-required="true">
@@ -485,8 +495,9 @@ window.SITE_CONFIG = {
       <input name="webhook" type="hidden" value="https://hook.eu2.make.com/cds3apkdon1odprbssp1g3pujadvbx1l">
       <input name="_key" type="hidden" value="06c97b438709e68194eda1c79870739da3c83220">
 
+      <p class="vk-form-confirm-line">Objednávku telefonicky potvrdíme pred odoslaním.</p>
       <div style="margin-top:10px;text-align:center">
-        <button name="submit" type="submit">ÁNO, CHCEM IRON OAK PRO — <span class="vk-button-old">158,00 €</span><span class="vk-button-price">79,00 €</span><span class="vk-button-discount">ZĽAVA 50 %</span></button>
+        <button name="submit" type="submit" class="vk-submit-order">OBJEDNAŤ S POVINNOSŤOU PLATBY — <span class="vk-button-price vk-submit-price">79,00 €</span></button>
       </div>
       <p class="vk-form-privacy">Odoslaním formulára súhlasíte so spracovaním údajov na vybavenie objednávky. Pozrite si naše <a href="/sk/privacy-policy.html">zásady ochrany osobných údajov</a>.</p>
 </form>
@@ -577,7 +588,7 @@ window.SITE_CONFIG = {
       <tr><td>Napínanie reťaze pomocou náradia</td><td><strong>Automatické napínanie</strong> vďaka senzoru</td></tr>
       <tr><td>Ťažké motory, ktoré rýchlo unavia ruky</td><td><strong>Len 2,4 kg</strong> vrátane meča a batérie</td></tr>
       <tr><td>Rezacia kapacita do 25–30 cm</td><td><strong>Kmene a konáre do priemeru 40 cm</strong></td></tr>
-      <tr><td>Obmedzená záruka a možnosti vrátenia</td><td><strong>2 roky záruka (+1 rok navyše) + vrátenie do 120 dní</strong></td></tr>
+      <tr><td>Obmedzená záruka a možnosti vrátenia</td><td><strong>24 mesiacov záruka + vrátenie do 30 dní</strong></td></tr>
     </table>
   </div>
   <div class="vk-cta-wrap"><a class="vk-cta" href="#vk-formulario">Objednať Iron Oak Pro teraz</a></div>
@@ -596,9 +607,19 @@ window.SITE_CONFIG = {
     <li><strong>Napínanie reťaze:</strong> Automatické, senzorom riadené.</li>
     <li><strong>Hmotnosť:</strong> 2,4 kg vrátane meča a batérie.</li>
     <li><strong>Obsah balenia:</strong> Píla, 2 batérie, rýchlonabíjačka, 2 reťaze, náradie, transportný kufor, ochranné okuliare, rukavice a návod.</li>
-    <li><strong>Záruka:</strong> 24 mesiacov (+ 12 mesiacov navyše pri objednávke dnes).</li>
+    <li><strong>Záruka:</strong> 24 mesiacov.</li>
   </ul>
   <p class="vk-disclaimer">*Vždy si prečítajte priložený návod a výrobok používajte podľa odporúčaní.</p>
+
+  <h2 class="vk-section-title">Identifikácia produktu</h2>
+  <!-- TODO: Doplňte názov, adresu a kontakt výrobcu (GPSR), keď budú k dispozícii v projekte. -->
+  <!-- TODO: Doplňte zodpovednú osobu / subjekt v EÚ (GPSR), keď budú údaje k dispozícii. -->
+  <ul class="vk-specs vk-product-id">
+    <li><strong>Názov / model:</strong> Iron Oak Pro™ (akumulátorová reťazová píla).</li>
+    <li><strong>Referencia ponuky / produktu:</strong> 3228 · <code>vortek-3228</code> · LP <code>sk-vortek-3228</code>.</li>
+    <li><strong>Predajca a kontakt:</strong> GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED — RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong · <a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a>.</li>
+    <li><strong>Bezpečnosť a právne informácie:</strong> <a href="/sk/terms-conditions.html">Zmluvné podmienky</a>, <a href="/sk/refund-policy.html">Pravidlá vrátenia peňazí</a> (30 dní), <a href="/sk/shipping-policy.html">Pravidlá prepravy</a>.</li>
+  </ul>
 
   <div class="vk-package">
     <h3>🎁 Všetko, čo obsahuje balenie Iron Oak Pro™</h3>
@@ -614,8 +635,8 @@ window.SITE_CONFIG = {
       <li>🧤 Profesionálne rukavice</li>
       <li>🚚 Doprava zdarma do 24–48 pracovných hodín</li>
       <li>💳 Platba na dobierku</li>
-      <li>🔄 Vrátenie do 120 dní</li>
-      <li>🛡️ Záruka 24 mesiacov (+1 rok navyše)</li>
+      <li>🔄 Vrátenie do 30 dní</li>
+      <li>🛡️ Záruka 24 mesiacov</li>
     </ul>
     <div class="pkg-value">Predchádzajúca cena: 158,00 € · zľava 50 %</div>
     <div class="vk-price-bonus">🎁 2 batérie + rýchlonabíjačka + 2 reťaze ZADARMO v balení</div>
@@ -651,7 +672,7 @@ window.SITE_CONFIG = {
         <img src="/assets/img/products/vortek/review-photo-a.webp?v=1" alt="Foto z recenzie — Elena V." width="220" height="165" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/img/placeholder.svg'">
       </figure>
     </div>
-    <div class="vk-review">
+    <div class="vk-review vk-review--no-shot">
       <div class="vk-review__avatar"><img src="/assets/img/products/vortek/review-avatar-l.webp?v=1" alt="" width="52" height="52" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/img/placeholder.svg'"></div>
       <div class="vk-review__body">
         <div class="rv-name">Marek S.</div>
@@ -659,9 +680,6 @@ window.SITE_CONFIG = {
         <div class="rv-stars">★★★★☆ 4,6/5</div>
         <p>Prekvapilo ma, aká je napriek výkonu ľahká. Hmotnosť 2,4 kg sa dá udržať aj po hodinách práce a ovláda sa veľmi ľahko, dokonca aj pri práci nad zemou.</p>
       </div>
-      <figure class="vk-review__shot">
-        <img src="/assets/img/products/vortek/review-photo-l.webp?v=1" alt="Foto z recenzie — Marek S." width="220" height="165" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/assets/img/placeholder.svg'">
-      </figure>
     </div>
   </div>
   <div class="vk-cta-wrap"><a class="vk-cta" href="#vk-formulario">Objednať Iron Oak Pro teraz</a></div>
@@ -678,7 +696,8 @@ window.SITE_CONFIG = {
       <input id="name2" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required aria-required="true">
 
       <label class="vk-lbl" for="tel2">Telefón<span>*</span></label>
-      <input id="tel2" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true">
+      <input id="tel2" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Telefón" required aria-required="true" aria-describedby="tel-hint-2">
+      <p class="vk-form-tel-hint" id="tel-hint-2">Po odoslaní objednávky vám náš operátor zavolá na potvrdenie údajov a objednávky. Zadajte telefónne číslo, na ktorom vás môžeme zastihnúť.</p>
 
       <label class="vk-lbl" for="street-address2">Adresa doručenia<span>*</span></label>
       <input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Adresa doručenia" required aria-required="true">
@@ -698,8 +717,9 @@ window.SITE_CONFIG = {
       <input name="webhook" type="hidden" value="https://hook.eu2.make.com/cds3apkdon1odprbssp1g3pujadvbx1l">
       <input name="_key" type="hidden" value="06c97b438709e68194eda1c79870739da3c83220">
 
+      <p class="vk-form-confirm-line">Objednávku telefonicky potvrdíme pred odoslaním.</p>
       <div style="margin-top:10px;text-align:center">
-        <button name="submit" type="submit">ÁNO, CHCEM IRON OAK PRO — <span class="vk-button-old">158,00 €</span><span class="vk-button-price">79,00 €</span><span class="vk-button-discount">ZĽAVA 50 %</span></button>
+        <button name="submit" type="submit" class="vk-submit-order">OBJEDNAŤ S POVINNOSŤOU PLATBY — <span class="vk-button-price vk-submit-price">79,00 €</span></button>
       </div>
       <p class="vk-form-privacy">Vaše údaje použijeme na vybavenie objednávky. Pozrite si naše <a href="/sk/privacy-policy.html">zásady ochrany osobných údajov</a>.</p>
 </form>
@@ -735,6 +755,14 @@ window.SITE_CONFIG = {
       <p>Áno. Kuriérovi zaplatíte až pri prevzatí objednávky doma podľa možností doručenia vo vašej oblasti.</p>
     </details>
     <details>
+      <summary>↩️ Aké sú podmienky vrátenia?</summary>
+      <p>Máte 30 dní na vrátenie produktu podľa našich <a href="/sk/refund-policy.html">Pravidiel vrátenia peňazí</a>.</p>
+    </details>
+    <details>
+      <summary>🛡️ Aká je záruka?</summary>
+      <p>Na produkt sa vzťahuje záruka 24 mesiacov od dodania.</p>
+    </details>
+    <details>
       <summary>✅ Dobre, Iron Oak Pro ma presvedčil. Ako si ho objednám?</summary>
       <p>Vyplňte formulár, do 24 hodín vám zavoláme na potvrdenie a Iron Oak Pro dostanete do 24–48 pracovných hodín. Začnite kliknutím na „Áno, chcem Iron Oak Pro — 79,00 €".</p>
     </details>
@@ -748,7 +776,7 @@ window.SITE_CONFIG = {
     <div class="vk-footer__grid">
       <div>
         <div class="vk-footer__brand">
-          <span class="vk-logo__mark"><img src="/favicon.svg" alt="" width="32" height="32"></span>
+          <span class="vk-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#a855f7" width="32" height="32" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg></span>
           <span class="vk-logo__text">trendtopia-store<span>.com</span></span>
         </div>
       </div>
@@ -783,6 +811,14 @@ window.SITE_CONFIG = {
 <script>
 (function () {
   document.getElementById('vk-year').textContent = new Date().getFullYear();
+
+  var cfg = window.SITE_CONFIG || {};
+  if (cfg.PRICE != null && !isNaN(Number(cfg.PRICE))) {
+    var priceLabel = Number(cfg.PRICE).toFixed(2).replace('.', ',') + ' €';
+    document.querySelectorAll('.vk-submit-price').forEach(function (el) {
+      el.textContent = priceLabel;
+    });
+  }
 
   var MSGS = {
     name: 'Zadajte meno a priezvisko.',
@@ -844,7 +880,13 @@ window.SITE_CONFIG = {
       err.className = 'vk-field-error';
       err.hidden = true;
       input.insertAdjacentElement('afterend', err);
-      input.setAttribute('aria-describedby', err.id);
+      if (input.id === 'tel') {
+        input.setAttribute('aria-describedby', 'tel-hint ' + err.id);
+      } else if (input.id === 'tel2') {
+        input.setAttribute('aria-describedby', 'tel-hint-2 ' + err.id);
+      } else {
+        input.setAttribute('aria-describedby', err.id);
+      }
       input.addEventListener('input', function () { if (input.classList.contains('is-invalid')) validateInput(input); });
       input.addEventListener('blur', function () { validateInput(input); });
     });
