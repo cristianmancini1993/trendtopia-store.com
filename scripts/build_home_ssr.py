@@ -74,7 +74,7 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
         markets[geo] = {
             "setOfPots": [geo] if geo in casa else [],
             "coreSync": [geo] if geo in core else [],
-            "vortek": [geo] if geo in vortek else [],
+            "vortek": [geo] if geo in vortek else list(vortek),
         }
     return markets
 

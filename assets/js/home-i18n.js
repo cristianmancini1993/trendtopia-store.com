@@ -84,7 +84,7 @@
     LOCALE_MARKETS[geo] = {
       setOfPots: CASA_FUEGO_GEOS.indexOf(geo) >= 0 ? [geo] : [],
       coreSync: CORESYNC_GEOS.indexOf(geo) >= 0 ? [geo] : [],
-      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : []
+      vortek: VORTEK_GEOS.indexOf(geo) >= 0 ? [geo] : EN_HOME_MARKETS.vortek.slice()
     };
   });
 
