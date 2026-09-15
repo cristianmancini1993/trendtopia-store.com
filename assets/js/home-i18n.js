@@ -724,8 +724,10 @@
   }
 
   function homeFeaturedProduct(locale) {
-    if (locale === 'sk') return 'vortek';
-    var coreCodes = (LOCALE_MARKETS[locale] && LOCALE_MARKETS[locale].coreSync) || [];
+    var markets = LOCALE_MARKETS[locale] || {};
+    var vortekCodes = markets.vortek || [];
+    if (vortekCodes.length) return 'vortek';
+    var coreCodes = markets.coreSync || [];
     if (coreCodes.length) return 'coresync';
     return 'coresync';
   }

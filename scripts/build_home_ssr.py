@@ -80,9 +80,10 @@ def compute_locale_markets(data: dict, select_locales: list[str]) -> dict:
 
 
 def home_featured_product(locale: str, locale_markets: dict) -> str:
-    if locale == "sk":
+    markets = locale_markets.get(locale, {})
+    if markets.get("vortek"):
         return "vortek"
-    if locale_markets.get(locale, {}).get("coreSync"):
+    if markets.get("coreSync"):
         return "coresync"
     return "coresync"
 
