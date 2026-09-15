@@ -17,7 +17,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Iron Oak Pro™ profesionálna reťazová píla | 1500W | 2 batérie na 8 hodín | trendtopia-store.com</title>
-<meta name="description" content="Iron Oak Pro™: profesionálna reťazová píla 1500W s diamantovou reťazou. Reže kmene do 40 cm. 2 batérie na 8 h prevádzky. Doprava zdarma do 24–48 hodín a platba na dobierku.">
+<meta name="description" content="Iron Oak Pro™: profesionálna reťazová píla 1500W s diamantovou reťazou. Reže kmene do 40 cm. 2 batérie na 8 h prevádzky. Doprava zdarma do 24–48 pracovných hodín po potvrdení objednávky a platba na dobierku.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
@@ -395,7 +395,7 @@ window.SITE_CONFIG = {
       <span class="vk-logo__mark"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#a855f7" width="32" height="32" aria-hidden="true"><path d="M12 2l2.5 7.5L22 12l-7.5 2.5L12 22l-2.5-7.5L2 12l7.5-2.5z"/></svg></span>
       <span class="vk-logo__text">trendtopia-store<span>.com</span></span>
     </a>
-    <span class="vk-header__badge"><span>Doručenie 24–48 h</span><span>Platba na dobierku</span></span>
+    <span class="vk-header__badge"><span>Doručenie 24–48 h po potvrdení</span><span>Platba na dobierku</span></span>
   </div>
 </header>
 
@@ -427,7 +427,7 @@ window.SITE_CONFIG = {
       <div class="vk-price-bonus">🎁 2 batérie + rýchlonabíjačka + 2 diamantové reťaze ZADARMO</div>
       <a class="vk-cta" href="#vk-formulario">Áno, chcem Iron Oak Pro za 79,00 €</a>
       <div class="vk-trust">
-        <span>🚚 Doprava zdarma do 24–48 pracovných hodín</span>
+        <span>🚚 Doručenie do 24–48 pracovných hodín po telefonickom potvrdení objednávky</span>
         <span>💶 Platba na dobierku</span>
         <span>🛡️ Záruka 24 mesiacov</span>
         <span>↩️ Vrátenie do 30 dní</span>
@@ -451,7 +451,7 @@ window.SITE_CONFIG = {
     </div>
     <div class="vk-trust-row__item">
       <span class="vk-trust-row__icon">🚚</span>
-      <div class="vk-trust-row__label">Doručenie 24–48 h</div>
+      <div class="vk-trust-row__label">Doručenie 24–48 h po potvrdení</div>
       <div class="vk-trust-row__sub">Doprava je zahrnutá v cene</div>
     </div>
     <div class="vk-trust-row__item">
@@ -623,7 +623,7 @@ window.SITE_CONFIG = {
       <li>📘 Návod na použitie v balení</li>
       <li>🥽 Ochranné okuliare</li>
       <li>🧤 Profesionálne rukavice</li>
-      <li>🚚 Doprava zdarma do 24–48 pracovných hodín</li>
+      <li>🚚 Doručenie do 24–48 pracovných hodín po telefonickom potvrdení objednávky</li>
       <li>💳 Platba na dobierku</li>
       <li>🔄 Vrátenie do 30 dní</li>
       <li>🛡️ Záruka 24 mesiacov</li>
@@ -757,7 +757,7 @@ window.SITE_CONFIG = {
     </details>
     <details>
       <summary>✅ Dobre, Iron Oak Pro ma presvedčil. Ako si ho objednám?</summary>
-      <p>Vyplňte formulár, do 24 hodín vám zavoláme na potvrdenie a Iron Oak Pro dostanete do 24–48 pracovných hodín. Začnite kliknutím na „Áno, chcem Iron Oak Pro — 79,00 €".</p>
+      <p>Vyplňte formulár. Do 24 hodín vám zavoláme na potvrdenie objednávky. Po telefonickom potvrdení vám objednávku doručíme do 24–48 pracovných hodín. Začnite kliknutím na „Áno, chcem Iron Oak Pro — 79,00 €".</p>
     </details>
   </div>
   <div class="vk-cta-wrap"><a class="vk-cta" href="#vk-formulario">Objednať Iron Oak Pro teraz</a></div>
@@ -816,13 +816,34 @@ window.SITE_CONFIG = {
   var MSGS = {
     name: 'Zadajte meno a priezvisko.',
     address: 'Zadajte adresu doručenia.',
-    tel: 'Zadajte platné telefónne číslo.',
+    tel: 'Zadajte platné slovenské telefónne číslo.',
     postalCode: 'Zadajte platné PSČ vo formáte 811 01.',
     generic: 'Objednávku sa nepodarilo odoslať. Skúste to znova.',
     submitting: 'Odosielanie…'
   };
 
   function errId(input) { return input.id + '-error'; }
+
+  function isValidSkPhone(val) {
+    if (!val || !/\d/.test(val)) return false;
+    var compact = val.replace(/[\s\-().]/g, '');
+    if (compact.indexOf('+421') === 0) compact = compact.slice(1);
+    if (compact.indexOf('00421') === 0) compact = '421' + compact.slice(5);
+    var digits = compact.replace(/\D/g, '');
+    var national = '';
+    if (digits.indexOf('421') === 0) {
+      if (digits.length > 12) return false;
+      national = digits.slice(3);
+    } else if (digits.charAt(0) === '0') {
+      if (digits.length !== 10) return false;
+      national = digits.slice(1);
+    } else {
+      national = digits;
+    }
+    if (national.length !== 9) return false;
+    if (/^(\d)\1{8}$/.test(national)) return false;
+    return true;
+  }
 
   function validateInput(input) {
     var val = input.value.trim();
@@ -832,8 +853,7 @@ window.SITE_CONFIG = {
     } else if (input.name === 'street-address') {
       if (!val || val.length < 5) msg = MSGS.address;
     } else if (input.name === 'tel') {
-      var digits = val.replace(/\D/g, '');
-      if (!val || digits.length < 7 || digits.length > 16) msg = MSGS.tel;
+      if (!isValidSkPhone(val)) msg = MSGS.tel;
     } else if (input.name === 'postal-code') {
       if (!/^\d{3}\s?\d{2}$/.test(val)) msg = MSGS.postalCode;
     }
