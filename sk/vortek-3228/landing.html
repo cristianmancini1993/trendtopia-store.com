@@ -178,6 +178,12 @@ window.SITE_CONFIG = {
 .vk-form-sec--dark .sub{color:rgba(255,255,255,.88)}
 .vk-form-sec--dark .sub strong{color:#fff}
 .vk-form{max-width:420px;margin:0 auto;background:#fff;padding:1.5rem;border-radius:1rem;border:2px solid var(--vk-dark)}
+.vk-form-discount{
+  display:flex;align-items:center;justify-content:center;
+  margin:0 0 1rem;padding:0.65rem 0.8rem;border-radius:0.6rem;
+  background:var(--vk-brand);color:#fff;font-size:0.9rem;font-weight:900;
+  letter-spacing:.03em;text-align:center;text-transform:uppercase;
+}
 .vk-lbl{display:block;text-align:left;font-size:0.85rem;font-weight:700;color:var(--vk-dark);margin-bottom:5px}
 .vk-lbl span{color:var(--vk-urgency)}
 .vk-form input{
@@ -501,6 +507,7 @@ window.SITE_CONFIG = {
     <p class="vk-form-note">Ponuka platí do vypredania zásob</p>
 
     <form class="vk-form vk-order-form tm-order-form order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
+      <div class="vk-form-discount">Zľava 50 %</div>
       <label class="vk-lbl" for="name">Meno a priezvisko<span>*</span></label>
       <input id="name" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required aria-required="true">
 
@@ -719,6 +726,7 @@ window.SITE_CONFIG = {
     <p class="sub">Objednajte si ho a <strong>pohodlne zaplaťte až pri prevzatí.</strong></p>
 
     <form class="vk-form vk-order-form tm-order-form order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
+      <div class="vk-form-discount">Zľava 50 %</div>
       <label class="vk-lbl" for="name2">Meno a priezvisko<span>*</span></label>
       <input id="name2" type="text" name="name" autocomplete="name" placeholder="Meno a priezvisko" required aria-required="true">
 
