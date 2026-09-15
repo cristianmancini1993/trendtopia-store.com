@@ -10,6 +10,7 @@ MARKERS = [
     ("CASA_FUEGO_GEOS", "  var CASA_FUEGO_GEOS = "),
     ("CORESYNC_GEOS", "  var CORESYNC_GEOS = "),
     ("EN_HOME_MARKETS", "  var EN_HOME_MARKETS = "),
+    ("VORTEK_PATHS", "  var VORTEK_PATHS = "),
     ("LOCALE_LABELS", "  var LOCALE_LABELS = "),
     ("HTML_LANG", "  var HTML_LANG = "),
     ("PRODUCT_PRICES", "  var PRODUCT_PRICES = "),

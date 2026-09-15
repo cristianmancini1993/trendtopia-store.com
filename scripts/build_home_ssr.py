@@ -113,7 +113,8 @@ def market_hrefs(data: dict, locale_markets: dict, locale: str, product: str) ->
         if product == "setOfPots":
             href = f"/{code}/casa-fuego/landing.html"
         elif product in ("vortek", "vortekCol"):
-            href = f"/{code}/vortek-3228/landing.html"
+            slug = data.get("VORTEK_PATHS", {}).get(code, "vortek-3228")
+            href = f"/{code}/{slug}/landing.html"
         else:
             href = f"/{code}/smartwatch/landing.html"
         hrefs.append((code.upper(), href))
@@ -133,7 +134,7 @@ def set_attr(html: str, attr: str, key: str, value: str, *, is_html: bool = Fals
         inner = value if is_html else escape(value)
         return m.group(1) + inner + m.group(3)
 
-    return re.sub(pattern, repl, html, count=1, flags=re.S | re.I)
+    return re.sub(pattern, repl, html, flags=re.S | re.I)
 
 
 def set_logo_aria(html: str, value: str) -> str:

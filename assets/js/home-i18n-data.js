@@ -6,7 +6,11 @@
   EN_HOME_MARKETS: {
     setOfPots: ['es', 'pl', 'sk', 'cz'],
     coreSync: ['es', 'pl', 'gr', 'sk'],
-    vortek: ['sk']
+    vortek: ['es', 'sk']
+  },
+  VORTEK_PATHS: {
+    es: 'vortek-1013',
+    sk: 'vortek-3228'
   },
   LOCALE_LABELS: {
     bg: 'Български',
@@ -44,6 +48,7 @@
       lt: '89,00 €', pl: '399,00 zł', pt: '99,00 €', sk: '89,00 €'
     },
     vortek: {
+      es: '69,00 €',
       sk: '79,00 €'
     }
   },
@@ -59,7 +64,8 @@
       featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Consíguelo ya por solo {price}',
       product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por solo {price}'
+      product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por solo {price}',
+      featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
     },
     pt: {
       featured_name_priced: 'CoreSync™ — {price}',
