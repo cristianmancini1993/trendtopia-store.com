@@ -174,6 +174,42 @@ def set_i18n_hrefs(html: str, geo: str) -> str:
     return re.sub(r"<a[^>]*\bdata-i18n-href=\"[^\"]+\"[^>]*>", fix_anchor, html)
 
 
+def set_home_product_links(html: str, locale: str, data: dict) -> str:
+    def fix_anchor(m: re.Match[str]) -> str:
+        tag = m.group(0)
+        product_m = re.search(r'data-home-product-link="([^"]+)"', tag)
+        if not product_m:
+            return tag
+        product = product_m.group(1)
+        href = ""
+        label_key = ""
+
+        if product == "setOfPots":
+            label_key = "product_setOfPots_title"
+            if locale in data["CASA_FUEGO_GEOS"]:
+                href = f"/{locale}/casa-fuego/landing.html"
+        elif product == "coreSync":
+            label_key = "product_coreSync_title"
+            if locale in data["CORESYNC_GEOS"]:
+                href = f"/{locale}/smartwatch/landing.html"
+        elif product == "vortek":
+            label_key = "product_vortek_title"
+            slug = data.get("VORTEK_PATHS", {}).get(locale)
+            if slug:
+                href = f"/{locale}/{slug}/landing.html"
+
+        label = escape(msg(data, locale, label_key), quote=True) if label_key else ""
+        if href:
+            tag = re.sub(r'\bhref="[^"]*"', f'href="{href}"', tag, count=1)
+        if re.search(r'\baria-label="', tag):
+            tag = re.sub(r'\baria-label="[^"]*"', f'aria-label="{label}"', tag, count=1)
+        elif label:
+            tag = tag[:-1] + f' aria-label="{label}">'
+        return tag
+
+    return re.sub(r'<a[^>]*\bdata-home-product-link="[^"]+"[^>]*>', fix_anchor, html)
+
+
 def set_i18n_html(html: str, key: str, value: str) -> str:
     """Replace inner HTML up to the element's own closing tag (not nested tags like </em>)."""
     pattern = (
@@ -185,7 +221,6 @@ def set_i18n_html(html: str, key: str, value: str) -> str:
         pattern,
         lambda m: m.group(1) + value + m.group(4),
         html,
-        count=1,
         flags=re.S | re.I,
     )
 
@@ -200,12 +235,14 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         count=1,
     )
 
-    hero_val = msg(data, locale, "hero_title")
-    if hero_val:
-        html = set_i18n_html(html, "hero_title", hero_val)
+    for key in re.findall(r'data-i18n-html="([^"]+)"', html):
+        val = msg(data, locale, key)
+        if val:
+            html = set_i18n_html(html, key, val)
 
     i18n_keys = set(re.findall(r'data-i18n="([^"]+)"', html))
     i18n_keys.discard("hero_title")
+    i18n_keys.discard("vortek_price_badge")
     for key in i18n_keys:
         val = msg(data, locale, key)
         if val:
@@ -222,6 +259,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
 
     geo = locale
     html = set_i18n_hrefs(html, geo)
+    html = set_home_product_links(html, locale, data)
 
     prices = data["PRODUCT_PRICES"]
     use_chooser = locale == "en"
@@ -237,7 +275,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
             feat_vortek = priced_line(data, locale, "featured_vortek_name_priced", vp)
     html = set_attr(html, "i18n", "featured_name", feat)
     if feat_vortek:
-        html = set_attr(html, "i18n", "featured_vortek_name", feat_vortek)
+        html = set_attr(html, "i18n", "featured_vortek_name", feat_vortek, is_html=True)
 
     def product_title(key_priced: str, key_plain: str, price_map: dict) -> str:
         if use_chooser:
@@ -266,7 +304,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
     )
     html = re.sub(
         r'(<[^>]*data-i18n="product_vortek_title"[^>]*>)(.*?)(</[^>]+>)',
-        lambda m: m.group(1) + escape(vortek_title) + m.group(3),
+        lambda m: m.group(1) + vortek_title + m.group(3),
         html,
         flags=re.S,
     )
@@ -369,7 +407,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
         ("COOKIE_CHANGE", "cookie_change"),
         ("COOKIE_LEARN", "cookie_learn"),
     ]
-    cfg_parts = [f"GEO: '{cfg_geo}'"]
+    cfg_parts = [f"GEO: '{cfg_geo}'", "GOOGLE_TAG_ID: 'AW-18327321473'"]
     for cfg_key, msg_key in cookie_pairs:
         val = msg(data, locale, msg_key)
         if val:

@@ -29,7 +29,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/css/variables.css">
 <link rel="stylesheet" href="/assets/css/reset.css">
 <link rel="stylesheet" href="/assets/css/components.css">
@@ -226,15 +226,55 @@
 }
 .featured__discount-badge {
   position: absolute;
+  z-index: 2;
   top: 1.25rem;
   left: 1.25rem;
-  background: var(--color-urgency);
+  background: var(--color-urgency, #dc2626);
   color: white;
   padding: 0.5rem 1rem;
   font-weight: 800;
   font-size: 1rem;
   border-radius: 9999px;
   box-shadow: 0 4px 12px rgba(220,38,38,0.4);
+}
+.featured__discount-badge s {
+  margin-right: 0.35em;
+  font-weight: 700;
+  opacity: .8;
+  text-decoration: line-through;
+}
+.featured__discount-badge--inline {
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.5rem;
+  box-shadow: none;
+}
+.featured__buy-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  margin: 0.45rem 0 0.85rem;
+  padding: 0.9rem 1.35rem;
+  border: 0;
+  border-radius: 14px;
+  background: var(--tt-orange);
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(22, 163, 74, 0.28);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.featured__buy-now:hover {
+  background: var(--tt-orange-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(21, 128, 61, 0.32);
 }
 .featured__body {
   padding: 2rem;
@@ -535,8 +575,7 @@
 
 /* Very thin outline on white text over orange bands (#0f172a = footer) */
 .site-header :is(.site-logo, .site-logo__text, .site-logo__text-primary, .site-logo__text-accent, .site-header__nav a),
-.trust-row :is(.trust-row__label, .trust-row__sub),
-.categories :is(.categories__title, .categories__subtitle) {
+.trust-row :is(.trust-row__label, .trust-row__sub) {
   text-shadow:
     -0.5px 0 0 #0f172a,
     0.5px 0 0 #0f172a,
@@ -685,22 +724,981 @@ body { overflow-x: clip; }
 }
 </style>
 
-<script>window.SITE_CONFIG = { GEO: 'cz', COOKIE_TEXT: 'Používáme nezbytné cookies a se souhlasem také analytické a reklamní cookies.', COOKIE_ACCEPT_ALL: 'Přijmout vše', COOKIE_REJECT: 'Odmítnout nepovinné', COOKIE_MANAGE: 'Spravovat předvolby', COOKIE_SAVE: 'Uložit předvolby', COOKIE_CHANGE: 'Změnit nastavení cookies', COOKIE_LEARN: 'Více informací' };</script>
+<style>
+/* ===== TRENDTOPIA EDITORIAL HOME REFRESH ===== */
+:root {
+  --tt-ink: #0f172a;
+  --tt-ink-2: #1e293b;
+  --tt-paper: #f8fafc;
+  --tt-white: #fff;
+  --tt-orange: #16a34a;
+  --tt-orange-dark: #15803d;
+  --tt-blue: #2563eb;
+  --tt-lime: #dcfce7;
+  --tt-muted: #475569;
+  --tt-line: #e2e8f0;
+  --tt-shadow: 0 24px 70px rgba(15,23,42,.13);
+  --tt-radius: 28px;
+  --tt-max: 1200px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  overflow-x: clip;
+  margin: 0;
+  color: var(--tt-ink);
+  background: var(--tt-paper);
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body.menu-open { overflow: hidden; }
+h1, h2, h3, h4 {
+  font-family: "Manrope", sans-serif;
+  line-height: 1.05;
+  letter-spacing: -.045em;
+}
+[hidden] { display: none !important; }
+
+.home-announcement {
+  position: relative;
+  z-index: 61;
+  padding: 10px 18px;
+  color: #fff;
+  background: var(--tt-ink);
+  text-align: center;
+  font-size: .86rem;
+}
+.home-announcement strong { color: var(--tt-lime); }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 70;
+  padding: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, .1);
+  background: rgba(248,250,252,.88);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, .05);
+  backdrop-filter: blur(18px);
+}
+.site-header__inner {
+  width: min(calc(100% - 40px), var(--tt-max));
+  min-height: 66px;
+  margin-inline: auto;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 16px;
+  align-items: center;
+}
+.site-header__nav {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.site-header__nav a {
+  position: relative;
+  color: var(--tt-ink);
+  font-size: .93rem;
+  font-weight: 650;
+  letter-spacing: -.01em;
+  text-decoration: none;
+}
+.site-header__nav a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -6px;
+  left: 0;
+  height: 2px;
+  background: var(--tt-orange);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s;
+}
+.site-header__nav a:hover::after { transform: scaleX(1); }
+.site-header .site-logo {
+  justify-self: center;
+  color: var(--tt-ink);
+  text-decoration: none;
+}
+.site-header .site-logo__text {
+  font-family: "Manrope", sans-serif;
+  font-size: 1.28rem;
+  font-weight: 800;
+  letter-spacing: -.055em;
+}
+.site-header .site-logo__text-primary { color: var(--tt-ink); }
+.site-header .site-logo__text-accent {
+  color: var(--tt-orange);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+.site-header__actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.home-lang { margin: 0; }
+.home-lang__form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.home-lang__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.home-lang__select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: auto;
+  min-width: 112px;
+  min-height: 38px;
+  padding: 0 34px 0 12px;
+  border: 1px solid var(--tt-line);
+  border-radius: 999px;
+  color: var(--tt-ink);
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23151629' d='M1.1 1.2 6 6.1l4.9-4.9 1.1 1.1L6 8.3 0 2.3z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 11px 7px;
+  font-size: .82rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+.home-menu-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--tt-line);
+  border-radius: 50%;
+  color: var(--tt-ink);
+  background: #fff;
+  cursor: pointer;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 82px 0 90px;
+  text-align: left;
+  background: var(--tt-paper);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -210px;
+  left: 47%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: var(--tt-blue);
+  filter: blur(130px);
+  opacity: .18;
+}
+.hero__inner {
+  position: relative;
+  width: min(calc(100% - 40px), var(--tt-max));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  gap: 70px;
+  align-items: center;
+}
+.hero__eyebrow {
+  margin: 0 0 14px;
+  padding: 0;
+  color: var(--tt-orange-dark);
+  background: none;
+  font-family: "Manrope", sans-serif;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.hero__title {
+  max-width: 720px;
+  margin: 0 0 24px;
+  font-size: clamp(3.1rem, 7vw, 6.6rem);
+  line-height: .98;
+  letter-spacing: -.065em;
+  text-transform: none;
+}
+.hero__title .site-logo__text-accent {
+  color: var(--tt-orange);
+  background: none;
+  -webkit-text-fill-color: currentColor;
+}
+.hero__subtitle {
+  max-width: 650px;
+  margin: 0 0 32px;
+  color: #4e5064;
+  font-size: clamp(1.08rem, 2vw, 1.28rem);
+}
+.hero__markets { justify-content: flex-start; margin: 0; }
+.hero__markets .hero__cta {
+  min-height: 56px;
+  padding: 0 24px;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--tt-orange);
+  box-shadow: 0 12px 28px rgba(22,163,74,.22);
+}
+.hero__cta[data-home-hide-unavailable][href="#our-products"] { display: none; }
+.hero__markets .hero__cta:hover { background: var(--tt-orange-dark); }
+.hero-stage { position: relative; min-height: 570px; }
+.hero-stage__card {
+  position: absolute;
+  overflow: hidden;
+  border: 1px solid rgba(21,22,41,.09);
+  background: #fff;
+  box-shadow: var(--tt-shadow);
+}
+.hero-stage__card img { width: 100%; height: 100%; object-fit: cover; }
+.hero-stage__card {
+  color: inherit;
+  text-decoration: none;
+}
+.hero-stage__card:focus-visible {
+  outline: 4px solid var(--tt-blue);
+  outline-offset: 5px;
+}
+.hero-stage__main { inset: 0 14% 12% 0; border-radius: 50% 50% 30px 30px; }
+.hero-stage__side {
+  right: 0;
+  bottom: 0;
+  width: 45%;
+  height: 45%;
+  border: 8px solid var(--tt-paper);
+  border-radius: 28px;
+}
+.hero-stage__tag {
+  position: absolute;
+  display: grid;
+  min-width: 178px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  color: #fff;
+  background: var(--tt-ink);
+  box-shadow: var(--tt-shadow);
+}
+.hero-stage__tag b { font-family: "Manrope"; font-size: 1.08rem; }
+.hero-stage__tag { pointer-events: none; }
+.hero-stage__tag small { color: #c8c9d5; }
+.hero-stage__tag--top { top: 9%; right: 1%; }
+.hero-stage__tag--bottom {
+  bottom: 7%;
+  left: -4%;
+  color: var(--tt-ink);
+  background: var(--tt-lime);
+  transform: rotate(-3deg);
+}
+.hero-stage__tag--bottom small { color: #4a522e; }
+.hero-stage__tag s,
+.hero__subtitle s,
+.featured__promo s,
+.featured__name s,
+.home-market-picker__title s,
+.product-card__title s {
+  text-decoration: line-through;
+  font-weight: 700;
+  opacity: .75;
+}
+
+.trust-row {
+  position: relative;
+  z-index: 4;
+  width: min(calc(100% - 40px), var(--tt-max));
+  margin: 0 auto;
+  border: 1px solid var(--tt-line);
+  border-radius: 22px;
+  color: var(--tt-ink);
+  background: #fff;
+  box-shadow: var(--tt-shadow);
+}
+.trust-row__inner {
+  max-width: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+.trust-row__item {
+  min-height: 108px;
+  padding: 24px;
+  border: 0;
+  border-right: 0;
+  border-bottom: 0;
+  box-shadow: none;
+  text-align: left;
+}
+.trust-row__item:nth-child(2n),
+.trust-row__item:last-child {
+  border-right: 0;
+}
+.trust-row__item + .trust-row__item {
+  border-left: 1px solid var(--tt-line);
+}
+.trust-row__icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin: 0 0 12px;
+  place-items: center;
+  border-radius: 13px;
+  color: #fff;
+  background: var(--tt-blue);
+  font-size: 1.15rem;
+}
+.trust-row__item:nth-child(2) .trust-row__icon { background: var(--tt-orange); }
+.trust-row__item:nth-child(3) .trust-row__icon { color: var(--tt-ink); background: var(--tt-lime); }
+.trust-row__item:nth-child(4) .trust-row__icon { background: var(--tt-ink); }
+.trust-row__label { color: var(--tt-ink); font-size: .95rem; font-weight: 800; }
+.trust-row__sub { color: var(--tt-muted); font-size: .82rem; }
+
+.featured {
+  padding: 108px 20px 72px;
+  background: var(--tt-paper);
+}
+.featured__container { max-width: var(--tt-max); }
+.featured__eyebrow {
+  margin-bottom: 14px;
+  color: var(--tt-orange-dark);
+  font-family: "Manrope";
+  letter-spacing: .12em;
+  text-align: left;
+}
+.featured__title {
+  margin-bottom: 30px;
+  font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+  text-align: left;
+}
+.featured__card {
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, .72);
+  border-radius: var(--tt-radius);
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .07);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.featured__card:hover {
+  border-color: var(--tt-ink);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, .11);
+  transform: translateY(-2px);
+}
+.featured__photo { min-height: 520px; }
+.featured__photo img { min-height: 520px; object-fit: cover; }
+.featured__body { padding: 42px; }
+.featured__category { color: var(--tt-orange-dark); letter-spacing: .08em; }
+.featured__name { font-size: clamp(2rem, 3vw, 3rem); }
+.featured__desc { color: var(--tt-muted); font-size: 1.04rem; }
+.featured__body .featured__cta {
+  min-height: 54px;
+  border-radius: 14px;
+  background: var(--tt-orange);
+}
+.featured__body .featured__cta:hover { background: var(--tt-orange-dark); }
+.home-market-picker--in-card {
+  border-top: 1px solid var(--tt-line);
+  background: #fff;
+}
+
+.categories {
+  padding: 92px 20px 108px;
+  color: var(--tt-ink);
+  background: #fff;
+}
+.categories__container { max-width: var(--tt-max); }
+.categories__title {
+  margin: 0 0 18px;
+  color: var(--tt-ink);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.05rem, 3.8vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.038em;
+  text-align: left;
+  text-wrap: balance;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+}
+.categories__subtitle {
+  max-width: 680px;
+  margin: 0 0 38px;
+  color: var(--tt-muted);
+  text-align: left;
+}
+.home-market-pickers {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+.home-market-picker--with-thumb {
+  position: relative;
+  min-height: 340px;
+  padding: 0;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, .72);
+  border-radius: 24px;
+  color: var(--tt-ink);
+  background: var(--tt-paper);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, .07);
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.home-market-picker--with-thumb:hover {
+  border-color: var(--tt-ink);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, .11);
+  transform: translateY(-2px);
+}
+.home-market-picker--with-thumb .home-market-picker__thumb {
+  width: 100%;
+  height: 220px;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+.home-market-picker--with-thumb .home-market-picker__content { padding: 24px; }
+.home-market-picker__title { color: var(--tt-ink); font-family: "Manrope"; font-size: 1.05rem; }
+.home-market-picker__links a {
+  display: inline-flex;
+  min-width: 42px;
+  min-height: 38px;
+  margin-top: 14px;
+  padding: 0 12px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--tt-ink);
+  font-weight: 800;
+}
+
+.why {
+  padding: 108px 20px;
+  color: #fff;
+  background: var(--tt-ink);
+}
+.why__container { max-width: var(--tt-max); }
+.why__title {
+  margin-bottom: 46px;
+  color: #fff;
+  font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+  text-align: left;
+}
+.why__grid { gap: 16px; }
+.why__item {
+  min-height: 270px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+  background: rgba(255,255,255,.045);
+  box-shadow: none;
+  text-align: left;
+}
+.why__icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 58px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--tt-ink);
+  background: var(--tt-lime);
+}
+.why__heading { color: #fff; font-size: 1.45rem; }
+.why__text { color: #b8b9c8; }
+
+.site-footer {
+  padding: 70px 0 105px;
+  color: #aeb0bf;
+  background: var(--tt-ink);
+  font-size: .88rem;
+}
+.site-footer .container { max-width: var(--tt-max); }
+.site-footer__grid { grid-template-columns: 1.2fr .8fr 1fr; gap: 45px; }
+.site-footer__heading { color: #fff; font-family: "Manrope"; }
+.site-footer__list a,
+.site-footer__link-btn { color: #d1d2dc; }
+.site-footer__brand-mark { border-radius: 20px; }
+.site-footer .site-logo__text-primary { color: #fff; }
+.site-footer .site-logo__text-accent { color: var(--tt-orange); }
+.site-footer__bottom { color: #77798a; border-color: rgba(255,255,255,.1); }
+
+.home-mobile-buy {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  z-index: 40;
+  display: none;
+  padding: 9px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 17px;
+  background: rgba(21,22,41,.94);
+  box-shadow: 0 16px 40px rgba(0,0,0,.22);
+  backdrop-filter: blur(13px);
+}
+.home-mobile-buy a {
+  display: flex;
+  min-height: 49px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--tt-orange);
+  font-weight: 800;
+  text-decoration: none;
+}
+.home-mobile-buy:has(a[data-home-hide-unavailable][href="#our-products"]) { display: none; }
+.tt-cookie-banner { z-index: 1000; }
+
+.section { padding: 108px 0; }
+.wrap { width: min(calc(100% - 40px), var(--tt-max)); margin-inline: auto; }
+.eyebrow {
+  margin: 0 0 14px;
+  color: var(--tt-orange-dark);
+  font-family: "Manrope", sans-serif;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.lead { max-width: 650px; color: var(--tt-muted); font-size: clamp(1.08rem, 2vw, 1.28rem); }
+.btn {
+  display: inline-flex;
+  min-height: 52px;
+  padding: 0 22px;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--tt-ink);
+  box-shadow: 0 12px 26px rgba(15,23,42,.14);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+.btn:hover { background: var(--tt-ink-2); transform: translateY(-2px); }
+.btn-primary { background: var(--tt-orange); box-shadow: 0 12px 28px rgba(22,163,74,.22); }
+.btn-primary:hover { background: var(--tt-orange-dark); }
+.btn-ghost { border: 1px solid var(--tt-line); color: var(--tt-ink); background: transparent; box-shadow: none; }
+.btn-ghost:hover { background: #fff; }
+
+.template-products { padding-top: 50px; }
+.template-products__intro {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 70px;
+  margin-bottom: 38px;
+  align-items: end;
+}
+.template-products__intro h2 {
+  margin: 0;
+  color: var(--tt-ink);
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(2.05rem, 3.8vw, 3.35rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.038em;
+  text-wrap: balance;
+}
+.template-products__intro p:last-child { margin-bottom: 0; }
+.home-market-pickers.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.home-market-pickers.product-grid .home-market-picker--with-thumb {
+  min-height: 0;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.home-market-pickers.product-grid .home-market-picker--with-thumb:last-child {
+  grid-column: 1 / -1;
+}
+.home-market-picker__media {
+  position: relative;
+  width: 100%;
+}
+.home-market-pickers.product-grid .home-market-picker__thumb {
+  height: auto;
+  aspect-ratio: 3 / 1;
+}
+.home-market-pickers.product-grid #vortek-markets-collections .home-market-picker__thumb {
+  aspect-ratio: 16 / 9;
+  object-position: center 45%;
+}
+.product-card__content { padding: 30px; }
+.product-card__category {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--tt-orange-dark);
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.product-card__title {
+  display: block;
+  color: var(--tt-ink);
+  font-family: "Manrope";
+  font-size: 1.45rem;
+  font-weight: 800;
+  line-height: 1.15;
+}
+.product-card__text { margin: 14px 0 0; color: var(--tt-muted); }
+.product-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+.product-card__actions .home-market-picker__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.product-card__actions .home-market-picker__links a {
+  min-height: 50px;
+  margin: 0;
+  padding: 0 20px;
+  border-radius: 14px;
+  background: var(--tt-orange);
+}
+.product-card__actions .home-market-picker__links a:hover { background: var(--tt-orange-dark); }
+
+.how-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 74px;
+  align-items: center;
+}
+.how-grid h2,
+.reviews-head h2,
+.faq-grid h2 {
+  margin-bottom: 20px;
+  font-size: clamp(2.2rem, 4.8vw, 4.4rem);
+}
+.steps { display: grid; gap: 14px; }
+.step {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 16px;
+  padding: 21px;
+  border: 1px solid rgba(15,23,42,.72);
+  border-radius: 18px;
+  background: #fff;
+}
+.step-no {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 14px;
+  color: #fff;
+  background: var(--tt-ink);
+  font-family: "Manrope";
+  font-weight: 800;
+}
+.step h3 { margin: 0 0 5px; font-size: 1.12rem; }
+.step p { margin: 0; color: var(--tt-muted); }
+.promise-card {
+  position: relative;
+  overflow: hidden;
+  padding: 46px;
+  border-radius: 32px;
+  color: #fff;
+  background: var(--tt-blue);
+  box-shadow: var(--tt-shadow);
+}
+.promise-card::after {
+  content: "T";
+  position: absolute;
+  right: -25px;
+  bottom: -105px;
+  color: rgba(255,255,255,.09);
+  font-family: "Manrope";
+  font-size: 18rem;
+  font-weight: 800;
+}
+.promise-card > * { position: relative; z-index: 1; }
+.promise-card h2 { margin-bottom: 18px; font-size: clamp(2.2rem, 4vw, 3.8rem); }
+.promise-card p { max-width: 470px; color: #e0e7ff; }
+.promise-card .btn { color: var(--tt-ink); background: var(--tt-lime); box-shadow: none; }
+
+.reviews { background: #fff; }
+.reviews-head { display: flex; gap: 30px; align-items: end; justify-content: space-between; }
+.review-note {
+  display: inline-block;
+  max-width: 390px;
+  padding: 10px 13px;
+  border-radius: 11px;
+  color: #713f12;
+  background: #fef3c7;
+  font-size: .78rem;
+  font-weight: 800;
+}
+.review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 38px; }
+.review {
+  padding: 27px;
+  border: 1px solid rgba(15,23,42,.72);
+  border-radius: 22px;
+  background: var(--tt-paper);
+}
+.review-product {
+  width: 100%;
+  height: 168px;
+  margin: 0 0 16px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+.stars { margin-bottom: 16px; color: #f59e0b; letter-spacing: .07em; }
+.review blockquote { margin: 0; color: #334155; font-size: 1.03rem; }
+.review-person {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--tt-line);
+}
+img.avatar {
+  display: block;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--tt-ink);
+}
+.review-person b,
+.review-person small { display: block; }
+.review-person small { color: var(--tt-muted); }
+
+.faq-grid { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; }
+#ayuda {
+  width: min(calc(100% - 40px), var(--tt-max));
+  margin-inline: auto;
+  border: 1px solid rgba(15,23,42,.72);
+  border-radius: 28px;
+}
+#ayuda > .wrap { width: 100%; padding-inline: 40px; }
+.faq-list { border-top: 1px solid var(--tt-line); }
+.faq-list details { border-bottom: 1px solid var(--tt-line); }
+.faq-list summary {
+  position: relative;
+  padding: 22px 45px 22px 0;
+  font-family: "Manrope";
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+.faq-list summary::-webkit-details-marker { display: none; }
+.faq-list summary::after { content: "+"; position: absolute; top: 15px; right: 5px; font-size: 1.7rem; font-weight: 400; }
+.faq-list details[open] summary::after { content: "−"; }
+.faq-list details p { padding: 0 38px 22px 0; color: var(--tt-muted); }
+
+.quick-dialog {
+  width: min(620px, calc(100% - 30px));
+  padding: 0;
+  border: 0;
+  border-radius: 24px;
+  box-shadow: 0 30px 90px rgba(0,0,0,.25);
+}
+.quick-dialog::backdrop { background: rgba(15,23,42,.55); }
+.quick-dialog__inner { padding: 30px; }
+.quick-dialog__close {
+  float: right;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--tt-line);
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+@media (hover: none) {
+  .featured__card:hover,
+  .home-market-picker--with-thumb:hover,
+  .btn:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 980px) {
+  .site-header__inner {
+    width: min(calc(100% - 24px), var(--tt-max));
+    min-height: 58px;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    padding-block: 6px;
+  }
+  .site-header .site-logo { justify-self: start; grid-column: 1; grid-row: 1; }
+  .site-header .site-logo__text { font-size: 1.05rem; }
+  .site-header__actions { grid-column: 2; grid-row: 1; gap: 8px; }
+  .home-menu-btn { display: inline-grid; place-items: center; z-index: 72; }
+  .site-header__nav {
+    position: fixed;
+    inset: 0;
+    z-index: 68;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 22px;
+    padding: 88px 24px 40px;
+    background: rgba(248,250,252,.97);
+    font-family: "Manrope", sans-serif;
+    font-size: 1.55rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s;
+  }
+  .site-header__nav a { min-height: 44px; display: inline-flex; align-items: center; }
+  .site-header__nav a::after { display: none; }
+  .menu-open .site-header__nav { opacity: 1; pointer-events: auto; }
+  .home-lang__select {
+    min-width: 96px;
+    max-width: 112px;
+    min-height: 36px;
+    font-size: .75rem;
+    padding-right: 28px;
+    background-position: right 10px center;
+  }
+  .hero__inner { grid-template-columns: 1fr; gap: 36px; }
+  .hero__copy { max-width: 760px; }
+  .hero-stage { max-width: 760px; min-height: 420px; }
+  .template-products__intro,
+  .how-grid,
+  .faq-grid { grid-template-columns: 1fr; gap: 28px; }
+  .review-grid { grid-template-columns: 1fr 1fr; }
+  .review:last-child { grid-column: 1 / -1; }
+  .featured__title,
+  .why__title,
+  .categories__title,
+  .template-products__intro h2 { font-size: clamp(1.85rem, 7vw, 2.6rem); }
+}
+
+@media (max-width: 767px) {
+  .home-announcement { font-size: .74rem; padding: 8px 12px; }
+  .hero {
+    padding: 36px 0 48px;
+  }
+  .hero__title {
+    font-size: clamp(2.35rem, 11vw, 3.35rem);
+    margin-bottom: 16px;
+  }
+  .hero__subtitle { font-size: 1.02rem; margin-bottom: 22px; }
+  .hero__markets { width: 100%; }
+  .hero__markets .hero__cta {
+    width: 100%;
+    justify-content: center;
+    min-height: 52px;
+    font-size: .92rem;
+  }
+  .hero-stage { min-height: 340px; }
+  .hero-stage__main { inset: 0 8% 16% 0; }
+  .hero-stage__side { width: 46%; height: 42%; }
+  .hero-stage__tag { min-width: 140px; padding: 10px 12px; }
+  .trust-row {
+    width: min(calc(100% - 24px), var(--tt-max));
+  }
+  .trust-row__inner { grid-template-columns: 1fr 1fr; }
+  .trust-row__item { min-height: 0; padding: 16px; }
+  .trust-row__item:nth-child(3) { border-left: 0; border-top: 1px solid var(--tt-line); }
+  .trust-row__item:nth-child(4) { border-top: 1px solid var(--tt-line); }
+  .featured { padding: 56px 14px 40px; }
+  .featured__card { border-radius: 22px; }
+  .featured__photo,
+  .featured__photo img { min-height: 0; }
+  .featured__body { padding: 22px 18px; }
+  .featured__cta,
+  .featured__buy-now { width: 100%; min-height: 50px; }
+  .home-market-pickers.product-grid,
+  .why__grid,
+  .review-grid,
+  .values { grid-template-columns: 1fr; }
+  .home-market-pickers.product-grid .home-market-picker--with-thumb:last-child,
+  .review:last-child,
+  .value:last-child { grid-column: auto; }
+  .home-market-pickers.product-grid #vortek-markets-collections .home-market-picker__thumb {
+    aspect-ratio: 16 / 10;
+  }
+  .product-card__content { padding: 20px; }
+  .product-card__actions { flex-direction: column; }
+  .product-card__actions .btn,
+  .product-card__actions .home-market-picker__links a { width: 100%; }
+  .why { padding: 64px 16px; }
+  .why__item { min-height: 0; padding: 22px; }
+  .why__icon { margin-bottom: 22px; }
+  .reviews-head { display: block; }
+  .review { padding: 18px; }
+  .review-product { height: 150px; }
+  .section { padding: 64px 0; }
+  .wrap { width: min(calc(100% - 24px), var(--tt-max)); }
+  #ayuda { width: min(calc(100% - 24px), var(--tt-max)); }
+  #ayuda > .wrap { padding-inline: 16px; }
+  .promise-card { padding: 24px; }
+  .promise-card::after { font-size: 11rem; }
+  .site-footer__grid { grid-template-columns: 1fr; gap: 28px; }
+  .home-mobile-buy {
+    display: block;
+    right: 10px;
+    left: 10px;
+    bottom: max(10px, env(safe-area-inset-bottom));
+  }
+  .site-footer { padding: 48px 0 120px; }
+}
+
+@media (max-width: 560px) {
+  .hero__inner { width: min(calc(100% - 24px), var(--tt-max)); }
+  .hero-stage { min-height: 300px; }
+  .hero-stage__tag--bottom { left: 0; }
+  .trust-row__inner { grid-template-columns: 1fr; }
+  .trust-row__item + .trust-row__item { border-top: 1px solid var(--tt-line); border-left: 0; }
+  .featured { padding-inline: 12px; }
+  .categories, .why { padding-inline: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+</style>
+
+<script>window.SITE_CONFIG = { GEO: 'cz', GOOGLE_TAG_ID: 'AW-18327321473', COOKIE_TEXT: 'Používáme nezbytné cookies a se souhlasem také analytické a reklamní cookies.', COOKIE_ACCEPT_ALL: 'Přijmout vše', COOKIE_REJECT: 'Odmítnout nepovinné', COOKIE_MANAGE: 'Spravovat předvolby', COOKIE_SAVE: 'Uložit předvolby', COOKIE_CHANGE: 'Změnit nastavení cookies', COOKIE_LEARN: 'Více informací' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js?v=20260315d" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260916s" defer></script>
 </head>
 <body>
 
+<div class="home-announcement"><strong data-i18n="trust_1_sub">doprava zdarma</strong> · <span data-i18n="trust_2_label">Dobírka</span> · <span data-i18n="trust_2_sub">bez předplatby</span></div>
+
 <header class="site-header">
   <div class="site-header__inner">
+    <nav class="site-header__nav" id="home-nav" aria-label="Main navigation">
+      <a href="#our-products" data-i18n="hero_cta">Naše produkty</a>
+      <a href="#why" data-i18n="why_title">Proč trendtopia-store.com</a>
+      <a href="/cz/contact-us.html" data-i18n="footer_contact" data-i18n-href="contact-us.html">Kontakt</a>
+    </nav>
     <a href="/" class="site-logo" aria-label="Domů trendtopia-store.com">
       <span class="site-logo__text"><span class="site-logo__text-primary">trendtopia-store</span><span class="site-logo__text-accent">.com</span></span>
     </a>
-    <div class="home-lang">
-      <form class="home-lang__form" action="/" method="get">
-        <label class="home-lang__label" for="home-locale-select" data-i18n="lang_label">Jazyk / země</label>
-        <select id="home-locale-select" name="lang" class="home-lang__select" aria-label="Jazyk / země">
+    <div class="site-header__actions">
+      <div class="home-lang">
+        <form class="home-lang__form" action="/" method="get">
+          <label class="home-lang__label" for="home-locale-select" data-i18n="lang_label">Jazyk / země</label>
+          <select id="home-locale-select" name="lang" class="home-lang__select" aria-label="Jazyk / země">
         <option value="en">English</option>
         <option value="es">Español</option>
         <option value="pl">Polski</option>
@@ -708,7 +1706,9 @@ body { overflow-x: clip; }
         <option value="cz" selected>Čeština</option>
         <option value="gr">Ελληνικά</option>
       </select>
-      </form>
+        </form>
+      </div>
+      <button class="home-menu-btn" id="home-menu-btn" type="button" aria-expanded="false" aria-controls="home-nav" aria-label="Open menu">☰</button>
     </div>
   </div>
 </header>
@@ -717,11 +1717,24 @@ body { overflow-x: clip; }
 
   <!-- HERO -->
   <section class="hero">
-    <span class="hero__eyebrow" data-i18n="hero_eyebrow">⭐ Nové produkty každý týden</span>
-    <h1 class="hero__title" data-i18n-html="hero_title">Pečlivě vybrané, <span class="site-logo__text-accent">navržené pro vás.</span></h1>
-    <p class="hero__subtitle" data-i18n="hero_subtitle">Pečujeme o každý detail — od výběru až po doručení k vašim dveřím. Doručení do 24–48 pracovních hodin a platba na dobírku, vaše jistota je naší prioritou.</p>
-    <div class="hero__markets">
-      <a href="#our-products" class="hero__cta hero__cta--accent" data-i18n="hero_cta">Naše produkty</a>
+    <div class="hero__inner">
+      <div class="hero__copy">
+        <span class="hero__eyebrow" data-i18n="hero_eyebrow">⭐ Nové produkty každý týden</span>
+        <h1 class="hero__title" data-i18n-html="hero_title">Pečlivě vybrané, <span class="site-logo__text-accent">navržené pro vás.</span></h1>
+        <p class="hero__subtitle" data-i18n-html="hero_subtitle">Pečujeme o každý detail — od výběru až po doručení k vašim dveřím. Doručení do 24–48 pracovních hodin a platba na dobírku, vaše jistota je naší prioritou.</p>
+        <div class="hero__markets">
+          <a href="#our-products" class="hero__cta hero__cta--accent" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost">IRON OAK PRO</a>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <a class="hero-stage__card hero-stage__main" href="#our-products" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost">
+          <img src="/assets/img/home/iron-oak-pro-hero.jpg" alt="" width="1024" height="1024" loading="eager" decoding="async" onerror="this.src='/assets/img/placeholder.svg'">
+        </a>
+        <a class="hero-stage__card hero-stage__side" href="/cz/casa-fuego/landing.html" data-home-product-link="setOfPots" aria-label="Set of Pots™ — Zvolte zemi pro cenu a dostupnost">
+          <img src="/assets/img/home/casa-fuego-hero.jpg" alt="" width="819" height="1024" loading="eager" decoding="async" onerror="this.src='/assets/img/placeholder.svg'">
+        </a>
+        <div class="hero-stage__tag hero-stage__tag--bottom"><b>Iron Oak Pro™</b><small data-i18n-html="vortek_price_badge">−50%</small></div>
+      </div>
     </div>
   </section>
 
@@ -768,7 +1781,7 @@ body { overflow-x: clip; }
           <div class="featured__category" data-i18n="featured_category">Technologie</div>
           <h3 class="featured__name" data-i18n="featured_name">CoreSync™ — 1.499,00 Kč</h3>
           <p class="featured__desc" data-i18n="featured_desc">Univerzální chytré hodinky pro propojení s telefonem, sledování aktivity a spánku v jedné aplikaci. Až 10 dní výdrž, voděodolnost 5ATM, aplikace pro iOS/Android. Kompletní sada s náhradním řemínkem a ochrannými fóliemi.</p>
-          <a class="featured__cta" href="#coresSync-markets-links" data-i18n="featured_cta">Pořiďte si ho už</a>
+          <a class="featured__cta" href="/cz/smartwatch/landing.html" data-i18n="featured_cta" data-home-product-link="coreSync" aria-label="CoreSync™ — Zvolte zemi pro cenu a dostupnost">Pořiďte si ho už</a>
         </div>
         <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
           <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Pořiďte si ho už za 1.499,00 Kč</span>
@@ -787,15 +1800,18 @@ body { overflow-x: clip; }
             <source type="image/webp" srcset="/assets/img/products/vortek/hero.webp?v=3">
             <img src="/assets/img/products/vortek/hero.webp?v=3" alt="Iron Oak Pro — professional cordless chain saw kit with batteries and charger" data-i18n-alt="featured_vortek_img_alt" loading="lazy" decoding="async" width="1040" height="1040" onerror="this.src='/assets/img/placeholder.svg'">
           </picture>
+          <span class="featured__discount-badge" data-i18n-html="vortek_price_badge">−50%</span>
         </div>
         <div class="featured__body">
           <div class="featured__category" data-i18n="featured_vortek_category">Garden &amp; Power Tools</div>
           <h3 class="featured__name" data-i18n="featured_vortek_name">Iron Oak Pro™</h3>
+          <p class="featured__promo" data-i18n-html="vortek_price_badge">−50%</p>
           <p class="featured__desc" data-i18n="featured_vortek_desc">Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery.</p>
-          <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta">Pořiďte si ho už</a>
+          <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost">Pořiďte si ho už</a>
         </div>
         <div id="vortek-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="vortek" hidden>
-          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Choose your country to see price and availability</span>
+          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost</span>
+          <a class="featured__buy-now" href="#our-products" data-i18n="vortek_buy_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost">KOUPIT HNED</a>
           <span id="vortek-markets-links" class="home-market-picker__links" data-market-links="vortek"></span>
         </div>
       </article>
@@ -804,31 +1820,55 @@ body { overflow-x: clip; }
   </div>
 
   <!-- CATEGORIES -->
-  <section class="categories" id="our-products">
-    <div class="categories__container">
-      <h2 class="categories__title" data-i18n="collections_title">Prohlédněte si naše kolekce</h2>
-      <p class="categories__subtitle" data-i18n="collections_subtitle">Nabídky pro vybranou zemi. Klepněte na odkaz a otevřete stránku produktu.</p>
-      <div class="home-market-pickers">
+  <section class="categories section template-products" id="our-products">
+    <div class="categories__container wrap">
+      <div class="template-products__intro">
+        <div>
+          <p class="eyebrow">La selección Trendtopia</p>
+          <h2 class="categories__title" data-i18n="collections_title">Prohlédněte si naše kolekce</h2>
+        </div>
+        <p class="categories__subtitle lead" data-i18n="collections_subtitle">Nabídky pro vybranou zemi. Klepněte na odkaz a otevřete stránku produktu.</p>
+      </div>
+      <div class="home-market-pickers product-grid">
         <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="setOfPots">
-          <div class="home-market-picker__content">
-            <span class="home-market-picker__title" data-i18n="product_setOfPots_title">Set of Pots™ — Pořiďte si ho už za 1 999 Kč</span>
-            <span class="home-market-picker__links" data-market-links="setOfPots"><a href="/cz/casa-fuego/landing.html">CZ</a></span>
+          <div class="home-market-picker__content product-card__content">
+            <span class="product-card__category">Cocina y hogar</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_setOfPots_title">Set of Pots™ — Pořiďte si ho už za 1 999 Kč</span>
+            <p class="product-card__text">Seis recipientes y seis tapas de cristal, acero inoxidable y base de cinco capas para cocinar a diario.</p>
+            <div class="product-card__actions">
+              <span class="home-market-picker__links" data-market-links="setOfPots"><a href="/cz/casa-fuego/landing.html">CZ</a></span>
+              <button class="btn btn-ghost quick" type="button" data-product="casa">Resumen rápido</button>
+            </div>
           </div>
-          <img class="home-market-picker__thumb" src="/assets/img/products/casa-fuego/hero.webp" alt="" width="72" height="72" loading="lazy" decoding="async">
+          <img class="home-market-picker__thumb" src="/assets/img/home/casa-fuego-collection.jpg" alt="" width="1024" height="342" loading="lazy" decoding="async">
         </div>
         <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="coreSync">
-          <div class="home-market-picker__content">
-            <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Pořiďte si ho už za 1.499,00 Kč</span>
-            <span class="home-market-picker__links" data-market-links="coreSync"><a href="/cz/smartwatch/landing.html">CZ</a></span>
+          <div class="home-market-picker__content product-card__content">
+            <span class="product-card__category">Tecnología y bienestar</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_coreSync_title">CoreSync™ — Pořiďte si ho už za 1.499,00 Kč</span>
+            <p class="product-card__text">Llamadas, notificaciones y actividad diaria en una pantalla sencilla. Kit completo para empezar desde el primer día.</p>
+            <div class="product-card__actions">
+              <span class="home-market-picker__links" data-market-links="coreSync"><a href="/cz/smartwatch/landing.html">CZ</a></span>
+              <button class="btn btn-ghost quick" type="button" data-product="coresync">Resumen rápido</button>
+            </div>
           </div>
-          <img class="home-market-picker__thumb" src="/assets/img/products/smartwatch/hero.jpg?v=2" alt="" width="72" height="72" loading="lazy" decoding="async">
+          <img class="home-market-picker__thumb" src="/assets/img/home/coresync-collection.jpg" alt="" width="1024" height="342" loading="lazy" decoding="async">
         </div>
         <div id="vortek-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="vortekCol">
-          <div class="home-market-picker__content">
-            <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Choose your country to see price and availability</span>
-            <span class="home-market-picker__links" data-market-links="vortekCol"><a href="/es/vortek-1013/landing.html">ES</a> · <a href="/sk/vortek-3228/landing.html">SK</a></span>
+          <div class="home-market-picker__content product-card__content">
+            <span class="product-card__category">Jardín y herramientas</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost</span>
+            <p class="featured__promo" data-i18n-html="vortek_price_badge">−50%</p>
+            <p class="product-card__text">Motosierra a batería para jardín y trabajos exteriores, con dos baterías y cargador rápido.</p>
+            <div class="product-card__actions">
+              <span class="home-market-picker__links" data-market-links="vortekCol"><a href="/es/vortek-1013/landing.html">ES</a> · <a href="/sk/vortek-3228/landing.html">SK</a></span>
+              <button class="btn btn-ghost quick" type="button" data-product="vortek">Resumen rápido</button>
+            </div>
           </div>
-          <img class="home-market-picker__thumb" src="/assets/img/products/vortek/hero.webp?v=3" alt="" width="72" height="72" loading="lazy" decoding="async">
+          <div class="home-market-picker__media">
+            <img class="home-market-picker__thumb" src="/assets/img/home/iron-oak-pro-collection.jpg?v=2" alt="" width="1024" height="768" loading="lazy" decoding="async">
+            <span class="featured__discount-badge" data-i18n-html="vortek_price_badge">−50%</span>
+          </div>
         </div>
       </div>
     </div>
@@ -854,6 +1894,82 @@ body { overflow-x: clip; }
           <h3 class="why__heading" data-i18n="why_3_heading">Podpora ve vašem jazyce</h3>
           <p class="why__text" data-i18n="why_3_text">Jsme tu pro vás ve vašem jazyce v 18 evropských zemích. Napište na e-mail podpory na každé stránce a odpovíme vám, jak se sluší: osobně, ne botem.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="como-funciona">
+    <div class="wrap how-grid">
+      <div>
+        <p class="eyebrow">Compra sin complicaciones</p>
+        <h2>Así funciona tu pedido.</h2>
+        <div class="steps">
+          <article class="step"><span class="step-no">1</span><div><h3>Elige tu producto</h3><p>Consulta su ficha, contenido, precio y condiciones antes de solicitarlo.</p></div></article>
+          <article class="step"><span class="step-no">2</span><div><h3>Deja tus datos</h3><p>Indica nombre, teléfono y dirección en el formulario seguro de la ficha.</p></div></article>
+          <article class="step"><span class="step-no">3</span><div><h3>Confirma por teléfono</h3><p>Te llamamos una vez para verificar el pedido y evitar entregas equivocadas.</p></div></article>
+          <article class="step"><span class="step-no">4</span><div><h3>Paga al recibir</h3><p>Abonas el importe al repartidor cuando el paquete llegue a tu domicilio.</p></div></article>
+        </div>
+      </div>
+      <aside class="promise-card">
+        <p class="eyebrow">Nuestra promesa</p>
+        <h2>Sabes qué compras antes de abrir la puerta.</h2>
+        <p>Precio visible, contenido del pack, condiciones de entrega y forma de pago explicados con claridad. Si algo no encaja, nuestro equipo de soporte debe ayudarte.</p>
+        <a class="btn" href="#ayuda">RESOLVER DUDAS →</a>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section reviews">
+    <div class="wrap">
+      <div class="reviews-head">
+        <div><p class="eyebrow">Opiniones verificadas</p><h2>Lo que valoran quienes compran.</h2></div>
+      </div>
+      <div class="review-grid">
+        <article class="review">
+          <img class="review-product" src="/assets/img/home/reviews/iron-oak-pro-1.webp" alt="Iron Oak Pro™" width="1024" height="768" loading="lazy" decoding="async">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Me llamaron para confirmar la dirección y el pedido llegó dos días después. El proceso fue muy sencillo.”</blockquote>
+          <div class="review-person">
+            <img class="avatar" src="/assets/img/home/reviews/maria-g.jpg" alt="" width="84" height="84" loading="lazy" decoding="async">
+            <span><b>María G.</b><small>Compra verificada · Iron Oak Pro™</small></span>
+          </div>
+        </article>
+        <article class="review">
+          <img class="review-product" src="/assets/img/home/reviews/iron-oak-pro-2.jpg" alt="Iron Oak Pro™" width="1024" height="768" loading="lazy" decoding="async">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Agradecí poder pagar al recibirlo. La información de la ficha coincidía con el contenido del paquete.”</blockquote>
+          <div class="review-person">
+            <img class="avatar" src="/assets/img/home/reviews/david-l.jpg" alt="" width="84" height="84" loading="lazy" decoding="async">
+            <span><b>David L.</b><small>Compra verificada · Iron Oak Pro™</small></span>
+          </div>
+        </article>
+        <article class="review">
+          <img class="review-product" src="/assets/img/home/reviews/casa-fuego.jpg" alt="Casa Fuego™" width="1024" height="768" loading="lazy" decoding="async">
+          <div class="stars">★★★★☆</div>
+          <blockquote>“Tuve una duda antes de comprar y me respondieron en español. Eso me dio bastante más confianza.”</blockquote>
+          <div class="review-person">
+            <img class="avatar" src="/assets/img/home/reviews/ana-r.jpg" alt="" width="84" height="84" loading="lazy" decoding="async">
+            <span><b>Ana R.</b><small>Compra verificada · Casa Fuego™</small></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ayuda">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Compra con toda la información.</h2>
+        <p class="lead">Si te queda alguna duda, aquí tienes las respuestas más habituales. Y si prefieres hablar con alguien, escríbenos: te atendemos en tu idioma.</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>¿Tengo que pagar por adelantado?</summary><p>No. El pago se realiza en efectivo directamente al mensajero cuando recibes el paquete. No necesitas tarjeta ni realizar ningún pago anticipado.</p></details>
+        <details><summary>¿Por qué me llamarán por teléfono?</summary><p>Un operador te llamará para confirmar el pedido, tus datos y la dirección de entrega. La confirmación suele realizarse dentro de las siguientes 24 horas laborables. Si no respondes, el pedido no podrá confirmarse y podrá cancelarse.</p></details>
+        <details><summary>¿Cuándo recibiré el pedido?</summary><p>La entrega se realiza normalmente en 24–48 horas laborables después de la confirmación telefónica. En islas menores y zonas remotas puede tardar entre 3 y 5 días hábiles. El envío es gratuito.</p></details>
+        <details><summary>¿Puedo devolver el producto?</summary><p>Sí. Puedes solicitar la devolución durante los 30 días posteriores a la entrega escribiendo a info@trendtopia-store.com e indicando tu número de pedido y el producto. Los gastos de devolución corresponden al cliente, excepto si el producto está defectuoso, dañado o es incorrecto. El reembolso se tramita dentro de los 14 días posteriores a recibir la devolución.</p></details>
+        <details><summary>¿Qué garantía tienen los productos?</summary><p>Los productos tienen una garantía legal de conformidad de 24 meses desde la entrega. Cubre defectos existentes al recibir el producto, pero no daños causados por uso inadecuado, modificaciones o incumplimiento de las instrucciones.</p></details>
+        <details><summary>¿Cómo contacto con soporte?</summary><p>Escribe a info@trendtopia-store.com indicando tu nombre, número de pedido —si corresponde— y tu consulta. El horario de atención es de lunes a viernes de 09:00 a 19:00 CET y los sábados de 09:00 a 13:00 CET. La respuesta habitual es de una hora entre semana y hasta 24 horas durante el fin de semana.</p></details>
       </div>
     </div>
   </section>
@@ -895,6 +2011,19 @@ body { overflow-x: clip; }
   </div>
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — <span data-i18n="footer_rights">Všechna práva vyhrazena.</span> <a href="/">trendtopia-store.com</a></div>
 </div></footer>
+
+<div class="home-mobile-buy"><a href="#our-products" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost">IRON OAK PRO</a></div>
+
+<dialog class="quick-dialog" id="quick-dialog">
+  <div class="quick-dialog__inner">
+    <button class="quick-dialog__close" id="quick-dialog-close" type="button" aria-label="Cerrar">✕</button>
+    <p class="eyebrow" id="quick-dialog-tag">Resumen</p>
+    <h2 id="quick-dialog-title">Producto</h2>
+    <p class="lead" id="quick-dialog-text"></p>
+    <ul id="quick-dialog-list" class="product-points"></ul>
+    <a class="btn btn-primary" id="quick-dialog-link" href="#our-products">VER FICHA COMPLETA →</a>
+  </div>
+</dialog>
 
 </body>
 </html>

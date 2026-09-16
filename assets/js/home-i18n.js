@@ -62,6 +62,9 @@
   var VORTEK_GEOS = ['es', 'sk'];
   var VORTEK_PATHS = {
     es: 'vortek-1013',
+    lt: 'vortek-1427',
+    lv: 'vortek-3518',
+    pl: 'vortek-1429',
     sk: 'vortek-3228'
   };
 
@@ -124,15 +127,15 @@
       featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Get it now for only {price}',
       product_coreSync_priced: 'CoreSync™ — Get it now for only {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Get it now for only {price}',
+      product_vortek_priced: 'Iron Oak Pro™ — Get it now for {price}',
       featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
     },
     es: {
       featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Consíguelo ya por solo {price}',
       product_coreSync_priced: 'CoreSync™ — Consíguelo ya por solo {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por solo {price}',
-      featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
+      product_vortek_priced: 'Iron Oak Pro™ — Consíguelo ya por 69,00 € <s>138,00 €</s> · −50%',
+      featured_vortek_name_priced: 'Iron Oak Pro™ — 69,00 € <s>138,00 €</s> · −50%'
     },
     pt: {
       featured_name_priced: 'CoreSync™ — {price}',
@@ -171,8 +174,8 @@
       featured_name_priced: 'CoreSync™ — {price}',
       product_setOfPots_priced: 'Set of Pots™ — Zaobstarajte si ho už od {price}',
       product_coreSync_priced: 'CoreSync™ — Zaobstarajte si ho už od {price}',
-      product_vortek_priced: 'Iron Oak Pro™ — Zaobstarajte si ho už od {price}',
-      featured_vortek_name_priced: 'Iron Oak Pro™ — {price}'
+      product_vortek_priced: 'Iron Oak Pro™ — Zaobstarajte si ho za 79,00 € <s>158,00 €</s> · −50%',
+      featured_vortek_name_priced: 'Iron Oak Pro™ — 79,00 € <s>158,00 €</s> · −50%'
     },
     cz: {
       featured_name_priced: 'CoreSync™ — {price}',
@@ -232,6 +235,11 @@
       hero_title: 'Chosen with care, <span class="site-logo__text-accent">made for you.</span>',
       hero_subtitle: 'We take care of every detail, from selection until your order reaches your door. Delivery in 24–48 business hours and cash on delivery—your peace of mind is our priority.',
       hero_cta: 'Our products',
+      hero_offer_cta: 'Discover offers',
+      vortek_discount_cta: 'IRON OAK PRO',
+      vortek_discount_badge: 'Iron Oak Pro™',
+      vortek_buy_cta: 'BUY NOW',
+      vortek_price_badge: '−50%',
       trust_1_label: '24–48h business days',
       trust_1_sub: 'free shipping',
       trust_2_label: 'Cash on delivery',
@@ -288,9 +296,14 @@
       page_description: 'Artículos para hogar, jardín y día a día. Entrega en 24–48 h laborables, contra reembolso en países disponibles. Devolución 30 días, garantía 24 meses.',
       logo_aria: 'Inicio trendtopia-store.com',
       hero_eyebrow: '⭐ Productos nuevos cada semana',
-      hero_title: 'Elegido con cuidado, <span class="site-logo__text-accent">pensado para ti.</span>',
-      hero_subtitle: 'Cuidamos cada detalle, desde la selección hasta que el pedido llega a tu puerta. Entrega en 24–48 h laborables y pago contra reembolso, tu tranquilidad es nuestra prioridad.',
+      hero_title: '¿PAGAR EL PRECIO COMPLETO?<br><span class="site-logo__text-accent">NI HABLAR.</span>',
+      hero_subtitle: 'Iron Oak Pro™ ahora a 69,00 € (antes 138,00 €) con −50% de descuento. Entrega en 24–48 h laborables y pago contra reembolso.',
       hero_cta: 'Nuestros productos',
+      hero_offer_cta: 'DESCUBRIR OFERTAS',
+      vortek_discount_cta: 'IRON OAK PRO · −50% · 69,00 €',
+      vortek_discount_badge: '−50% · 69,00 € (antes 138,00 €)',
+      vortek_buy_cta: 'COMPRAR YA',
+      vortek_price_badge: '−50% · <s>138,00 €</s> 69,00 €',
       trust_1_label: '24–48 h laborables',
       trust_1_sub: 'envío gratis',
       trust_2_label: 'Contra reembolso',
@@ -347,6 +360,11 @@
       hero_title: 'Escolhido com cuidado, <span class="site-logo__text-accent">pensado para si.</span>',
       hero_subtitle: 'Cuidamos de cada pormenor, desde a seleção até a encomenda chegar à sua porta. Entrega em 24–48 h úteis e pagamento à cobrança, a sua tranquilidade é a nossa prioridade.',
       hero_cta: 'Os nossos produtos',
+      hero_offer_cta: 'Descobrir ofertas',
+      vortek_discount_cta: 'IRON OAK PRO',
+      vortek_discount_badge: 'Iron Oak Pro™',
+      vortek_buy_cta: 'COMPRAR JÁ',
+      vortek_price_badge: '−50%',
       trust_1_label: '24–48 h úteis',
       trust_1_sub: 'envio grátis',
       trust_2_label: 'Pagamento à cobrança',
@@ -391,6 +409,11 @@
       hero_title: 'Wybrane z troską, <span class="site-logo__text-accent">stworzone z myślą o Tobie.</span>',
       hero_subtitle: 'Dbamy o każdy szczegół — od wyboru po dostawę pod Twoje drzwi. Dostawa w 24–48 h roboczych i płatność przy odbiorze, Twój spokój jest dla nas priorytetem.',
       hero_cta: 'Nasze produkty',
+      hero_offer_cta: 'Odkryj oferty',
+      vortek_discount_cta: 'IRON OAK PRO',
+      vortek_discount_badge: 'Iron Oak Pro™',
+      vortek_buy_cta: 'KUP TERAZ',
+      vortek_price_badge: '−50%',
       trust_1_label: '24–48 h robocze',
       trust_1_sub: 'darmowa dostawa',
       trust_2_label: 'Płatność przy odbiorze',
@@ -410,6 +433,7 @@
       collections_subtitle: 'Oferty dla wybranego kraju. Kliknij link, aby otworzyć stronę produktu.',
       product_setOfPots_title: 'Set of Pots™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
       product_coreSync_title: 'CoreSync™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
+      product_vortek_title: 'Iron Oak Pro™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
       why_title: 'Dlaczego trendtopia-store.com',
       why_1_heading: 'Starannie wybrane produkty',
       why_1_text: 'Chcemy zapewnić Ci najwyższą jakość każdego produktu. Dlatego testujemy je dokładnie w warunkach realnego użytkowania, zanim trafią do Ciebie.',
@@ -445,6 +469,11 @@
       hero_title: 'Επιλεγμένα με προσοχή, <span class="site-logo__text-accent">σκεφτόμενα για εσάς.</span>',
       hero_subtitle: 'Φροντίζουμε κάθε λεπτομέρεια, από την επιλογή μέχρι την παράδοση στην πόρτα σας. Παράδοση σε 24–48 ώρες εργασίας και αντικαταβολή, η ηρεμία σας είναι προτεραιότητά μας.',
       hero_cta: 'Τα προϊόντα μας',
+      hero_offer_cta: 'Ανακαλύψτε προσφορές',
+      vortek_discount_cta: 'IRON OAK PRO',
+      vortek_discount_badge: 'Iron Oak Pro™',
+      vortek_buy_cta: 'ΑΓΟΡΑΣΕ ΤΩΡΑ',
+      vortek_price_badge: '−50%',
       trust_1_label: '24–48 ώρες εργασίας',
       trust_1_sub: 'δωρεάν αποστολή',
       trust_2_label: 'Αντικαταβολή',
@@ -464,6 +493,7 @@
       collections_subtitle: 'Προσφορές για τη χώρα που επιλέξατε. Πατήστε έναν σύνδεσμο για τη σελίδα του προϊόντος.',
       product_setOfPots_title: 'Set of Pots™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
       product_coreSync_title: 'CoreSync™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
+      product_vortek_title: 'Iron Oak Pro™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
       why_title: 'Γιατί trendtopia-store.com',
       why_1_heading: 'Επιλεγμένα προϊόντα',
       why_1_text: 'Στόχος μας είναι να σας προσφέρουμε την υψηλότερη ποιότητα σε κάθε προϊόν. Γι\' αυτό τα δοκιμάζουμε ενδελεχώς σε πραγματικές συνθήκες χρήσης πριν φτάσουν σε εσάς.',
@@ -499,6 +529,11 @@
       hero_title: 'Vybrané s dôrazom na detail, <span class="site-logo__text-accent">premyslené pre vás.</span>',
       hero_subtitle: 'Staráme sa o každý detail — od výberu až po doručenie k vašim dverám. Doručenie do 24–48 pracovných hodín a platba na dobierku, vaša pohoda je naša priorita.',
       hero_cta: 'Naše produkty',
+      hero_offer_cta: 'Objaviť ponuky',
+      vortek_discount_cta: 'IRON OAK PRO · −50% · 79,00 €',
+      vortek_discount_badge: '−50% · 79,00 € (predtým 158,00 €)',
+      vortek_buy_cta: 'KÚPIŤ TERAZ',
+      vortek_price_badge: '−50% · <s>158,00 €</s> 79,00 €',
       trust_1_label: '24–48 prac. hodín',
       trust_1_sub: 'doprava zdarma',
       trust_2_label: 'Dobierka',
@@ -558,6 +593,11 @@
       hero_title: 'Pečlivě vybrané, <span class="site-logo__text-accent">navržené pro vás.</span>',
       hero_subtitle: 'Pečujeme o každý detail — od výběru až po doručení k vašim dveřím. Doručení do 24–48 pracovních hodin a platba na dobírku, vaše jistota je naší prioritou.',
       hero_cta: 'Naše produkty',
+      hero_offer_cta: 'Objevit nabídky',
+      vortek_discount_cta: 'IRON OAK PRO',
+      vortek_discount_badge: 'Iron Oak Pro™',
+      vortek_buy_cta: 'KOUPIT HNED',
+      vortek_price_badge: '−50%',
       trust_1_label: '24–48 prac. hodin',
       trust_1_sub: 'doprava zdarma',
       trust_2_label: 'Dobírka',
@@ -577,6 +617,7 @@
       collections_subtitle: 'Nabídky pro vybranou zemi. Klepněte na odkaz a otevřete stránku produktu.',
       product_setOfPots_title: 'Set of Pots™ — Zvolte zemi pro cenu a dostupnost',
       product_coreSync_title: 'CoreSync™ — Zvolte zemi pro cenu a dostupnost',
+      product_vortek_title: 'Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost',
       why_title: 'Proč trendtopia-store.com',
       why_1_heading: 'Pečlivě vybrané produkty',
       why_1_text: 'Usilujeme se vám nabídnout maximální kvalitu každého produktu. Proto je důkladně testujeme v reálných podmínkách použití dříve, než se k vám dostanou.',
@@ -768,7 +809,7 @@
     );
     if (vortekFeatName) {
       var vortekPrice = PRODUCT_PRICES.vortek[geo];
-      vortekFeatName.textContent = vortekPrice
+      vortekFeatName.innerHTML = vortekPrice
         ? pricedLine(locale, 'featured_vortek_name_priced', vortekPrice)
         : msg(locale, 'featured_vortek_name');
     }
@@ -801,9 +842,37 @@
         return;
       }
       var vp = PRODUCT_PRICES.vortek[geo];
-      el.textContent = vp
+      el.innerHTML = vp
         ? pricedLine(locale, 'product_vortek_priced', vp)
         : msg(locale, 'product_vortek_title');
+    });
+  }
+
+  function applyHeroProductLinks(locale) {
+    document.querySelectorAll('[data-home-product-link]').forEach(function (link) {
+      var product = link.getAttribute('data-home-product-link');
+      var href = '';
+      var labelKey = '';
+
+      if (product === 'setOfPots') {
+        labelKey = 'product_setOfPots_title';
+        if (CASA_FUEGO_GEOS.indexOf(locale) >= 0) {
+          href = '/' + locale + '/casa-fuego/landing.html';
+        }
+      } else if (product === 'coreSync') {
+        labelKey = 'product_coreSync_title';
+        if (CORESYNC_GEOS.indexOf(locale) >= 0) {
+          href = '/' + locale + '/smartwatch/landing.html';
+        }
+      } else if (product === 'vortek') {
+        labelKey = 'product_vortek_title';
+        if (VORTEK_PATHS[locale]) {
+          href = '/' + locale + '/' + VORTEK_PATHS[locale] + '/landing.html';
+        }
+      }
+
+      if (href) link.setAttribute('href', href);
+      if (labelKey) link.setAttribute('aria-label', msg(locale, labelKey));
     });
   }
 
@@ -873,6 +942,7 @@
     });
 
     applyProductPricing(locale);
+    applyHeroProductLinks(locale);
 
     var featuredKey = homeFeaturedProduct(locale);
     document.querySelectorAll('[data-home-feature]').forEach(function (section) {
@@ -975,6 +1045,83 @@
     }
   }
 
+  function bindMobileMenu() {
+    var button = document.getElementById('home-menu-btn');
+    var nav = document.getElementById('home-nav');
+    if (!button || !nav || button.dataset.homeMenuBound === '1') return;
+    button.dataset.homeMenuBound = '1';
+
+    function closeMenu() {
+      document.body.classList.remove('menu-open');
+      button.setAttribute('aria-expanded', 'false');
+      button.textContent = '☰';
+    }
+
+    button.addEventListener('click', function () {
+      var open = document.body.classList.toggle('menu-open');
+      button.setAttribute('aria-expanded', String(open));
+      button.textContent = open ? '✕' : '☰';
+    });
+
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+  }
+
+  function bindTemplateInteractions() {
+    var dialog = document.getElementById('quick-dialog');
+    var close = document.getElementById('quick-dialog-close');
+    var dialogLink = document.getElementById('quick-dialog-link');
+    if (!dialog || !close || !dialogLink || dialog.dataset.bound === '1') return;
+    dialog.dataset.bound = '1';
+
+    var products = {
+      coresync: {
+        productKey: 'coreSync',
+        tag: 'Tecnología y bienestar',
+        title: 'CoreSync™',
+        text: 'Smartwatch pensado para llamadas, notificaciones y seguimiento cotidiano desde una experiencia sencilla.',
+        points: ['Hasta 10 días de batería*', 'Llamadas Bluetooth', 'Compatible con iOS y Android', 'Kit con accesorios']
+      },
+      casa: {
+        productKey: 'setOfPots',
+        tag: 'Cocina y hogar',
+        title: 'Casa Fuego™',
+        text: 'Batería de acero inoxidable con seis recipientes y seis tapas de cristal para equipar la cocina.',
+        points: ['12 componentes', 'Base de cinco capas*', 'Compatible con inducción', 'Sin revestimiento antiadherente']
+      },
+      vortek: {
+        productKey: 'vortek',
+        tag: 'Jardín y herramientas',
+        title: 'Iron Oak Pro™',
+        text: 'Motosierra a batería para jardín y trabajos exteriores, con dos baterías y cargador rápido.',
+        points: ['Motor sin escobillas', 'Dos baterías', 'Cargador rápido', 'Kit de accesorios']
+      }
+    };
+
+    document.querySelectorAll('.quick[data-product]').forEach(function (button) {
+      button.addEventListener('click', function () {
+        var product = products[button.getAttribute('data-product')];
+        if (!product) return;
+        document.getElementById('quick-dialog-tag').textContent = product.tag;
+        document.getElementById('quick-dialog-title').textContent = product.title;
+        document.getElementById('quick-dialog-text').textContent = product.text;
+        document.getElementById('quick-dialog-list').innerHTML = product.points
+          .map(function (point) { return '<li>' + point + '</li>'; })
+          .join('');
+        dialogLink.setAttribute('data-home-product-link', product.productKey);
+        applyHeroProductLinks(normalizeLocale(getSsrLocale() || detectLocale()));
+        if (typeof dialog.showModal === 'function') dialog.showModal();
+        else dialog.setAttribute('open', '');
+      });
+    });
+
+    close.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+  }
+
   function init() {
     var select = document.getElementById('home-locale-select');
     var ssr = normalizeLocale(getSsrLocale() || '');
@@ -992,6 +1139,8 @@
     applyLocale(locale);
     bindLocaleSelect(select);
     bindFeaturedCtaScroll();
+    bindMobileMenu();
+    bindTemplateInteractions();
   }
 
   if (document.readyState === 'loading') {
