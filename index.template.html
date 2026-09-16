@@ -1167,6 +1167,17 @@ h1, h2, h3, h4 {
 }
 .home-market-picker--with-thumb .home-market-picker__content { padding: 24px; }
 .home-market-picker__title { color: var(--tt-ink); font-family: "Manrope"; font-size: 1.05rem; }
+.product-card__hint {
+  margin: 0 0 10px;
+  color: var(--tt-muted);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.home-market-picker--on-orange .product-card__hint {
+  color: var(--tt-ink);
+  opacity: .78;
+}
 .home-market-picker__links a {
   display: inline-flex;
   min-width: 42px;
@@ -1350,6 +1361,7 @@ h1, h2, h3, h4 {
 }
 .product-card__title {
   display: block;
+  margin-bottom: 6px;
   color: var(--tt-ink);
   font-family: "Manrope";
   font-size: 1.45rem;
@@ -1678,7 +1690,7 @@ img.avatar {
 <script>window.SITE_CONFIG = { GEO: 'en', GOOGLE_TAG_ID: 'AW-18327321473', COOKIE_TEXT: 'We use necessary cookies and, with your consent, analytics and advertising cookies.', COOKIE_ACCEPT_ALL: 'Accept all', COOKIE_REJECT: 'Reject non-essential', COOKIE_MANAGE: 'Manage preferences', COOKIE_SAVE: 'Save preferences', COOKIE_CHANGE: 'Change cookie preferences', COOKIE_LEARN: 'Learn more' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js?v=20260916s" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260916t" defer></script>
 </head>
 <body>
 
@@ -1784,7 +1796,7 @@ img.avatar {
           <a class="featured__cta" href="#coresSync-markets-links" data-i18n="featured_cta" data-home-product-link="coreSync">Get it now</a>
         </div>
         <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
-          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Choose your country to see price and availability</span>
+          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™</span>
           <span id="coresSync-markets-links" class="home-market-picker__links" data-market-links="coreSync"></span>
         </div>
       </article>
@@ -1810,7 +1822,7 @@ img.avatar {
           <a class="featured__cta" href="#vortek-markets-links" data-i18n="featured_cta" data-home-product-link="vortek">Get it now</a>
         </div>
         <div id="vortek-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="vortek">
-          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Choose your country to see price and availability</span>
+          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™</span>
           <a class="featured__buy-now" href="#our-products" data-i18n="vortek_buy_cta" data-home-product-link="vortek">BUY NOW</a>
           <span id="vortek-markets-links" class="home-market-picker__links" data-market-links="vortek"></span>
         </div>
@@ -1827,13 +1839,14 @@ img.avatar {
           <p class="eyebrow">La selección Trendtopia</p>
           <h2 class="categories__title" data-i18n="collections_title">Explore our collections</h2>
         </div>
-        <p class="categories__subtitle lead" data-i18n="collections_subtitle">Offers shown for your selected country. Tap a link to open the product page.</p>
+        <p class="categories__subtitle lead" data-i18n="collections_subtitle">Choose your country to see the available offer.</p>
       </div>
       <div class="home-market-pickers product-grid">
         <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="setOfPots">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Cocina y hogar</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_setOfPots_title">Set of Pots™ — Choose your country to see price and availability</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_setOfPots_title">Set of Pots™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Choose your country to see the available offer.</p>
             <p class="product-card__text">Seis recipientes y seis tapas de cristal, acero inoxidable y base de cinco capas para cocinar a diario.</p>
             <div class="product-card__actions">
               <span class="home-market-picker__links" data-market-links="setOfPots"></span>
@@ -1845,7 +1858,8 @@ img.avatar {
         <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="coreSync">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Tecnología y bienestar</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_coreSync_title">CoreSync™ — Choose your country to see price and availability</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_coreSync_title">CoreSync™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Choose your country to see the available offer.</p>
             <p class="product-card__text">Llamadas, notificaciones y actividad diaria en una pantalla sencilla. Kit completo para empezar desde el primer día.</p>
             <div class="product-card__actions">
               <span class="home-market-picker__links" data-market-links="coreSync"></span>
@@ -1857,7 +1871,8 @@ img.avatar {
         <div id="vortek-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="vortekCol">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Jardín y herramientas</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Choose your country to see price and availability</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_vortek_title">Iron Oak Pro™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Choose your country to see the available offer.</p>
             <p class="featured__promo" data-i18n-html="vortek_price_badge">−50% · <s>138,00 €</s> 69,00 €</p>
             <p class="product-card__text">Motosierra a batería para jardín y trabajos exteriores, con dos baterías y cargador rápido.</p>
             <div class="product-card__actions">

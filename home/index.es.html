@@ -1167,6 +1167,17 @@ h1, h2, h3, h4 {
 }
 .home-market-picker--with-thumb .home-market-picker__content { padding: 24px; }
 .home-market-picker__title { color: var(--tt-ink); font-family: "Manrope"; font-size: 1.05rem; }
+.product-card__hint {
+  margin: 0 0 10px;
+  color: var(--tt-muted);
+  font-size: .92rem;
+  font-weight: 700;
+  letter-spacing: .01em;
+}
+.home-market-picker--on-orange .product-card__hint {
+  color: var(--tt-ink);
+  opacity: .78;
+}
 .home-market-picker__links a {
   display: inline-flex;
   min-width: 42px;
@@ -1350,6 +1361,7 @@ h1, h2, h3, h4 {
 }
 .product-card__title {
   display: block;
+  margin-bottom: 6px;
   color: var(--tt-ink);
   font-family: "Manrope";
   font-size: 1.45rem;
@@ -1678,7 +1690,7 @@ img.avatar {
 <script>window.SITE_CONFIG = { GEO: 'es', GOOGLE_TAG_ID: 'AW-18327321473', COOKIE_TEXT: 'Usamos cookies necesarias y, con tu consentimiento, cookies analíticas y publicitarias.', COOKIE_ACCEPT_ALL: 'Aceptar todo', COOKIE_REJECT: 'Rechazar no esenciales', COOKIE_MANAGE: 'Gestionar preferencias', COOKIE_SAVE: 'Guardar preferencias', COOKIE_CHANGE: 'Cambiar preferencias de cookies', COOKIE_LEARN: 'Más información' };</script>
 <script src="/assets/js/main.js" defer></script>
 <script src="/assets/js/home-i18n-data.js" defer></script>
-<script src="/assets/js/home-i18n.js?v=20260916s" defer></script>
+<script src="/assets/js/home-i18n.js?v=20260916t" defer></script>
 </head>
 <body>
 
@@ -1723,14 +1735,14 @@ img.avatar {
         <h1 class="hero__title" data-i18n-html="hero_title">¿PAGAR EL PRECIO COMPLETO?<br><span class="site-logo__text-accent">NI HABLAR.</span></h1>
         <p class="hero__subtitle" data-i18n-html="hero_subtitle">Iron Oak Pro™ ahora a 69,00 € (antes 138,00 €) con −50% de descuento. Entrega en 24–48 h laborables y pago contra reembolso.</p>
         <div class="hero__markets">
-          <a href="/es/vortek-1013/landing.html" class="hero__cta hero__cta--accent" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad">IRON OAK PRO · −50% · 69,00 €</a>
+          <a href="/es/vortek-1013/landing.html" class="hero__cta hero__cta--accent" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™">IRON OAK PRO · −50% · 69,00 €</a>
         </div>
       </div>
       <div class="hero-stage">
-        <a class="hero-stage__card hero-stage__main" href="/es/vortek-1013/landing.html" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad">
+        <a class="hero-stage__card hero-stage__main" href="/es/vortek-1013/landing.html" data-home-product-link="vortek" aria-label="Iron Oak Pro™">
           <img src="/assets/img/home/iron-oak-pro-hero.jpg" alt="" width="1024" height="1024" loading="eager" decoding="async" onerror="this.src='/assets/img/placeholder.svg'">
         </a>
-        <a class="hero-stage__card hero-stage__side" href="/es/casa-fuego/landing.html" data-home-product-link="setOfPots" aria-label="Set of Pots™ — Elige tu país para ver precio y disponibilidad">
+        <a class="hero-stage__card hero-stage__side" href="/es/casa-fuego/landing.html" data-home-product-link="setOfPots" aria-label="Casa Fuego™">
           <img src="/assets/img/home/casa-fuego-hero.jpg" alt="" width="819" height="1024" loading="eager" decoding="async" onerror="this.src='/assets/img/placeholder.svg'">
         </a>
         <div class="hero-stage__tag hero-stage__tag--bottom"><b>Iron Oak Pro™</b><small data-i18n-html="vortek_price_badge">−50% · <s>138,00 €</s> 69,00 €</small></div>
@@ -1781,10 +1793,10 @@ img.avatar {
           <div class="featured__category" data-i18n="featured_category">Tecnología</div>
           <h3 class="featured__name" data-i18n="featured_name">CoreSync™ — 49,00 €</h3>
           <p class="featured__desc" data-i18n="featured_desc">Smartwatch versátil para mantenerte conectado, seguir tu actividad diaria y consultar tus rutinas de descanso desde una app. Hasta 10 días de batería, resistencia al agua 5ATM, app iOS/Android incluida. Kit completo con correa de repuesto y protectores de pantalla.</p>
-          <a class="featured__cta" href="/es/smartwatch/landing.html" data-i18n="featured_cta" data-home-product-link="coreSync" aria-label="CoreSync™ — Elige tu país para ver precio y disponibilidad">Consíguelo ya</a>
+          <a class="featured__cta" href="/es/smartwatch/landing.html" data-i18n="featured_cta" data-home-product-link="coreSync" aria-label="CoreSync™">Consíguelo ya</a>
         </div>
         <div id="coresSync-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="coreSync">
-          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™ — Consíguelo ya por solo 49,00 €</span>
+          <span class="home-market-picker__title" data-i18n="product_coreSync_title">CoreSync™</span>
           <span id="coresSync-markets-links" class="home-market-picker__links" data-market-links="coreSync"><a href="/es/smartwatch/landing.html">ES</a></span>
         </div>
       </article>
@@ -1806,12 +1818,12 @@ img.avatar {
           <div class="featured__category" data-i18n="featured_vortek_category">Jardín y herramientas</div>
           <h3 class="featured__name" data-i18n="featured_vortek_name">Iron Oak Pro™ — 69,00 € <s>138,00 €</s> · −50%</h3>
           <p class="featured__promo" data-i18n-html="vortek_price_badge">−50% · <s>138,00 €</s> 69,00 €</p>
-          <p class="featured__desc" data-i18n="featured_vortek_desc">Motosierra a batería para jardín y trabajos exteriores. Motor brushless 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena diamantada. Contra reembolso.</p>
-          <a class="featured__cta" href="/es/vortek-1013/landing.html" data-i18n="featured_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad">Consíguelo ya</a>
+          <p class="featured__desc" data-i18n="featured_vortek_desc">Motosierra a batería para jardín y trabajos exteriores. Motor sin escobillas de 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena de diamante. Contra reembolso.</p>
+          <a class="featured__cta" href="/es/vortek-1013/landing.html" data-i18n="featured_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™">Consíguelo ya</a>
         </div>
         <div id="vortek-markets" class="home-market-picker home-market-picker--light home-market-picker--in-card" data-home-product="vortek">
-          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Consíguelo ya por 69,00 € <s>138,00 €</s> · −50%</span>
-          <a class="featured__buy-now" href="/es/vortek-1013/landing.html" data-i18n="vortek_buy_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad">COMPRAR YA</a>
+          <span class="home-market-picker__title" data-i18n="product_vortek_title">Iron Oak Pro™</span>
+          <a class="featured__buy-now" href="/es/vortek-1013/landing.html" data-i18n="vortek_buy_cta" data-home-product-link="vortek" aria-label="Iron Oak Pro™">COMPRAR YA</a>
           <span id="vortek-markets-links" class="home-market-picker__links" data-market-links="vortek"><a href="/es/vortek-1013/landing.html">ES</a></span>
         </div>
       </article>
@@ -1827,13 +1839,14 @@ img.avatar {
           <p class="eyebrow">La selección Trendtopia</p>
           <h2 class="categories__title" data-i18n="collections_title">Explora nuestras colecciones</h2>
         </div>
-        <p class="categories__subtitle lead" data-i18n="collections_subtitle">Ofertas para tu país seleccionado. Pulsa un enlace para abrir la página del producto.</p>
+        <p class="categories__subtitle lead" data-i18n="collections_subtitle">Elige tu país para ver la oferta disponible.</p>
       </div>
       <div class="home-market-pickers product-grid">
         <div id="setOfPots-markets" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="setOfPots">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Cocina y hogar</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_setOfPots_title">Set of Pots™ — Consíguelo ya por solo 89,00 €</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_setOfPots_title">Casa Fuego™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Elige tu país para ver la oferta disponible.</p>
             <p class="product-card__text">Seis recipientes y seis tapas de cristal, acero inoxidable y base de cinco capas para cocinar a diario.</p>
             <div class="product-card__actions">
               <span class="home-market-picker__links" data-market-links="setOfPots"><a href="/es/casa-fuego/landing.html">ES</a></span>
@@ -1845,7 +1858,8 @@ img.avatar {
         <div id="coresSync-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="coreSync">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Tecnología y bienestar</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_coreSync_title">CoreSync™ — Consíguelo ya por solo 49,00 €</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_coreSync_title">CoreSync™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Elige tu país para ver la oferta disponible.</p>
             <p class="product-card__text">Llamadas, notificaciones y actividad diaria en una pantalla sencilla. Kit completo para empezar desde el primer día.</p>
             <div class="product-card__actions">
               <span class="home-market-picker__links" data-market-links="coreSync"><a href="/es/smartwatch/landing.html">ES</a></span>
@@ -1857,7 +1871,8 @@ img.avatar {
         <div id="vortek-markets-collections" class="home-market-picker home-market-picker--on-orange home-market-picker--with-thumb" data-home-product="vortekCol">
           <div class="home-market-picker__content product-card__content">
             <span class="product-card__category">Jardín y herramientas</span>
-            <span class="home-market-picker__title product-card__title" data-i18n="product_vortek_title">Iron Oak Pro™ — Consíguelo ya por 69,00 € <s>138,00 €</s> · −50%</span>
+            <span class="home-market-picker__title product-card__title" data-i18n="product_vortek_title">Iron Oak Pro™</span>
+            <p class="product-card__hint" data-i18n="choose_country_offer">Elige tu país para ver la oferta disponible.</p>
             <p class="featured__promo" data-i18n-html="vortek_price_badge">−50% · <s>138,00 €</s> 69,00 €</p>
             <p class="product-card__text">Motosierra a batería para jardín y trabajos exteriores, con dos baterías y cargador rápido.</p>
             <div class="product-card__actions">
@@ -2012,7 +2027,7 @@ img.avatar {
   <div class="site-footer__bottom">© <span data-year>2026</span> <strong>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED</strong> — <span data-i18n="footer_rights">Todos los derechos reservados.</span> <a href="/">trendtopia-store.com</a></div>
 </div></footer>
 
-<div class="home-mobile-buy"><a href="/es/vortek-1013/landing.html" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad">IRON OAK PRO · −50% · 69,00 €</a></div>
+<div class="home-mobile-buy"><a href="/es/vortek-1013/landing.html" data-i18n="vortek_discount_cta" data-home-product-link="vortek" data-home-hide-unavailable aria-label="Iron Oak Pro™">IRON OAK PRO · −50% · 69,00 €</a></div>
 
 <dialog class="quick-dialog" id="quick-dialog">
   <div class="quick-dialog__inner">

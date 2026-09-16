@@ -260,10 +260,11 @@
       featured_vortek_desc: 'Cordless chain saw for garden and outdoor work. 1500 W brushless motor, cuts trunks up to 40 cm. Complete kit with two batteries, fast charger and diamond chain. Cash on delivery.',
       featured_vortek_img_alt: 'Iron Oak Pro — professional cordless chain saw kit with batteries and charger',
       collections_title: 'Explore our collections',
-      collections_subtitle: 'Offers shown for your selected country. Tap a link to open the product page.',
-      product_setOfPots_title: 'Set of Pots™ — Choose your country to see price and availability',
-      product_coreSync_title: 'CoreSync™ — Choose your country to see price and availability',
-      product_vortek_title: 'Iron Oak Pro™ — Choose your country to see price and availability',
+      collections_subtitle: 'Choose your country to see the available offer.',
+      choose_country_offer: 'Choose your country to see the available offer.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Why trendtopia-store.com',
       why_1_heading: 'Hand-picked products',
       why_1_text: 'We aim to offer you the highest quality in every product. That is why we test them thoroughly in real-world conditions before they reach you.',
@@ -321,13 +322,14 @@
       featured_img_alt: 'CoreSync — kit completo de smartwatch con correa extra, cargador, manual y app móvil',
       featured_vortek_category: 'Jardín y herramientas',
       featured_vortek_name: 'Iron Oak Pro™',
-      featured_vortek_desc: 'Motosierra a batería para jardín y trabajos exteriores. Motor brushless 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena diamantada. Contra reembolso.',
+      featured_vortek_desc: 'Motosierra a batería para jardín y trabajos exteriores. Motor sin escobillas de 1500 W, corta troncos hasta 40 cm. Kit con dos baterías, cargador rápido y cadena de diamante. Contra reembolso.',
       featured_vortek_img_alt: 'Iron Oak Pro — motosierra profesional a batería con baterías y cargador',
       collections_title: 'Explora nuestras colecciones',
-      collections_subtitle: 'Ofertas para tu país seleccionado. Pulsa un enlace para abrir la página del producto.',
-      product_setOfPots_title: 'Set of Pots™ — Elige tu país para ver precio y disponibilidad',
-      product_coreSync_title: 'CoreSync™ — Elige tu país para ver precio y disponibilidad',
-      product_vortek_title: 'Iron Oak Pro™ — Elige tu país para ver precio y disponibilidad',
+      collections_subtitle: 'Elige tu país para ver la oferta disponible.',
+      choose_country_offer: 'Elige tu país para ver la oferta disponible.',
+      product_setOfPots_title: 'Casa Fuego™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Por qué trendtopia-store.com',
       why_1_heading: 'Productos seleccionados',
       why_1_text: 'Buscamos ofrecerte la máxima calidad en cada producto. Por eso los probamos exhaustivamente en condiciones reales de uso antes de que lleguen a ti.',
@@ -380,9 +382,10 @@
       featured_desc: 'Smartwatch versátil para se manter conectado, acompanhar a atividade diária e consultar rotinas de descanso numa app.',
       featured_cta: 'Obtenha já',
       collections_title: 'Explore as nossas coleções',
-      collections_subtitle: 'Ofertas para o país selecionado. Toque num link para abrir a página do produto.',
-      product_setOfPots_title: 'Set of Pots™ — Escolha o país para ver preço e disponibilidade',
-      product_coreSync_title: 'CoreSync™ — Escolha o país para ver preço e disponibilidade',
+      collections_subtitle: 'Escolha o país para ver a oferta disponível.',
+      choose_country_offer: 'Escolha o país para ver a oferta disponível.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
       why_title: 'Porquê trendtopia-store.com',
       why_1_heading: 'Produtos selecionados',
       why_1_text: 'Procuramos oferecer-lhe a máxima qualidade em cada produto. Por isso testamo-los exaustivamente em condições reais de utilização antes de chegarem até si.',
@@ -430,10 +433,11 @@
       featured_cta: 'Zgarnij już',
       featured_img_alt: 'CoreSync — kompletny zestaw smartwatch z dodatkowym paskiem, ładowarką, instrukcją i aplikacją',
       collections_title: 'Poznaj nasze kolekcje',
-      collections_subtitle: 'Oferty dla wybranego kraju. Kliknij link, aby otworzyć stronę produktu.',
-      product_setOfPots_title: 'Set of Pots™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
-      product_coreSync_title: 'CoreSync™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
-      product_vortek_title: 'Iron Oak Pro™ — Wybierz kraj, aby zobaczyć cenę i dostępność',
+      collections_subtitle: 'Wybierz kraj, aby zobaczyć dostępną ofertę.',
+      choose_country_offer: 'Wybierz kraj, aby zobaczyć dostępną ofertę.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Dlaczego trendtopia-store.com',
       why_1_heading: 'Starannie wybrane produkty',
       why_1_text: 'Chcemy zapewnić Ci najwyższą jakość każdego produktu. Dlatego testujemy je dokładnie w warunkach realnego użytkowania, zanim trafią do Ciebie.',
@@ -490,10 +494,11 @@
       featured_cta: 'Αποκτήστε το τώρα',
       featured_img_alt: 'CoreSync — πλήρες κιτ smartwatch με επιπλέον λουράκι, φορτιστή, εγχειρίδιο και εφαρμογή',
       collections_title: 'Εξερευνήστε τις συλλογές μας',
-      collections_subtitle: 'Προσφορές για τη χώρα που επιλέξατε. Πατήστε έναν σύνδεσμο για τη σελίδα του προϊόντος.',
-      product_setOfPots_title: 'Set of Pots™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
-      product_coreSync_title: 'CoreSync™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
-      product_vortek_title: 'Iron Oak Pro™ — Επιλέξτε χώρα για τιμή και διαθεσιμότητα',
+      collections_subtitle: 'Επιλέξτε χώρα για να δείτε τη διαθέσιμη προσφορά.',
+      choose_country_offer: 'Επιλέξτε χώρα για να δείτε τη διαθέσιμη προσφορά.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Γιατί trendtopia-store.com',
       why_1_heading: 'Επιλεγμένα προϊόντα',
       why_1_text: 'Στόχος μας είναι να σας προσφέρουμε την υψηλότερη ποιότητα σε κάθε προϊόν. Γι\' αυτό τα δοκιμάζουμε ενδελεχώς σε πραγματικές συνθήκες χρήσης πριν φτάσουν σε εσάς.',
@@ -554,10 +559,11 @@
       featured_vortek_desc: 'Profesionálna akumulátorová reťazová píla na práce na záhrade a v exteriéri. Bezkefový motor 1500 W, reže kmene do 40 cm. Kompletná sada s 2 batériami, rýchlonabíjačkou a diamantovou reťazou. Platba na dobierku.',
       featured_vortek_img_alt: 'Iron Oak Pro — profesionálna reťazová píla s batériami a nabíjačkou',
       collections_title: 'Preskúmajte naše kolekcie',
-      collections_subtitle: 'Ponuky pre vybranú krajinu. Kliknite na odkaz a otvorte stránku produktu.',
-      product_setOfPots_title: 'Set of Pots™ — Vyberte krajinu pre cenu a dostupnosť',
-      product_coreSync_title: 'CoreSync™ — Vyberte krajinu pre cenu a dostupnosť',
-      product_vortek_title: 'Iron Oak Pro™ — Vyberte krajinu pre cenu a dostupnosť',
+      collections_subtitle: 'Vyberte krajinu a zobrazte si dostupnú ponuku.',
+      choose_country_offer: 'Vyberte krajinu a zobrazte si dostupnú ponuku.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Prečo trendtopia-store.com',
       why_1_heading: 'Starostlivo vybrané produkty',
       why_1_text: 'Chceme vám ponúknuť maximálnu kvalitu každého produktu. Preto ich dôkladne testujeme v reálnych podmienkach používania skôr, ako sa k vám dostanú.',
@@ -614,10 +620,11 @@
       featured_cta: 'Pořiďte si ho už',
       featured_img_alt: 'CoreSync — kompletní sada chytrých hodinek s náhradním řemínkem, nabíječkou, návodem a aplikací',
       collections_title: 'Prohlédněte si naše kolekce',
-      collections_subtitle: 'Nabídky pro vybranou zemi. Klepněte na odkaz a otevřete stránku produktu.',
-      product_setOfPots_title: 'Set of Pots™ — Zvolte zemi pro cenu a dostupnost',
-      product_coreSync_title: 'CoreSync™ — Zvolte zemi pro cenu a dostupnost',
-      product_vortek_title: 'Iron Oak Pro™ — Zvolte zemi pro cenu a dostupnost',
+      collections_subtitle: 'Zvolte zemi a zobrazte dostupnou nabídku.',
+      choose_country_offer: 'Zvolte zemi a zobrazte dostupnou nabídku.',
+      product_setOfPots_title: 'Set of Pots™',
+      product_coreSync_title: 'CoreSync™',
+      product_vortek_title: 'Iron Oak Pro™',
       why_title: 'Proč trendtopia-store.com',
       why_1_heading: 'Pečlivě vybrané produkty',
       why_1_text: 'Usilujeme se vám nabídnout maximální kvalitu každého produktu. Proto je důkladně testujeme v reálných podmínkách použití dříve, než se k vám dostanou.',
@@ -815,36 +822,15 @@
     }
 
     document.querySelectorAll('[data-i18n="product_setOfPots_title"]').forEach(function (el) {
-      if (useChooserCopy) {
-        el.textContent = msg(locale, 'product_setOfPots_title');
-        return;
-      }
-      var p = PRODUCT_PRICES.setOfPots[geo];
-      el.textContent = p
-        ? pricedLine(locale, 'product_setOfPots_priced', p)
-        : msg(locale, 'product_setOfPots_title');
+      el.textContent = msg(locale, 'product_setOfPots_title');
     });
 
     document.querySelectorAll('[data-i18n="product_coreSync_title"]').forEach(function (el) {
-      if (useChooserCopy) {
-        el.textContent = msg(locale, 'product_coreSync_title');
-        return;
-      }
-      var p = PRODUCT_PRICES.coreSync[geo];
-      el.textContent = p
-        ? pricedLine(locale, 'product_coreSync_priced', p)
-        : msg(locale, 'product_coreSync_title');
+      el.textContent = msg(locale, 'product_coreSync_title');
     });
 
     document.querySelectorAll('[data-i18n="product_vortek_title"]').forEach(function (el) {
-      if (useChooserCopy) {
-        el.textContent = msg(locale, 'product_vortek_title');
-        return;
-      }
-      var vp = PRODUCT_PRICES.vortek[geo];
-      el.innerHTML = vp
-        ? pricedLine(locale, 'product_vortek_priced', vp)
-        : msg(locale, 'product_vortek_title');
+      el.textContent = msg(locale, 'product_vortek_title');
     });
   }
 

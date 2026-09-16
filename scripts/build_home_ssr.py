@@ -277,19 +277,9 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
     if feat_vortek:
         html = set_attr(html, "i18n", "featured_vortek_name", feat_vortek, is_html=True)
 
-    def product_title(key_priced: str, key_plain: str, price_map: dict) -> str:
-        if use_chooser:
-            return msg(data, locale, key_plain)
-        p = price_map.get(locale)
-        if p:
-            return priced_line(data, locale, key_priced, p)
-        return msg(data, locale, key_plain)
-
-    pots_title = product_title("product_setOfPots_priced", "product_setOfPots_title", prices["setOfPots"])
-    core_title = product_title("product_coreSync_priced", "product_coreSync_title", prices["coreSync"])
-    vortek_title = product_title(
-        "product_vortek_priced", "product_vortek_title", prices.get("vortek", {})
-    )
+    pots_title = msg(data, locale, "product_setOfPots_title")
+    core_title = msg(data, locale, "product_coreSync_title")
+    vortek_title = msg(data, locale, "product_vortek_title")
     html = re.sub(
         r'(<[^>]*data-i18n="product_setOfPots_title"[^>]*>)(.*?)(</[^>]+>)',
         lambda m: m.group(1) + escape(pots_title) + m.group(3),
@@ -304,7 +294,7 @@ def render_locale(template: str, locale: str, data: dict, select_locales: list[s
     )
     html = re.sub(
         r'(<[^>]*data-i18n="product_vortek_title"[^>]*>)(.*?)(</[^>]+>)',
-        lambda m: m.group(1) + vortek_title + m.group(3),
+        lambda m: m.group(1) + escape(vortek_title) + m.group(3),
         html,
         flags=re.S,
     )
