@@ -141,9 +141,14 @@
     .review-head { display: flex; gap: 30px; align-items: end; justify-content: space-between; }
     .review-note { max-width: 410px; padding: 10px 13px; border-radius: 11px; color: #715100; background: #fff1b6; font-size: .76rem; font-weight: 800; }
     .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 38px; }
-    .review { padding: 26px; border: 1px solid var(--line); border-radius: 21px; background: var(--paper); }
+    .review { overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 21px; background: var(--paper); }
+    .review-photo { aspect-ratio: 4 / 3; object-fit: cover; }
+    .review-body { padding: 22px 22px 24px; }
     .review blockquote { margin: 14px 0 0; color: #39433f; }
-    .review footer { margin-top: 20px; color: var(--muted); font-size: .82rem; padding: 0; background: none; }
+    .review-user { display: flex; gap: 11px; align-items: center; margin-top: 18px; }
+    .review-user img { width: 46px; height: 46px; flex: 0 0 46px; border-radius: 50%; object-fit: cover; }
+    .review-user b, .review-user small { display: block; line-height: 1.25; }
+    .review-user small { color: var(--muted); font-size: .78rem; font-weight: 700; }
 
     .faq-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 70px; }
     .faq-list { border-top: 1px solid var(--line); }

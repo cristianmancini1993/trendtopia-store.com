@@ -188,9 +188,14 @@ window.SITE_CONFIG = {
     .review-head { display: flex; gap: 30px; align-items: end; justify-content: space-between; }
     .review-note { max-width: 410px; padding: 10px 13px; border-radius: 11px; color: #715100; background: #fff1b6; font-size: .76rem; font-weight: 800; }
     .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 38px; }
-    .review { padding: 26px; border: 1px solid var(--line); border-radius: 21px; background: var(--paper); }
+    .review { overflow: hidden; padding: 0; border: 1px solid var(--line); border-radius: 21px; background: var(--paper); }
+    .review-photo { aspect-ratio: 4 / 3; object-fit: cover; }
+    .review-body { padding: 22px 22px 24px; }
     .review blockquote { margin: 14px 0 0; color: #39433f; }
-    .review footer { margin-top: 20px; color: var(--muted); font-size: .82rem; padding: 0; background: none; }
+    .review-user { display: flex; gap: 11px; align-items: center; margin-top: 18px; }
+    .review-user img { width: 46px; height: 46px; flex: 0 0 46px; border-radius: 50%; object-fit: cover; }
+    .review-user b, .review-user small { display: block; line-height: 1.25; }
+    .review-user small { color: var(--muted); font-size: .78rem; font-weight: 700; }
 
     .faq-grid { display: grid; grid-template-columns: .78fr 1.22fr; gap: 70px; }
     .faq-list { border-top: 1px solid var(--line); }
@@ -395,9 +400,30 @@ window.SITE_CONFIG = {
       <div class="wrap">
         <div class="review-head"><div><p class="eyebrow">Opiniones</p><h2>LO QUE CUENTAN QUIENES YA LA USAN.</h2></div><div class="review-note">Opiniones de clientes sobre el uso de Iron Oak Pro. La autonomía y el corte dependen de la madera y las condiciones de trabajo.</div></div>
         <div class="review-grid">
-          <article class="review"><div class="stars">★★★★★</div><blockquote>“Pude cortar la leña y terminar el trabajo del jardín sin detenerme a esperar otra carga.”</blockquote><footer>Peter K. · Valencia</footer></article>
-          <article class="review"><div class="stars">★★★★★</div><blockquote>“Me sorprendió que pudiera trabajar con troncos más gruesos manteniendo un manejo sencillo.”</blockquote><footer>Elena V. · Sevilla</footer></article>
-          <article class="review"><div class="stars">★★★★☆</div><blockquote>“El peso hace que resulte más manejable durante trabajos largos que otras herramientas que he utilizado.”</blockquote><footer>Marek S. · Zaragoza</footer></article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-kit.webp?v=1" alt="Kit Iron Oak Pro sobre la mesa al desembalar" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★★</div>
+              <blockquote>“Pude cortar la leña y terminar el trabajo del jardín sin detenerme a esperar otra carga.”</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-l.webp" alt="" width="92" height="92"><span><b>Carlos M.</b><small>Valencia</small></span></div>
+            </div>
+          </article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=1" alt="Pedido Iron Oak Pro al abrirlo en casa" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★★</div>
+              <blockquote>“Me sorprendió que pudiera trabajar con troncos más gruesos manteniendo un manejo sencillo.”</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-a.webp" alt="" width="92" height="92"><span><b>Elena V.</b><small>Sevilla</small></span></div>
+            </div>
+          </article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=1" alt="Montaje de la motosierra Iron Oak Pro" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★☆</div>
+              <blockquote>“El peso hace que resulte más manejable durante trabajos largos que otras herramientas que he utilizado.”</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-m.webp" alt="" width="92" height="92"><span><b>Javier S.</b><small>Zaragoza</small></span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>

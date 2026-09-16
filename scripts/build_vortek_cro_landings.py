@@ -174,7 +174,12 @@ LOCALES = {
     "q1": "“Pude cortar la leña y terminar el trabajo del jardín sin detenerme a esperar otra carga.”",
     "q2": "“Me sorprendió que pudiera trabajar con troncos más gruesos manteniendo un manejo sencillo.”",
     "q3": "“El peso hace que resulte más manejable durante trabajos largos que otras herramientas que he utilizado.”",
-    "r1": "Peter K. · Valencia", "r2": "Elena V. · Sevilla", "r3": "Marek S. · Zaragoza",
+    "r1n": "Carlos M.", "r1c": "Valencia",
+    "r2n": "Elena V.", "r2c": "Sevilla",
+    "r3n": "Javier S.", "r3c": "Zaragoza",
+    "ph1": "Kit Iron Oak Pro sobre la mesa al desembalar",
+    "ph2": "Pedido Iron Oak Pro al abrirlo en casa",
+    "ph3": "Montaje de la motosierra Iron Oak Pro",
     "faq_eye": "Preguntas frecuentes", "faq_h2": "ANTES DE PEDIRLA, DEBES SABER…",
     "faq_p": "Respuestas sobre baterías, corte, pago, envío, devoluciones y garantía.",
     "faq": [
@@ -294,7 +299,12 @@ LOCALES = {
     "q1": "“Narezal som drevo na zimu a dokončil záhradu bez čakania na ďalšie nabitie.”",
     "q2": "“Prekvapilo ma, že zvládla hrubšie kmene a stále sa ľahko ovládala.”",
     "q3": "“Vďaka hmotnosti sa pri dlhšej práci ovláda ľahšie ako iné nástroje, ktoré som používal.”",
-    "r1": "Peter K. · Nitra", "r2": "Elena V. · Prešov", "r3": "Marek S. · Banská Bystrica",
+    "r1n": "Peter K.", "r1c": "Nitra",
+    "r2n": "Elena V.", "r2c": "Prešov",
+    "r3n": "Marek S.", "r3c": "Banská Bystrica",
+    "ph1": "Súprava Iron Oak Pro na stole po vybalení",
+    "ph2": "Objednávka Iron Oak Pro po otvorení doma",
+    "ph3": "Montáž reťazovej píly Iron Oak Pro",
     "faq_eye": "Často kladené otázky", "faq_h2": "PRED OBJEDNÁVKOU BY STE MALI VEDIEŤ…",
     "faq_p": "Odpovede o batériách, reze, platbe, doručení, vrátení a záruke.",
     "faq": [
@@ -414,7 +424,12 @@ LOCALES = {
     "q1": "“Pociąłem drewno na zimę i skończyłem ogród bez czekania na kolejne ładowanie.”",
     "q2": "“Zaskoczyło mnie, że radzi sobie z grubszymi pniami przy prostym prowadzeniu.”",
     "q3": "“Waga sprawia, że przy dłuższej pracy jest wygodniejsza niż inne narzędzia, których używałem.”",
-    "r1": "Peter K. · Kraków", "r2": "Elena V. · Wrocław", "r3": "Marek S. · Poznań",
+    "r1n": "Piotr K.", "r1c": "Kraków",
+    "r2n": "Ewa W.", "r2c": "Wrocław",
+    "r3n": "Marek S.", "r3c": "Poznań",
+    "ph1": "Zestaw Iron Oak Pro na stole po rozpakowaniu",
+    "ph2": "Zamówienie Iron Oak Pro po otwarciu w domu",
+    "ph3": "Montaż pilarki Iron Oak Pro",
     "faq_eye": "Najczęstsze pytania", "faq_h2": "ZANIM ZAMÓWISZ, MUSISZ WIEDZIEĆ…",
     "faq_p": "Odpowiedzi o akumulatorach, cięciu, płatności, dostawie, zwrotach i gwarancji.",
     "faq": [
@@ -534,7 +549,12 @@ LOCALES = {
     "q1": "“Sukapojau malkas žiemai ir baigiau sodą nelaukdamas kito įkrovimo.”",
     "q2": "“Nustebino, kad susitvarko su storesniais kamienais ir vis tiek paprasta valdyti.”",
     "q3": "“Dėl svorio ilgesniame darbe valdyti lengviau nei kitus įrankius, kuriuos naudojau.”",
-    "r1": "Peter K. · Kaunas", "r2": "Elena V. · Klaipėda", "r3": "Marek S. · Šiauliai",
+    "r1n": "Petras K.", "r1c": "Kaunas",
+    "r2n": "Rasa V.", "r2c": "Klaipėda",
+    "r3n": "Marius S.", "r3c": "Šiauliai",
+    "ph1": "Iron Oak Pro rinkinys ant stalo išpakavus",
+    "ph2": "Iron Oak Pro užsakymas atidarius namie",
+    "ph3": "Iron Oak Pro pjūklo surinkimas",
     "faq_eye": "Dažnai užduodami klausimai", "faq_h2": "PRIEŠ UŽSAKYDAMI TURITE ŽINOTI…",
     "faq_p": "Atsakymai apie akumuliatorius, pjovimą, mokėjimą, pristatymą, grąžinimą ir garantiją.",
     "faq": [
@@ -654,7 +674,12 @@ LOCALES = {
     "q1": "“Sasagāju malku ziemai un pabeidzu dārzu, negaidot nākamo uzlādi.”",
     "q2": "“Pārsteidza, ka tiek galā ar resnākiem stumbriem un joprojām ir viegli vadāms.”",
     "q3": "“Svara dēļ ilgākā darbā tas ir ērtāks par citiem rīkiem, ko esmu lietojis.”",
-    "r1": "Peter K. · Liepāja", "r2": "Elena V. · Daugavpils", "r3": "Marek S. · Jelgava",
+    "r1n": "Pēteris K.", "r1c": "Liepāja",
+    "r2n": "Elīna V.", "r2c": "Daugavpils",
+    "r3n": "Māris S.", "r3c": "Jelgava",
+    "ph1": "Iron Oak Pro komplekts uz galda pēc izpakošanas",
+    "ph2": "Iron Oak Pro pasūtījums, atverot mājās",
+    "ph3": "Iron Oak Pro zāģa montāža",
     "faq_eye": "Biežākie jautājumi", "faq_h2": "PIRMS PASŪTĪŠANAS TEV JĀZINA…",
     "faq_p": "Atbildes par akumulatoriem, griezumu, maksājumu, piegādi, atgriešanu un garantiju.",
     "faq": [
@@ -892,9 +917,30 @@ window.SITE_CONFIG = {{
       <div class="wrap">
         <div class="review-head"><div><p class="eyebrow">{L['rev_eye']}</p><h2>{L['rev_h2']}</h2></div><div class="review-note">{L['rev_note']}</div></div>
         <div class="review-grid">
-          <article class="review"><div class="stars">★★★★★</div><blockquote>{L['q1']}</blockquote><footer>{L['r1']}</footer></article>
-          <article class="review"><div class="stars">★★★★★</div><blockquote>{L['q2']}</blockquote><footer>{L['r2']}</footer></article>
-          <article class="review"><div class="stars">★★★★☆</div><blockquote>{L['q3']}</blockquote><footer>{L['r3']}</footer></article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-kit.webp?v=1" alt="{L['ph1']}" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★★</div>
+              <blockquote>{L['q1']}</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-l.webp" alt="" width="92" height="92"><span><b>{L['r1n']}</b><small>{L['r1c']}</small></span></div>
+            </div>
+          </article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=1" alt="{L['ph2']}" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★★</div>
+              <blockquote>{L['q2']}</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-a.webp" alt="" width="92" height="92"><span><b>{L['r2n']}</b><small>{L['r2c']}</small></span></div>
+            </div>
+          </article>
+          <article class="review">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=1" alt="{L['ph3']}" width="1024" height="768" loading="lazy">
+            <div class="review-body">
+              <div class="stars">★★★★☆</div>
+              <blockquote>{L['q3']}</blockquote>
+              <div class="review-user"><img src="/assets/img/products/vortek/review-avatar-m.webp" alt="" width="92" height="92"><span><b>{L['r3n']}</b><small>{L['r3c']}</small></span></div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
