@@ -150,11 +150,11 @@ LOCALES = {
     "f2t": "DOS BATERÍAS PARA SEGUIR CORTANDO",
     "f2p": "Las dos baterías incluidas suman hasta ocho horas combinadas y una carga completa en aproximadamente una hora. La autonomía real depende del tipo y el grosor de la madera.",
     "f2c1": "2 baterías", "f2c2": "Cambio rápido", "f2c3": "Cargador incluido",
-    "f2alt": "Cambio de batería en la motosierra Iron Oak Pro junto al cargador",
+    "f2alt": "Corte de un tronco con la motosierra Iron Oak Pro",
     "f3t": "LUBRICACIÓN Y TENSADO AUTOMÁTICOS*",
     "f3p": "Depósito de aceite y sistema que ajusta la tensión de la cadena para reducir las paradas manuales. Sigue siempre las instrucciones de mantenimiento del fabricante.",
     "f3c1": "2 cadenas", "f3c2": "Depósito de aceite", "f3c3": "Ajuste automático*",
-    "f3alt": "Mantenimiento y cadena de la motosierra Iron Oak Pro",
+    "f3alt": "Kit Iron Oak Pro con baterías y cargador en el taller",
     "cmp_eye": "Comparación objetiva",
     "cmp_h2": "IRON OAK PRO FRENTE A UN MODELO BÁSICO",
     "cmp_p": "Comparación del kit Iron Oak Pro frente a una motosierra básica de jardín.",
@@ -180,8 +180,8 @@ LOCALES = {
     "r2n": "Elena V.", "r2c": "Sevilla",
     "r3n": "Javier S.", "r3c": "Zaragoza",
     "ph1": "Kit Iron Oak Pro sobre la mesa al desembalar",
-    "ph2": "Pedido Iron Oak Pro al abrirlo en casa",
-    "ph3": "Montaje de la motosierra Iron Oak Pro",
+    "ph2": "Motosierra Iron Oak Pro junto a un tronco en el jardín",
+    "ph3": "Kit Iron Oak Pro al desembalarlo en casa",
     "faq_eye": "Preguntas frecuentes", "faq_h2": "ANTES DE PEDIRLA, DEBES SABER…",
     "faq_p": "Respuestas sobre baterías, corte, pago, envío, devoluciones y garantía.",
     "faq": [
@@ -276,11 +276,11 @@ LOCALES = {
     "f2t": "DVE BATÉRIE, ABY STE MOHLI REZAŤ ĎALEJ",
     "f2p": "Dve batérie v balení spolu až osem hodín a plné nabitie približne za hodinu. Reálna výdrž závisí od druhu a hrúbky dreva.",
     "f2c1": "2 batérie", "f2c2": "Rýchla výmena", "f2c3": "Nabíjačka v balení",
-    "f2alt": "Výmena batérie Iron Oak Pro pri nabíjačke",
+    "f2alt": "Rezanie kmeňa pílou Iron Oak Pro zblízka",
     "f3t": "AUTOMATICKÉ MAZANIE A NAPÍNANIE*",
     "f3p": "Nádržka na olej a systém, ktorý upraví napnutie reťaze, aby ste nemuseli tak často zastavovať. Vždy dodržujte pokyny výrobcu.",
     "f3c1": "2 reťaze", "f3c2": "Nádržka na olej", "f3c3": "Automatické nastavenie*",
-    "f3alt": "Údržba a reťaz píly Iron Oak Pro",
+    "f3alt": "Súprava Iron Oak Pro s batériami a nabíjačkou v dielni",
     "cmp_eye": "Objektívne porovnanie",
     "cmp_h2": "IRON OAK PRO VOČI ZÁKLADNÉMU MODELU",
     "cmp_p": "Porovnanie kitu Iron Oak Pro so základnou záhradnou pílou.",
@@ -306,8 +306,8 @@ LOCALES = {
     "r2n": "Elena V.", "r2c": "Prešov",
     "r3n": "Marek S.", "r3c": "Banská Bystrica",
     "ph1": "Súprava Iron Oak Pro na stole po vybalení",
-    "ph2": "Objednávka Iron Oak Pro po otvorení doma",
-    "ph3": "Montáž reťazovej píly Iron Oak Pro",
+    "ph2": "Píla Iron Oak Pro pri kmeni v záhrade",
+    "ph3": "Súprava Iron Oak Pro po vybalení",
     "faq_eye": "Často kladené otázky", "faq_h2": "PRED OBJEDNÁVKOU BY STE MALI VEDIEŤ…",
     "faq_p": "Odpovede o batériách, reze, platbe, doručení, vrátení a záruke.",
     "faq": [
@@ -404,11 +404,11 @@ LOCALES = {
     "f2t": "SYSTEM DWÓCH AKUMULATORÓW DLA STABILNEJ MOCY",
     "f2p": "Dwa akumulatory pracują jednocześnie, zapewniając stabilne zasilanie podczas cięcia. Deklarowany czas pracy wynosi do ośmiu godzin, zależnie od rodzaju i grubości drewna, nacisku, temperatury oraz stanu akumulatorów.",
     "f2c1": "2 akumulatory", "f2c2": "Jednoczesna praca", "f2c3": "Ładowarka w zestawie",
-    "f2alt": "System dwóch akumulatorów Iron Oak Pro przy ładowarce",
+    "f2alt": "Cięcie pnia pilarką Iron Oak Pro z bliska",
     "f3t": "AUTOMATYCZNE SMAROWANIE I NAPINANIE*",
     "f3p": "Zbiornik oleju i układ, który koryguje napięcie łańcucha, żeby rzadziej się zatrzymywać. Zawsze stosuj się do instrukcji producenta.",
     "f3c1": "2 łańcuchy", "f3c2": "Zbiornik oleju", "f3c3": "Regulacja automatyczna*",
-    "f3alt": "Konserwacja i łańcuch pilarki Iron Oak Pro",
+    "f3alt": "Zestaw Iron Oak Pro z akumulatorami i ładowarką w warsztacie",
     "cmp_eye": "Rzetelne porównanie",
     "cmp_h2": "IRON OAK PRO W PORÓWNANIU Z PODSTAWOWYM MODELEM",
     "cmp_p": "Porównanie zestawu Iron Oak Pro z podstawową pilarką ogrodową.",
@@ -434,8 +434,8 @@ LOCALES = {
     "r2n": "Ewa W.", "r2c": "Wrocław",
     "r3n": "Marek S.", "r3c": "Poznań",
     "ph1": "Zestaw Iron Oak Pro na stole po rozpakowaniu",
-    "ph2": "Zamówienie Iron Oak Pro po otwarciu w domu",
-    "ph3": "Montaż pilarki Iron Oak Pro",
+    "ph2": "Pilarka Iron Oak Pro przy pniu w ogrodzie",
+    "ph3": "Zestaw Iron Oak Pro po rozpakowaniu",
     "faq_eye": "Najczęstsze pytania", "faq_h2": "CO WARTO WIEDZIEĆ PRZED ZAMÓWIENIEM?",
     "faq_p": "Odpowiedzi o akumulatorach, cięciu, płatności, dostawie, zwrotach i gwarancji.",
     "faq": [
@@ -533,11 +533,11 @@ LOCALES = {
     "f2t": "DU AKUMULIATORIAI, KAD PJAUTUMĖTE TOLIAU",
     "f2p": "Du akumuliatoriai rinkinyje kartu iki aštuonių valandų, o pilnas įkrovimas apie valandą. Tikroji trukmė priklauso nuo medienos rūšies ir storio.",
     "f2c1": "2 akumuliatoriai", "f2c2": "Greitas keitimas", "f2c3": "Kroviklis rinkinyje",
-    "f2alt": "Iron Oak Pro akumuliatoriaus keitimas prie kroviklio",
+    "f2alt": "Kamieno pjovimas Iron Oak Pro pjūklu iš arti",
     "f3t": "AUTOMATINIS TEPIMAS IR ĮTEMPIMAS*",
     "f3p": "Alyvos bakelis ir sistema, reguliuojanti grandinės įtempimą, kad rečiau stabdytumėte. Visada laikykitės gamintojo nurodymų.",
     "f3c1": "2 grandinės", "f3c2": "Alyvos bakelis", "f3c3": "Automatinis reguliavimas*",
-    "f3alt": "Iron Oak Pro priežiūra ir grandinė",
+    "f3alt": "Iron Oak Pro rinkinys su akumuliatoriais ir krovikliu dirbtuvėse",
     "cmp_eye": "Objektyvus palyginimas",
     "cmp_h2": "IRON OAK PRO PRIEŠ PAGRINDINĮ MODELĮ",
     "cmp_p": "Iron Oak Pro rinkinio palyginimas su paprastu sodo pjūklu.",
@@ -563,8 +563,8 @@ LOCALES = {
     "r2n": "Rasa V.", "r2c": "Klaipėda",
     "r3n": "Marius S.", "r3c": "Šiauliai",
     "ph1": "Iron Oak Pro rinkinys ant stalo išpakavus",
-    "ph2": "Iron Oak Pro užsakymas atidarius namie",
-    "ph3": "Iron Oak Pro pjūklo surinkimas",
+    "ph2": "Iron Oak Pro pjūklas prie kamieno sode",
+    "ph3": "Iron Oak Pro rinkinys išpakavus",
     "faq_eye": "Dažnai užduodami klausimai", "faq_h2": "PRIEŠ UŽSAKYDAMI TURITE ŽINOTI…",
     "faq_p": "Atsakymai apie akumuliatorius, pjovimą, mokėjimą, pristatymą, grąžinimą ir garantiją.",
     "faq": [
@@ -659,11 +659,11 @@ LOCALES = {
     "f2t": "DIVI AKUMULATORI, LAI ZĀĢĒTU TĀLĀK",
     "f2p": "Divi akumulatori komplektā kopā līdz astoņām stundām un pilna uzlāde aptuveni stundā. Reālais laiks atkarīgs no koksnes veida un biezuma.",
     "f2c1": "2 akumulatori", "f2c2": "Ātra maiņa", "f2c3": "Lādētājs komplektā",
-    "f2alt": "Iron Oak Pro akumulatora maiņa pie lādētāja",
+    "f2alt": "Stumbra zāģēšana ar Iron Oak Pro no tuvuma",
     "f3t": "AUTOMĀTISKA EĻĻOŠANA UN SPRIEGOŠANA*",
     "f3p": "Eļļas tvertne un sistēma, kas pielāgo ķēdes spriegojumu, lai retāk apstātos. Vienmēr ievēro ražotāja norādījumus.",
     "f3c1": "2 ķēdes", "f3c2": "Eļļas tvertne", "f3c3": "Automātiska regulēšana*",
-    "f3alt": "Iron Oak Pro apkope un ķēde",
+    "f3alt": "Iron Oak Pro komplekts ar akumulatoriem un lādētāju darbnīcā",
     "cmp_eye": "Objektīvs salīdzinājums",
     "cmp_h2": "IRON OAK PRO PRET PAMATA MODELI",
     "cmp_p": "Iron Oak Pro komplekta salīdzinājums ar pamata dārza zāģi.",
@@ -689,8 +689,8 @@ LOCALES = {
     "r2n": "Elīna V.", "r2c": "Daugavpils",
     "r3n": "Māris S.", "r3c": "Jelgava",
     "ph1": "Iron Oak Pro komplekts uz galda pēc izpakošanas",
-    "ph2": "Iron Oak Pro pasūtījums, atverot mājās",
-    "ph3": "Iron Oak Pro zāģa montāža",
+    "ph2": "Iron Oak Pro zāģis pie stumbra dārzā",
+    "ph3": "Iron Oak Pro komplekts pēc izpakošanas",
     "faq_eye": "Biežākie jautājumi", "faq_h2": "PIRMS PASŪTĪŠANAS TEV JĀZINA…",
     "faq_p": "Atbildes par akumulatoriem, griezumu, maksājumu, piegādi, atgriešanu un garantiju.",
     "faq": [
@@ -823,7 +823,7 @@ window.SITE_CONFIG = {{
           <li><span>{L['p5']}</span></li>
         </ul>
         <div class="product-shot">
-          <img src="/assets/img/products/vortek/hero.webp?v=4" alt="{L['hero_alt']}" width="1024" height="1024">
+          <img src="/assets/img/products/vortek/hero.webp?v=6" alt="{L['hero_alt']}" width="1200" height="1200">
           <div class="discount-badge">−50%<small>{L['badge_small']}</small></div>
           <div class="pack-label">{L['pack_label']}<small>{L['pack_small']}</small></div>
         </div>
@@ -896,9 +896,9 @@ window.SITE_CONFIG = {{
         <h2>{L['feat_h2']}</h2>
         <p class="section-copy">{L['feat_p']}</p>
 
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-battery-swap.webp?v=4" alt="{L['f1alt']}" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">01</span><h3>{L['f1t']}</h3><p>{L['f1p']}</p><div class="chips"><span class="chip">{L['f1c1']}</span><span class="chip">{L['f1c2']}</span><span class="chip">{L['f1c3']}</span></div></div></article>
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-one-handed.webp?v=2" alt="{L['f2alt']}" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">02</span><h3>{L['f2t']}</h3><p>{L['f2p']}</p><div class="chips"><span class="chip">{L['f2c1']}</span><span class="chip">{L['f2c2']}</span><span class="chip">{L['f2c3']}</span></div></div></article>
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-spare-chain.webp?v=1" alt="{L['f3alt']}" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">03</span><h3>{L['f3t']}</h3><p>{L['f3p']}</p><div class="chips"><span class="chip">{L['f3c1']}</span><span class="chip">{L['f3c2']}</span><span class="chip">{L['f3c3']}</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-battery-swap.webp?v=6" alt="{L['f1alt']}" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">01</span><h3>{L['f1t']}</h3><p>{L['f1p']}</p><div class="chips"><span class="chip">{L['f1c1']}</span><span class="chip">{L['f1c2']}</span><span class="chip">{L['f1c3']}</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-one-handed.webp?v=7" alt="{L['f2alt']}" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">02</span><h3>{L['f2t']}</h3><p>{L['f2p']}</p><div class="chips"><span class="chip">{L['f2c1']}</span><span class="chip">{L['f2c2']}</span><span class="chip">{L['f2c3']}</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-spare-chain.webp?v=4" alt="{L['f3alt']}" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">03</span><h3>{L['f3t']}</h3><p>{L['f3p']}</p><div class="chips"><span class="chip">{L['f3c1']}</span><span class="chip">{L['f3c2']}</span><span class="chip">{L['f3c3']}</span></div></div></article>
       </div>
     </section>
 
@@ -920,7 +920,7 @@ window.SITE_CONFIG = {{
 
     <section class="pack">
       <div class="wrap pack-grid">
-        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=4" alt="{L['pack_alt']}" width="1024" height="1024"></div>
+        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=6" alt="{L['pack_alt']}" width="1200" height="1200"></div>
         <div><p class="eyebrow">{L['pack_eye']}</p><h2>{L['pack_h2']}</h2><ul class="pack-list"><li>{L['li1']}</li><li>{L['li2']}</li><li>{L['li3']}</li><li>{L['li4']}</li><li>{L['li5']}</li><li>{L['li6']}</li></ul><div class="safety">{L['safety']}</div></div>
       </div>
     </section>
@@ -938,7 +938,7 @@ window.SITE_CONFIG = {{
             </div>
           </article>
           <article class="review">
-            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=1" alt="{L['ph2']}" width="1024" height="768" loading="lazy">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=3" alt="{L['ph2']}" width="1024" height="768" loading="lazy">
             <div class="review-body">
               <div class="stars">★★★★★</div>
               <blockquote>{L['q2']}</blockquote>
@@ -946,7 +946,7 @@ window.SITE_CONFIG = {{
             </div>
           </article>
           <article class="review">
-            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=1" alt="{L['ph3']}" width="1024" height="768" loading="lazy">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=2" alt="{L['ph3']}" width="1024" height="768" loading="lazy">
             <div class="review-body">
               <div class="stars">★★★★☆</div>
               <blockquote>{L['q3']}</blockquote>

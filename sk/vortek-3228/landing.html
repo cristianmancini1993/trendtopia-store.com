@@ -83,8 +83,8 @@ window.SITE_CONFIG = {
     .announcement { padding: 10px 18px; color: #fff; background: var(--orange); text-align: center; font-weight: 800; }
     .announcement strong { color: #fff6b8; }
 
-    .hero { position: relative; min-height: 880px; overflow: hidden; padding: 27px 0 78px; color: #fff; background: var(--ink); }
-    .hero::before { content: ""; position: absolute; width: 720px; height: 720px; top: -270px; left: -280px; border-radius: 50%; background: var(--cyan); filter: blur(180px); opacity: .16; }
+    .hero { position: relative; min-height: 880px; overflow: hidden; padding: 27px 0 78px; color: #fff; background: #2c3f3a; }
+    .hero::before { content: ""; position: absolute; width: 720px; height: 720px; top: -270px; left: -280px; border-radius: 50%; background: var(--cyan); filter: blur(180px); opacity: .32; }
     .hero::after { content: "50%"; position: absolute; right: -55px; bottom: -175px; color: rgba(255,255,255,.035); font-family: "Barlow Condensed"; font-size: 26rem; font-weight: 900; }
     .topbar { position: relative; z-index: 4; display: flex; min-height: 64px; align-items: center; justify-content: space-between; }
     .logo { color: #fff; font-family: "Barlow Condensed"; font-size: 1.8rem; font-weight: 900; letter-spacing: -.03em; text-decoration: none; text-transform: uppercase; }
@@ -101,11 +101,11 @@ window.SITE_CONFIG = {
     .hero-points li::before { content: "✓"; display: grid; flex: 0 0 24px; width: 24px; height: 24px; place-items: center; border-radius: 50%; color: var(--ink); background: var(--cyan); font-size: .76rem; font-weight: 900; }
     .hero-points strong { color: #fff; }
 
-    .product-shot { position: relative; margin: 32px 0 0; }
+    .product-shot { position: relative; margin: 32px 0 0; padding-bottom: 86px; }
     .product-shot img { aspect-ratio: 1 / 1; border: 1px solid rgba(255,255,255,.13); border-radius: 28px; object-fit: cover; box-shadow: 0 28px 70px rgba(0,0,0,.34); }
     .discount-badge { position: absolute; top: -18px; right: -15px; display: grid; width: 126px; height: 126px; place-items: center; border: 7px solid var(--ink); border-radius: 50%; color: var(--ink); background: var(--yellow); font-family: "Barlow Condensed"; font-size: 2.6rem; font-weight: 900; line-height: .85; text-align: center; transform: rotate(7deg); }
     .discount-badge small { display: block; font-family: "Manrope"; font-size: .65rem; letter-spacing: .08em; }
-    .pack-label { position: absolute; bottom: 18px; left: -15px; padding: 14px 17px; border-radius: 14px; color: #fff; background: var(--orange); box-shadow: var(--shadow); font-weight: 800; }
+    .pack-label { position: absolute; bottom: 0; left: -15px; padding: 14px 17px; border-radius: 14px; color: #fff; background: var(--orange); box-shadow: var(--shadow); font-weight: 800; }
     .pack-label small { display: block; color: #ffe3d7; font-weight: 600; }
 
     .order-card { position: relative; overflow: hidden; padding: 29px; border: 1px solid rgba(255,255,255,.13); border-radius: 29px; color: var(--ink); background: #fff; box-shadow: 0 30px 90px rgba(0,0,0,.3); }
@@ -155,12 +155,12 @@ window.SITE_CONFIG = {
     .problem-item b { display: block; color: var(--cyan); font-family: "Barlow Condensed"; font-size: 2.2rem; line-height: 1; }
     .problem-item span { color: #c1cbc7; }
 
-    .features { color: #fff; background: var(--ink); }
+    .features { color: #fff; background: #2c3f3a; }
     .features .section-copy { color: #b4c0bb; }
     .feature-row { padding: 38px 0; border-bottom: 1px solid rgba(255,255,255,.11); }
     .feature-row:last-child { border-bottom: 0; }
     .feature-row:nth-child(even) .feature-media { order: 2; }
-    .feature-media img { aspect-ratio: 4/3; border: 1px solid rgba(255,255,255,.12); border-radius: 23px; object-fit: cover; }
+    .feature-media img { aspect-ratio: 1/1; border: 1px solid rgba(255,255,255,.12); border-radius: 23px; object-fit: cover; }
     .feature-no { display: inline-grid; width: 44px; height: 44px; margin-bottom: 30px; place-items: center; border-radius: 50%; color: var(--ink); background: var(--cyan); font-family: "Barlow Condensed"; font-size: 1.25rem; font-weight: 900; }
     .feature-body h3 { font-size: 2.4rem; }
     .feature-body p { color: #b8c3bf; }
@@ -299,7 +299,7 @@ window.SITE_CONFIG = {
           <li><span><strong>Rukavice zadarmo</strong> v balení ako darček.</span></li>
         </ul>
         <div class="product-shot">
-          <img src="/assets/img/products/vortek/hero.webp?v=4" alt="Kompletný kit reťazovej píly Iron Oak Pro s batériami, reťazami, nabíjačkou, kufríkom a rukavicami" width="1024" height="1024">
+          <img src="/assets/img/products/vortek/hero.webp?v=6" alt="Kompletný kit reťazovej píly Iron Oak Pro s batériami, reťazami, nabíjačkou, kufríkom a rukavicami" width="1200" height="1200">
           <div class="discount-badge">−50%<small>PONUKA</small></div>
           <div class="pack-label">KOMPLETNÝ KIT V CENE<small>2 batérie · 2 reťaze · kufrík · rukavice zadarmo</small></div>
         </div>
@@ -374,9 +374,9 @@ window.SITE_CONFIG = {
         <h2>MENEJ PRESTÁVOK. VIAC HOTOVEJ PRÁCE.</h2>
         <p class="section-copy">Tri dôvody, prečo je kit Iron Oak Pro určený na rez a údržbu záhrady.</p>
 
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-battery-swap.webp?v=4" alt="Rezanie kmeňa pílou Iron Oak Pro" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">01</span><h3>BEZKEFOVÝ MOTOR 1 500 W*</h3><p>Navrhnutý na stály rez a nižšie prehrievanie pri dlhšom použití. Skutočný výkon rezu závisí od dreva, reťaze a stavu nabitia.</p><div class="chips"><span class="chip">Bezkefový motor</span><span class="chip">Odvod tepla</span><span class="chip">Práca v záhrade</span></div></div></article>
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-one-handed.webp?v=2" alt="Výmena batérie Iron Oak Pro pri nabíjačke" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">02</span><h3>DVE BATÉRIE, ABY STE MOHLI REZAŤ ĎALEJ</h3><p>Dve batérie v balení spolu až osem hodín a plné nabitie približne za hodinu. Reálna výdrž závisí od druhu a hrúbky dreva.</p><div class="chips"><span class="chip">2 batérie</span><span class="chip">Rýchla výmena</span><span class="chip">Nabíjačka v balení</span></div></div></article>
-        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-spare-chain.webp?v=1" alt="Údržba a reťaz píly Iron Oak Pro" width="1024" height="768"></div><div class="feature-body"><span class="feature-no">03</span><h3>AUTOMATICKÉ MAZANIE A NAPÍNANIE*</h3><p>Nádržka na olej a systém, ktorý upraví napnutie reťaze, aby ste nemuseli tak často zastavovať. Vždy dodržujte pokyny výrobcu.</p><div class="chips"><span class="chip">2 reťaze</span><span class="chip">Nádržka na olej</span><span class="chip">Automatické nastavenie*</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-battery-swap.webp?v=6" alt="Rezanie kmeňa pílou Iron Oak Pro" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">01</span><h3>BEZKEFOVÝ MOTOR 1 500 W*</h3><p>Navrhnutý na stály rez a nižšie prehrievanie pri dlhšom použití. Skutočný výkon rezu závisí od dreva, reťaze a stavu nabitia.</p><div class="chips"><span class="chip">Bezkefový motor</span><span class="chip">Odvod tepla</span><span class="chip">Práca v záhrade</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-one-handed.webp?v=7" alt="Rezanie kmeňa pílou Iron Oak Pro zblízka" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">02</span><h3>DVE BATÉRIE, ABY STE MOHLI REZAŤ ĎALEJ</h3><p>Dve batérie v balení spolu až osem hodín a plné nabitie približne za hodinu. Reálna výdrž závisí od druhu a hrúbky dreva.</p><div class="chips"><span class="chip">2 batérie</span><span class="chip">Rýchla výmena</span><span class="chip">Nabíjačka v balení</span></div></div></article>
+        <article class="feature-row"><div class="feature-media"><img src="/assets/img/products/vortek/feature-spare-chain.webp?v=4" alt="Súprava Iron Oak Pro s batériami a nabíjačkou v dielni" width="1200" height="1200"></div><div class="feature-body"><span class="feature-no">03</span><h3>AUTOMATICKÉ MAZANIE A NAPÍNANIE*</h3><p>Nádržka na olej a systém, ktorý upraví napnutie reťaze, aby ste nemuseli tak často zastavovať. Vždy dodržujte pokyny výrobcu.</p><div class="chips"><span class="chip">2 reťaze</span><span class="chip">Nádržka na olej</span><span class="chip">Automatické nastavenie*</span></div></div></article>
       </div>
     </section>
 
@@ -398,7 +398,7 @@ window.SITE_CONFIG = {
 
     <section class="pack">
       <div class="wrap pack-grid">
-        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=4" alt="Kompletný obsah balenia Iron Oak Pro" width="1024" height="1024"></div>
+        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=6" alt="Kompletný obsah balenia Iron Oak Pro" width="1200" height="1200"></div>
         <div><p class="eyebrow">Všetko v balení</p><h2>OTVORTE KUFRÍK A PUSŤTE SA DO PRÁCE.</h2><ul class="pack-list"><li>1 reťazová píla Iron Oak Pro</li><li>2 lítiové batérie</li><li>1 rýchlonabíjačka</li><li>2 reťaze a montážne príslušenstvo</li><li>1 prepravný kufrík</li><li>Rukavice zadarmo, okuliare a návod</li></ul><div class="safety"><strong>Bezpečnosť:</strong> vždy používajte ochranu očí, rukavice a vhodnú výbavu. Prečítajte si celý návod a pílu nepoužívajte, ak nie ste spôsobilí obsluhovať reťazovú pílu.</div></div>
       </div>
     </section>
@@ -416,7 +416,7 @@ window.SITE_CONFIG = {
             </div>
           </article>
           <article class="review">
-            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=1" alt="Objednávka Iron Oak Pro po otvorení doma" width="1024" height="768" loading="lazy">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-box.webp?v=3" alt="Píla Iron Oak Pro pri kmeni v záhrade" width="1024" height="768" loading="lazy">
             <div class="review-body">
               <div class="stars">★★★★★</div>
               <blockquote>“Prekvapilo ma, že zvládla hrubšie kmene a stále sa ľahko ovládala.”</blockquote>
@@ -424,7 +424,7 @@ window.SITE_CONFIG = {
             </div>
           </article>
           <article class="review">
-            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=1" alt="Montáž reťazovej píly Iron Oak Pro" width="1024" height="768" loading="lazy">
+            <img class="review-photo" src="/assets/img/products/vortek/review-unbox-hands.webp?v=2" alt="Súprava Iron Oak Pro po vybalení" width="1024" height="768" loading="lazy">
             <div class="review-body">
               <div class="stars">★★★★☆</div>
               <blockquote>“Vďaka hmotnosti sa pri dlhšej práci ovláda ľahšie ako iné nástroje, ktoré som používal.”</blockquote>
