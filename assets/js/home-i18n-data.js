@@ -226,7 +226,7 @@
     es: {
       lang_label: 'Idioma / país',
       page_title: 'trendtopia-store.com — Productos seleccionados. Diseño útil. Ofertas elegidas.',
-      page_description: 'Artículos para hogar, jardín y día a día. Entrega en 24–48 h laborables, contra reembolso en países disponibles. Devolución 30 días, garantía 24 meses.',
+      page_description: 'Artículos para hogar, jardín y día a día. Entrega en 24–48 h laborables, contra reembolso en países disponibles. Devolución 30 días, garantía legal de 3 años.',
       logo_aria: 'Inicio trendtopia-store.com',
       hero_eyebrow: '⭐ Productos nuevos cada semana',
       hero_title: '¿PAGAR EL PRECIO COMPLETO?<br><span class="site-logo__text-accent">NI HABLAR.</span>',
@@ -243,7 +243,7 @@
       trust_2_sub: 'sin prepago',
       trust_3_label: 'Devolución 30 días',
       trust_3_sub: 'ver política de reembolso',
-      trust_4_label: 'Garantía 24 meses',
+      trust_4_label: 'Garantía 3 años',
       trust_4_sub: 'defectos de fabricación',
       featured_eyebrow: '⭐ Novedad de la semana',
       featured_title: 'Producto destacado',

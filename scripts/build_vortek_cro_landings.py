@@ -190,7 +190,7 @@ LOCALES = {
       ("¿Tengo que pagar ahora?", "No. El pago es contra reembolso: se confirma el pedido por teléfono y se paga al transportista al recibirlo."),
       ("¿Qué incluye exactamente?", "Motosierra, dos baterías, cargador, dos cadenas, herramientas, maletín, gafas, manual y guantes de regalo."),
       ("¿Puedo devolverla?", "Sí, durante 30 días según la <a href=\"/es/refund-policy.html\">política de reembolso</a>."),
-      ("¿Qué garantía tiene?", "Garantía legal de conformidad de 24 meses desde la entrega."),
+      ("¿Qué garantía tiene?", "Los productos nuevos están cubiertos por una garantía legal de conformidad de 3 años desde la entrega. La garantía cubre las faltas de conformidad en los términos establecidos por la legislación española de consumidores."),
     ],
     "cta_h2": "IRON OAK PRO POR 69,00 €",
     "cta_p": "Kit completo, 50 % de descuento y pago al recibir. Oferta sujeta a disponibilidad y confirmación.",
