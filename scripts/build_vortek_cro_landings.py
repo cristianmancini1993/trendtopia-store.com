@@ -969,7 +969,7 @@ window.SITE_CONFIG = {{
   <footer>
     <div class="wrap">
       <div class="footer-grid">
-        <div><a class="logo" href="#inicio">IRON OAK <span>PRO</span></a><p>{L['foot_p']}</p><p>{COMPANY}<br>{ADDR}<br><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></p></div>
+        <div><a class="logo footer-brand" href="/" aria-label="trendtopia-store.com"><img src="/assets/img/site/logo-transparent.png" alt="" width="72" height="72"><span class="footer-brand__name">trendtopia-store<span>.com</span></span></a><p>{L['foot_p']}</p><p>{COMPANY}<br>{ADDR}<br><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></p></div>
         <div><h3>{L['help']}</h3><a href="#pedido">{L['a_order']}</a><a href="{L['href_ship']}">{L['a_ship']}</a><a href="{L['href_contact']}">{L['a_contact']}</a></div>
         <div><h3>{L['legal']}</h3><a href="{L['href_priv']}">{L['a_priv']}</a><a href="{L['href_cook']}">{L['a_cook']}</a><a href="{L['href_terms']}">{L['a_terms']}</a><a href="{L['href_about']}">{L['a_about']}</a><button type="button" class="tt-cookie-change-link">{L['cookie_btn']}</button></div>
       </div>
