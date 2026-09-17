@@ -355,11 +355,11 @@ LOCALES = {
     "ship": "Dostawa 24–48 h*", "cod": "Płatność przy odbiorze",
     "rating": "Ocena klientów*",
     "eyebrow": "Profesjonalna pilarka akumulatorowa",
-    "h1": "SKOŃCZ PRACĘ. <em>NIE BATERII.</em>",
+    "h1": "DOKOŃCZ PRACĘ. <em>BEZ PRZERW NA ŁADOWANIE.</em>",
     "lead": "Silnik bezszczotkowy 1500 W, dwa akumulatory i kompletny zestaw do cięcia pni i gałęzi bez kabla i benzyny.",
     "p1": "<strong>Do 8 godzin łącznie*</strong> z dwoma akumulatorami w zestawie.",
     "p2": "<strong>Deklarowana średnica do 40 cm*</strong> w zależności od drewna i warunków.",
-    "p3": "<strong>Tylko 2,4 kg*</strong> z prowadnicą i akumulatorem.",
+    "p3": "<strong>Tylko 2,4 kg*</strong> z prowadnicą i dwoma akumulatorami.",
     "p4": "<strong>Automatyczne smarowanie i napinanie*</strong>, mniej przerw.",
     "p5": "<strong>Rękawice w prezencie</strong> w zestawie.",
     "hero_alt": "Kompletny zestaw pilarki Iron Oak Pro z akumulatorami, łańcuchami, ładowarką, walizką i rękawicami",
@@ -376,7 +376,8 @@ LOCALES = {
     "next": "KONTYNUUJ ZAMÓWIENIE →",
     "micro1": "Zadzwonimy raz, aby potwierdzić dane i adres.",
     "lbl_addr": "Adres dostawy", "ph_addr": "Ulica, numer, mieszkanie",
-    "lbl_postal": "Kod pocztowy", "ph_postal": "00-001", "postal_pattern": "",
+    "lbl_postal": "Kod pocztowy", "ph_postal": "00-001", "postal_pattern": ' pattern="[0-9]{2}-[0-9]{3}"',
+    "postal_type_attr": ' type="text"', "postal_inputmode": "text",
     "lbl_city": "Miejscowość", "ph_city": "Warszawa",
     "lbl_prov": "Województwo", "ph_prov": "mazowieckie",
     "submit": "POTWIERDŹ ZAMÓWIENIE · 299,00 zł",
@@ -384,13 +385,14 @@ LOCALES = {
     "micro2": "Potwierdzając, akceptujesz <a href=\"/pl/terms-conditions.html\">regulamin</a> i <a href=\"/pl/privacy-policy.html\">politykę prywatności</a>.",
     "t1b": "Rabat −50%", "t1s": "598,00 zł → 299,00 zł",
     "t2b": "Płatność przy odbiorze", "t2s": "Bez płatności z góry",
+    "trust_pay_icon": "zł",
     "t3b": "Dostawa 24–48 h*", "t3s": "Po potwierdzeniu telefonicznym",
     "t4b": "30 dni*", "t4s": "Zwrot towaru",
     "prob_eye": "Praca bez zwykłych ograniczeń",
     "prob_h2": "JEDNO NARZĘDZIE. CAŁY DZIEŃ.",
-    "prob_p": "Iron Oak Pro łączy silnik bezszczotkowy z dwoma wymiennymi akumulatorami. Gdy jeden się wyczerpie, wkładasz drugi i jedziesz dalej.",
+    "prob_p": "Iron Oak Pro łączy silnik bezszczotkowy z systemem dwóch akumulatorów pracujących jednocześnie, zapewniając stabilne zasilanie podczas cięcia.",
     "m1b": "1 500 W*", "m1s": "Deklarowana moc silnika bezszczotkowego.",
-    "m2b": "2 AKUMULATORY", "m2s": "W zestawie do zmiany podczas pracy.",
+    "m2b": "SYSTEM 2 AKUMULATORÓW", "m2s": "Pracują jednocześnie, zapewniając stabilne zasilanie.",
     "m3b": "40 CM*", "m3s": "Maksymalna deklarowana średnica w zależności od drewna.",
     "feat_eye": "Zaprojektowana, by iść do przodu",
     "feat_h2": "MNIEJ PRZESTOJÓW. WIĘCEJ ZROBIONEJ PRACY.",
@@ -399,16 +401,16 @@ LOCALES = {
     "f1p": "Do stałego cięcia i mniejszego przegrzewania przy dłuższym użyciu. Rzeczywista moc cięcia zależy od drewna, łańcucha i stanu naładowania.",
     "f1c1": "Silnik bezszczotkowy", "f1c2": "Odprowadzanie ciepła", "f1c3": "Praca w ogrodzie",
     "f1alt": "Cięcie pnia pilarką Iron Oak Pro",
-    "f2t": "DWA AKUMULATORY, ŻEBY CIĄĆ DALEJ",
-    "f2p": "Dwa akumulatory w zestawie dają łącznie do ośmiu godzin i pełne ładowanie w około godzinę. Rzeczywista praca zależy od rodzaju i grubości drewna.",
-    "f2c1": "2 akumulatory", "f2c2": "Szybka wymiana", "f2c3": "Ładowarka w zestawie",
-    "f2alt": "Wymiana akumulatora Iron Oak Pro przy ładowarce",
+    "f2t": "SYSTEM DWÓCH AKUMULATORÓW DLA STABILNEJ MOCY",
+    "f2p": "Dwa akumulatory pracują jednocześnie, zapewniając stabilne zasilanie podczas cięcia. Deklarowany czas pracy wynosi do ośmiu godzin, zależnie od rodzaju i grubości drewna, nacisku, temperatury oraz stanu akumulatorów.",
+    "f2c1": "2 akumulatory", "f2c2": "Jednoczesna praca", "f2c3": "Ładowarka w zestawie",
+    "f2alt": "System dwóch akumulatorów Iron Oak Pro przy ładowarce",
     "f3t": "AUTOMATYCZNE SMAROWANIE I NAPINANIE*",
     "f3p": "Zbiornik oleju i układ, który koryguje napięcie łańcucha, żeby rzadziej się zatrzymywać. Zawsze stosuj się do instrukcji producenta.",
     "f3c1": "2 łańcuchy", "f3c2": "Zbiornik oleju", "f3c3": "Regulacja automatyczna*",
     "f3alt": "Konserwacja i łańcuch pilarki Iron Oak Pro",
     "cmp_eye": "Rzetelne porównanie",
-    "cmp_h2": "IRON OAK PRO WOBEC MODELU PODSTAWOWEGO",
+    "cmp_h2": "IRON OAK PRO W PORÓWNANIU Z PODSTAWOWYM MODELEM",
     "cmp_p": "Porównanie zestawu Iron Oak Pro z podstawową pilarką ogrodową.",
     "cmp_h": "Cecha", "cmp_a": "Iron Oak Pro", "cmp_b": "Model podstawowy",
     "c1": "Akumulatory w zestawie", "c1a": "✓ 2 sztuki", "c1b": "Zazwyczaj 1",
@@ -434,15 +436,15 @@ LOCALES = {
     "ph1": "Zestaw Iron Oak Pro na stole po rozpakowaniu",
     "ph2": "Zamówienie Iron Oak Pro po otwarciu w domu",
     "ph3": "Montaż pilarki Iron Oak Pro",
-    "faq_eye": "Najczęstsze pytania", "faq_h2": "ZANIM ZAMÓWISZ, MUSISZ WIEDZIEĆ…",
+    "faq_eye": "Najczęstsze pytania", "faq_h2": "CO WARTO WIEDZIEĆ PRZED ZAMÓWIENIEM?",
     "faq_p": "Odpowiedzi o akumulatorach, cięciu, płatności, dostawie, zwrotach i gwarancji.",
     "faq": [
-      ("Jak długo działają akumulatory?", "Razem do ośmiu godzin. Szybka ładowarka ładuje je w około godzinę. Rzeczywisty czas zależy od grubości i rodzaju drewna, nacisku cięcia, temperatury i stanu akumulatorów."),
+      ("Jak długo działają akumulatory?", "Dwa akumulatory pracują jednocześnie. Deklarowany czas pracy wynosi do ośmiu godzin, a pełne ładowanie trwa około godziny. Rzeczywisty czas zależy od grubości i rodzaju drewna, nacisku, temperatury oraz stanu akumulatorów."),
       ("Czy przetnie pnie 40 cm?", "Maksymalna deklarowana średnica to do 40 cm. Twardość drewna, technika i konserwacja wpływają na efekt."),
       ("Czy muszę płacić teraz?", "Nie. Płatność przy odbiorze: potwierdzamy zamówienie telefonicznie i płacisz kurierowi przy odbiorze."),
       ("Co dokładnie zawiera zestaw?", "Pilarkę, dwa akumulatory, ładowarkę, dwa łańcuchy, narzędzia, walizkę, okulary, instrukcję i rękawice w prezencie."),
       ("Czy mogę zwrócić?", "Tak, w ciągu 30 dni zgodnie z <a href=\"/pl/refund-policy.html\">polityką zwrotów</a>."),
-      ("Jaka jest gwarancja?", "24-miesięczna gwarancja zgodności od dostawy."),
+      ("Jak długo sprzedawca odpowiada za zgodność towaru z umową?", "Sprzedawca odpowiada za brak zgodności towaru z umową przez 2 lata od dnia dostarczenia towaru, na zasadach określonych w polskiej ustawie o prawach konsumenta."),
     ],
     "cta_h2": "IRON OAK PRO ZA 299,00 ZŁ",
     "cta_p": "Kompletny zestaw, 50% rabatu i płatność przy odbiorze. Oferta do wyczerpania zapasów i po potwierdzeniu.",
@@ -457,6 +459,9 @@ LOCALES = {
     "msg_name": "Wpisz imię i nazwisko.",
     "msg_addr": "Wpisz adres dostawy.",
     "msg_tel": "Wpisz prawidłowy polski numer telefonu.",
+    "msg_postal": "Wpisz kod pocztowy w formacie 00-001.",
+    "msg_city": "Wpisz miejscowość.",
+    "msg_province": "Wpisz województwo.",
     "msg_generic": "Nie udało się wysłać zamówienia. Spróbuj ponownie.",
     "phone_js": PHONE_PL,
     "form_extra": "",
@@ -842,7 +847,7 @@ window.SITE_CONFIG = {{
 
           <div class="form-step" id="step2" hidden>
             <div class="field"><label for="address">{L['lbl_addr']}</label><input id="address" name="street-address" autocomplete="street-address" placeholder="{L['ph_addr']}" required></div>
-            <div class="fields-2"><div class="field"><label for="postal">{L['lbl_postal']}</label><input id="postal" name="postal" inputmode="numeric" autocomplete="postal-code" placeholder="{L['ph_postal']}"{L['postal_pattern']} required></div><div class="field"><label for="city">{L['lbl_city']}</label><input id="city" name="address-level2" autocomplete="address-level2" placeholder="{L['ph_city']}" required></div></div>
+            <div class="fields-2"><div class="field"><label for="postal">{L['lbl_postal']}</label><input id="postal" name="postal"{L.get('postal_type_attr', '')} inputmode="{L.get('postal_inputmode', 'numeric')}" autocomplete="postal-code" placeholder="{L['ph_postal']}"{L['postal_pattern']} required></div><div class="field"><label for="city">{L['lbl_city']}</label><input id="city" name="address-level2" autocomplete="address-level2" placeholder="{L['ph_city']}" required></div></div>
             <div class="field"><label for="province">{L['lbl_prov']}</label><input id="province" name="province" autocomplete="address-level1" placeholder="{L['ph_prov']}" required></div>
             <button class="btn" name="submit" type="submit">{L['submit']}</button>
             <button class="back" id="backStep" type="button">{L['back']}</button>
@@ -863,7 +868,7 @@ window.SITE_CONFIG = {{
   <div class="trust-strip" aria-label="{L['cod']}">
     <div class="wrap trust-grid">
       <div class="trust-item"><span class="trust-icon">50%</span><span><b>{L['t1b']}</b><small>{L['t1s']}</small></span></div>
-      <div class="trust-item"><span class="trust-icon">€</span><span><b>{L['t2b']}</b><small>{L['t2s']}</small></span></div>
+      <div class="trust-item"><span class="trust-icon">{L.get('trust_pay_icon', '€')}</span><span><b>{L['t2b']}</b><small>{L['t2s']}</small></span></div>
       <div class="trust-item"><span class="trust-icon">↗</span><span><b>{L['t3b']}</b><small>{L['t3s']}</small></span></div>
       <div class="trust-item"><span class="trust-icon">↩</span><span><b>{L['t4b']}</b><small>{L['t4s']}</small></span></div>
     </div>
@@ -992,36 +997,49 @@ window.SITE_CONFIG = {{
     name: {L['msg_name']!r},
     address: {L['msg_addr']!r},
     tel: {L['msg_tel']!r},
+    postal: {L.get('msg_postal', '')!r},
+    city: {L.get('msg_city', '')!r},
+    province: {L.get('msg_province', '')!r},
     generic: {L['msg_generic']!r},
     submitting: {L['submitting']!r}
   }};
+  var FIELD_SELECTOR = 'input[name="name"], input[name="tel"], input[name="street-address"], input[name="postal"], input[name="address-level2"], input[name="province"]';
 {L['phone_js']}
   function errId(input) {{ return input.id + '-error'; }}
   function validateInput(input) {{
     var val = input.value.trim();
+    if (input.name === 'postal') {{
+      input.value = val;
+    }}
     var msg = '';
     if (input.name === 'name') {{
-      if (!val || val.length < 3 || /\\d/.test(val)) msg = MSGS.name;
+      if (!val || val.length < 3 || val.length > 80 || /\\d/.test(val)) msg = MSGS.name;
     }} else if (input.name === 'street-address') {{
       if (!val || val.length < 5) msg = MSGS.address;
     }} else if (input.name === 'tel') {{
       if (!isValidLocalPhone(val)) msg = MSGS.tel;
+    }} else if (input.name === 'postal' && MSGS.postal) {{
+      if (!/^[0-9]{{2}}-[0-9]{{3}}$/.test(val)) msg = MSGS.postal;
+    }} else if (input.name === 'address-level2' && MSGS.city) {{
+      if (!val || val.length < 2) msg = MSGS.city;
+    }} else if (input.name === 'province' && MSGS.province) {{
+      if (!val || val.length < 2) msg = MSGS.province;
     }}
     var err = document.getElementById(errId(input));
     if (msg) {{
       input.setCustomValidity(msg);
-      if (err) {{ err.textContent = msg; err.hidden = false; }}
+      if (err) {{ err.textContent = msg; err.hidden = false; err.setAttribute('role', 'alert'); }}
       input.classList.add('is-invalid');
       input.setAttribute('aria-invalid', 'true');
     }} else {{
       input.setCustomValidity('');
-      if (err) {{ err.textContent = ''; err.hidden = true; }}
+      if (err) {{ err.textContent = ''; err.hidden = true; err.removeAttribute('role'); }}
       input.classList.remove('is-invalid');
       input.removeAttribute('aria-invalid');
     }}
     return !msg;
   }}
-  form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {{
+  form.querySelectorAll(FIELD_SELECTOR).forEach(function (input) {{
     var err = document.createElement('span');
     err.id = errId(input);
     err.className = 'vk-field-error';
@@ -1052,7 +1070,7 @@ window.SITE_CONFIG = {{
   form.addEventListener('submit', function (e) {{
     if (form.dataset.submitting === 'true') {{ e.preventDefault(); e.stopImmediatePropagation(); return; }}
     var valid = true, firstInvalid = null;
-    form.querySelectorAll('input[name="name"], input[name="street-address"], input[name="tel"]').forEach(function (input) {{
+    form.querySelectorAll(FIELD_SELECTOR).forEach(function (input) {{
       if (!validateInput(input)) {{ valid = false; if (!firstInvalid) firstInvalid = input; }}
     }});
     if (!form.reportValidity() || !valid) {{
