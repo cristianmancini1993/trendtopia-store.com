@@ -214,7 +214,10 @@ window.SITE_CONFIG = {
 
     footer { padding: 60px 0 105px; color: #9ba6a2; background: var(--ink); font-size: .84rem; }
     .footer-grid { display: grid; grid-template-columns: 1.3fr .7fr .7fr; gap: 48px; }
-    footer .logo { display: inline-block; margin-bottom: 17px; }
+    footer a.footer-brand { display: inline-flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; margin: 0 0 20px; text-align: center; }
+    footer .footer-brand img { width: 72px; height: 72px; margin: 0; object-fit: contain; }
+    footer .footer-brand__name { color: #fff; font-size: 1.28rem; font-weight: 800; letter-spacing: -.03em; line-height: 1; text-transform: none; }
+    footer .footer-brand__name span { color: var(--orange); }
     footer h3 { color: #fff; font-family: "Manrope"; font-size: .95rem; letter-spacing: 0; text-transform: none; }
     footer a, footer button { display: block; margin: 7px 0; color: #c8d0cd; text-decoration: none; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; }
     footer ul { margin: 0; padding: 0; list-style: none; }
@@ -261,6 +264,7 @@ window.SITE_CONFIG = {
       .cta-box { grid-template-columns: 1fr; padding: 29px; }
       .cta-box .btn { width: 100%; }
       .footer-grid { grid-template-columns: 1fr; }
+      footer a.footer-brand { width: 100%; }
       .sticky { display: block; }
       footer { padding-bottom: 115px; }
     }
@@ -453,7 +457,7 @@ window.SITE_CONFIG = {
   <footer>
     <div class="wrap">
       <div class="footer-grid">
-        <div><a class="logo" href="#inicio">IRON OAK <span>PRO</span></a><p>Akumulátorový nástroj na rezanie a údržbu exteriéru.</p><p>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED<br>RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong<br><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></p></div>
+        <div><a class="logo footer-brand" href="/" aria-label="trendtopia-store.com"><img src="/assets/img/site/logo-transparent.png" alt="" width="72" height="72"><span class="footer-brand__name">trendtopia-store<span>.com</span></span></a><p>Akumulátorový nástroj na rezanie a údržbu exteriéru.</p><p>GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED<br>RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong<br><a href="mailto:info@trendtopia-store.com">info@trendtopia-store.com</a></p></div>
         <div><h3>Pomoc</h3><a href="#pedido">Objednať</a><a href="/sk/shipping-policy.html">Doprava</a><a href="/sk/contact-us.html">Kontakt</a></div>
         <div><h3>Právne info</h3><a href="/sk/privacy-policy.html">Ochrana údajov</a><a href="/sk/cookie-policy.html">Cookies</a><a href="/sk/terms-conditions.html">Obchodné podmienky</a><a href="/sk/about-us.html">O nás</a><button type="button" class="tt-cookie-change-link">Zmeniť nastavenia cookies</button></div>
       </div>
