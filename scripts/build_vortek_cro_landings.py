@@ -108,10 +108,12 @@ LOCALES = {
     "p2": "<strong>Capacidad declarada de hasta 40 cm*</strong> según madera y condiciones de uso.",
     "p3": "<strong>Solo 2,4 kg*</strong> incluyendo espada y batería.",
     "p4": "<strong>Lubricación y tensado automáticos*</strong> para reducir interrupciones.",
+    "p5": "<strong>Guantes de regalo</strong> incluidos en el kit.",
+    "hero_alt": "Kit completo de motosierra Iron Oak Pro con baterías, cadenas, cargador, maletín y guantes de regalo",
     "hero_alt": "Kit completo de motosierra Iron Oak Pro con baterías, cadenas, cargador, maletín y guantes",
     "badge_small": "OFERTA",
     "pack_label": "KIT COMPLETO INCLUIDO",
-    "pack_small": "2 baterías · 2 cadenas · cargador · maletín",
+    "pack_small": "2 baterías · 2 cadenas · maletín · guantes de regalo",
     "form_eye": "Oferta de lanzamiento",
     "form_h2": "PIDE TU IRON OAK PRO",
     "form_p": "No pagas ahora. Confirmamos el pedido por teléfono y pagas al recibirlo.",
@@ -167,7 +169,7 @@ LOCALES = {
     "pack_alt": "Contenido completo del pack Iron Oak Pro",
     "li1": "1 motosierra Iron Oak Pro", "li2": "2 baterías de litio", "li3": "1 cargador rápido",
     "li4": "2 cadenas y accesorios de montaje", "li5": "1 maletín de transporte",
-    "li6": "Gafas, guantes y manual de uso",
+    "li6": "Guantes de regalo, gafas y manual",
     "safety": "<strong>Seguridad:</strong> usa siempre protección ocular, guantes y equipo adecuado. Lee el manual completo y no utilices la herramienta si no estás capacitado para manejar una motosierra.",
     "rev_eye": "Opiniones", "rev_h2": "LO QUE CUENTAN QUIENES YA LA USAN.",
     "rev_note": "Opiniones de clientes sobre el uso de Iron Oak Pro. La autonomía y el corte dependen de la madera y las condiciones de trabajo.",
@@ -186,7 +188,7 @@ LOCALES = {
       ("¿Cuánto duran las baterías?", "Juntas ofrecen hasta ocho horas combinadas. El cargador rápido las carga en aproximadamente una hora. La autonomía real depende del grosor y tipo de madera, la presión de corte, la temperatura y el estado de las baterías."),
       ("¿Puede cortar troncos de 40 cm?", "La capacidad máxima declarada es de hasta 40 cm. La dureza de la madera, la técnica y el mantenimiento influyen en el resultado."),
       ("¿Tengo que pagar ahora?", "No. El pago es contra reembolso: se confirma el pedido por teléfono y se paga al transportista al recibirlo."),
-      ("¿Qué incluye exactamente?", "Motosierra, dos baterías, cargador, dos cadenas, herramientas, maletín, gafas, guantes y manual."),
+      ("¿Qué incluye exactamente?", "Motosierra, dos baterías, cargador, dos cadenas, herramientas, maletín, gafas, manual y guantes de regalo."),
       ("¿Puedo devolverla?", "Sí, durante 30 días según la <a href=\"/es/refund-policy.html\">política de reembolso</a>."),
       ("¿Qué garantía tiene?", "Garantía legal de conformidad de 24 meses desde la entrega."),
     ],
@@ -233,10 +235,11 @@ LOCALES = {
     "p2": "<strong>Deklarovaná kapacita až 40 cm*</strong> podľa dreva a podmienok použitia.",
     "p3": "<strong>Len 2,4 kg*</strong> vrátane lišty a batérie.",
     "p4": "<strong>Automatické mazanie a napínanie*</strong> na menej prestávok.",
+    "p5": "<strong>Rukavice zadarmo</strong> v balení ako darček.",
     "hero_alt": "Kompletný kit reťazovej píly Iron Oak Pro s batériami, reťazami, nabíjačkou, kufríkom a rukavicami",
     "badge_small": "PONUKA",
     "pack_label": "KOMPLETNÝ KIT V CENE",
-    "pack_small": "2 batérie · 2 reťaze · nabíjačka · kufrík",
+    "pack_small": "2 batérie · 2 reťaze · kufrík · rukavice zadarmo",
     "form_eye": "Úvodná ponuka",
     "form_h2": "OBJEDNAJTE SI IRON OAK PRO",
     "form_p": "Teraz neplatíte. Objednávku potvrdíme telefonicky a zaplatíte pri prevzatí.",
@@ -292,7 +295,7 @@ LOCALES = {
     "pack_alt": "Kompletný obsah balenia Iron Oak Pro",
     "li1": "1 reťazová píla Iron Oak Pro", "li2": "2 lítiové batérie", "li3": "1 rýchlonabíjačka",
     "li4": "2 reťaze a montážne príslušenstvo", "li5": "1 prepravný kufrík",
-    "li6": "Okuliare, rukavice a návod",
+    "li6": "Rukavice zadarmo, okuliare a návod",
     "safety": "<strong>Bezpečnosť:</strong> vždy používajte ochranu očí, rukavice a vhodnú výbavu. Prečítajte si celý návod a pílu nepoužívajte, ak nie ste spôsobilí obsluhovať reťazovú pílu.",
     "rev_eye": "Recenzie", "rev_h2": "ČO HOVORIA TÍ, KTORÍ JU UŽ POUŽÍVAJÚ.",
     "rev_note": "Skúsenosti zákazníkov s Iron Oak Pro. Výdrž a rez závisia od dreva a podmienok práce.",
@@ -311,7 +314,7 @@ LOCALES = {
       ("Ako dlho vydržia batérie?", "Spolu až osem hodín. Rýchlonabíjačka ich nabije približne za hodinu. Reálna výdrž závisí od hrúbky a druhu dreva, tlaku rezu, teploty a stavu batérií."),
       ("Zvládne kmene 40 cm?", "Maximálna deklarovaná kapacita je až 40 cm. Tvrdosť dreva, technika a údržba ovplyvňujú výsledok."),
       ("Musím platiť teraz?", "Nie. Platba je na dobierku: objednávku potvrdíme telefonicky a zaplatíte kuriérovi pri prevzatí."),
-      ("Čo presne obsahuje?", "Pílu, dve batérie, nabíjačku, dve reťaze, náradie, kufrík, okuliare, rukavice a návod."),
+      ("Čo presne obsahuje?", "Pílu, dve batérie, nabíjačku, dve reťaze, náradie, kufrík, okuliare, návod a rukavice zadarmo."),
       ("Môžem ju vrátiť?", "Áno, do 30 dní podľa <a href=\"/sk/refund-policy.html\">pravidiel vrátenia peňazí</a>."),
       ("Aká je záruka?", "Zákonná záruka 24 mesiacov od dodania."),
     ],
@@ -358,10 +361,11 @@ LOCALES = {
     "p2": "<strong>Deklarowana średnica do 40 cm*</strong> w zależności od drewna i warunków.",
     "p3": "<strong>Tylko 2,4 kg*</strong> z prowadnicą i akumulatorem.",
     "p4": "<strong>Automatyczne smarowanie i napinanie*</strong>, mniej przerw.",
+    "p5": "<strong>Rękawice w prezencie</strong> w zestawie.",
     "hero_alt": "Kompletny zestaw pilarki Iron Oak Pro z akumulatorami, łańcuchami, ładowarką, walizką i rękawicami",
     "badge_small": "OFERTA",
     "pack_label": "KOMPLETNY ZESTAW W CENIE",
-    "pack_small": "2 akumulatory · 2 łańcuchy · ładowarka · walizka",
+    "pack_small": "2 akumulatory · 2 łańcuchy · walizka · rękawice w prezencie",
     "form_eye": "Oferta startowa",
     "form_h2": "ZAMÓW IRON OAK PRO",
     "form_p": "Nie płacisz teraz. Potwierdzimy zamówienie telefonicznie i zapłacisz przy odbiorze.",
@@ -417,7 +421,7 @@ LOCALES = {
     "pack_alt": "Pełna zawartość zestawu Iron Oak Pro",
     "li1": "1 pilarka Iron Oak Pro", "li2": "2 akumulatory litowe", "li3": "1 szybka ładowarka",
     "li4": "2 łańcuchy i akcesoria montażowe", "li5": "1 walizka transportowa",
-    "li6": "Okulary, rękawice i instrukcja",
+    "li6": "Rękawice w prezencie, okulary i instrukcja",
     "safety": "<strong>Bezpieczeństwo:</strong> zawsze używaj ochrony oczu, rękawic i odpowiedniego sprzętu. Przeczytaj całą instrukcję i nie używaj narzędzia, jeśli nie jesteś przygotowany do obsługi pilarki łańcuchowej.",
     "rev_eye": "Opinie", "rev_h2": "CO MÓWIĄ OSOBY, KTÓRE JUŻ JEJ UŻYWAJĄ.",
     "rev_note": "Opinie klientów o użytkowaniu Iron Oak Pro. Czas pracy i cięcie zależą od drewna i warunków.",
@@ -436,7 +440,7 @@ LOCALES = {
       ("Jak długo działają akumulatory?", "Razem do ośmiu godzin. Szybka ładowarka ładuje je w około godzinę. Rzeczywisty czas zależy od grubości i rodzaju drewna, nacisku cięcia, temperatury i stanu akumulatorów."),
       ("Czy przetnie pnie 40 cm?", "Maksymalna deklarowana średnica to do 40 cm. Twardość drewna, technika i konserwacja wpływają na efekt."),
       ("Czy muszę płacić teraz?", "Nie. Płatność przy odbiorze: potwierdzamy zamówienie telefonicznie i płacisz kurierowi przy odbiorze."),
-      ("Co dokładnie zawiera zestaw?", "Pilarkę, dwa akumulatory, ładowarkę, dwa łańcuchy, narzędzia, walizkę, okulary, rękawice i instrukcję."),
+      ("Co dokładnie zawiera zestaw?", "Pilarkę, dwa akumulatory, ładowarkę, dwa łańcuchy, narzędzia, walizkę, okulary, instrukcję i rękawice w prezencie."),
       ("Czy mogę zwrócić?", "Tak, w ciągu 30 dni zgodnie z <a href=\"/pl/refund-policy.html\">polityką zwrotów</a>."),
       ("Jaka jest gwarancja?", "24-miesięczna gwarancja zgodności od dostawy."),
     ],
@@ -483,10 +487,11 @@ LOCALES = {
     "p2": "<strong>Deklaruojamas pjovimas iki 40 cm*</strong> pagal medieną ir naudojimo sąlygas.",
     "p3": "<strong>Tik 2,4 kg*</strong> su juosta ir akumuliatoriumi.",
     "p4": "<strong>Automatinis tepimas ir įtempimas*</strong>, mažiau pertraukų.",
+    "p5": "<strong>Pirštinės dovanų</strong> rinkinyje.",
     "hero_alt": "Visas Iron Oak Pro pjūklo rinkinys su akumuliatoriais, grandinėmis, krovikliu, lagaminu ir pirštinėmis",
     "badge_small": "PASIŪLYMAS",
     "pack_label": "VISAS RINKINYS ĮSKAIČIUOTAS",
-    "pack_small": "2 akumuliatoriai · 2 grandinės · kroviklis · lagaminas",
+    "pack_small": "2 akumuliatoriai · 2 grandinės · lagaminas · pirštinės dovanų",
     "form_eye": "Įvadinis pasiūlymas",
     "form_h2": "UŽSISAKYKITE IRON OAK PRO",
     "form_p": "Dabar nemokate. Užsakymą patvirtinsime telefonu, o mokėsite gavę.",
@@ -542,7 +547,7 @@ LOCALES = {
     "pack_alt": "Visas Iron Oak Pro rinkinio turinys",
     "li1": "1 Iron Oak Pro grandininis pjūklas", "li2": "2 ličio akumuliatoriai", "li3": "1 greitasis kroviklis",
     "li4": "2 grandinės ir montavimo priedai", "li5": "1 transportavimo lagaminas",
-    "li6": "Akiniai, pirštinės ir vadovas",
+    "li6": "Pirštinės dovanų, akiniai ir vadovas",
     "safety": "<strong>Sauga:</strong> visada naudokite akių apsaugą, pirštines ir tinkamą įrangą. Perskaitykite visą vadovą ir nenaudokite įrankio, jei nesate pasirengę valdyti grandininio pjūklo.",
     "rev_eye": "Atsiliepimai", "rev_h2": "KĄ SAKO JAU NAUDOJANTYS.",
     "rev_note": "Klientų patirtis su Iron Oak Pro. Veikimo laikas ir pjovimas priklauso nuo medienos ir sąlygų.",
@@ -561,7 +566,7 @@ LOCALES = {
       ("Kiek veikia akumuliatoriai?", "Kartu iki aštuonių valandų. Greitasis kroviklis įkrauna apie valandą. Tikroji trukmė priklauso nuo medienos storio ir rūšies, pjovimo spaudimo, temperatūros ir akumuliatorių būklės."),
       ("Ar pjauna 40 cm kamienus?", "Didžiausias deklaruojamas skersmuo – iki 40 cm. Medienos kietumas, technika ir priežiūra turi įtakos rezultatui."),
       ("Ar turiu mokėti dabar?", "Ne. Mokama pristatymo metu: užsakymą patvirtiname telefonu, o kurjeriui mokate gavę."),
-      ("Kas tiksliai įeina?", "Pjūklas, du akumuliatoriai, kroviklis, dvi grandinės, įrankiai, lagaminas, akiniai, pirštinės ir vadovas."),
+      ("Kas tiksliai įeina?", "Pjūklas, du akumuliatoriai, kroviklis, dvi grandinės, įrankiai, lagaminas, akiniai, vadovas ir pirštinės dovanų."),
       ("Ar galiu grąžinti?", "Taip, per 30 dienų pagal <a href=\"/lt/refund-policy.html\">grąžinimo politiką</a>."),
       ("Kokia garantija?", "24 mėnesių atitikties garantija nuo pristatymo."),
     ],
@@ -608,10 +613,11 @@ LOCALES = {
     "p2": "<strong>Deklarētais griezums līdz 40 cm*</strong> atkarībā no koksnes un lietošanas.",
     "p3": "<strong>Tikai 2,4 kg*</strong> ar sliedi un akumulatoru.",
     "p4": "<strong>Automātiska eļļošana un spriegošana*</strong>, mazāk paužu.",
+    "p5": "<strong>Cimdi dāvanā</strong> komplektā.",
     "hero_alt": "Pilns Iron Oak Pro ķēdes zāģa komplekts ar akumulatoriem, ķēdēm, lādētāju, koferi un cimdiem",
     "badge_small": "PIEDĀVĀJUMS",
     "pack_label": "PILNS KOMPLEKTS IEKĻAUTS",
-    "pack_small": "2 akumulatori · 2 ķēdes · lādētājs · koferis",
+    "pack_small": "2 akumulatori · 2 ķēdes · koferis · cimdi dāvanā",
     "form_eye": "Ievada piedāvājums",
     "form_h2": "PASŪTI IRON OAK PRO",
     "form_p": "Tagad nemaksā. Pasūtījumu apstiprināsim pa tālruni, un maksāsi saņemot.",
@@ -667,7 +673,7 @@ LOCALES = {
     "pack_alt": "Pilns Iron Oak Pro komplekta saturs",
     "li1": "1 Iron Oak Pro ķēdes zāģis", "li2": "2 litija akumulatori", "li3": "1 ātrais lādētājs",
     "li4": "2 ķēdes un montāžas piederumi", "li5": "1 transporta koferis",
-    "li6": "Brilles, cimdi un lietošanas pamācība",
+    "li6": "Cimdi dāvanā, brilles un pamācība",
     "safety": "<strong>Drošība:</strong> vienmēr lieto acu aizsardzību, cimdus un piemērotu aprīkojumu. Izlasi visu pamācību un nelieto rīku, ja neesi sagatavots darbam ar ķēdes zāģi.",
     "rev_eye": "Atsauksmes", "rev_h2": "KO SAKA TIE, KAS TO JAU LIETO.",
     "rev_note": "Klientu pieredze ar Iron Oak Pro. Darbības laiks un griezums atkarīgi no koksnes un apstākļiem.",
@@ -686,7 +692,7 @@ LOCALES = {
       ("Cik ilgi darbojas akumulatori?", "Kopā līdz astoņām stundām. Ātrais lādētājs tos uzlādē aptuveni stundā. Reālais laiks atkarīgs no koksnes biezuma un veida, griešanas spiediena, temperatūras un akumulatoru stāvokļa."),
       ("Vai zāģē 40 cm stumbrus?", "Maksimālais deklarētais diametrs ir līdz 40 cm. Koksnes cietība, tehnika un apkope ietekmē rezultātu."),
       ("Vai jāmaksā tagad?", "Nē. Apmaksa saņemot: pasūtījumu apstiprinām pa tālruni, un kurjeram maksā saņemot."),
-      ("Kas tieši ir komplektā?", "Zāģis, divi akumulatori, lādētājs, divas ķēdes, instrumenti, koferis, brilles, cimdi un pamācība."),
+      ("Kas tieši ir komplektā?", "Zāģis, divi akumulatori, lādētājs, divas ķēdes, instrumenti, koferis, brilles, pamācība un cimdi dāvanā."),
       ("Vai varu atgriezt?", "Jā, 30 dienu laikā saskaņā ar <a href=\"/lv/refund-policy.html\">atgriešanas politiku</a>."),
       ("Kāda ir garantija?", "24 mēnešu atbilstības garantija no piegādes."),
     ],
@@ -809,9 +815,10 @@ window.SITE_CONFIG = {{
           <li><span>{L['p2']}</span></li>
           <li><span>{L['p3']}</span></li>
           <li><span>{L['p4']}</span></li>
+          <li><span>{L['p5']}</span></li>
         </ul>
         <div class="product-shot">
-          <img src="/assets/img/products/vortek/hero.webp?v=3" alt="{L['hero_alt']}" width="1024" height="1024">
+          <img src="/assets/img/products/vortek/hero.webp?v=4" alt="{L['hero_alt']}" width="1024" height="1024">
           <div class="discount-badge">−50%<small>{L['badge_small']}</small></div>
           <div class="pack-label">{L['pack_label']}<small>{L['pack_small']}</small></div>
         </div>
@@ -908,7 +915,7 @@ window.SITE_CONFIG = {{
 
     <section class="pack">
       <div class="wrap pack-grid">
-        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=3" alt="{L['pack_alt']}" width="1024" height="1024"></div>
+        <div class="pack-image"><img src="/assets/img/products/vortek/hero.webp?v=4" alt="{L['pack_alt']}" width="1024" height="1024"></div>
         <div><p class="eyebrow">{L['pack_eye']}</p><h2>{L['pack_h2']}</h2><ul class="pack-list"><li>{L['li1']}</li><li>{L['li2']}</li><li>{L['li3']}</li><li>{L['li4']}</li><li>{L['li5']}</li><li>{L['li6']}</li></ul><div class="safety">{L['safety']}</div></div>
       </div>
     </section>
