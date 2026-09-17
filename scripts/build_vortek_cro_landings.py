@@ -363,7 +363,7 @@ LOCALES = {
     "p4": "<strong>Automatyczne smarowanie i napinanie*</strong>, mniej przerw.",
     "p5": "<strong>Rękawice w prezencie</strong> w zestawie.",
     "hero_alt": "Kompletny zestaw pilarki Iron Oak Pro z akumulatorami, łańcuchami, ładowarką, walizką i rękawicami",
-    "badge_small": "OFERTA",
+    "badge_small": "RABAT",
     "pack_label": "KOMPLETNY ZESTAW W CENIE",
     "pack_small": "2 akumulatory · 2 łańcuchy · walizka · rękawice w prezencie",
     "form_eye": "Oferta startowa",
