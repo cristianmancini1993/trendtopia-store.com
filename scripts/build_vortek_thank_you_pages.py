@@ -9,12 +9,12 @@ SPECS = [
         "dest": ROOT / "es/vortek-1013/thank-you.html",
         "replacements": [
             ("glacierair-1415", "vortek-1013"),
-            ("GlacierAir™", "Iron Oak Pro™"),
+            ("GlacierAir™", "Vortek™"),
             ("PRICE: 99.0", "PRICE: 69.0"),
             ("trackPurchase(99.0, 'EUR')", "trackPurchase(69.0, 'EUR')"),
             (
                 "Perfecto — tu pedido está en proceso. Solo falta <strong>un último paso</strong> para completarlo y poner en marcha el envío.",
-                "Perfecto — tu pedido <strong>Iron Oak Pro™</strong> está en proceso. Solo falta <strong>un último paso</strong> para completarlo y poner en marcha el envío.",
+                "Perfecto — tu pedido <strong>Vortek™</strong> está en proceso. Solo falta <strong>un último paso</strong> para completarlo y poner en marcha el envío.",
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
@@ -32,12 +32,12 @@ SPECS = [
         "dest": ROOT / "lt/vortek-1427/thank-you.html",
         "replacements": [
             ("casa-fuego", "vortek-1427"),
-            ("Casa Fuego™", "Iron Oak Pro™"),
+            ("Casa Fuego™", "Vortek™"),
             ("PRICE: 89.0", "PRICE: 64.0"),
             ("trackPurchase(89.0, 'EUR')", "trackPurchase(64.0, 'EUR')"),
             (
                 "Puiku — jūsų užsakymas apdorojamas. Liko tik <strong>paskutinis žingsnis</strong>, kad jį užbaigtumėte ir pradėtumėte siuntimą.",
-                "Puiku — jūsų <strong>Iron Oak Pro™</strong> užsakymas apdorojamas. Liko tik <strong>paskutinis žingsnis</strong>, kad jį užbaigtumėte ir pradėtumėte siuntimą.",
+                "Puiku — jūsų <strong>Vortek™</strong> užsakymas apdorojamas. Liko tik <strong>paskutinis žingsnis</strong>, kad jį užbaigtumėte ir pradėtumėte siuntimą.",
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
@@ -49,12 +49,12 @@ SPECS = [
         "dest": ROOT / "pl/vortek-1429/thank-you.html",
         "replacements": [
             ("glacierair-3297", "vortek-1429"),
-            ("GlacierAir™", "Iron Oak Pro™"),
+            ("GlacierAir™", "Vortek™"),
             ("PRICE: 419.0", "PRICE: 299.0"),
             ("trackPurchase(419.0, 'PLN')", "trackPurchase(299.0, 'PLN')"),
             (
                 "Świetnie — Twoje zamówienie jest przetwarzane. Pozostał już tylko <strong>ostatni krok</strong> do jego ukończenia i wysyłki.",
-                "Świetnie — Twoje zamówienie <strong>Iron Oak Pro™</strong> jest przetwarzane. Pozostał już tylko <strong>ostatni krok</strong> do jego ukończenia i wysyłki.",
+                "Świetnie — Twoje zamówienie <strong>Vortek™</strong> jest przetwarzane. Pozostał już tylko <strong>ostatni krok</strong> do jego ukończenia i wysyłki.",
             ),
             ('GOOGLE_TAG_ID: \'\'', "GOOGLE_TAG_ID: 'AW-18327321473'"),
             ('meta name="theme-color" content="#16a34a"', 'meta name="theme-color" content="#201c18"'),
