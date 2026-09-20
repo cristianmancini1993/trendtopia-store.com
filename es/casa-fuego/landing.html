@@ -88,11 +88,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 .why-block p + .tag-row{margin-top:14px}
 .why-block .steel-tip{font-size:13.5px;color:var(--color-text-muted);font-style:italic;margin-top:16px}
 .faq-item.open .faq-a{max-height:480px}
-.final-cta{text-align:center;padding:36px 0 40px}
-.final-cta .eyebrow{display:block;font-size:13px;font-weight:800;color:var(--color-accent);letter-spacing:.04em;margin-bottom:8px}
-.final-cta h2{font-size:26px;font-weight:800;margin:0 0 10px;line-height:1.25}
-.final-cta p{font-size:15.5px;color:var(--color-text-muted);margin:0 0 10px}
-.final-cta .cta-btn{max-width:520px;margin:18px auto 0}
 .cf-sticky-cta{display:none}
 @media (max-width:640px){
   .cf-sticky-cta{position:fixed;right:12px;bottom:12px;left:12px;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(20,24,31,.94);box-shadow:0 14px 45px rgba(0,0,0,.25)}
@@ -108,6 +103,7 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 
 <div class="rating-strip wrap">
   <div class="stars">★★★★★</div>
+  <div class="rating-text"><strong>4,9/5</strong> — Reseñas con compra verificada</div>
 </div>
 
 <section class="hero wrap">
@@ -130,24 +126,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   </div>
 </section>
 
-<section class="kit-section wrap mid-copy" style="padding-top:8px;padding-bottom:8px">
-  <div class="section-heading">
-    <span class="eyebrow">12 PIEZAS. RENUEVA TU BATERÍA DE UNA SOLA VEZ.</span>
-    <h2>4 ollas + 1 cazo + 1 sartén + 6 tapas</h2>
-  </div>
-  <p class="lead">Desde una salsa rápida hasta un guiso para toda la familia: diferentes tamaños para tener siempre la pieza adecuada.</p>
-  <ul class="hero-feats mid-feats" style="margin:0 auto 18px">
-    <li>Diferentes tamaños</li>
-    <li>Acero inoxidable 18/10</li>
-    <li>Tecnología de 7 capas</li>
-    <li>Compatible con inducción</li>
-    <li>Superficie de cocción en acero inoxidable</li>
-  </ul>
-  <div style="text-align:center;margin-bottom:8px">
-    <a href="#cf-formulario" class="cta-btn" style="max-width:520px;margin-left:auto;margin-right:auto">QUIERO MI CASA FUEGO →</a>
-  </div>
-</section>
-
 <div class="wrap">
   <div class="feature-row">
     <div class="feature-item"><div class="ico">🚚</div><h4>Envío 24–48 h</h4><p>Recíbelo en casa tras la confirmación del pedido.</p></div>
@@ -160,6 +138,26 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
 <p class="cf-sold-by">Vendido por trendtopia-store.com</p>
 <section class="order-section" id="cf-formulario">
   <div class="wrap">
+    <div class="urgency-strip">
+      <div class="countdown-row">
+        <div class="countdown-label">⏰ EL DESCUENTO DEL 50% CADUCA EN</div>
+        <div class="countdown-timer" id="countdownTimer">
+          <div class="box"><div class="num" id="cd-h">00</div><div class="lbl">Hrs</div></div>
+          <div class="sep">:</div>
+          <div class="box"><div class="num" id="cd-m">14</div><div class="lbl">Min</div></div>
+          <div class="sep">:</div>
+          <div class="box"><div class="num" id="cd-s">59</div><div class="lbl">Seg</div></div>
+        </div>
+      </div>
+      <div class="stock-row">
+        <div class="stock-label"><span class="left">Disponibilidad</span><span class="right">ÚLTIMAS 6 UNIDADES A PRECIO PROMO</span></div>
+        <div class="stock-bar"><div class="stock-bar-fill"></div></div>
+      </div>
+      <div class="live-row">
+        <span class="dot"></span>
+        <span id="liveCount" data-live="<strong>{n} personas</strong> están viendo esta oferta ahora"><strong>59 personas</strong> están viendo esta oferta ahora</span>
+      </div>
+    </div>
     <div class="order-card">
       <h2>Pide tu Casa Fuego ahora</h2>
       <p>12 piezas por solo 89,00 €</p>
@@ -266,13 +264,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
       <p>Para carnes, verduras, huevos y salteados.</p>
     </div>
   </div>
-  <div class="section-heading" style="margin-top:8px;margin-bottom:14px">
-    <span class="eyebrow">12 PIEZAS EN TOTAL</span>
-    <h2>89,00 €</h2>
-  </div>
-  <div style="text-align:center">
-    <a href="#cf-formulario" class="cta-btn" style="max-width:520px;margin-left:auto;margin-right:auto">PEDIR AHORA Y PAGAR AL RECIBIR →</a>
-  </div>
 </section>
 
 <section class="compare">
@@ -295,6 +286,44 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
       <tr><td>Cazo</td><td class="win">1</td></tr>
       <tr><td>Sartén</td><td class="win">1</td></tr>
     </table>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="wrap">
+    <div class="section-heading">
+      <span class="eyebrow" style="display:block;margin-bottom:8px;color:#e2231a;font-weight:600;text-transform:none;letter-spacing:0;font-size:14px;">★ 4,9/5 · Compra verificada · Reseñas revisadas</span>
+      <h2>Más de 2.146 clientes satisfechos. Por eso eligen Casa Fuego.</h2>
+    </div>
+    <div class="t-grid">
+      <div class="testimonial">
+        <img decoding="async" class="t-photo" src="/assets/img/products/casa-fuego/review-1-atlantis.jpg?v=2" alt="Laura, clienta de Casa Fuego" width="1024" height="1024" loading="lazy">
+        <div class="t-body">
+          <div class="stars">★★★★★</div>
+          <h4>Calienta parejo y las tapas de cristal ayudan</h4>
+          <p>«Buscaba un set que funcionara en mi inducción y estoy contenta. Calienta parejo y las tapas de cristal me van muy bien para no destapar a cada rato. Se nota que el acero es sólido.»</p>
+          <div class="author-row"><div class="author">Laura M. ✅ — Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <img decoding="async" class="t-photo" src="/assets/img/products/casa-fuego/review-2-atlantis.jpg?v=1" alt="Antonio, cliente de Casa Fuego" width="1024" height="1024" loading="lazy">
+        <div class="t-body">
+          <div class="stars">★★★★★</div>
+          <h4>El borde para servir se agradece</h4>
+          <p>«El detalle del borde para servir sin gotear se agradece más de lo que pensaba. Las asas se quedan cómodas y limpiarlo es sencillo. Pagué al recibir el pedido, todo correcto.»</p>
+          <div class="author-row"><div class="author">Antonio R. ✅ — Compra verificada</div></div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <img decoding="async" class="t-photo" src="/assets/img/products/casa-fuego/review-3-atlantis.jpg?v=1" alt="Marta, clienta de Casa Fuego" width="1024" height="1024" loading="lazy">
+        <div class="t-body">
+          <div class="stars">★★★★☆</div>
+          <h4>El reparto del calor se nota</h4>
+          <p>«El reparto del calor se nota con las salsas. Le quito una estrella porque la olla más grande ocupa bastante en mi armario, pero por lo demás cumple y el juego es completo.»</p>
+          <div class="author-row"><div class="author">Marta G. ✅ — Compra verificada</div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -325,35 +354,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
   </div>
 </section>
 
-<section class="order-section">
-  <div class="wrap">
-    <div class="order-card">
-      <h2>Pide tu Casa Fuego ahora</h2>
-      <p>12 piezas por solo 89,00 €</p>
-      <p>Introduce tus datos y recibe tu batería directamente en casa.</p>
-      <p class="form-privacy">Al enviar el formulario aceptas el tratamiento de tus datos para gestionar el pedido. Consulta la <a href="/es/privacy-policy.html">Política de privacidad</a>.</p>
-      <form class="cf-form tm-order-form order-form" action="https://offers.adricenetwork.com/forms/html/" method="post" novalidate>
-        <label for="name2">Nombre y apellidos*</label>
-        <input id="name2" type="text" name="name" autocomplete="name" placeholder="Nombre y apellidos" required aria-required="true"><br>
-        <label for="street-address2">Dirección*</label>
-        <input id="street-address2" type="text" name="street-address" autocomplete="street-address" placeholder="Dirección" required aria-required="true"><br>
-        <label for="tel2">Teléfono*</label>
-        <input id="tel2" type="tel" name="tel" autocomplete="tel" inputmode="tel" placeholder="Teléfono" required aria-required="true"><br>
-        <input name="uid" type="hidden" value="019e5f4e-b178-7d63-91e1-6fda72088957">
-        <input name="offer" type="hidden" value="3176">
-        <input name="lp" type="hidden" value="3210">
-        <input name="thankyoupage" type="hidden" value="https://trendtopia-store.com/es/casa-fuego/thank-you.html">
-        <input name="webhook" type="hidden" value="https://hook.eu2.make.com/otlkouarqencnd3tdlobo9xhdex1wcei">
-        <input name="_key" type="hidden" value="11d65f1d13d333374d5526fe541c73e0c5752a5f">
-        <div style="margin-top: 10px; text-align: center">
-          <button name="submit" type="submit">PEDIR AHORA Y PAGAR AL RECIBIR →</button>
-        </div>
-        <p class="form-note">🔒 Sin anticipo · Pagas al recibir</p>
-      </form>
-    </div>
-  </div>
-</section>
-
 <section class="faq wrap">
   <div class="section-heading">
     <h2>Preguntas frecuentes</h2>
@@ -374,15 +374,6 @@ window.SITE_CONFIG = Object.assign(window.SITE_CONFIG || {}, {
     <div class="faq-a"><p>Sí. No necesitas pagar por adelantado. Pagas al repartidor cuando recibes el pedido.</p></div></div>
   <div class="faq-item"><button class="faq-q" type="button"><span>¿Puedo devolverlo?</span><span class="arrow">▾</span></button>
     <div class="faq-a"><p>Sí. Dispones de hasta 30 días según las condiciones de devolución de la tienda.</p></div></div>
-</section>
-
-<section class="final-cta wrap">
-  <span class="eyebrow">Casa Fuego</span>
-  <h2>12 PIEZAS POR 89,00 €</h2>
-  <p>Acero 18/10 · 7 capas · Compatible con inducción</p>
-  <p>4 ollas + 1 cazo + 1 sartén + 6 tapas</p>
-  <a href="#cf-formulario" class="cta-btn">PEDIR AHORA Y PAGAR AL RECIBIR →</a>
-  <p class="form-note">🔒 Sin anticipo · 🚚 24–48 h · 🔄 30 días de devolución</p>
 </section>
 
 <footer class="site-footer">
