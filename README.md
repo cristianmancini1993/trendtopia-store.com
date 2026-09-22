@@ -7,7 +7,7 @@ Static HTML/CSS/JS multi-geo e-commerce site for Cash On Delivery campaigns (Met
 ## Quick facts
 
 - **Domain**: trendtopia-store.com
-- **Company**: GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED — 陶敬宾, RM 01, 15/F, Goldsland Building, 22-26 Minden Avenue, Tsim Sha Tsui, Kowloon, Hong Kong
+- **Company**: County of Sussex — 16192 Coastal Hwy, Lewes, DE 19958-3608, United States
 - **Contact email**: info@trendtopia-store.com (auto-derived from domain)
 - **First product**: HyperTrimmer™ 3000 (slug: `hypertrimmer`) — battery-powered grass trimmer
 - **Geos active**: 18 (it, es, fr, de, pt, gr, bg, ro, cz, pl, ee, lv, lt, hr, hu, si, sk, en)
@@ -18,37 +18,37 @@ Static HTML/CSS/JS multi-geo e-commerce site for Cash On Delivery campaigns (Met
 
 ```
 /
-├── index.html                    Root landing-language picker
+├── index.html Root landing-language picker
 ├── robots.txt
-├── sitemap.xml                   127 URLs across 18 geos
+├── sitemap.xml 127 URLs across 18 geos
 ├── favicon.svg
 │
-├── /assets/                      Shared by all geos
-│   ├── /css/                     reset · variables · components · landing · thank-you · home
-│   ├── /js/                      main · form-handler · popup-purchases · tracking · countdown
-│   └── /img/
-│       ├── /products/hypertrimmer/   ← drop hero.jpg, detail.jpg, lifestyle.jpg, package.jpg, feature-1/2/3.jpg, og-image.jpg
-│       ├── /reviews/hypertrimmer/    ← drop review-1..6.jpg + expert.jpg
-│       └── placeholder.svg           Used as fallback if .jpg missing
+├── /assets/ Shared by all geos
+│ ├── /css/ reset · variables · components · landing · thank-you · home
+│ ├── /js/ main · form-handler · popup-purchases · tracking · countdown
+│ └── /img/
+│ ├── /products/hypertrimmer/ ← drop hero.jpg, detail.jpg, lifestyle.jpg, package.jpg, feature-1/2/3.jpg, og-image.jpg
+│ ├── /reviews/hypertrimmer/ ← drop review-1..6.jpg + expert.jpg
+│ └── placeholder.svg Used as fallback if .jpg missing
 │
-├── /content/                     Translatable copy (JSON)
-│   └── /[geo]/
-│       ├── home.json
-│       ├── policies.json
-│       └── /products/hypertrimmer/
-│           ├── landing.json
-│           └── thank-you.json
+├── /content/ Translatable copy (JSON)
+│ └── /[geo]/
+│ ├── home.json
+│ ├── policies.json
+│ └── /products/hypertrimmer/
+│ ├── landing.json
+│ └── thank-you.json
 │
-└── /[geo]/                       18 geo folders (it, es, fr, de, ...)
-    ├── index.html                Home page
-    ├── /hypertrimmer/
-    │   ├── landing.html          22-section landing
-    │   └── thank-you.html        5-section TY page (noindex)
-    ├── privacy-policy.html
-    ├── terms-conditions.html
-    ├── cookie-policy.html
-    ├── shipping-policy.html
-    └── refund-policy.html
+└── /[geo]/ 18 geo folders (it, es, fr, de, ...)
+ ├── index.html Home page
+ ├── /hypertrimmer/
+ │ ├── landing.html 22-section landing
+ │ └── thank-you.html 5-section TY page (noindex)
+ ├── privacy-policy.html
+ ├── terms-conditions.html
+ ├── cookie-policy.html
+ ├── shipping-policy.html
+ └── refund-policy.html
 ```
 
 ## Before going live — TODO checklist
@@ -65,13 +65,13 @@ Edit `window.SITE_CONFIG` block at the top of every `landing.html` and `thank-yo
 
 ```js
 window.SITE_CONFIG = {
-  META_PIXEL_ID: '123456789012345',         // ← Meta Pixel ID
-  GOOGLE_TAG_ID: 'G-XXXXXXXXXX',            // ← GA4 measurement ID
-  GOOGLE_ADS_CONVERSION_ID: 'AW-123456789', // ← Google Ads conversion ID
-  GOOGLE_ADS_CONVERSION_LABEL: 'abc123',    // ← Lead conversion label
-  TY_CONVERSION_LABEL: 'xyz789',            // ← Purchase conversion label
-  NETWORK_PIXEL_URL: '',                    // ← Optional ClickFlare/Voluum URL
-  ...
+ META_PIXEL_ID: '123456789012345', // ← Meta Pixel ID
+ GOOGLE_TAG_ID: 'G-XXXXXXXXXX', // ← GA4 measurement ID
+ GOOGLE_ADS_CONVERSION_ID: 'AW-123456789', // ← Google Ads conversion ID
+ GOOGLE_ADS_CONVERSION_LABEL: 'abc123', // ← Lead conversion label
+ TY_CONVERSION_LABEL: 'xyz789', // ← Purchase conversion label
+ NETWORK_PIXEL_URL: '', // ← Optional ClickFlare/Voluum URL
+ ...
 };
 ```
 
@@ -87,11 +87,11 @@ with the real CRM/network endpoint that should receive the lead payload.
 The payload posted is:
 ```json
 {
-  "name": "...", "phone": "...", "address": "...",
-  "id_offerta": "...", "offer": "...", "lp": "...", "subid": "...",
-  "utm_source": "...", "utm_campaign": "...", "utm_medium": "...",
-  "fingerprint": "...", "geo": "it", "product": "hypertrimmer",
-  "timestamp": "2026-04-27T..."
+ "name": "...", "phone": "...", "address": "...",
+ "id_offerta": "...", "offer": "...", "lp": "...", "subid": "...",
+ "utm_source": "...", "utm_campaign": "...", "utm_medium": "...",
+ "fingerprint": "...", "geo": "it", "product": "hypertrimmer",
+ "timestamp": "2026-04-27T..."
 }
 ```
 
@@ -124,11 +124,11 @@ No build step required. No server runtime. Pure HTML/CSS/JS.
 For each new product, repeat this structure within every geo:
 ```
 /[geo]/[new-slug]/
-  ├── landing.html
-  └── thank-you.html
+ ├── landing.html
+ └── thank-you.html
 /content/[geo]/products/[new-slug]/
-  ├── landing.json
-  └── thank-you.json
+ ├── landing.json
+ └── thank-you.json
 /assets/img/products/[new-slug]/
 /assets/img/reviews/[new-slug]/
 ```
@@ -143,6 +143,6 @@ Then add the product card to each `[geo]/index.html` and the URLs to `sitemap.xm
 
 ## License & ownership
 
-© 2026 GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED — All rights reserved.
+© 2026 County of Sussex — All rights reserved.
 
 Generated with the Landing Factory multi-geo static template.

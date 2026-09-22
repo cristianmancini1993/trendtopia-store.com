@@ -1,13 +1,13 @@
 # LEGAL_REVIEW_REQUIRED.md
 
-Auténticas cuestiones jurídicas que **no** pueden resolverse desde código.  
+Auténticas cuestiones jurídicas que **no** pueden resolverse desde código. 
 Actualizado: 2026-09-08
 
 ---
 
 ## 1. Entidad HK + consumidores UE
 
-**Tema:** GLOBAL INTEGRATED MARKETING COMMUNICATION GROUP HOLDINGS LIMITED (Hong Kong) vende a consumidores en la UE.
+**Tema:** County of Sussex (Hong Kong) vende a consumidores en la UE.
 
 **Texto afectado:** Terms, Privacy, footers en todos los locales.
 
