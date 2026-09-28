@@ -213,8 +213,8 @@ new_body = r'''<div class="topbar">🔥 50 % DE DESCUENTO – SOLO HOY · 🚚 E
             <div class="stars">★★★★★</div>
             <p>«Vivo en una casa adosada y no quería molestar a los vecinos un domingo por la mañana. Esta recortadora es increíblemente silenciosa, pero tiene una potencia que no esperarías de una herramienta a batería. Se monta en un instante y las cuchillas de plástico son perfectas para recortar alrededor de mis flores sin dañarlas. ¡La recomiendo totalmente a cualquiera que quiera un jardín cuidado sin estrés!»</p>
             <div class="author-row">
-              <img decoding="async" class="avatar" src="/assets/img/products/arcforce/reviewer-2.webp?v=1" alt="Katarzyna M.">
-              <div class="author">Katarzyna M. ✅ — Cliente verificado</div>
+              <img decoding="async" class="avatar" src="/assets/img/products/arcforce/reviewer-2.webp?v=1" alt="Marek K.">
+              <div class="author">Marek K. ✅ — Cliente verificado</div>
             </div>
           </div>
         </div>
